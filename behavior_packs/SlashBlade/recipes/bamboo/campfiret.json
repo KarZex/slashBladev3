@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "SB_campfiret"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+      "BCB",
+      "DDD"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:tudura",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:iron_bars",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:flint_and_steel",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:coal",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:campfiret",
+      "count": 1
+    }
+  }
+  
+}

@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "SB_tatami_tan"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XBX",
+	  "BAB",
+	  "XBX"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:tudura",
+        "data": 0
+      },
+      "B": {
+        "item": "zex:straw",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:log",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:tatami_tan",
+      "count": 4
+    }
+  }
+  
+}

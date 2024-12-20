@@ -1,0 +1,821 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:entity": {
+	"description": {
+		"identifier": "zex:stand",
+		"runtime_identifier": "minecraft:shulker",
+		"is_spawnable": true,
+		"is_summonable": true,
+		"is_experimental": false
+		},
+	"component_groups": {
+      "default": {
+      "minecraft:interact": [
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:wood"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:wood",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:white"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:white",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:slashblade"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:slashblade",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:tukumo"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:tukumo",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:muramasa"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:muramasa",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:bamboo"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:bamboo",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:silverbanboo"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:silverbanboo",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:tagayasan"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:tagayasan",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:sabigatana"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:sabigatana",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:doutanuki"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:doutanuki",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:balkonw"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:balkonw",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:balkons"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:balkons",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:balkoni"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:balkoni",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:balkong"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:balkong",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:doutanuki"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:doutanuki",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:balkond"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:balkond",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:weiss"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:weiss",
+              "target": "self"
+            }
+          },
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:haze"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:haze",
+              "target": "self"
+            }
+          }
+        ],
+		"minecraft:skin_id": { "value": 0 }
+      },
+      "wood": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:wood",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 1 }
+      },
+      "white": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:white",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 2 }
+      },
+      "slashblade": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:slashblade",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 3 }
+      },
+      "tukumo": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:tukumo",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 4 }
+      },
+      "muramasa": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:muramasa",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 5 }
+      },
+      "bamboo": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:bamboo",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 6 }
+      },
+      "silverbanboo": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:silverbanboo",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 7 }
+      },
+      "tagayasan": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:tagayasan",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 8 }
+      },
+      "sabigatana": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:sabigatana",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 9 }
+      },
+      "doutanuki": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:doutanuki",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 10 }
+      },
+      "balkonw": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:balkonw",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 11 }
+      },
+      "balkons": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:balkons",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 12 }
+      },
+      "balkoni": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:balkoni",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 13 }
+      },
+      "balkong": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:balkong",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 14 }
+      },
+      "balkond": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:balkond",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 15 }
+      },
+      "weiss": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:weiss",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 16 }
+      },
+      "haze": {
+		"minecraft:interact": [
+			{
+				"cooldown": 2.5,
+				"use_item": true,
+				"transform_to_item": "blade:haze",
+				"play_sounds": "mob.armor_stand.place",
+				"interact_text": "action.interact.gunstand",
+				"on_interact": {
+					"filters": {
+						"all_of": [
+						{ "test" :  "is_family", "subject" : "other", "value" :  "player"}
+						]
+					},
+					"event": "set:default",
+					"target": "self"
+				}
+			}
+        ],
+		"minecraft:skin_id": { "value": 17 }
+      }
+    },
+	"components": {
+			"minecraft:behavior.trade_with_player": {},
+      "minecraft:experience_reward": {
+        "on_death": "0"
+      },
+	 "minecraft:collision_box": {
+				"width": 0.5,
+				"height": 1.8
+			},
+      "minecraft:loot": {
+        "table": "loot_tables/entities/stand.json"
+      },
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+
+            "minecraft:push_through": {
+                "value": 0
+            },
+			"minecraft:physics": {}
+		},
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        }
+      },
+      "set:default": {
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        }
+      },
+      "set:wood": {
+        "add": {
+          "component_groups": [
+            "wood"
+          ]
+        }
+      },
+      "set:white": {
+        "add": {
+          "component_groups": [
+            "white"
+          ]
+        }
+      },
+      "set:slashblade": {
+        "add": {
+          "component_groups": [
+            "slashblade"
+          ]
+        }
+      },
+      "set:tukumo": {
+        "add": {
+          "component_groups": [
+            "tukumo"
+          ]
+        }
+      },
+      "set:muramasa": {
+        "add": {
+          "component_groups": [
+            "muramasa"
+          ]
+        }
+      },
+      "set:bamboo": {
+        "add": {
+          "component_groups": [
+            "bamboo"
+          ]
+        }
+      },
+      "set:silverbanboo": {
+        "add": {
+          "component_groups": [
+            "silverbanboo"
+          ]
+        }
+      },
+      "set:tagayasan": {
+        "add": {
+          "component_groups": [
+            "tagayasan"
+          ]
+        }
+      },
+      "set:sabigatana": {
+        "add": {
+          "component_groups": [
+            "sabigatana"
+          ]
+        }
+      },
+      "set:doutanuki": {
+        "add": {
+          "component_groups": [
+            "doutanuki"
+          ]
+        }
+      },
+      "set:balkonw": {
+        "add": {
+          "component_groups": [
+            "balkonw"
+          ]
+        }
+      },
+      "set:balkons": {
+        "add": {
+          "component_groups": [
+            "balkons"
+          ]
+        }
+      },
+      "set:balkoni": {
+        "add": {
+          "component_groups": [
+            "balkoni"
+          ]
+        }
+      },
+      "set:balkong": {
+        "add": {
+          "component_groups": [
+            "balkong"
+          ]
+        }
+      },
+      "set:balkond": {
+        "add": {
+          "component_groups": [
+            "balkond"
+          ]
+        }
+      },
+      "set:weiss": {
+        "add": {
+          "component_groups": [
+            "weiss"
+          ]
+        }
+      },
+      "set:haze": {
+        "add": {
+          "component_groups": [
+            "haze"
+          ]
+        }
+      }
+    }
+  }
+}

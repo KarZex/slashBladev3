@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "SB.wara"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AAA",
+      "AAA",
+      "AAA"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:straw",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:log",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:log",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:wara",
+      "count": 1
+    }
+  }
+  
+}

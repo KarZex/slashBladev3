@@ -1,0 +1,103 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "zex:campfiret",
+      "register_to_creative_menu": true,
+      "category": "Construction",
+	  "properties": { 
+		"campfiret:fire": [ 0,1]
+	   }
+    },
+    "components": {
+	"minecraft:creative_category": {
+    "group": "itemGroup.name.kar_zex",
+    "category": "items"
+	},
+      "minecraft:destroy_time": 0,
+	  "minecraft:block_light_absorption": 0.0,
+      "minecraft:block_light_emission": 0.0,
+	  "minecraft:aim_collision": {
+		"origin" : [-8, 0.0, -8.0],
+		"size" : [16, 2.0, 16.0]
+	  },
+	  "minecraft:block_collision": {
+		"origin" : [-8, 0.0, -8.0],
+		"size" : [16, 2.0, 16.0]
+	  },
+      "minecraft:explosion_resistance": 1000,
+      "minecraft:map_color": "#FF0000"
+    },
+    "events": {
+	  "minecraft:ignite": {
+			"set_block_property": {
+				"campfiret:fire": "0"
+			},
+			"run_command": {
+				"command": [
+					"event entity @e[type=zex:campfirep,c=1] A"
+				],
+			    "target": "self"
+			}
+	  },
+	  "minecraft:fire": {
+			"set_block_property": {
+				"campfiret:fire": "1"
+			},
+			"run_command": {
+				"command": [
+					"summon zex:campfirep",
+					"execute @p ~~~ clear @p charcoal 0 1"
+				],
+			    "target": "self"
+			}
+	   }
+    },
+	"permutations": [
+		{
+		 "condition": "query.block_property('campfiret:fire') == 0",
+		 "components": {
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "campfiret",
+					"render_method": "blend"
+					}
+			},
+			"minecraft:geometry": "geometry.campfiret",
+			"minecraft:on_interact": {
+				"condition": "(query.get_equipped_item_name('main_hand') == 'charcoal')",
+				"event": "minecraft:fire"
+			},
+		    "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+		  }
+		},
+		{
+		 "condition": "query.block_property('campfiret:fire') == 1",
+		 "components": {
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "campfiret",
+					"render_method": "blend"
+					}
+			},
+			"minecraft:on_player_destroyed":{
+				"event" : "minecraft:ignite"
+			},
+			"minecraft:geometry": "geometry.campfiret",
+			"minecraft:crafting_table": {
+				"grid_size": 3,
+				"custom_description": "tile.zex:campfiret.name",
+				"crafting_tags": ["campfiret"]
+			},
+			"minecraft:block_light_emission": 1.0,
+			"minecraft:random_ticking": {
+                "on_tick": {
+                    "event": "minecraft:ignite"
+                }
+			},
+		    "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+		  }
+		}
+	]
+  }
+}

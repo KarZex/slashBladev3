@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:meshi_egg",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "meshi_egg",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

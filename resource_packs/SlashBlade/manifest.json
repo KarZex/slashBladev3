@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "抜刀剣modと竹modを再現したアドオンです。",
+    "name": "§gSlashBlade Addon V2",
+    "uuid": "650f8da0-7820-11ed-eb70-bb7f0d916e1b",
+    "version": [0, 0, 1]
+  },
+  "modules": [
+    {
+      "description": "抜刀剣modと竹modを再現したアドオンです。",
+      "type": "resources",
+      "uuid": "651050f0-7820-11ed-ade5-afac44d7afdb",
+      "version": [0, 0, 1]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "Blade_silverbanboo"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XCE",
+      "FBD",
+      "AFX"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:paper",
+        "data": 0
+      },
+      "B": {
+        "item": "blade:bamboo",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:egg",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:ink_sac",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      },
+      "F": {
+        "item": "minecraft:string",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "blade:silverbanboo",
+      "count": 1
+    }
+  }
+  
+}

@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "zex.bamboo2"
+    },
+
+    
+    "tags": ["furnace"],
+    "input": "zex:rawrice",
+    "output": "zex:rice"
+  }
+  
+}

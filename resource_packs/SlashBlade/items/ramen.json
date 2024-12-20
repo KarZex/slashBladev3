@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:ramen",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "ramen",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

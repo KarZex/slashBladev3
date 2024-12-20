@@ -1,0 +1,75 @@
+{
+  "format_version": [   1,  1, 0 ],
+  "zex:cherry_leaves": {
+    "sound": "grass"
+  },
+  "zex:thatched": {
+    "sound": "grass"
+  },
+  "zex:tatami": {
+    "sound": "grass"
+  },
+  "zex:riceplant": {
+    "sound": "grass"
+  },
+  "zex:cherry_log": {
+    "sound": "wood"
+  },
+  "zex:cherry_plank": {
+    "sound": "wood"
+  },
+  "zex:bamboo_pane": {
+    "sound": "bamboo"
+  },
+  "zex:bamboot": {
+    "sound": "bamboo"
+  },
+  "zex:bambootii": {
+    "sound": "bamboo"
+  },
+  "zex:bambooblock": {
+    "sound": "bamboo"
+  },
+  "zex:andon": {
+    "sound": "grass"
+  },
+  "zex:kawara": {
+    "sound": "grass"
+  },
+  "zex:kayabuki": {
+    "sound": "grass"
+  },
+  "zex:wara": {
+    "sound": "grass"
+  },
+  "zex:kawara": {
+    "sound": "nether_brick"
+  },
+  "zex:plaster": {
+    "sound": "gravel"
+  },
+  "zex:cherry_log": {
+    "sound": "wood"
+  },
+  "zex:tatami": {
+    "sound": "grass"
+  },
+   "zex:tatami": {
+    "sound": "grass"
+  },
+   "zex:tatami_n": {
+    "sound": "grass"
+  },
+   "zex:tatami_e": {
+    "sound": "grass"
+  },
+   "zex:tatami_tan": {
+    "sound": "grass"
+  },
+   "zex:tatami_tan_n": {
+    "sound": "grass"
+  },
+   "zex:tatami_tan_e": {
+    "sound": "grass"
+  }
+}

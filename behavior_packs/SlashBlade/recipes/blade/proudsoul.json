@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "craft_proudsoul"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:proudsoul",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:tinyproudsoul",
+      "count": 2
+    }
+  }
+  
+}

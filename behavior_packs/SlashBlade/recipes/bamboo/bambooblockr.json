@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "SB_bambooblockr"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:bambooblock",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:log",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:log",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:bamboot",
+      "count": 1
+    }
+  }
+  
+}

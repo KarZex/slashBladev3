@@ -1,0 +1,537 @@
+{
+  "tiers": [
+    {
+      "groups": [
+        {
+          "trades": [
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:tnt",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt1",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile1"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt2",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile2"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt3",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile3"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt4",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile4"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt5",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile5"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt6",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile6"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt7",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile7"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt8",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile8"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt9",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile9"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt10",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile10"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt11",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile11"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt12",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile12"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt13",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile13"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt14",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile14"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt15",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile15"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt16",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile16"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt17",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile17"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt18",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile18"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt19",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile19"
+						}
+					]
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "block:tnt20",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "quantity": 1,
+				  "functions": [
+						{
+							"function": "set_actor_id",
+							"id": "addon:missile20"
+						}
+					]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

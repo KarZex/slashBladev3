@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:butakusi",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "butakusi",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

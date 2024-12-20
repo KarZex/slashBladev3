@@ -1,0 +1,49 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "Blade_slashblade"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAB",
+      "CDE",
+      "FGX"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:blaze_rod",
+        "data": 0
+      },
+      "B": {
+        "item": "zex:bladesoulsphere",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:lapis_block",
+        "data": 0
+      },
+      "D": {
+        "item": "blade:white",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:coal_block",
+        "data": 0
+      },
+      "F": {
+        "item": "minecraft:string",
+        "data": 0
+      },
+      "G": {
+        "item": "minecraft:gold_ingot",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "blade:slashblade",
+      "count": 1
+    }
+  }
+  
+}

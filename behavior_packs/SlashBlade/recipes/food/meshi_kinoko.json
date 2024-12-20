@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:meshi_kinoko"
+    },
+    "tags": [ "campfiret" ],
+    "pattern": [
+      "BC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:beef",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:brown_mushroom",
+        "data": 0
+      },
+      "C": {
+        "item": "zex:rawrice",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:meshi_kinoko",
+      "count": 1
+    }
+  }
+  
+}

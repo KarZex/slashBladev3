@@ -1,0 +1,61 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "zex:stand",
+			"materials": {
+				"default": "iron_golem"
+			},
+      "textures": {
+        "default": "textures/entity/stand",
+		"blank": "textures/entity/stand",
+        "wood": "textures/models/wood",
+		"white": "textures/models/white",
+		"slashblade": "textures/models/slashblade",
+		"tukumo": "textures/models/tukumo",
+		"muramasa": "textures/models/muramasa",
+		"bamboo": "textures/models/bamboo",
+		"silverbanboo": "textures/models/silverbanboo",
+		"sabigatana": "textures/models/sabigatana",
+		"doutanuki": "textures/models/doutanuki",
+		"tagayasan": "textures/models/tagayasan",
+		"balkonw": "textures/models/balkonw",
+		"balkons": "textures/models/balkons",
+		"balkoni": "textures/models/balkoni",
+		"balkong": "textures/models/balkong",
+		"balkond": "textures/models/balkond",
+		"haze": "textures/models/haze",
+		"weiss": "textures/models/weiss"
+      },
+      "geometry": {
+        "default": "geometry.stand",
+		"blank": "geometry.blank",
+        "wood": "geometry.wood",
+		"white": "geometry.white",
+		"slashblade": "geometry.slashblade",
+		"tukumo": "geometry.blade2",
+		"muramasa": "geometry.muramasa",
+        "bamboo": "geometry.wood",
+		"balkon": "geometry.balkon",
+		"weiss": "geometry.weiss",
+        "silverbanboo": "geometry.slashblade",
+		"tagayasan": "geometry.tagayasan"
+      },
+			"spawn_egg": {
+				"texture": "a1",
+				"texture_index": 0
+			},
+			"scripts": {
+				"animate": [ 
+					"float"
+				]
+			},
+			"animations": {
+				"float": "animation.stand.ak"
+			},
+			"render_controllers": [
+				"controller.render.default","controller.render.bladeitem"
+			]
+		}
+	}
+}

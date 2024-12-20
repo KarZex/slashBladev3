@@ -1,0 +1,49 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "fire:sasd",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+	    "animate": [ "walk" ]
+	  },
+	  "animations": {
+	    "walk": "controller.animation.blade.sasd"
+	  }
+    },
+    "components": {
+	  "minecraft:explode": {
+				"fuseLength": 4,
+				"fuseLit": true,
+				"power": 0,
+				"causesFire": false
+	   },
+      "minecraft:health": {
+        "value": 9999,
+        "max": 9999
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+          "cause": "all",
+          "deals_damage": false
+        }
+	   ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      }
+	}
+  }
+}

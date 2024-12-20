@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:butamesi"
+    },
+    "tags": [ "campfiret" ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:rawrice",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:porkchop",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:butamesi",
+      "count": 1
+    }
+  }
+  
+}

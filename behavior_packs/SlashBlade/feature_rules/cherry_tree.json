@@ -1,0 +1,53 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:feature_rules": {
+        "description": {
+            "identifier": "feature_rules:cherry_tree",
+            "places_feature": "feature:cherry_tree"
+        },
+        "conditions": {
+            "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "zex_bambooforest"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "birch"
+            }
+          ]
+        }
+      ]
+        },
+        "distribution": {
+            "iterations": 3,
+            "scatter_chance": 92.0,
+            "x": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    16
+                ]
+            },
+            "y": {
+                "distribution": "uniform",
+                "extent": [
+                    "query.heightmap(variable.worldx, variable.worldz) + 0",
+                    "query.heightmap(variable.worldx, variable.worldz) + 1 + 0"
+                ]
+            },
+            "z": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    16
+                ]
+            }
+        }
+    }
+}

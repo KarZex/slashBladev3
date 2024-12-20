@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:kaisenoyako",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "kaisenoyako",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

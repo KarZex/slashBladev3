@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:gyumesi"
+    },
+    "tags": [ "campfiret" ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:rawrice",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:beef",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:gyumesi",
+      "count": 1
+    }
+  }
+  
+}

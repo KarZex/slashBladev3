@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:gyumesi",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "gyumesi",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

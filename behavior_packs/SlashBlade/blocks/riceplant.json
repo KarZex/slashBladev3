@@ -1,0 +1,175 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "zex:riceplant",
+      "register_to_creative_menu": false,
+	  "properties": { 
+		"riceplant:grow": [ 0,1,2,3,4 ]
+	   }
+    },
+    "components": {
+      "minecraft:destroy_time": 0,
+	  "minecraft:block_light_absorption": 0.0,
+      "minecraft:block_light_emission": 0.0,
+	  "minecraft:geometry": "geometry.crop",
+	  "minecraft:block_collision": false,
+      "minecraft:explosion_resistance": 1,
+	  "minecraft:random_ticking": {
+                "on_tick": {
+                    "event": "minecraft:ignite"
+                }
+      },
+      "minecraft:placement_filter": {
+        "conditions": [
+            {
+            "allowed_faces": ["up"],
+            "block_filter": ["farmland"]
+            }
+         ]
+      },
+	  "minecraft:flammable":{
+		"burn_odds": 50,
+		"flame_odds": 50
+	  },
+      "minecraft:map_color": "#FF0000"
+    },
+    "events": {
+	  "minecraft:ignite": {
+        "randomize": [
+          {
+			"weight": 1
+          },
+          {
+			"weight": 1,
+			"set_block_property": {
+				"riceplant:grow": "(query.block_property('riceplant:grow')<4) ? query.block_property('riceplant:grow') + 1 : 4"
+			}
+		  }
+        ]
+	  },
+	  "minecraft:fire": {
+        "sequence": [
+                    {
+                        "decrement_stack": {}
+                    },
+                    {
+                        "run_command": {
+                            "command": [
+                                "particle minecraft:crop_growth_emitter ~~~"
+                            ]
+                        }
+                    },
+                    {
+						"set_block_property": {
+							"riceplant:grow": "4"
+						}
+                    }
+                ]
+	  }
+    },
+	"permutations": [
+		{
+		 "condition": "query.block_property('riceplant:grow') == 0",
+		 "components": {
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "riceplant0",
+					"render_method": "blend"
+					}
+			},
+			"minecraft:on_interact": {
+				"condition": "(query.get_equipped_item_name('main_hand') == 'bone_meal')",
+				"event": "minecraft:fire"
+			},
+			"minecraft:geometry": "geometry.crop",
+			"minecraft:pick_collision": {
+                    "origin": [-7,0,-7],
+                    "size": [14,2,14]
+            },
+		    "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+		  }
+		},
+		{
+		 "condition": "query.block_property('riceplant:grow') == 1",
+		 "components": {
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "riceplant1",
+					"render_method": "blend"
+					}
+			},
+			"minecraft:on_interact": {
+				"condition": "(query.get_equipped_item_name('main_hand') == 'bone_meal')",
+				"event": "minecraft:fire"
+			},
+			"minecraft:geometry": "geometry.crop",
+			"minecraft:pick_collision": {
+                    "origin": [-7,0,-7],
+                    "size": [14,4,14]
+            },
+		    "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+		  }
+		},
+		{
+		 "condition": "query.block_property('riceplant:grow') == 2",
+		 "components": {
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "riceplant2",
+					"render_method": "blend"
+					}
+			},
+			"minecraft:on_interact": {
+				"condition": "(query.get_equipped_item_name('main_hand') == 'bone_meal')",
+				"event": "minecraft:fire"
+			},
+			"minecraft:geometry": "geometry.crop",
+			"minecraft:pick_collision": {
+                    "origin": [-7,0,-7],
+                    "size": [14,8,14]
+            },
+		    "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+		  }
+		},
+		{
+		 "condition": "query.block_property('riceplant:grow') == 3",
+		 "components": {
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "riceplant3",
+					"render_method": "blend"
+					}
+			},
+			"minecraft:on_interact": {
+				"condition": "(query.get_equipped_item_name('main_hand') == 'bone_meal')",
+				"event": "minecraft:fire"
+			},
+			"minecraft:geometry": "geometry.crop",
+			"minecraft:pick_collision": {
+                    "origin": [-7,0,-7],
+                    "size": [14,12,14]
+            },
+		    "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+		  }
+		},
+		{
+		 "condition": "query.block_property('riceplant:grow') == 4",
+		 "components": {
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "riceplant4",
+					"render_method": "blend"
+					}
+			},
+			"minecraft:geometry": "geometry.crop2",
+			"minecraft:pick_collision": {
+                    "origin": [-7,0,-7],
+                    "size": [14,16,14]
+            },
+		    "minecraft:loot": "loot_tables/blocks/riceplant.json"
+		  }
+		}
+	]
+  }
+}

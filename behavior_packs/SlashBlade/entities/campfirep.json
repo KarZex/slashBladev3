@@ -1,0 +1,61 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "zex:campfirep",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+	    "animate": [ "walk" ]
+	  },
+	  "animations": {
+	    "walk": "controller.animation.bfire"
+	  }
+    },
+	"component_groups": {
+      "A": {
+				"minecraft:despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "inanimate", "spawns" ]
+      },        
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+          "cause": "all",
+          "deals_damage": false
+        }
+	   ]
+      },
+      "minecraft:health": {
+        "value": 9999,
+        "max": 9999
+      },
+      "minecraft:persistent": {
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+
+    "events": {
+      "A": {
+        "add": {
+          "component_groups": [
+            "A"
+          ]
+        }
+      }
+    }
+  }
+}

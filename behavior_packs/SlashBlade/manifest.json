@@ -1,0 +1,37 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "抜刀剣modと竹modを再現したアドオンです。",
+    "name": "§gSlashBlade Addon V2.1",
+    "min_engine_version": [1, 21, 20 ],
+    "uuid": "6b1c4759-2b17-4dd6-b61e-d211b8c85592",
+    "version": [1, 21, 21]
+  },
+  "modules": [
+    {
+      "description": "Data Module",
+      "type": "data",
+      "uuid": "39da64a2-5ad6-460f-987a-14ca2caa096f",
+      "version": [1, 0, 0]
+    },
+    {
+      "description": "Script API Module",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "1c8a5519-23c0-4507-9fb4-cc778744c78f",
+      "version": [1, 0, 0],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "capabilities": ["script_eval"],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.13.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.2.0"
+    }
+  ]
+}

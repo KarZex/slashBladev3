@@ -1,0 +1,90 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "zex:bamboo_pane",
+      "register_to_creative_menu": true,
+      "category": "Construction",
+	  "properties": { "bamboo_pane:facing": [ 0,1,2,3,4,5 ] }
+    },
+    "components": {
+	"minecraft:creative_category": {
+    "group": "itemGroup.name.kar_zex",
+    "category": "items"
+	},
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "bamboo_pane",
+          "render_method": "blend"
+        }
+      },
+      "minecraft:block_light_absorption": 0.0,
+      "minecraft:block_light_emission": 0.0,
+	  "minecraft:geometry": "geometry.bamboo_pane",
+	  "minecraft:aim_collision": {
+		"origin" : [-1, 0.0, -8.0],
+		"size" : [2, 16.0, 16.0]
+	  },
+	  "minecraft:block_collision": {
+		"origin" : [-1, 0.0, -8.0],
+		"size" : [2, 16.0, 16.0]
+	  },
+      "minecraft:loot": "loot_tables/blocks/bamboo_pane.json",
+      "minecraft:destroy_time": 0.1,
+      "minecraft:explosion_resistance": 1,
+	  "minecraft:on_player_placing":{
+		"event" : "minecraft:ignite"
+	   },
+	  "minecraft:flammable":{
+		"burn_odds": 5,
+		"flame_odds": 5
+	  },
+      "minecraft:map_color": "#FF0000"
+    },
+    "events": {
+	  "minecraft:ignite": {
+		"set_block_property": {
+			"bamboo_pane:facing": "query.block_face"
+		}
+	  }
+    },
+	"permutations": [
+		{
+		 "condition": "query.block_property('bamboo_pane:facing') == 0",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('bamboo_pane:facing') == 1",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('bamboo_pane:facing') == 2",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('bamboo_pane:facing') == 3",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('bamboo_pane:facing') == 4",
+		 "components": {
+		 "minecraft:rotation": [0,90,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('bamboo_pane:facing') == 5",
+		 "components": {
+		 "minecraft:rotation": [0,90,0]
+		  }
+		}
+	]
+  }
+}

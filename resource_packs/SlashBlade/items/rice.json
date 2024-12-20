@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:rice",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "rice",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

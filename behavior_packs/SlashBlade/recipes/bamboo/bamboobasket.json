@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "SB.bamboobasket"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "AXA",
+      "XAX"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:bamboot",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:log",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:log",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:bamboobasket",
+      "count": 1
+    }
+  }
+  
+}

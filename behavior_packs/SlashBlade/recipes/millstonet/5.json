@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex.millstonet5"
+    },
+    "tags": [ "millstonet" ],
+    "pattern": [
+      "AA",
+	  "AA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:leaves",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:tnt",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "minecraft:dye:2",
+      "count": 1
+    }
+  }
+  
+}

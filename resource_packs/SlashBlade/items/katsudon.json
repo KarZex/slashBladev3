@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:katsudon",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "katsudon",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

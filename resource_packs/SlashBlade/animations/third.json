@@ -1,0 +1,74 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.sword.third": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0]
+				},
+				"leftArm": {
+					"rotation": [-12.5, 0, 0]
+				},
+				"sword": {
+					"rotation": [97.48436, 0.75155, -2.38443],
+					"position": [11, 38, -30],
+					"scale": 0.3
+				}
+			}
+		},
+		"animation.item.scope3": {
+			"loop": true,
+			"bones": {
+				"scope": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.player.ads3": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [-2.5, 0, -25],
+					"position": [0, 0, 0]
+				},
+				"gun": {
+					"position": [1, -3, 0]
+				}
+			}
+		},
+		"animation.sword.itemzation": {
+			"loop": true,
+			"bones": {
+				"bone41": {
+					"rotation": [0, 0, -42.5],
+					"position": [-99, -116, 0]
+				},
+				"swordat": {
+					"rotation": [0, 0, 217.5],
+					"position": [1, -193, 0]
+				}
+			}
+		},
+		"animation.stand.ak": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0]
+				},
+				"leftArm": {
+					"rotation": [-12.5, 0, 0]
+				},
+				"sword": {
+					"rotation": [97.48436, 0.75155, -2.38443],
+					"position": [11, 38, -30],
+					"scale": 0.3
+				},
+				"root": {
+					"rotation": [97.51023, 0.70099, -82.04647],
+					"position": [-0.25, 2.3, 16.25]
+				}
+			}
+		}
+	}
+}

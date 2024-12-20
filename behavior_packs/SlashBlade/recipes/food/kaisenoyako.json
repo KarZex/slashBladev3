@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:kaisenoyako"
+    },
+    "tags": [ "campfiret" ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:rawrice",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:salmon",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:kaisenoyako",
+      "count": 1
+    }
+  }
+  
+}

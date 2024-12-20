@@ -1,0 +1,56 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.bladeitem": {
+			"geometry": "Array.item_geo[query.skin_id]",
+			"materials": [{"*":"material.default"}],
+			"textures": ["Array.item_texture[query.skin_id]"],
+			"arrays": {
+				"geometries": {
+					"Array.item_geo": [
+					"Geometry.blank",
+					"Geometry.wood",
+					"Geometry.white",
+					"Geometry.slashblade",
+					"Geometry.tukumo",
+					"Geometry.muramasa",
+					"Geometry.bamboo",
+					"Geometry.silverbanboo",
+					"Geometry.tagayasan",
+					"Geometry.sabigatana",
+					"Geometry.doutanuki",
+					"Geometry.balkon",
+					"Geometry.balkon",
+					"Geometry.balkon",
+					"Geometry.balkon",
+					"Geometry.balkon",
+					"Geometry.weiss",
+					"Geometry.weiss"
+					]
+				},
+				"textures": {
+					"Array.item_texture": [
+					"Texture.blank",
+					"Texture.wood",
+					"Texture.white",
+					"Texture.slashblade",
+					"Texture.tukumo",
+					"Texture.muramasa",
+					"Texture.bamboo",
+					"Texture.silverbanboo",
+					"Texture.tagayasan",
+					"Texture.sabigatana",
+					"Texture.doutanuki",
+					"Texture.balkonw",
+					"Texture.balkons",
+					"Texture.balkoni",
+					"Texture.balkong",
+					"Texture.balkond",
+					"Texture.weiss",
+					"Texture.haze"
+					]
+				}
+			} 
+    }
+  }
+}

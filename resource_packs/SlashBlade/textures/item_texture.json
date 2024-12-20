@@ -1,0 +1,135 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+"butakusi": {
+      "textures": "textures/items/butakusi"
+    },
+  "butamesi": {
+      "textures": "textures/items/butamesi"
+    },
+  "gyukusi": {
+      "textures": "textures/items/gyukusi"
+    },
+  "gyumesi": {
+      "textures": "textures/items/gyumesi"
+    },
+  "kaisenoyako": {
+      "textures": "textures/items/kaisenoyako"
+    },
+  "katsudon": {
+      "textures": "textures/items/katsudon"
+    },
+  "meshi_egg": {
+      "textures": "textures/items/meshi_egg"
+    },
+  "meshi_kinoko": {
+      "textures": "textures/items/meshi_kinoko"
+    },
+  "oyako": {
+      "textures": "textures/items/oyako"
+    },
+    "ramen": {
+      "textures": "textures/items/ramen"
+    },
+    "rice": {
+      "textures": "textures/items/meshi"
+    },
+    "tamagyumeshi": {
+      "textures": "textures/items/tamagyumeshi"
+    },
+    "tekka": {
+      "textures": "textures/items/tekka"
+    },
+    "torikusi": {
+      "textures": "textures/items/torikusi"
+    },
+    "bamboobasket": {
+      "textures": "textures/items/bamboobasket"
+    },
+    "rawrice": {
+      "textures": "textures/items/rawrice"
+    },
+    "riceplantseed": {
+      "textures": "textures/items/riceplantseed"
+    },
+    "straw": {
+      "textures": "textures/items/straw"
+    },
+    "tudura": {
+      "textures": "textures/items/tudura"
+    },
+  "bladesoulsphere": {
+      "textures": "textures/items/bladesoulsphere"
+    },
+  "proudsoul": {
+      "textures": "textures/items/proudsoul"
+    },
+  "tinyproudsoul": {
+      "textures": "textures/items/tinyproudsoul"
+    },
+  "bladesoulingot": {
+      "textures": "textures/items/bladesoulingot"
+    },
+  "wood": {
+      "textures": "textures/blade/wood"
+    },
+    "slashblade": {
+      "textures": "textures/blade/slashblade"
+    },
+  "white": {
+      "textures": "textures/blade/white"
+    },
+  "whiteb": {
+      "textures": "textures/blade/whiteb"
+    },
+   "tukumo": {
+      "textures": "textures/blade/tukumo"
+    },
+  "muramasa": {
+      "textures": "textures/blade/muramasa"
+    },
+  "bamboo": {
+      "textures": "textures/blade/bamboo"
+    },
+  "balkonw": {
+      "textures": "textures/blade/balkon_wood"
+    },
+  "balkons": {
+      "textures": "textures/blade/balkon_rock"
+    },
+  "balkoni": {
+      "textures": "textures/blade/balkon_steel"
+    },
+  "balkong": {
+      "textures": "textures/blade/balkon_gold"
+    },
+  "balkond": {
+      "textures": "textures/blade/balkon_diamond"
+    },
+  "silverbanboo": {
+      "textures": "textures/blade/silverbanboo"
+    },
+  "communist": {
+      "textures": "textures/blade/communist"
+    },
+  "haze": {
+      "textures": "textures/blade/haze"
+    },
+  "weiss": {
+      "textures": "textures/blade/weiss"
+    },
+  "tagayasan": {
+      "textures": "textures/blade/tagayasan"
+    },
+  "sabigatana": {
+      "textures": "textures/blade/sabigatana"
+    },
+  "lightsaber": {
+      "textures": "textures/blade/lightsaber"
+    },
+  "doutanuki": {
+      "textures": "textures/blade/doutanuki"
+    }
+  }
+}

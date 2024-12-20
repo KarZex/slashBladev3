@@ -1,0 +1,17 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+ 		"swingblade.c": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/blade"
+			]
+		},
+ 		"swingblade.lightsaber": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/lightsaber"
+			]
+		}
+  	}
+}

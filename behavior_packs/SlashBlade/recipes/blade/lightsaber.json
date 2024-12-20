@@ -1,0 +1,53 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "Blade.lightsaber"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CCA",
+      "CAC",
+      "DCC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:redstone_block",
+        "data": 0
+      },
+      "B": {
+        "item": "blade:balkond",
+        "data": 0
+      },
+      "C": {
+        "item": "zex:bladesoulsphere",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:redstone_block",
+        "data": 0
+      },
+      "F": {
+        "item": "minecraft:iron_block",
+        "data": 0
+      },
+      "G": {
+        "item": "minecraft:gold_block",
+        "data": 0
+      },
+      "H": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "blade:lightsaber",
+      "count": 1
+    }
+  }
+  
+}

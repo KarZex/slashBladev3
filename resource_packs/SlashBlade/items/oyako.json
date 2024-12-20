@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:oyako",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "oyako",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

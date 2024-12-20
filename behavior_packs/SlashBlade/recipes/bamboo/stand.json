@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "SB.stand"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AAA",
+      "XAX",
+      "ABA"
+    ],
+    "key": {
+      "B": {
+        "item": "zex:tudura",
+        "data": 0
+      },
+      "A": {
+        "item": "minecraft:cobblestone",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:flint_and_steel",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:coal",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:stand_spawn_egg",
+      "count": 1
+    }
+  }
+  
+}

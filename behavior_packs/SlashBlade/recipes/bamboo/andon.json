@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "SB.andon"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BBB",
+	  "BAB",
+	  "BCB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:tudura",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:stick",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:torch",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:andon",
+      "count": 8
+    }
+  }
+  
+}

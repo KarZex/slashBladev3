@@ -1,0 +1,204 @@
+item.gun:ak47=AK47
+item.empty:ak47e=AK §4[Empty]
+item.ammo:ak47a=AK47 Magazine
+
+item.gun:m249=M249
+item.empty:auge=AUG §4[Empty]
+item.ammo:m249a=M249 Magazine
+
+item.gun:lazer=Lazer
+item.empty:lazere=Lazer §4[Empty]
+item.ammo:lazera=Lazer Magazine
+
+item.gun:m4=M4A1
+item.empty:m4e=M4A1 §4[Empty]
+item.ammo:m4a=M4A1 Magazine
+
+item.gun:m16a4=M16A4
+item.empty:m16a4e=M16A4 §4[Empty]
+item.ammo:m16a4a=M16A4 Magazine
+
+item.gun:scar=SCAR-L
+item.empty:scare=SCAR-L §4[Empty]
+item.ammo:scara=SCAR-L Magazine
+
+item.gun:awm=AWM
+item.empty:awme=AWM §4[Empty]
+item.ammo:awma=AWM Magazine
+
+item.gun:hk416=HK416
+item.empty:hk416e=HK416 §4[Empty]
+item.ammo:hk416a=HK416 Magazine
+
+item.gun:an94=AN-94
+item.empty:an94e=AN-94 §4[Empty]
+item.ammo:an94a=AN-94 Magazine
+
+item.gun:dp28=DP-28
+item.empty:dp28e=DP-28 §4[Empty]
+item.ammo:dp28a=DP-28 Magazine
+
+item.gun:famas=MGL140
+item.empty:famase=MGL140 §4[Empty]
+item.ammo:famasa=MGL140 Magazine
+
+item.gun:fire=Flamethrower
+item.empty:firee=Flamethrower §4[Empty]
+item.ammo:firea=Flamethrower Magazine
+
+item.gun:glock17=Glock17
+item.empty:glock17e=Glock17 §4[Empty]
+item.ammo:glock17a=Glock17 Magazine
+
+item.gun:glock18=Glock18c
+item.empty:glock18e=Glock18c §4[Empty]
+item.ammo:glock18a=Glock18c Magazine
+
+item.gun:k98=Karabiner 98
+item.empty:k98e=Karabiner 98 §4[Empty]
+item.ammo:k98a=Karabiner 98 Magazine
+
+item.gun:lewis=Lewis Gun
+item.empty:lewise=Lewis Gun §4[Empty]
+item.ammo:lewisa=Lewis Gun Magazine
+
+item.gun:m9=M9A1
+item.empty:m9e=M9A1 §4[Empty]
+item.ammo:m9a=M9A1 Magazine
+
+item.gun:m10=MAC-10
+item.empty:m10e=MAC-10 §4[Empty]
+item.ammo:m10a=MAC-10 Magazine
+
+item.gun:m82=§8Barrett M82
+item.empty:m82e=§8Barrett M82 §4[Empty]
+item.ammo:m82a=§8Barrett M82 Magazine
+
+item.gun:m110=M110 SASS
+item.empty:m110e=M110 SASS §4[Empty]
+item.ammo:m110a=M110 SASS Magazine
+
+item.gun:mg42=MG42
+item.empty:mg42e=MG42 §4[Empty]
+item.ammo:mg42a=MG42 Magazine
+
+item.gun:ppsh=PPSh-41
+item.empty:ppshe=PPSh-41 §4[Empty]
+item.ammo:ppsha=PPSh-41 Magazine
+
+item.gun:rpk=RPK
+item.empty:rpke=RPK §4[Empty]
+item.ammo:rpka=RPK Magazine
+
+item.gun:sar=§bFrost Lazer
+item.empty:sare=§bFrost Lazer §4[Empty]
+item.ammo:sara=§bFrost Lazer Magazine
+
+item.gun:svd=SVD
+item.empty:svde=SVD §4[Empty]
+item.ammo:svda=SVD Magazine
+
+item.gun:thom=Thompson SMG
+item.empty:thome=Thompson SMG §4[Empty]
+item.ammo:thoma=Thompson SMG Magazine
+
+item.gun:uzi=UZI
+item.empty:uzie=UZI §4[Empty]
+item.ammo:uzia=UZI Magazine
+
+item.gun:vz61=Vz 61
+item.empty:vz61e=Vz 61 §4[Empty]
+item.ammo:vz61a=Vz 61 Magazine
+
+item.gun:xm8=H&K XM8
+item.empty:xm8e=H&K XM8 §4[Empty]
+item.ammo:xm8a=H&K XM8 Magazine
+
+item.gun:mp40=MP40
+item.empty:mp40e=MP40 §4[Empty]
+item.ammo:mp40a=MP40 Magazine
+
+item.gun:=
+item.empty:e= §4[Empty]
+item.ammo:a= Magazine
+
+item.gun:rpg=RPG-7
+item.empty:rpge=RPG-7 §4[Empty]
+item.ammo:rpga=RPG-7 Magazine
+
+item.gun:mosin=Mosin-Nagant
+item.empty:mosine=Mosin-Nagant §4[Empty]
+item.ammo:mosina=Mosin-Nagant Magazine
+
+item.gun:l86=L85A2
+item.empty:l86e=L85A2 §4[Empty]
+item.ammo:l86a=L85A2 Magazine
+
+item.gun:tt33=TT33
+item.empty:tt33e=TT33 §4[Empty]
+item.ammo:tt33a=TT33 Magazine
+
+item.gun:m1911=M1911
+item.empty:m1911e=M1911 §4[Empty]
+item.ammo:m1911a=M1911 Magazine
+
+item.gun:p90=Panzerfaust
+item.empty:p90e=Panzerfaust §4[Empty]
+item.ammo:p90a=Panzerfaust Magazine
+
+item.gun:mp5=MP5
+item.empty:mp5e=MP5 §4[Empty]
+item.ammo:mp5a=MP5 Magazine
+
+item.gun:p38=P38
+item.ammo:p38a=P38 Magazine
+
+item.gun:p226=P226
+item.ammo:p226a=P226 Magazine
+
+item.gun:t100=TYPE100
+item.ammo:t100a=TYPE100 Magazine
+
+item.gun:t95=TYPE95
+item.ammo:t95a=TYPE95 Magazine
+
+item.gun:ump9=UMP9
+item.ammo:ump9a=UMP9 Magazine
+
+item.gun:mp7=MP7
+item.ammo:mp7a=MP7 Magazine
+
+item.gun:t89=TYPE89
+item.ammo:t89a=TYPE89 Magazine
+
+item.gun:ak12=AK12
+item.ammo:ak12a=AK12 Magazine
+
+item.gun:416=416
+item.ammo:416a=416 Magazine
+
+
+
+item.gun:ak47=AK47
+item.empty:ak47e=AK §4[Empty]
+item.ammo:ak47a=AK47 Magazine
+
+
+item.gun:bar=M1918 BAR
+item.empty:bare=BAR §4[Empty]
+item.ammo:bara=BAR Magazine
+
+item.gun:g36=H&K G36
+item.empty:g36e=H&K G36 §4[Empty]
+item.ammo:g36a=H&K G36 Magazine
+
+item.gun:scarh=SCAR-H
+item.empty:scarhe=SCAR-H §4[Empty]
+item.ammo:scarha=SCAR-H Magazine
+
+item.zex:mm9=9mmHGBullet
+item.zex:1270m=.50CalBullet
+item.zex:556m=.22CalBullet
+item.zex:762m=.30CalBullet
+item.zex:rocketm=76mmRocket
+item.zex:btm=Battery

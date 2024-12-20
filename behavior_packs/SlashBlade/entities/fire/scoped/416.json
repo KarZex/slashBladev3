@@ -1,0 +1,46 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "fire:sm416",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball",
+      "scripts": {
+	    "animate": [ "walk" ]
+	  },
+	  "animations": {
+	    "walk": "controller.animation.ding"
+	  }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "nbullet","arbullet"]
+      },
+				"minecraft:explode": {
+				"fuseLength": 0.4,
+				"fuseLit": true,
+				"power": 0,
+				"causesFire": false
+			},
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+				"onHit": {
+					"remove_on_hit": {}
+				},
+				"power": 0.5,
+				"gravity": 0,
+				"inertia": 1.5,
+				"uncertaintyBase": 0,
+				"uncertaintyMultiplier": 0,
+				"offset": [0, 0.5, 0],
+				"catchFire": false
+			},
+			"minecraft:physics": {}
+		}
+	}
+}

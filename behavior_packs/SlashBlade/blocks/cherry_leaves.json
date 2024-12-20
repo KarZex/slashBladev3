@@ -1,0 +1,82 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "zex:cherry_leaves",
+      "register_to_creative_menu": true,
+      "category": "Construction",
+	  "properties": { "tatami:facing": [ 0,1,2,3,4,5 ] }
+    },
+    "components": {
+	"minecraft:creative_category": {
+    "group": "itemGroup.name.kar_zex",
+    "category": "items"
+	},
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "cherry_leaves",
+          "render_method": "blend"
+        }
+      },
+      "minecraft:block_light_absorption": 0.0,
+      "minecraft:block_light_emission": 0.0,
+	  "minecraft:unit_cube": {},
+      "minecraft:loot": "loot_tables/blocks/tatami.json",
+      "minecraft:destroy_time": 0.1,
+      "minecraft:explosion_resistance": 1,
+	  "minecraft:on_player_placing":{
+		"event" : "minecraft:ignite"
+	   },
+	  "minecraft:flammable":{
+		"burn_odds": 50,
+		"flame_odds": 50
+	  },
+      "minecraft:map_color": "#FF0000"
+    },
+    "events": {
+	  "minecraft:ignite": {
+		"set_block_property": {
+			"tatami:facing": "query.block_face"
+		}
+	  }
+    },
+	"permutations": [
+		{
+		 "condition": "query.block_property('tatami:facing') == 0",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('tatami:facing') == 1",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('tatami:facing') == 2",
+		 "components": {
+		 "minecraft:rotation": [0,0,90]
+		  }
+		},
+		{
+		 "condition": "query.block_property('tatami:facing') == 3",
+		 "components": {
+		 "minecraft:rotation": [0,0,90]
+		  }
+		},
+		{
+		 "condition": "query.block_property('tatami:facing') == 4",
+		 "components": {
+		 "minecraft:rotation": [90,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('tatami:facing') == 5",
+		 "components": {
+		 "minecraft:rotation": [90,0,0]
+		  }
+		}
+	]
+  }
+}

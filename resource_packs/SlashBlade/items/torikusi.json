@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:torikusi",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "torikusi",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

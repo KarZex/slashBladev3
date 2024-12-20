@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "craft_bsi"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+	  "ABA",
+	  "XAX"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:proudsoul",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:bladesoulingot",
+      "count": 1
+    }
+  }
+  
+}

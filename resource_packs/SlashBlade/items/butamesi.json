@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:butamesi",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "butamesi",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

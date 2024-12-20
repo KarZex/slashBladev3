@@ -1,0 +1,70 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "zex:tatami_e",
+      "register_to_creative_menu": false,
+      "category": "Construction",
+	  "properties": { "tatami:facing": [ 1,2,3,4,5 ] }
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tatami_n",
+          "render_method": "opaque"
+        }
+      },
+	  "minecraft:unit_cube": {},
+      "minecraft:loot": "loot_tables/blocks/tatami.json",
+      "minecraft:destroy_time": 0.1,
+      "minecraft:explosion_resistance": 1,
+	  "minecraft:on_placed":{
+		"event" : "minecraft:ignite"
+	   },
+	  "minecraft:flammable":{
+		"burn_odds": 50,
+		"flame_odds": 50
+	  },
+      "minecraft:map_color": "#FF0000"
+    },
+    "events": {
+	  "minecraft:ignite": {
+		"set_block_property": {
+			"tatami:facing": "2"
+		}
+	  }
+    },
+	"permutations": [
+		{
+		 "condition": "query.block_property('tatami:facing') == 1",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('tatami:facing') == 2",
+		 "components": {
+		 "minecraft:rotation": [0,90,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('tatami:facing') == 3",
+		 "components": {
+		 "minecraft:rotation": [0,90,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('tatami:facing') == 4",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('tatami:facing') == 5",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		}
+	]
+  }
+}

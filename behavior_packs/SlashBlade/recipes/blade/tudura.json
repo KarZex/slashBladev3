@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "SB_tudura"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+      "AXA",
+      "XAX"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:bamboot",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:log",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:log",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:tudura",
+      "count": 1
+    }
+  }
+  
+}

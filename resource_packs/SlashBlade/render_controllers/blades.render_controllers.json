@@ -1,0 +1,100 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+   "controller.render.player.wood": {
+      "geometry": "Geometry.wood",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.wood" ]
+    },
+   "controller.render.player.white": {
+      "geometry": "Geometry.white",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.white" ]
+    },
+   "controller.render.player.whiteb": {
+      "geometry": "Geometry.whiteb",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.white" ]
+    },
+   "controller.render.player.slashblade": {
+      "geometry": "Geometry.slashblade",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.slashblade" ]
+    },
+	"controller.render.player.tukumo": {
+      "geometry": "Geometry.blade2",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.tukumo" ]
+    },
+      "controller.render.player.muramasa": {
+      "geometry": "Geometry.muramasa",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.muramasa" ]
+    },
+      "controller.render.player.bamboo": {
+      "geometry": "Geometry.bamboo",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.bamboo" ]
+    },
+      "controller.render.player.silverbanboo": {
+      "geometry": "Geometry.silverbanboo",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.silverbanboo" ]
+    },
+      "controller.render.player.tagayasan": {
+      "geometry": "Geometry.tagayasan",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.tagayasan" ]
+    },
+      "controller.render.player.sabigatana": {
+      "geometry": "Geometry.muramasa",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.sabigatana" ]
+    },
+      "controller.render.player.doutanuki": {
+      "geometry": "Geometry.muramasa",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.doutanuki" ]
+    },
+      "controller.render.player.balkonw": {
+      "geometry": "Geometry.balkon",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.balkonw" ]
+    },
+      "controller.render.player.balkons": {
+      "geometry": "Geometry.balkon",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.balkons" ]
+    },
+      "controller.render.player.balkoni": {
+      "geometry": "Geometry.balkon",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.balkoni" ]
+    },
+      "controller.render.player.balkong": {
+      "geometry": "Geometry.balkon",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.balkong" ]
+    },
+      "controller.render.player.balkond": {
+      "geometry": "Geometry.balkon",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.balkond" ]
+    },
+      "controller.render.player.weiss": {
+      "geometry": "Geometry.weiss",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.weiss" ]
+    },
+      "controller.render.player.haze": {
+      "geometry": "Geometry.weiss",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.haze" ]
+    },
+      "controller.render.player.lightsaber": {
+      "geometry": "Geometry.lightsaber",
+      "materials": [ { "*": "Material.emissive" } ],
+      "textures": [ "Texture.lightsaber" ]
+    }
+  }
+}

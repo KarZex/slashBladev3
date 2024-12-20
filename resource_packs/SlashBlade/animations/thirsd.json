@@ -1,0 +1,21 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.humanoid.new": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0]
+				},
+				"leftArm": {
+					"rotation": [-12.5, 0, 0]
+				},
+				"sword": {
+					"rotation": [97.48436, 0.75155, -2.38443],
+					"position": [11, 38, -30],
+					"scale": 0.3
+				}
+			}
+		}
+	}
+}

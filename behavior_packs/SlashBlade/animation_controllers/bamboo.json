@@ -1,0 +1,156 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.bfire": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ]
+        },
+        "qwerty": {
+          "transitions": [
+            {
+              "asdfgh": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/particle minecraft:basic_flame_particle ~~~"
+          ]
+        },
+        "asdfgh": {
+          "transitions": [
+            {
+              "qwerty": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/particle minecraft:basic_flame_particle ~~~"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "qwerty": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/clear @p charcoal 0 1"
+          ]
+        }
+      }
+    },
+    "controller.animation.smoke": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute @s ~~~ particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~3~~ particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~~~3 particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~-3~~ particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~~~-3 particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~3~~3 particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~3~~-3 particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~-3~~3 particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~-3~~-3 particle minecraft:huge_explosion_emitter ~~~"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute @s ~~~ particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~3~~ particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~~~3 particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~-3~~ particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~~~-3 particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~3~~3 particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~3~~-3 particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~-3~~3 particle minecraft:huge_explosion_emitter ~~~",
+			"/execute @s ~-3~~-3 particle minecraft:huge_explosion_emitter ~~~"
+          ]
+        }
+      }
+    },
+    "controller.animation.doom": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/kill @e[family=bullet,r=6]"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/kill @e[family=bullet,r=6]"
+          ]
+        }
+      }
+    },
+    "controller.animation.nacl": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/summon fire:naclb"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/summon fire:naclb"
+          ]
+        }
+      }
+    },
+    "controller.animation.dronespawn": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/summon addon:gb6_drone ~~7~",
+		    "/event entity @s A"
+          ]
+        }
+      }
+    }
+  }
+}

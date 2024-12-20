@@ -1,0 +1,90 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "zex:andon",
+      "register_to_creative_menu": true,
+      "category": "Construction",
+	  "properties": { "andon:facing": [ 0,1,2,3,4,5 ] }
+    },
+    "components": {
+	"minecraft:creative_category": {
+    "group": "itemGroup.name.kar_zex",
+    "category": "items"
+	},
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "andon",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:block_light_absorption": 0.0,
+      "minecraft:block_light_emission": 1.0,
+	  "minecraft:geometry": "geometry.andon",
+	  "minecraft:aim_collision": {
+		"origin" : [-4, 0.0, -4],
+		"size" : [8, 12.0, 8]
+	  },
+	  "minecraft:block_collision": {
+		"origin" : [-4, 0.0, -4],
+		"size" : [8, 12.0, 8]
+	  },
+      "minecraft:loot": "loot_tables/blocks/andon.json",
+      "minecraft:destroy_time": 0.1,
+      "minecraft:explosion_resistance": 1,
+	  "minecraft:on_player_placing":{
+		"event" : "minecraft:ignite"
+	   },
+	  "minecraft:flammable":{
+		"burn_odds": 5,
+		"flame_odds": 5
+	  },
+      "minecraft:map_color": "#FF0000"
+    },
+    "events": {
+	  "minecraft:ignite": {
+		"set_block_property": {
+			"andon:facing": "query.block_face"
+		}
+	  }
+    },
+	"permutations": [
+		{
+		 "condition": "query.block_property('andon:facing') == 0",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('andon:facing') == 1",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('andon:facing') == 2",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('andon:facing') == 3",
+		 "components": {
+		 "minecraft:rotation": [0,0,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('andon:facing') == 4",
+		 "components": {
+		 "minecraft:rotation": [0,90,0]
+		  }
+		},
+		{
+		 "condition": "query.block_property('andon:facing') == 5",
+		 "components": {
+		 "minecraft:rotation": [0,90,0]
+		  }
+		}
+	]
+  }
+}

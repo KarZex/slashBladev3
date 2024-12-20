@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "Blade_wood3"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXB",
+      "XBX",
+      "AXX"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:wooden_sword",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:log",
+        "data": 3
+      },
+      "C": {
+        "item": "minecraft:log",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "blade:wood",
+      "count": 1
+    }
+  }
+  
+}

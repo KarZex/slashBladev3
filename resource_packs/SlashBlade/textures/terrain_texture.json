@@ -1,0 +1,50 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "andon": { "textures": [ "textures/blocks/andon" ] },
+	
+    "bamboo_pane": { "textures": [ "textures/blocks/bamboo_pane" ] },
+	
+    "campfiret": { "textures": [ "textures/blocks/campfiret" ] },
+	
+    "cherry_leaves": { "textures": [ "textures/blocks/cherry_leaves" ] },
+	
+    "cherry_log_side": { "textures": [ "textures/blocks/sakura_log" ] },
+    "cherry_log_top": { "textures": [ "textures/blocks/sakura_log_top" ] },
+	
+    "bambooblock_side": { "textures": [ "textures/blocks/bambooblock" ] },
+    "bambooblock_top": { "textures": [ "textures/blocks/bambooblock_top" ] },
+	
+    "millstonet": { "textures": [ "textures/blocks/millstone" ] },
+    "millstonet_top": { "textures": [ "textures/blocks/millstonet_top" ] },
+    "millstonet_bottom": { "textures": [ "textures/blocks/millstonet_bottom" ] },
+	
+    "bamboot": { "textures": [ "textures/blocks/bamboot" ] },
+	
+    "plaster": { "textures": [ "textures/blocks/plaster" ] },
+	
+    "kawara": { "textures": [ "textures/blocks/kawara" ] },
+	
+    "kayabuki": { "textures": [ "textures/blocks/kayabuki" ] },
+	
+    "riceplant0": { "textures": [ "textures/blocks/riceplant_stage_0" ] },
+    "riceplant1": { "textures": [ "textures/blocks/riceplant_stage_1" ] },
+    "riceplant2": { "textures": [ "textures/blocks/riceplant_stage_2" ] },
+    "riceplant3": { "textures": [ "textures/blocks/riceplant_stage_3" ] },
+    "riceplant4": { "textures": [ "textures/blocks/riceplant_stage_4" ] },
+	
+    "cherry_plank": { "textures": [ "textures/blocks/sakuraplank" ] },
+	
+    "tatami": { "textures": [ "textures/blocks/tatami" ] },
+    "tatami_n": { "textures": [ "textures/blocks/tatami_n" ] },
+	
+    "tatami_tan": { "textures": [ "textures/blocks/tatami_tan" ] },
+    "tatami_tan_n": { "textures": [ "textures/blocks/tatami_tan_n" ] },
+	
+    "wara": { "textures": [ "textures/blocks/wara" ] }
+	
+  }
+}

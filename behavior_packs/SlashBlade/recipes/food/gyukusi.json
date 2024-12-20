@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:gyukusi"
+    },
+    "tags": [ "campfiret" ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:bamboo",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:beef",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:gyukusi",
+      "count": 2
+    }
+  }
+  
+}
