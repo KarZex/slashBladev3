@@ -20,7 +20,7 @@
       "type": "script",
       "uuid": "1c8a5519-23c0-4507-9fb4-cc778744c78f",
       "version": [1, 0, 0],
-      "entry": "scripts/main.js"
+      "entry": "scripts/bladeMain.js"
     }
   ],
   "capabilities": ["script_eval"],

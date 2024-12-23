@@ -1,7 +1,7 @@
 import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, ItemComponentTypes,EnchantmentType  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
-import { craftData } from "./crafts";
+import { classReg, drive, slashdimension } from "./saData";
 import "./compornents";
 
 function callDamage( blade, score ){
@@ -12,13 +12,13 @@ function callDamage( blade, score ){
 	if( score <= 19 ){
 		return 2;
 	}
-	else if( score >= 20 && score <= 40 ){
+	else if( score >= 20 && score < 40 ){
 		return atk;
 	}
-	else if( score >= 40 && score <= 47 && overkill == false ){
+	else if( score >= 40 && score < 47 && overkill == false ){
 		return atk;
 	}
-	else if( score >= 40 && score <= 47 && overkill == true ){
+	else if( score >= 40 && score < 47 && overkill == true ){
 		return atkPlus;
 	}
 	else if ( score >= 47 ){
@@ -135,17 +135,11 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 			world.scoreboard.getObjective(`printlevel`).setScore(user,100);
 		}
 		else{
-			user.playSound(`swingblade.sab`);
-			const soul = blade.getDynamicProperty("ProudSoul") - 10;
-			blade.setDynamicProperty("ProudSoul", soul );
-			const lore = blade.getLore();
-			lore[1] = `§rProudSoul: ${soul}`;
-			blade.setLore(lore);
-			let FirePos = e.source.location
-			FirePos.y = FirePos.y + 1
-			const fire = e.source.dimension.spawnEntity(`fire:airblade`,FirePos);
-			fire.getComponent(`minecraft:projectile`).owner = e.source
-			fire.getComponent(`minecraft:projectile`).shoot( e.source.getViewDirection() );
+			if( classReg[blade.getDynamicProperty("sa")].cost <= blade.getDynamicProperty("ProudSoul") ){
+				world.sendMessage(`${blade.getDynamicProperty("sa")} ${classReg[blade.getDynamicProperty("sa")].cost}`);
+				blade.setDynamicProperty("ProudSoul", blade.getDynamicProperty("ProudSoul") - classReg[blade.getDynamicProperty("sa")].cost );
+				classReg[blade.getDynamicProperty("sa")].fireSa( blade,user );
+			}
 		}
 	}
 } )
