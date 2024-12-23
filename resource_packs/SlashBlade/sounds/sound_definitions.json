@@ -7,6 +7,12 @@
 				"sounds/blade"
 			]
 		},
+		"swingblade.sab": {
+		   "category": "hostile",
+		   "sounds": [
+			   "sounds/sab"
+		   ]
+	   },
  		"swingblade.lightsaber": {
 			"category": "hostile",
 			"sounds": [

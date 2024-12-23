@@ -31,48 +31,29 @@ title @s[scores={blade=27}] actionbar §gB ▏▏▏▏▏▏▏§7▏▏▏§7
 title @s[scores={blade=28}] actionbar §gB ▏▏▏▏▏▏▏▏§7▏▏§7
 title @s[scores={blade=29}] actionbar §gB ▏▏▏▏▏▏▏▏▏§7▏§7
 
-title @s[scores={blade=30}] actionbar §6A §7▏▏▏▏▏▏▏▏▏▏§7
-title @s[scores={blade=31}] actionbar §6A ▏§7▏▏▏▏▏▏▏▏▏§7
-title @s[scores={blade=32}] actionbar §6A ▏▏§7▏▏▏▏▏▏▏▏§7
-title @s[scores={blade=33}] actionbar §6A ▏▏▏§7▏▏▏▏▏▏▏§7
-title @s[scores={blade=34}] actionbar §6A ▏▏▏▏§7▏▏▏▏▏▏§7
-title @s[scores={blade=35}] actionbar §6A ▏▏▏▏▏§7▏▏▏▏▏§7
-title @s[scores={blade=36}] actionbar §6A ▏▏▏▏▏▏§7▏▏▏▏§7
-title @s[scores={blade=37}] actionbar §6A ▏▏▏▏▏▏▏§7▏▏▏§7
-title @s[scores={blade=38}] actionbar §6A ▏▏▏▏▏▏▏▏§7▏▏§7
-title @s[scores={blade=39}] actionbar §6A ▏▏▏▏▏▏▏▏▏§7▏§7
+title @s[scores={blade=30}] actionbar §cA §7▏▏▏▏▏▏▏▏▏▏§7
+title @s[scores={blade=31}] actionbar §cA ▏§7▏▏▏▏▏▏▏▏▏§7
+title @s[scores={blade=32}] actionbar §cA ▏▏§7▏▏▏▏▏▏▏▏§7
+title @s[scores={blade=33}] actionbar §cA ▏▏▏§7▏▏▏▏▏▏▏§7
+title @s[scores={blade=34}] actionbar §cA ▏▏▏▏§7▏▏▏▏▏▏§7
+title @s[scores={blade=35}] actionbar §cA ▏▏▏▏▏§7▏▏▏▏▏§7
+title @s[scores={blade=36}] actionbar §cA ▏▏▏▏▏▏§7▏▏▏▏§7
+title @s[scores={blade=37}] actionbar §cA ▏▏▏▏▏▏▏§7▏▏▏§7
+title @s[scores={blade=38}] actionbar §cA ▏▏▏▏▏▏▏▏§7▏▏§7
+title @s[scores={blade=39}] actionbar §cA ▏▏▏▏▏▏▏▏▏§7▏§7
 
 title @s[scores={blade=40}] actionbar §cS §7▏▏▏▏▏▏▏▏▏▏§7
 title @s[scores={blade=41}] actionbar §cS ▏§7▏▏▏▏▏▏▏▏▏§7
 title @s[scores={blade=42}] actionbar §cS ▏▏§7▏▏▏▏▏▏▏▏§7
 title @s[scores={blade=43}] actionbar §cS ▏▏▏§7▏▏▏▏▏▏▏§7
-title @s[scores={blade=44}] actionbar §cS ▏▏▏▏§7▏▏▏▏▏▏§7
-title @s[scores={blade=45}] actionbar §cS ▏▏▏▏▏§7▏▏▏▏▏§7
-title @s[scores={blade=46}] actionbar §cS ▏▏▏▏▏▏§7▏▏▏▏§7
-title @s[scores={blade=47}] actionbar §cS ▏▏▏▏▏▏▏§7▏▏▏§7
-title @s[scores={blade=48}] actionbar §cS ▏▏▏▏▏▏▏▏§7▏▏§7
-title @s[scores={blade=49}] actionbar §cS ▏▏▏▏▏▏▏▏▏§7▏§7
+title @s[scores={blade=44}] actionbar §cSS ▏▏▏▏§7▏▏▏▏▏▏§7
+title @s[scores={blade=45}] actionbar §cSS ▏▏▏▏▏§7▏▏▏▏▏§7
+title @s[scores={blade=46}] actionbar §cSS ▏▏▏▏▏▏§7▏▏▏▏§7
+title @s[scores={blade=47}] actionbar §cSSS ▏▏▏▏▏▏▏§7▏▏▏§7
+title @s[scores={blade=48}] actionbar §cSSS ▏▏▏▏▏▏▏▏§7▏▏§7
+title @s[scores={blade=49}] actionbar §cSSS ▏▏▏▏▏▏▏▏▏§7▏§7
+title @s[scores={blade=50..}] actionbar §cSSS ▏▏▏▏▏▏▏▏▏§7▏§7
 
-title @s[scores={blade=50}] actionbar §cSS §7▏▏▏▏▏▏▏▏▏▏§7
-title @s[scores={blade=51}] actionbar §cSS ▏§7▏▏▏▏▏▏▏▏▏§7
-title @s[scores={blade=52}] actionbar §cSS ▏▏§7▏▏▏▏▏▏▏▏§7
-title @s[scores={blade=53}] actionbar §cSS ▏▏▏§7▏▏▏▏▏▏▏§7
-title @s[scores={blade=54}] actionbar §cSS ▏▏▏▏§7▏▏▏▏▏▏§7
-title @s[scores={blade=55}] actionbar §cSS ▏▏▏▏▏§7▏▏▏▏▏§7
-title @s[scores={blade=56}] actionbar §cSS ▏▏▏▏▏▏§7▏▏▏▏§7
-title @s[scores={blade=57}] actionbar §cSS ▏▏▏▏▏▏▏§7▏▏▏§7
-title @s[scores={blade=58}] actionbar §cSS ▏▏▏▏▏▏▏▏§7▏▏§7
-title @s[scores={blade=59}] actionbar §cSS ▏▏▏▏▏▏▏▏▏§7▏§7
-
-title @s[scores={blade=60}] actionbar §cSSS §7▏▏▏▏▏▏▏▏▏▏§7
-title @s[scores={blade=61}] actionbar §cSSS ▏§7▏▏▏▏▏▏▏▏▏§7
-title @s[scores={blade=62}] actionbar §cSSS ▏▏§7▏▏▏▏▏▏▏▏§7
-title @s[scores={blade=63}] actionbar §cSSS ▏▏▏§7▏▏▏▏▏▏▏§7
-title @s[scores={blade=64}] actionbar §cSSS ▏▏▏▏§7▏▏▏▏▏▏§7
-title @s[scores={blade=65}] actionbar §cSSS ▏▏▏▏▏§7▏▏▏▏▏§7
-title @s[scores={blade=66}] actionbar §cSSS ▏▏▏▏▏▏§7▏▏▏▏§7
-title @s[scores={blade=67}] actionbar §cSSS ▏▏▏▏▏▏▏§7▏▏▏§7
-title @s[scores={blade=68}] actionbar §cSSS ▏▏▏▏▏▏▏▏§7▏▏§7
-title @s[scores={blade=69}] actionbar §cSSS ▏▏▏▏▏▏▏▏▏§7▏§7
-
-title @s[scores={blade=70..}] actionbar §cSSS ▏▏▏▏▏▏▏▏▏▏§7
+scoreboard players remove @s[scores={printlevel=1..}] printlevel 1
+scoreboard players set @s[scores={blade=..-1}] blade 0
+scoreboard players set @s[scores={blade=51..}] blade 50

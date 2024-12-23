@@ -16,7 +16,7 @@
     },
     "components": {
       "minecraft:type_family": {
-        "family": [ "nbullet","arbullet"]
+        "family": [ "sabullet"]
       },
 				"minecraft:explode": {
 				"fuseLength": 1.0,

@@ -1,0 +1,46 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "blade:silverbanboo",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/models/silverbanboo"
+      },
+      "geometry": {
+        "default": "geometry.silverbanboo"
+      },
+      "animations": {
+        "root": "controller.animation.blade",
+        "usesa": "animation.sword.usesa",
+        "atk": "animation.sword.ack",
+        "use": "animation.sword.use",
+        "use2": "animation.sword.use2",
+        "use3": "animation.sword.use3",
+        "use4": "animation.sword.use4",
+        "first": "animation.sword.first2",
+        "third": "animation.sword.third"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.main_hand = c.item_slot == 'main_hand';",
+          "v.attack = c.attack_time > 0;"
+        ],
+        "animate": [
+          "root",
+          {
+            "first": "(v.main_hand && c.is_first_person)"
+          },
+          {
+            "third": "v.main_hand && !c.is_first_person"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

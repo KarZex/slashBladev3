@@ -17,10 +17,10 @@
 				"pre" : {
 					"transitions" : [
 						{
-							"attack" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
+							"attack" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 0.5)"
 						},
 						{
-							"usesa" : "!query.is_using_item && ((query.is_sneaking && !query.is_on_ground) || query.state_time > 1.0)"
+							"usesa" : "!query.is_using_item && ((query.is_sneaking && !query.is_on_ground) || query.state_time > 0.5)"
 						}
 					]
 				},
@@ -28,7 +28,7 @@
 					"animations" : [ "use" ],
 					"transitions" : [
 						{
-							"default" : "query.state_time > 1.0"
+							"default" : "query.state_time > 0.5"
 						}
 					]
 				},
@@ -39,7 +39,7 @@
 							"pre2" : "query.is_using_item"
 						},
 						{
-							"default" : "query.state_time > 1.0"
+							"default" : "query.state_time > 0.5"
 						}
 					]
 				},
@@ -57,7 +57,7 @@
 							"pre3" : "query.is_using_item"
 						},
 						{
-							"default" : "query.state_time > 1.0"
+							"default" : "query.state_time > 0.5"
 						}
 					]
 				},
@@ -75,7 +75,7 @@
 							"pre4" : "query.is_using_item"
 						},
 						{
-							"default" : "query.state_time > 1.0"
+							"default" : "query.state_time > 0.5"
 						}
 					]
 				},
@@ -93,7 +93,7 @@
 							"pre" : "query.is_using_item"
 						},
 						{
-							"default" : "query.state_time > 1.0"
+							"default" : "query.state_time > 0.5"
 						}
 					]
 				},
@@ -104,7 +104,7 @@
 							"pre" : "query.is_using_item"
 						},
 						{
-							"default" : "query.state_time > 1.0"
+							"default" : "query.state_time > 0.5"
 						}
 					]
 				}

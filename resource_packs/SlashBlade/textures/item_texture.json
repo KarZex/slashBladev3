@@ -2,31 +2,31 @@
   "resource_pack_name": "vanilla",
   "texture_name": "atlas.items",
   "texture_data": {
-"butakusi": {
+    "butakusi": {
       "textures": "textures/items/butakusi"
     },
-  "butamesi": {
+    "butamesi": {
       "textures": "textures/items/butamesi"
     },
-  "gyukusi": {
+    "gyukusi": {
       "textures": "textures/items/gyukusi"
     },
-  "gyumesi": {
+    "gyumesi": {
       "textures": "textures/items/gyumesi"
     },
-  "kaisenoyako": {
+    "kaisenoyako": {
       "textures": "textures/items/kaisenoyako"
     },
-  "katsudon": {
+    "katsudon": {
       "textures": "textures/items/katsudon"
     },
-  "meshi_egg": {
+    "meshi_egg": {
       "textures": "textures/items/meshi_egg"
     },
-  "meshi_kinoko": {
+    "meshi_kinoko": {
       "textures": "textures/items/meshi_kinoko"
     },
-  "oyako": {
+    "oyako": {
       "textures": "textures/items/oyako"
     },
     "ramen": {
@@ -59,77 +59,173 @@
     "tudura": {
       "textures": "textures/items/tudura"
     },
-  "bladesoulsphere": {
+    "bladesoulsphere": {
       "textures": "textures/items/bladesoulsphere"
     },
-  "proudsoul": {
+    "proudsoul": {
       "textures": "textures/items/proudsoul"
     },
-  "tinyproudsoul": {
+    "tinyproudsoul": {
       "textures": "textures/items/tinyproudsoul"
     },
-  "bladesoulingot": {
+    "bladesoulingot": {
       "textures": "textures/items/bladesoulingot"
     },
-  "wood": {
-      "textures": "textures/blade/wood"
+    "wood": {
+      "textures": "textures/items/blade/wood"
     },
     "slashblade": {
-      "textures": "textures/blade/slashblade"
+      "textures": "textures/items/blade/slashblade"
     },
-  "white": {
-      "textures": "textures/blade/white"
+    "white": {
+      "textures": "textures/items/blade/white"
     },
-  "whiteb": {
+    "whiteb": {
       "textures": "textures/blade/whiteb"
     },
-   "tukumo": {
+    "tukumo": {
       "textures": "textures/blade/tukumo"
     },
-  "muramasa": {
-      "textures": "textures/blade/muramasa"
+    "muramasa": {
+      "textures": "textures/items/blade/muramasa"
     },
-  "bamboo": {
-      "textures": "textures/blade/bamboo"
+    "bamboo": {
+      "textures": "textures/items/blade/bamboo"
     },
-  "balkonw": {
+    "balkonw": {
       "textures": "textures/blade/balkon_wood"
     },
-  "balkons": {
+    "balkons": {
       "textures": "textures/blade/balkon_rock"
     },
-  "balkoni": {
+    "balkoni": {
       "textures": "textures/blade/balkon_steel"
     },
-  "balkong": {
+    "balkong": {
       "textures": "textures/blade/balkon_gold"
     },
-  "balkond": {
+    "balkond": {
       "textures": "textures/blade/balkon_diamond"
     },
-  "silverbanboo": {
-      "textures": "textures/blade/silverbanboo"
+    "silverbanboo": {
+      "textures": "textures/items/blade/silverbanboo"
     },
-  "communist": {
+    "communist": {
       "textures": "textures/blade/communist"
     },
-  "haze": {
+    "haze": {
       "textures": "textures/blade/haze"
     },
-  "weiss": {
+    "weiss": {
       "textures": "textures/blade/weiss"
     },
-  "tagayasan": {
-      "textures": "textures/blade/tagayasan"
+    "tagayasan": {
+      "textures": "textures/items/blade/tagayasan"
     },
-  "sabigatana": {
-      "textures": "textures/blade/sabigatana"
+    "sabigatana": {
+      "textures": "textures/items/blade/sabigatana"
     },
-  "lightsaber": {
+    "lightsaber": {
       "textures": "textures/blade/lightsaber"
     },
-  "doutanuki": {
-      "textures": "textures/blade/doutanuki"
+    "doutanuki": {
+      "textures": "textures/items/blade/doutanuki"
+    },
+    "sample": {
+      "textures": "textures/items/blade/sample"
+    },
+    "slashblade_named": {
+      "textures": "textures/items/blade/slashblade_named"
+    },
+    "wooden_katana": {
+      "textures": "textures/items/blade/wooden_katana"
+    },
+    "stone_katana": {
+      "textures": "textures/items/blade/stone_katana"
+    },
+    "iron_katana": {
+      "textures": "textures/items/blade/iron_katana"
+    },
+    "diamond_katana": {
+      "textures": "textures/items/blade/diamond_katana"
+    },
+    "golden_katana": {
+      "textures": "textures/items/blade/golden_katana"
+    },
+    "katana": {
+      "textures": "textures/items/blade/katana"
+    },
+    "yamato": {
+      "textures": "textures/items/blade/yamato"
+    },
+    "yuzukitukumo": {
+      "textures": "textures/items/blade/yuzukitukumo"
+    },
+    "agito": {
+      "textures": "textures/items/blade/agito"
+    },
+    "agito_rust": {
+      "textures": "textures/items/blade/agito_rust"
+    },
+    "orotiagito": {
+      "textures": "textures/items/blade/orotiagito"
+    },
+    "sange": {
+      "textures": "textures/items/blade/sange"
+    },
+    "yasha": {
+      "textures": "textures/items/blade/yasha"
+    },
+    "fox_white": {
+      "textures": "textures/items/blade/fox_white"
+    },
+    "fox_black": {
+      "textures": "textures/items/blade/fox_black"
+    },
+    "nihil": {
+      "textures": "textures/items/blade/nihil"
+    },
+    "nihilex": {
+      "textures": "textures/items/blade/nihilex"
+    },
+    "crimsoncherry": {
+      "textures": "textures/items/blade/crimsoncherry"
+    },
+    "nihilbx": {
+      "textures": "textures/items/blade/nihilbx"
+    },
+    "nihilul": {
+      "textures": "textures/items/blade/nihilul"
+    },
+    "snowraven": {
+      "textures": "textures/items/blade/snowraven"
+    },
+    "darkraven": {
+      "textures": "textures/items/blade/darkraven"
+    },
+    "toyako": {
+      "textures": "textures/items/blade/toyako"
+    },
+    "fluorescentbar": {
+      "textures": "textures/items/blade/fluorescentbar"
+    },
+    "yukari": {
+      "textures": "textures/items/blade/yukari"
+    },
+    "kamuy_fire": {
+      "textures": "textures/items/blade/kamuy_fire"
+    },
+    "kamuy_lightning": {
+      "textures": "textures/items/blade/kamuy_lightning"
+    },
+    "kamuy_water": {
+      "textures": "textures/items/blade/kamuy_water"
+    },
+    "kamuy_none": {
+      "textures": "textures/items/blade/kamuy_none"
+    },
+    "frosty_cherry": {
+      "textures": "textures/items/blade/frosty_cherry"
     }
   }
 }
