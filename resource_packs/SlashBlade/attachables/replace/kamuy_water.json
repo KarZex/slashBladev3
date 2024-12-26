@@ -10,7 +10,7 @@
         "default": "textures/models/kamuy_water"
       },
       "geometry": {
-        "default": "geometry.kamuy_water"
+        "default": "geometry.kamuy"
       },
       "animations": {
         "root": "controller.animation.blade",

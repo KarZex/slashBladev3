@@ -32,6 +32,7 @@ for row in csv_reader:
         blade_insa = row[10]
         blade_rare = row[11]
         blade_geo = row[12]
+        blade_mate = row[13]
 
 
         lang += "item.blade:{}={}\n".format(blade_id,blade_name)
@@ -91,6 +92,8 @@ for row in csv_reader:
             gun_item = json.load(f)
             gun_item["minecraft:attachable"]["description"]["identifier"] = "blade:{}".format(blade_id)
             gun_item["minecraft:attachable"]["description"]["textures"]["default"] = "textures/models/{}".format(blade_id)
+            if blade_mate != "":
+                gun_item["minecraft:attachable"]["description"]["materials"]["default"] = "{}".format(blade_mate)
             if blade_geo != "":
                 gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_geo)
             else:

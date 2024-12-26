@@ -50,7 +50,9 @@ function bladeInstant( user,blade ){
 	}
 	blade.setDynamicProperty("killCount",0);
 	blade.setDynamicProperty("ProudSoul",0);
-	blade.setDynamicProperty("userXp",0);
+	if( user.getDynamicProperty("userXp") == undefined ){
+		user.setDynamicProperty("userXp",0);
+	}
 	blade.setDynamicProperty("damage",bladeData[`${bladeId}`][`damage`]);
 	blade.setDynamicProperty("damagemax",bladeData[`${bladeId}`][`damageplus`]);
 	const attack = bladeData[`${bladeId}`][`damage`];
@@ -74,22 +76,46 @@ function bladeSoulcal( user,blade ){
 		lore[5] = `§r§6+${bladeData[`${bladeId}`][`damage`]}.0§r/§c+${blade.getDynamicProperty("damage")}.0§r/§5+${blade.getDynamicProperty("damagemax")}.0`;
 		blade.setLore(lore);
 	}
-	if( xp > blade.getDynamicProperty("userXp") ){
-		const soul = blade.getDynamicProperty("ProudSoul") + xp - blade.getDynamicProperty("userXp");
+	if( xp > user.getDynamicProperty("userXp") ){
+		const soul = blade.getDynamicProperty("ProudSoul") + xp - user.getDynamicProperty("userXp");
 		const lore = blade.getLore();
 		lore[1] = `§rProudSoul: ${soul}`;
 		blade.setLore(lore);
 		blade.setDynamicProperty("ProudSoul", soul );
-		blade.setDynamicProperty("userXp",xp);
+		user.setDynamicProperty("userXp",xp);
 	}
+}
+
+function bladeSwing( user,blade ){
+	user.playSound(`swingblade.c`);
+	const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
+	const level = world.scoreboard.getObjective(`blade`).getScore(user);
+	const d = callDamage( blade,level );
+	const victims = user.dimension.getEntities({location:user.location,maxDistance:3})
+	if( victims.length > 1 ){
+		for( let i = 0; i < victims.length; i++ ){
+			if( victims[i].nameTag != user.nameTag ){
+				victims[i].applyDamage( d,{ cause:`override`,damagingEntity:user });
+				world.scoreboard.getObjective(`blade`).addScore(user,2);
+				victims[i].applyKnockback(0,0,0,0);
+				if( bladeItemEnch.hasEnchantment("minecraft:fire_aspect") ){
+					victims[i].setOnFire(5);
+				}
+			}
+		}
+	}
+	else{
+		if (user.dimension.getEntities({location:user.location,maxDistance:5,families:[ `monster` ]}).length > 1){
+			world.scoreboard.getObjective(`blade`).addScore(user,-3);
+		}
+	}
+	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
 }
 
 world.afterEvents.itemReleaseUse.subscribe( e => {
 	if ( e.itemStack.typeId.includes(`blade:`) ){
 		const user = e.source;
 		const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-		const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
-		const bladeId = blade.typeId.split(`:`)[1];
 		if( blade.getDynamicProperty("killCount") == undefined ){
 			bladeInstant( user,blade );
 		}
@@ -108,37 +134,19 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 			user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
 		}
 		else if( e.useDuration > -10 ){
-			user.playSound(`swingblade.c`);
-			const level = world.scoreboard.getObjective(`blade`).getScore(user);
-			const d = callDamage( blade,level );
-			world.sendMessage(`${d}`);
-			const victims = user.dimension.getEntities({location:user.location,maxDistance:3})
-			if( victims.length > 1 ){
-				world.sendMessage(`${victims} ${victims.length}`);
-				for( let i = 0; i < victims.length; i++ ){
-					world.sendMessage(`${i} ${victims[i].typeId}`);
-					if( victims[i].nameTag != user.nameTag ){
-						victims[i].applyDamage( d,{ cause:`override`,damagingEntity:user });
-						world.scoreboard.getObjective(`blade`).addScore(user,2);
-						victims[i].applyKnockback(0,0,0,0);
-						if( bladeItemEnch.hasEnchantment("minecraft:fire_aspect") ){
-							victims[i].setOnFire(5);
-						}
-					}
-				}
-			}
-			else{
-				if (user.dimension.getEntities({location:user.location,maxDistance:5}).length > 1){
-					world.scoreboard.getObjective(`blade`).addScore(user,-3);
-				}
-			}
-			world.scoreboard.getObjective(`printlevel`).setScore(user,100);
+			bladeSwing( user,blade );
 		}
-		else{
-			if( classReg[blade.getDynamicProperty("sa")].cost <= blade.getDynamicProperty("ProudSoul") ){
-				world.sendMessage(`${blade.getDynamicProperty("sa")} ${classReg[blade.getDynamicProperty("sa")].cost}`);
-				blade.setDynamicProperty("ProudSoul", blade.getDynamicProperty("ProudSoul") - classReg[blade.getDynamicProperty("sa")].cost );
-				classReg[blade.getDynamicProperty("sa")].fireSa( blade,user );
+		else if( e.useDuration <= -10 && blade.getDynamicProperty("sa") != undefined ){
+			const classRef = classReg[blade.getDynamicProperty("sa")];
+			const sa = new classRef();
+			world.sendMessage(`${blade.getDynamicProperty("sa")} ${sa.cost}`);
+			if( sa.cost <= blade.getDynamicProperty("ProudSoul") ){
+				const soul = blade.getDynamicProperty("ProudSoul") - sa.cost;
+				blade.setDynamicProperty("ProudSoul", soul );
+				const lore = blade.getLore();
+				lore[1] = `§rProudSoul: ${soul}`;
+				blade.setLore(lore);
+				sa.fireSa( blade,user );
 			}
 		}
 	}
@@ -168,10 +176,12 @@ world.afterEvents.entityDie.subscribe( e => {
 		const lore = blade.getLore();
 		const kill = blade.getDynamicProperty("killCount") + 1;
 		blade.setDynamicProperty("killCount",kill);
-		lore[0] = `§rKillCount: ${kill}`;
 		if( kill >= 1000 ){
 			lore[0] = `§r§4KillCount: ${kill}`;
 			lore[4] = `§r§6B-A§r/§cS-SSS§r/§5Limit`
+		}
+		else {
+			lore[0] = `§rKillCount: ${kill}`;
 		}
 		blade.setLore(lore);
 	}

@@ -10,7 +10,7 @@
         "default": "textures/models/agito_rust"
       },
       "geometry": {
-        "default": "geometry.agito_rust"
+        "default": "geometry.blade2"
       },
       "animations": {
         "root": "controller.animation.blade",

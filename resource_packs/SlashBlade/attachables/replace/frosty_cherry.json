@@ -10,7 +10,7 @@
         "default": "textures/models/frosty_cherry"
       },
       "geometry": {
-        "default": "geometry.frosty_cherry"
+        "default": "geometry.none"
       },
       "animations": {
         "root": "controller.animation.blade",

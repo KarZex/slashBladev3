@@ -226,6 +226,27 @@
     },
     "frosty_cherry": {
       "textures": "textures/items/blade/frosty_cherry"
+    },
+    "snowcrow": {
+      "textures": "textures/items/blade/snowcrow"
+    },
+    "moonlightcherry": {
+      "textures": "textures/items/blade/moonlightcherry"
+    },
+    "greenmist": {
+      "textures": "textures/items/blade/greenmist"
+    },
+    "aquablaze": {
+      "textures": "textures/items/blade/aquablaze"
+    },
+    "blue": {
+      "textures": "textures/items/blade/blue"
+    },
+    "katana_red": {
+      "textures": "textures/items/blade/katana_red"
+    },
+    "tachi": {
+      "textures": "textures/items/blade/tachi"
     }
   }
 }

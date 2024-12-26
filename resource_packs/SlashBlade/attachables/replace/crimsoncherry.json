@@ -10,7 +10,7 @@
         "default": "textures/models/crimsoncherry"
       },
       "geometry": {
-        "default": "geometry.crimsoncherry"
+        "default": "geometry.nihil"
       },
       "animations": {
         "root": "controller.animation.blade",

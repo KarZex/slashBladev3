@@ -4,7 +4,7 @@
     "description": {
       "identifier": "blade:fluorescentbar",
       "materials": {
-        "default": "entity_alphatest"
+        "default": "entity_emissive_alpha"
       },
       "textures": {
         "default": "textures/models/fluorescentbar"

@@ -1,18 +1,11 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.item.shoot": {
+		"animation.airblade.rolling": {
 			"loop": true,
-			"animation_length": 0.2,
 			"bones": {
-
-				"gun": {
-					"position": {
-						"0.0": [0, 0, 0],
-						"0.02": [0, 0, 0],
-						"0.08": [0, 0.05, 0],
-						"0.16": [0, 0.1, 0]
-					}
+				"head": {
+					"rotation": ["1 - query.target_x_rotation", "-query.target_y_rotation", 0]
 				}
 			}
 		}

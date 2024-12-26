@@ -10,7 +10,7 @@
         "default": "textures/models/toyako"
       },
       "geometry": {
-        "default": "geometry.toyako"
+        "default": "geometry.yasha"
       },
       "animations": {
         "root": "controller.animation.blade",

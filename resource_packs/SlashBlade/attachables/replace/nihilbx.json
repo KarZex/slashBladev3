@@ -10,7 +10,7 @@
         "default": "textures/models/nihilbx"
       },
       "geometry": {
-        "default": "geometry.nihilbx"
+        "default": "geometry.nihil"
       },
       "animations": {
         "root": "controller.animation.blade",

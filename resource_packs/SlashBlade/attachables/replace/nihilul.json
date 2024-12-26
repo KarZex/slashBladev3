@@ -10,7 +10,7 @@
         "default": "textures/models/nihilul"
       },
       "geometry": {
-        "default": "geometry.nihilul"
+        "default": "geometry.nihil"
       },
       "animations": {
         "root": "controller.animation.blade",

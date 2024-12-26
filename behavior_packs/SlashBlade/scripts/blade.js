@@ -81,10 +81,6 @@ export const bladeData = {
       "lvl": 1
     }
   },
-  "katana": {
-    "damage": 6,
-    "damageplus": 16
-  },
   "tagayasan": {
     "damage": 6,
     "damageplus": 16,
@@ -287,7 +283,7 @@ export const bladeData = {
     },
     "insa": "waveedge"
   },
-  "snowraven": {
+  "snowcrow": {
     "damage": 6,
     "damageplus": 16
   },
@@ -369,5 +365,45 @@ export const bladeData = {
   "frosty_cherry": {
     "damage": 7,
     "damageplus": 17
+  },
+  "moonlightcherry": {
+    "damage": 7,
+    "damageplus": 17,
+    "ench1": {
+      "id": "smite",
+      "lvl": 5
+    }
+  },
+  "greenmist": {
+    "damage": 7,
+    "damageplus": 17,
+    "ench1": {
+      "id": "looting",
+      "lvl": 1
+    }
+  },
+  "aquablaze": {
+    "damage": 7,
+    "damageplus": 17,
+    "ench1": {
+      "id": "fire_aspect",
+      "lvl": 2
+    }
+  },
+  "blue": {
+    "damage": 7,
+    "damageplus": 17
+  },
+  "katana_red": {
+    "damage": 3,
+    "damageplus": 13
+  },
+  "tachi": {
+    "damage": 3,
+    "damageplus": 13
+  },
+  "katana": {
+    "damage": 4,
+    "damageplus": 14
   }
 };

@@ -10,7 +10,7 @@
         "default": "textures/models/darkraven"
       },
       "geometry": {
-        "default": "geometry.darkraven"
+        "default": "geometry.raven"
       },
       "animations": {
         "root": "controller.animation.blade",

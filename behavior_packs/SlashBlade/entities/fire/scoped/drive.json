@@ -1,0 +1,54 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "fire:airblade",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier":"minecraft:arrow",
+      "scripts": {
+	    "animate": [ "walk" ]
+	  },
+	  "animations": {
+	    "walk": "controller.animation.ding"
+	  }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "sabullet"]
+      },
+				"minecraft:explode": {
+				"fuseLength": 1.0,
+				"fuseLit": true,
+				"power": 0,
+				"causesFire": false
+			},
+      "minecraft:collision_box": {
+        "width": 1.2,
+        "height": 0.1
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 7,
+            "knockback": true
+          }
+        },
+        "power": 0.2,
+        "gravity": 0,
+        "inertia": 1.5,
+        "uncertaintyBase": 0,
+        "uncertaintyMultiplier": 0,
+        "anchor": 1,
+        "offset": [
+          0,
+          0.5,
+          0
+        ],
+        "catchFire": false
+      },
+	  "minecraft:physics": {}
+		}
+	}
+}

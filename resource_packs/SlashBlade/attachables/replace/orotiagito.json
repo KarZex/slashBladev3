@@ -10,7 +10,7 @@
         "default": "textures/models/orotiagito"
       },
       "geometry": {
-        "default": "geometry.orotiagito"
+        "default": "geometry.blade2"
       },
       "animations": {
         "root": "controller.animation.blade",

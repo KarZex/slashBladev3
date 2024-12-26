@@ -10,7 +10,7 @@
         "default": "textures/models/kamuy_fire"
       },
       "geometry": {
-        "default": "geometry.kamuy_fire"
+        "default": "geometry.kamuy"
       },
       "animations": {
         "root": "controller.animation.blade",

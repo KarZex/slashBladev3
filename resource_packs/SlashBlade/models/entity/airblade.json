@@ -13,12 +13,13 @@
 			"bones": [
 				{
 					"name": "head",
-					"pivot": [0, 24, 0],
+					"pivot": [0.03125, 0, 0.04952],
 					"mirror": true,
 					"cubes": [
-						{"origin": [-8, 0, -8], "size": [16, 0, 16], "uv": [8, 29], "mirror": false},
-						{"origin": [-8, 0, -8], "size": [16, 0, 16], "pivot": [0, 0, 0], "rotation": [0, -30, 0], "uv": [8, 29], "mirror": false},
-						{"origin": [-8, 0, -8], "size": [16, 0, 16], "pivot": [0, 0, 0], "rotation": [0, -60, 0], "uv": [8, 29], "mirror": false}
+						{"origin": [-2.16987, -0.1, -1.60192], "size": [9, 0.2, 2], "pivot": [2.83013, 0, 1.39808], "rotation": [0, -30, 0], "uv": [25, 43], "mirror": false},
+						{"origin": [-7.23205, -0.1, -3.10192], "size": [9, 0.2, 2], "pivot": [-0.23205, 0, -0.10192], "rotation": [0, 30, 0], "uv": [23, 43], "mirror": false},
+						{"origin": [-7.79423, -0.1, 0.8], "size": [15.58846, 0.2, 1.73205], "uv": [23, 43], "mirror": false},
+						{"origin": [-3.79423, -0.1, -1.4], "size": [7.83846, 0.2, 2.2], "uv": [28, 44], "mirror": false}
 					]
 				}
 			]

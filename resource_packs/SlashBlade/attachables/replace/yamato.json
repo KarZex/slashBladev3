@@ -10,7 +10,7 @@
         "default": "textures/models/yamato"
       },
       "geometry": {
-        "default": "geometry.yamato"
+        "default": "geometry.slashblade"
       },
       "animations": {
         "root": "controller.animation.blade",

@@ -10,7 +10,7 @@
         "default": "textures/models/katana"
       },
       "geometry": {
-        "default": "geometry.katana"
+        "default": "geometry.balkon"
       },
       "animations": {
         "root": "controller.animation.blade",

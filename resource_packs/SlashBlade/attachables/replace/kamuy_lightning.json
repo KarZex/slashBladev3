@@ -10,7 +10,7 @@
         "default": "textures/models/kamuy_lightning"
       },
       "geometry": {
-        "default": "geometry.kamuy_lightning"
+        "default": "geometry.kamuy"
       },
       "animations": {
         "root": "controller.animation.blade",

@@ -25,7 +25,8 @@
       },
       "scripts": {
         "pre_animation": [
-          "v.main_hand = c.item_slot == 'main_hand';"
+          "v.main_hand = c.item_slot == 'main_hand';",
+          "v.attack = c.attack_time > 0;"
         ],
         "animate": [
           "root",

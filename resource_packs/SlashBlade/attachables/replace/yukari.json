@@ -10,7 +10,7 @@
         "default": "textures/models/yukari"
       },
       "geometry": {
-        "default": "geometry.yukari"
+        "default": "geometry.nihil"
       },
       "animations": {
         "root": "controller.animation.blade",

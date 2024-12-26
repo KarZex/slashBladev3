@@ -10,7 +10,7 @@
         "default": "textures/models/sange"
       },
       "geometry": {
-        "default": "geometry.sange"
+        "default": "geometry.weiss"
       },
       "animations": {
         "root": "controller.animation.blade",

@@ -10,7 +10,6 @@ item.blade:stone_katana=「鋭巌」露台
 item.blade:iron_katana=利刀「鉄」露台
 item.blade:diamond_katana=名刀「金剛」露台
 item.blade:golden_katana=宝刀「山吹」露台
-item.blade:katana=利刀「無名」紅玉
 item.blade:tagayasan=木刀「鉄刀木」
 item.blade:yamato=魔剣「閻魔刀」
 item.blade:yuzukitukumo=結月刀「付喪」
@@ -29,7 +28,7 @@ item.blade:nihilex=血刀「似蛭」
 item.blade:crimsoncherry=妖刀「紅桜」
 item.blade:nihilbx=炼獄刀「死念」
 item.blade:nihilul=獄刀「似蛭」
-item.blade:snowraven=ユキガラス
+item.blade:snowcrow=ユキガラス
 item.blade:darkraven=ヤミガラス
 item.blade:toyako=洞爺湖
 item.blade:fluorescentbar=ケイコウトウ
@@ -39,8 +38,13 @@ item.blade:kamuy_lightning=神威刀「カンナ」
 item.blade:kamuy_water=神威刀「ワッカ」
 item.blade:kamuy_none=神威刀「クトネシリカ」
 item.blade:frosty_cherry=凍桜刃「雪花蒼月」
-
-
+item.blade:moonlightcherry=月光桜「吹雪一閃」
+item.blade:greenmist=聖幸刀「緑乃霧」
+item.blade:aquablaze=侍月刀「炎水薄斬」
+item.blade:blue=利刀「蒼梅」
+item.blade:katana_red=刀
+item.blade:tachi=太刀
+item.blade:katana=利刀「無名」紅玉
 
 item.zex:bladesoulingot=刀の魂塊
 item.zex:bladesoulsphere=刀の魂珠

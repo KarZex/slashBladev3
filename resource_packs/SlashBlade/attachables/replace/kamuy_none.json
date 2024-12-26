@@ -10,7 +10,7 @@
         "default": "textures/models/kamuy_none"
       },
       "geometry": {
-        "default": "geometry.kamuy_none"
+        "default": "geometry.kamuy"
       },
       "animations": {
         "root": "controller.animation.blade",
