@@ -1,6 +1,7 @@
 scoreboard objectives add blade dummy
 scoreboard objectives add bladec dummy
 scoreboard objectives add printlevel dummy
+scoreboard objectives add around dummy
 
 scoreboard objectives add wood dummy
 
@@ -21,6 +22,7 @@ scoreboard objectives add meleeup dummy
 
 execute as @a[tag=!startedblade] run scoreboard players set @s cooldown 20
 execute as @a[tag=!startedblade] run scoreboard players set @s blade 0
+execute as @a[tag=!startedblade] run scoreboard players set @s around 0
 execute as @a[tag=!startedblade] run scoreboard players set @s bladec 10
 execute as @a[tag=!startedblade] run scoreboard players set @s printlevel 0
 execute as @a[tag=!startedblade] run scoreboard players set @s sa 0

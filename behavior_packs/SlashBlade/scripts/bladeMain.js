@@ -122,7 +122,11 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 		if( user.typeId == `minecraft:player` ){
 			bladeSoulcal( user,blade );
 		}
-		if( user.isSneaking && !user.isFlying && !user.isFalling ){
+		if( !user.isSneaking && user.isJumping && !user.isOnGround){
+			user.addEffect(`levitation`,5,{ amplifier:5 });
+		}
+		if( user.isSneaking && user.isOnGround ){
+			user.playSound(`swingblade.c`);
 			const v = user.getVelocity();
 			let abs_v = v.x*v.x + v.z*v.z;
 			if( abs_v > 0.01 ){
@@ -130,6 +134,13 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 			}
 			const d = user.getViewDirection();
 			user.applyKnockback(d.x,d.z,abs_v*500,0)
+			user.addEffect(`resistance`,8,{ amplifier:255 });
+			user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
+		}
+		if( user.isSneaking && !user.isOnGround ){
+			user.playSound(`swingblade.c`);
+			user.applyKnockback(0,0,0,-5);
+			world.scoreboard.getObjective(`around`).setScore(user,8);
 			user.addEffect(`resistance`,8,{ amplifier:255 });
 			user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
 		}

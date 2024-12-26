@@ -46,8 +46,19 @@ export class vdrive {
   }
 }
 
+export class spear {
+  cost = 10
+  fireSa( blade, user ){
+    user.playSound(`random.explode`);
+    world.scoreboard.getObjective(`around`).setScore(user,10);
+    const d = user.getViewDirection();
+    user.applyKnockback(d.x,d.z,4,0)
+  }
+}
+
 export const classReg = {
   drive,
   slashdimension,
-  vdrive
+  vdrive,
+  spear
 }

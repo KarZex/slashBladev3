@@ -301,7 +301,8 @@ export const bladeData = {
     "ench1": {
       "id": "unbreaking",
       "lvl": 3
-    }
+    },
+    "insa": "slashdimension"
   },
   "yukari": {
     "damage": 7,
