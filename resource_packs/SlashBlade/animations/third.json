@@ -69,6 +69,23 @@
 					"position": [-0.25, 2.3, 16.25]
 				}
 			}
+		},
+		"animation.sword.stand": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [-5, 0, 0],
+					"position": [-26, 22.25, 3.75]
+				},
+				"leftArm": {
+					"rotation": [-12.5, 0, 0]
+				},
+				"sword": {
+					"rotation": [180.6574, -7.4713, -95.04292],
+					"position": [0, 0, 0],
+					"scale": 0.3
+				}
+			}
 		}
 	}
 }

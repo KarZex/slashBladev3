@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "zex:bladestand",
+			"materials": {
+				"default": "iron_golem"
+			},
+      "textures": {
+        "default": "textures/entity/stand",
+		"blank": "textures/entity/stand"
+
+      },
+      "geometry": {
+        "default": "geometry.bladestand",
+		"blank": "geometry.blank"
+        
+      },
+			"spawn_egg": {
+				"texture": "a1",
+				"texture_index": 0
+			},
+			"scripts": {
+				"animate": [ 
+					"float"
+				]
+			},
+			"animations": {
+				"float": "animation.sword.stand"
+			},
+			"render_controllers": [
+				"controller.render.default","controller.render.bladeitem"
+			]
+		}
+	}
+}

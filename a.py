@@ -9,6 +9,9 @@ row_count = 0
 bladedata_json = json.load(open("tool/bladedata.json","r"))
 texture_json = json.load(open("resource_packs/SlashBlade/textures/item_texture.json","r"))
 animation_controllers_json = json.load(open("tool/animation_controllers.json","r"))
+stand_json = json.load(open("tool/stand.json","r"))
+standrp_json = json.load(open("tool/standrp.json","r"))
+standrender_json = json.load(open("tool/bladeitem.json","r"))
 
 text = ""
 anicont = ""
@@ -44,6 +47,45 @@ for row in csv_reader:
         bladedata_json["{}".format(blade_id)] = {}
         bladedata_json["{}".format(blade_id)]["damage"] = blade_attack
         bladedata_json["{}".format(blade_id)]["damageplus"] = blade_attack_plus
+
+        stand_json["minecraft:entity"]["component_groups"]["{}".format(blade_id)] = {"minecraft:skin_id": {"value": row_count-1 }}
+        newjson = {
+          "use_item": True,
+          "play_sounds": "enderchest.open",
+          "interact_text": "action.gvc.item",
+          "on_interact": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "other",
+                  "domain": "hand",
+                  "value": "blade:{}".format(blade_id)
+                }
+              ]
+            },
+            "event": "{}".format(blade_id),
+            "target": "self"
+          }
+        }
+
+        stand_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(newjson)
+        stand_json["minecraft:entity"]["events"]["{}".format(blade_id)] = {
+            "add": {
+                "component_groups": [
+                    "{}".format(blade_id)
+                ]
+            }
+        }
+
+        standrp_json["minecraft:client_entity"]["description"]["textures"]["{}".format(blade_id)] = "textures/models/{}".format(blade_id)
+        if blade_mate != "":
+            standrp_json["minecraft:client_entity"]["description"]["materials"]["{}".format(blade_id)] = "{}".format(blade_mate)
+        if blade_geo != "":
+            standrp_json["minecraft:client_entity"]["description"]["geometry"]["{}".format(blade_id)] = "geometry.{}".format(blade_geo)
+        else:
+            standrp_json["minecraft:client_entity"]["description"]["geometry"]["{}".format(blade_id)] = "geometry.{}".format(blade_id)
+
         if blade_ench1 != "":
             Ench = blade_ench1.split("-")
             print(Ench)
@@ -86,6 +128,13 @@ for row in csv_reader:
             json.dump(gun_item,f,indent=2)
 
         texture_json["texture_data"]["{}".format(blade_id)] = {"textures":"textures/items/blade/{}".format(blade_id)}
+
+        with open("tool/loot.json","r") as f:
+            loot_table = json.load(f)
+            loot_table["pools"][0]["entries"][0]["name"] = "blade:{}".format(blade_id)
+        
+        with open("behavior_packs/SlashBlade/loot_tables/blade/{}.json".format(blade_id),"w") as f:
+            json.dump(loot_table,f,indent=2)
             
 
         with open("tool/ak47.json","r") as f:
@@ -100,6 +149,10 @@ for row in csv_reader:
                 gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_id)
         with open("resource_packs/SlashBlade/attachables/replace/{}.json".format(blade_id),"w") as f:
             json.dump(gun_item,f,indent=2)
+
+        
+        standrender_json["render_controllers"]["controller.render.bladeitem"]["arrays"]["geometries"]["Array.item_geo"].append("geometry.{}".format(blade_id))  
+        standrender_json["render_controllers"]["controller.render.bladeitem"]["arrays"]["textures"]["Array.item_texture"].append("texture.{}".format(blade_id))
 
         row_count += 1
 
@@ -124,3 +177,12 @@ with open("resource_packs/SlashBlade/textures/item_texture.json","w") as f:
 
 with open("resource_packs/SlashBlade/texts/blade.txt","w") as f:
     f.write(lang)
+
+with open("behavior_packs/SlashBlade/entities/bladestand.json","w") as f:
+    json.dump(stand_json,f,indent=2)
+
+with open("resource_packs/SlashBlade/entity/bladestand.json","w") as f:
+    json.dump(standrp_json,f,indent=2)
+
+with open("resource_packs/SlashBlade/render_controllers/bladeitem.json","w") as f:
+    json.dump(standrender_json,f,indent=2)

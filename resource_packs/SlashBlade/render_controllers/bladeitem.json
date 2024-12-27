@@ -2,55 +2,121 @@
   "format_version": "1.8.0",
   "render_controllers": {
     "controller.render.bladeitem": {
-			"geometry": "Array.item_geo[query.skin_id]",
-			"materials": [{"*":"material.default"}],
-			"textures": ["Array.item_texture[query.skin_id]"],
-			"arrays": {
-				"geometries": {
-					"Array.item_geo": [
-					"Geometry.blank",
-					"Geometry.wood",
-					"Geometry.white",
-					"Geometry.slashblade",
-					"Geometry.tukumo",
-					"Geometry.muramasa",
-					"Geometry.bamboo",
-					"Geometry.silverbanboo",
-					"Geometry.tagayasan",
-					"Geometry.sabigatana",
-					"Geometry.doutanuki",
-					"Geometry.balkon",
-					"Geometry.balkon",
-					"Geometry.balkon",
-					"Geometry.balkon",
-					"Geometry.balkon",
-					"Geometry.weiss",
-					"Geometry.weiss"
-					]
-				},
-				"textures": {
-					"Array.item_texture": [
-					"Texture.blank",
-					"Texture.wood",
-					"Texture.white",
-					"Texture.slashblade",
-					"Texture.tukumo",
-					"Texture.muramasa",
-					"Texture.bamboo",
-					"Texture.silverbanboo",
-					"Texture.tagayasan",
-					"Texture.sabigatana",
-					"Texture.doutanuki",
-					"Texture.balkonw",
-					"Texture.balkons",
-					"Texture.balkoni",
-					"Texture.balkong",
-					"Texture.balkond",
-					"Texture.weiss",
-					"Texture.haze"
-					]
-				}
-			} 
+      "geometry": "Array.item_geo[query.skin_id]",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [
+        "Array.item_texture[query.skin_id]"
+      ],
+      "arrays": {
+        "geometries": {
+          "Array.item_geo": [
+            "Geometry.blank",
+            "geometry.sample",
+            "geometry.slashblade",
+            "geometry.wood",
+            "geometry.bamboo",
+            "geometry.silverbanboo",
+            "geometry.white",
+            "geometry.slashblade_named",
+            "geometry.wooden_katana",
+            "geometry.stone_katana",
+            "geometry.iron_katana",
+            "geometry.diamond_katana",
+            "geometry.golden_katana",
+            "geometry.tagayasan",
+            "geometry.yamato",
+            "geometry.yuzukitukumo",
+            "geometry.agito",
+            "geometry.agito_rust",
+            "geometry.orotiagito",
+            "geometry.sange",
+            "geometry.yasha",
+            "geometry.fox_white",
+            "geometry.fox_black",
+            "geometry.muramasa",
+            "geometry.sabigatana",
+            "geometry.doutanuki",
+            "geometry.nihil",
+            "geometry.nihilex",
+            "geometry.crimsoncherry",
+            "geometry.nihilbx",
+            "geometry.nihilul",
+            "geometry.snowcrow",
+            "geometry.darkraven",
+            "geometry.toyako",
+            "geometry.fluorescentbar",
+            "geometry.yukari",
+            "geometry.kamuy_fire",
+            "geometry.kamuy_lightning",
+            "geometry.kamuy_water",
+            "geometry.kamuy_none",
+            "geometry.frosty_cherry",
+            "geometry.moonlightcherry",
+            "geometry.greenmist",
+            "geometry.aquablaze",
+            "geometry.blue",
+            "geometry.katana_red",
+            "geometry.tachi",
+            "geometry.katana"
+          ]
+        },
+        "textures": {
+          "Array.item_texture": [
+            "Texture.blank",
+            "texture.sample",
+            "texture.slashblade",
+            "texture.wood",
+            "texture.bamboo",
+            "texture.silverbanboo",
+            "texture.white",
+            "texture.slashblade_named",
+            "texture.wooden_katana",
+            "texture.stone_katana",
+            "texture.iron_katana",
+            "texture.diamond_katana",
+            "texture.golden_katana",
+            "texture.tagayasan",
+            "texture.yamato",
+            "texture.yuzukitukumo",
+            "texture.agito",
+            "texture.agito_rust",
+            "texture.orotiagito",
+            "texture.sange",
+            "texture.yasha",
+            "texture.fox_white",
+            "texture.fox_black",
+            "texture.muramasa",
+            "texture.sabigatana",
+            "texture.doutanuki",
+            "texture.nihil",
+            "texture.nihilex",
+            "texture.crimsoncherry",
+            "texture.nihilbx",
+            "texture.nihilul",
+            "texture.snowcrow",
+            "texture.darkraven",
+            "texture.toyako",
+            "texture.fluorescentbar",
+            "texture.yukari",
+            "texture.kamuy_fire",
+            "texture.kamuy_lightning",
+            "texture.kamuy_water",
+            "texture.kamuy_none",
+            "texture.frosty_cherry",
+            "texture.moonlightcherry",
+            "texture.greenmist",
+            "texture.aquablaze",
+            "texture.blue",
+            "texture.katana_red",
+            "texture.tachi",
+            "texture.katana"
+          ]
+        }
+      }
     }
   }
 }

@@ -153,7 +153,7 @@ export class water_drive {
     user.playSound(`random.explode`);
     world.scoreboard.getObjective(`around`).setScore(user,10);
     const d = user.getViewDirection();
-    user.applyKnockback(d.x,d.z,4,0)
+    user.applyKnockback(d.x,d.z,4,0);
   }
 }
 

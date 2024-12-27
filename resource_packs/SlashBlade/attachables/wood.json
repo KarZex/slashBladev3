@@ -1,0 +1,31 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "blade:wood.stand",
+			"item": {
+				"zex:firemask": "query.owner_identifier == 'zex:stand'"
+			},
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/models/wood"
+      },
+      "geometry": {
+        "default": "geometry.wood"
+      },
+      "animations": {
+        "root": "animation.sword.stand"
+      },
+      "scripts": {
+        "animate": [
+          "root"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

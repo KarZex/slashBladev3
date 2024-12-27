@@ -1,0 +1,215 @@
+{
+  "format_version": "1.21.0",
+	"minecraft:entity": {
+	"description": {
+		"identifier": "zex:bladestand",
+    "spawn_category": "creature",
+		"runtime_identifier": "minecraft:armor_stand",
+		"is_spawnable": true,
+		"is_summonable": true,
+		"is_experimental": false
+		},
+	"component_groups": {
+      "wood": {
+        "minecraft:skin_id": {
+          "value": 1
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/blade/wood.json"
+        }
+      }
+    },
+	"components": {
+    
+    "minecraft:interact": {
+      "interactions": [
+        {
+          "use_item": true,
+          "play_sounds": "enderchest.open",
+          "interact_text": "action.gvc.item",
+          "on_interact": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "other",
+                  "domain": "hand",
+                  "value": "blade:wood"
+                }
+              ]
+            },
+            "event": "wood",
+            "target": "self"
+          }
+        }
+      ]
+    },
+			"minecraft:behavior.trade_with_player": {},
+      "minecraft:experience_reward": {
+        "on_death": "0"
+      },
+	 "minecraft:collision_box": {
+				"width": 0.5,
+				"height": 1.8
+			},
+      "minecraft:loot": {
+        "table": "loot_tables/entities/stand.json"
+      },
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+
+            "minecraft:push_through": {
+                "value": 0
+            },
+            "minecraft:skin_id": {
+              "value": 0
+            },
+			"minecraft:physics": {}
+		},
+    "events": {
+      
+      "wood": {
+        "add": {
+          "component_groups": [
+            "wood"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        }
+      },
+      "set:default": {
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        }
+      },
+      "set:wood": {
+        "add": {
+          "component_groups": [
+            "wood"
+          ]
+        }
+      },
+      "set:white": {
+        "add": {
+          "component_groups": [
+            "white"
+          ]
+        }
+      },
+      "set:slashblade": {
+        "add": {
+          "component_groups": [
+            "slashblade"
+          ]
+        }
+      },
+      "set:tukumo": {
+        "add": {
+          "component_groups": [
+            "tukumo"
+          ]
+        }
+      },
+      "set:muramasa": {
+        "add": {
+          "component_groups": [
+            "muramasa"
+          ]
+        }
+      },
+      "set:bamboo": {
+        "add": {
+          "component_groups": [
+            "bamboo"
+          ]
+        }
+      },
+      "set:silverbanboo": {
+        "add": {
+          "component_groups": [
+            "silverbanboo"
+          ]
+        }
+      },
+      "set:tagayasan": {
+        "add": {
+          "component_groups": [
+            "tagayasan"
+          ]
+        }
+      },
+      "set:sabigatana": {
+        "add": {
+          "component_groups": [
+            "sabigatana"
+          ]
+        }
+      },
+      "set:doutanuki": {
+        "add": {
+          "component_groups": [
+            "doutanuki"
+          ]
+        }
+      },
+      "set:balkonw": {
+        "add": {
+          "component_groups": [
+            "balkonw"
+          ]
+        }
+      },
+      "set:balkons": {
+        "add": {
+          "component_groups": [
+            "balkons"
+          ]
+        }
+      },
+      "set:balkoni": {
+        "add": {
+          "component_groups": [
+            "balkoni"
+          ]
+        }
+      },
+      "set:balkong": {
+        "add": {
+          "component_groups": [
+            "balkong"
+          ]
+        }
+      },
+      "set:balkond": {
+        "add": {
+          "component_groups": [
+            "balkond"
+          ]
+        }
+      },
+      "set:weiss": {
+        "add": {
+          "component_groups": [
+            "weiss"
+          ]
+        }
+      },
+      "set:haze": {
+        "add": {
+          "component_groups": [
+            "haze"
+          ]
+        }
+      }
+    }
+  }
+}

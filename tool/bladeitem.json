@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.bladeitem": {
+			"geometry": "Array.item_geo[query.skin_id]",
+			"materials": [{"*":"material.default"}],
+			"textures": ["Array.item_texture[query.skin_id]"],
+			"arrays": {
+				"geometries": {
+					"Array.item_geo": [
+					"Geometry.blank"
+					]
+				},
+				"textures": {
+					"Array.item_texture": [
+					"Texture.blank"
+					]
+				}
+			} 
+    }
+  }
+}

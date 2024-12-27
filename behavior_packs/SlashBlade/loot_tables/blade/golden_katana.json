@@ -1,0 +1,14 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "blade:golden_katana",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

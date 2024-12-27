@@ -1,0 +1,1654 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "zex:bladestand",
+      "spawn_category": "creature",
+      "runtime_identifier": "minecraft:armor_stand",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "wood": {
+        "minecraft:skin_id": {
+          "value": 2
+        }
+      },
+      "sample": {
+        "minecraft:skin_id": {
+          "value": 0
+        }
+      },
+      "slashblade": {
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+      "bamboo": {
+        "minecraft:skin_id": {
+          "value": 3
+        }
+      },
+      "silverbanboo": {
+        "minecraft:skin_id": {
+          "value": 4
+        }
+      },
+      "white": {
+        "minecraft:skin_id": {
+          "value": 5
+        }
+      },
+      "slashblade_named": {
+        "minecraft:skin_id": {
+          "value": 6
+        }
+      },
+      "wooden_katana": {
+        "minecraft:skin_id": {
+          "value": 7
+        }
+      },
+      "stone_katana": {
+        "minecraft:skin_id": {
+          "value": 8
+        }
+      },
+      "iron_katana": {
+        "minecraft:skin_id": {
+          "value": 9
+        }
+      },
+      "diamond_katana": {
+        "minecraft:skin_id": {
+          "value": 10
+        }
+      },
+      "golden_katana": {
+        "minecraft:skin_id": {
+          "value": 11
+        }
+      },
+      "tagayasan": {
+        "minecraft:skin_id": {
+          "value": 12
+        }
+      },
+      "yamato": {
+        "minecraft:skin_id": {
+          "value": 13
+        }
+      },
+      "yuzukitukumo": {
+        "minecraft:skin_id": {
+          "value": 14
+        }
+      },
+      "agito": {
+        "minecraft:skin_id": {
+          "value": 15
+        }
+      },
+      "agito_rust": {
+        "minecraft:skin_id": {
+          "value": 16
+        }
+      },
+      "orotiagito": {
+        "minecraft:skin_id": {
+          "value": 17
+        }
+      },
+      "sange": {
+        "minecraft:skin_id": {
+          "value": 18
+        }
+      },
+      "yasha": {
+        "minecraft:skin_id": {
+          "value": 19
+        }
+      },
+      "fox_white": {
+        "minecraft:skin_id": {
+          "value": 20
+        }
+      },
+      "fox_black": {
+        "minecraft:skin_id": {
+          "value": 21
+        }
+      },
+      "muramasa": {
+        "minecraft:skin_id": {
+          "value": 22
+        }
+      },
+      "sabigatana": {
+        "minecraft:skin_id": {
+          "value": 23
+        }
+      },
+      "doutanuki": {
+        "minecraft:skin_id": {
+          "value": 24
+        }
+      },
+      "nihil": {
+        "minecraft:skin_id": {
+          "value": 25
+        }
+      },
+      "nihilex": {
+        "minecraft:skin_id": {
+          "value": 26
+        }
+      },
+      "crimsoncherry": {
+        "minecraft:skin_id": {
+          "value": 27
+        }
+      },
+      "nihilbx": {
+        "minecraft:skin_id": {
+          "value": 28
+        }
+      },
+      "nihilul": {
+        "minecraft:skin_id": {
+          "value": 29
+        }
+      },
+      "snowcrow": {
+        "minecraft:skin_id": {
+          "value": 30
+        }
+      },
+      "darkraven": {
+        "minecraft:skin_id": {
+          "value": 31
+        }
+      },
+      "toyako": {
+        "minecraft:skin_id": {
+          "value": 32
+        }
+      },
+      "fluorescentbar": {
+        "minecraft:skin_id": {
+          "value": 33
+        }
+      },
+      "yukari": {
+        "minecraft:skin_id": {
+          "value": 34
+        }
+      },
+      "kamuy_fire": {
+        "minecraft:skin_id": {
+          "value": 35
+        }
+      },
+      "kamuy_lightning": {
+        "minecraft:skin_id": {
+          "value": 36
+        }
+      },
+      "kamuy_water": {
+        "minecraft:skin_id": {
+          "value": 37
+        }
+      },
+      "kamuy_none": {
+        "minecraft:skin_id": {
+          "value": 38
+        }
+      },
+      "frosty_cherry": {
+        "minecraft:skin_id": {
+          "value": 39
+        }
+      },
+      "moonlightcherry": {
+        "minecraft:skin_id": {
+          "value": 40
+        }
+      },
+      "greenmist": {
+        "minecraft:skin_id": {
+          "value": 41
+        }
+      },
+      "aquablaze": {
+        "minecraft:skin_id": {
+          "value": 42
+        }
+      },
+      "blue": {
+        "minecraft:skin_id": {
+          "value": 43
+        }
+      },
+      "katana_red": {
+        "minecraft:skin_id": {
+          "value": 44
+        }
+      },
+      "tachi": {
+        "minecraft:skin_id": {
+          "value": 45
+        }
+      },
+      "katana": {
+        "minecraft:skin_id": {
+          "value": 46
+        }
+      }
+    },
+    "components": {
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:wood"
+                  }
+                ]
+              },
+              "event": "wood",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:sample"
+                  }
+                ]
+              },
+              "event": "sample",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:slashblade"
+                  }
+                ]
+              },
+              "event": "slashblade",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:wood"
+                  }
+                ]
+              },
+              "event": "wood",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:bamboo"
+                  }
+                ]
+              },
+              "event": "bamboo",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:silverbanboo"
+                  }
+                ]
+              },
+              "event": "silverbanboo",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:white"
+                  }
+                ]
+              },
+              "event": "white",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:slashblade_named"
+                  }
+                ]
+              },
+              "event": "slashblade_named",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:wooden_katana"
+                  }
+                ]
+              },
+              "event": "wooden_katana",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:stone_katana"
+                  }
+                ]
+              },
+              "event": "stone_katana",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:iron_katana"
+                  }
+                ]
+              },
+              "event": "iron_katana",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:diamond_katana"
+                  }
+                ]
+              },
+              "event": "diamond_katana",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:golden_katana"
+                  }
+                ]
+              },
+              "event": "golden_katana",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:tagayasan"
+                  }
+                ]
+              },
+              "event": "tagayasan",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:yamato"
+                  }
+                ]
+              },
+              "event": "yamato",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:yuzukitukumo"
+                  }
+                ]
+              },
+              "event": "yuzukitukumo",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:agito"
+                  }
+                ]
+              },
+              "event": "agito",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:agito_rust"
+                  }
+                ]
+              },
+              "event": "agito_rust",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:orotiagito"
+                  }
+                ]
+              },
+              "event": "orotiagito",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:sange"
+                  }
+                ]
+              },
+              "event": "sange",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:yasha"
+                  }
+                ]
+              },
+              "event": "yasha",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:fox_white"
+                  }
+                ]
+              },
+              "event": "fox_white",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:fox_black"
+                  }
+                ]
+              },
+              "event": "fox_black",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:muramasa"
+                  }
+                ]
+              },
+              "event": "muramasa",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:sabigatana"
+                  }
+                ]
+              },
+              "event": "sabigatana",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:doutanuki"
+                  }
+                ]
+              },
+              "event": "doutanuki",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:nihil"
+                  }
+                ]
+              },
+              "event": "nihil",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:nihilex"
+                  }
+                ]
+              },
+              "event": "nihilex",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:crimsoncherry"
+                  }
+                ]
+              },
+              "event": "crimsoncherry",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:nihilbx"
+                  }
+                ]
+              },
+              "event": "nihilbx",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:nihilul"
+                  }
+                ]
+              },
+              "event": "nihilul",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:snowcrow"
+                  }
+                ]
+              },
+              "event": "snowcrow",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:darkraven"
+                  }
+                ]
+              },
+              "event": "darkraven",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:toyako"
+                  }
+                ]
+              },
+              "event": "toyako",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:fluorescentbar"
+                  }
+                ]
+              },
+              "event": "fluorescentbar",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:yukari"
+                  }
+                ]
+              },
+              "event": "yukari",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:kamuy_fire"
+                  }
+                ]
+              },
+              "event": "kamuy_fire",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:kamuy_lightning"
+                  }
+                ]
+              },
+              "event": "kamuy_lightning",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:kamuy_water"
+                  }
+                ]
+              },
+              "event": "kamuy_water",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:kamuy_none"
+                  }
+                ]
+              },
+              "event": "kamuy_none",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:frosty_cherry"
+                  }
+                ]
+              },
+              "event": "frosty_cherry",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:moonlightcherry"
+                  }
+                ]
+              },
+              "event": "moonlightcherry",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:greenmist"
+                  }
+                ]
+              },
+              "event": "greenmist",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:aquablaze"
+                  }
+                ]
+              },
+              "event": "aquablaze",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:blue"
+                  }
+                ]
+              },
+              "event": "blue",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:katana_red"
+                  }
+                ]
+              },
+              "event": "katana_red",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:tachi"
+                  }
+                ]
+              },
+              "event": "tachi",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:katana"
+                  }
+                ]
+              },
+              "event": "katana",
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:behavior.trade_with_player": {},
+      "minecraft:experience_reward": {
+        "on_death": "0"
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 1.8
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/stand.json"
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:push_through": {
+        "value": 0
+      },
+      "minecraft:skin_id": {
+        "value": 0
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "wood": {
+        "add": {
+          "component_groups": [
+            "wood"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        }
+      },
+      "set:default": {
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        }
+      },
+      "set:wood": {
+        "add": {
+          "component_groups": [
+            "wood"
+          ]
+        }
+      },
+      "set:white": {
+        "add": {
+          "component_groups": [
+            "white"
+          ]
+        }
+      },
+      "set:slashblade": {
+        "add": {
+          "component_groups": [
+            "slashblade"
+          ]
+        }
+      },
+      "set:tukumo": {
+        "add": {
+          "component_groups": [
+            "tukumo"
+          ]
+        }
+      },
+      "set:muramasa": {
+        "add": {
+          "component_groups": [
+            "muramasa"
+          ]
+        }
+      },
+      "set:bamboo": {
+        "add": {
+          "component_groups": [
+            "bamboo"
+          ]
+        }
+      },
+      "set:silverbanboo": {
+        "add": {
+          "component_groups": [
+            "silverbanboo"
+          ]
+        }
+      },
+      "set:tagayasan": {
+        "add": {
+          "component_groups": [
+            "tagayasan"
+          ]
+        }
+      },
+      "set:sabigatana": {
+        "add": {
+          "component_groups": [
+            "sabigatana"
+          ]
+        }
+      },
+      "set:doutanuki": {
+        "add": {
+          "component_groups": [
+            "doutanuki"
+          ]
+        }
+      },
+      "set:balkonw": {
+        "add": {
+          "component_groups": [
+            "balkonw"
+          ]
+        }
+      },
+      "set:balkons": {
+        "add": {
+          "component_groups": [
+            "balkons"
+          ]
+        }
+      },
+      "set:balkoni": {
+        "add": {
+          "component_groups": [
+            "balkoni"
+          ]
+        }
+      },
+      "set:balkong": {
+        "add": {
+          "component_groups": [
+            "balkong"
+          ]
+        }
+      },
+      "set:balkond": {
+        "add": {
+          "component_groups": [
+            "balkond"
+          ]
+        }
+      },
+      "set:weiss": {
+        "add": {
+          "component_groups": [
+            "weiss"
+          ]
+        }
+      },
+      "set:haze": {
+        "add": {
+          "component_groups": [
+            "haze"
+          ]
+        }
+      },
+      "sample": {
+        "add": {
+          "component_groups": [
+            "sample"
+          ]
+        }
+      },
+      "slashblade": {
+        "add": {
+          "component_groups": [
+            "slashblade"
+          ]
+        }
+      },
+      "bamboo": {
+        "add": {
+          "component_groups": [
+            "bamboo"
+          ]
+        }
+      },
+      "silverbanboo": {
+        "add": {
+          "component_groups": [
+            "silverbanboo"
+          ]
+        }
+      },
+      "white": {
+        "add": {
+          "component_groups": [
+            "white"
+          ]
+        }
+      },
+      "slashblade_named": {
+        "add": {
+          "component_groups": [
+            "slashblade_named"
+          ]
+        }
+      },
+      "wooden_katana": {
+        "add": {
+          "component_groups": [
+            "wooden_katana"
+          ]
+        }
+      },
+      "stone_katana": {
+        "add": {
+          "component_groups": [
+            "stone_katana"
+          ]
+        }
+      },
+      "iron_katana": {
+        "add": {
+          "component_groups": [
+            "iron_katana"
+          ]
+        }
+      },
+      "diamond_katana": {
+        "add": {
+          "component_groups": [
+            "diamond_katana"
+          ]
+        }
+      },
+      "golden_katana": {
+        "add": {
+          "component_groups": [
+            "golden_katana"
+          ]
+        }
+      },
+      "tagayasan": {
+        "add": {
+          "component_groups": [
+            "tagayasan"
+          ]
+        }
+      },
+      "yamato": {
+        "add": {
+          "component_groups": [
+            "yamato"
+          ]
+        }
+      },
+      "yuzukitukumo": {
+        "add": {
+          "component_groups": [
+            "yuzukitukumo"
+          ]
+        }
+      },
+      "agito": {
+        "add": {
+          "component_groups": [
+            "agito"
+          ]
+        }
+      },
+      "agito_rust": {
+        "add": {
+          "component_groups": [
+            "agito_rust"
+          ]
+        }
+      },
+      "orotiagito": {
+        "add": {
+          "component_groups": [
+            "orotiagito"
+          ]
+        }
+      },
+      "sange": {
+        "add": {
+          "component_groups": [
+            "sange"
+          ]
+        }
+      },
+      "yasha": {
+        "add": {
+          "component_groups": [
+            "yasha"
+          ]
+        }
+      },
+      "fox_white": {
+        "add": {
+          "component_groups": [
+            "fox_white"
+          ]
+        }
+      },
+      "fox_black": {
+        "add": {
+          "component_groups": [
+            "fox_black"
+          ]
+        }
+      },
+      "muramasa": {
+        "add": {
+          "component_groups": [
+            "muramasa"
+          ]
+        }
+      },
+      "sabigatana": {
+        "add": {
+          "component_groups": [
+            "sabigatana"
+          ]
+        }
+      },
+      "doutanuki": {
+        "add": {
+          "component_groups": [
+            "doutanuki"
+          ]
+        }
+      },
+      "nihil": {
+        "add": {
+          "component_groups": [
+            "nihil"
+          ]
+        }
+      },
+      "nihilex": {
+        "add": {
+          "component_groups": [
+            "nihilex"
+          ]
+        }
+      },
+      "crimsoncherry": {
+        "add": {
+          "component_groups": [
+            "crimsoncherry"
+          ]
+        }
+      },
+      "nihilbx": {
+        "add": {
+          "component_groups": [
+            "nihilbx"
+          ]
+        }
+      },
+      "nihilul": {
+        "add": {
+          "component_groups": [
+            "nihilul"
+          ]
+        }
+      },
+      "snowcrow": {
+        "add": {
+          "component_groups": [
+            "snowcrow"
+          ]
+        }
+      },
+      "darkraven": {
+        "add": {
+          "component_groups": [
+            "darkraven"
+          ]
+        }
+      },
+      "toyako": {
+        "add": {
+          "component_groups": [
+            "toyako"
+          ]
+        }
+      },
+      "fluorescentbar": {
+        "add": {
+          "component_groups": [
+            "fluorescentbar"
+          ]
+        }
+      },
+      "yukari": {
+        "add": {
+          "component_groups": [
+            "yukari"
+          ]
+        }
+      },
+      "kamuy_fire": {
+        "add": {
+          "component_groups": [
+            "kamuy_fire"
+          ]
+        }
+      },
+      "kamuy_lightning": {
+        "add": {
+          "component_groups": [
+            "kamuy_lightning"
+          ]
+        }
+      },
+      "kamuy_water": {
+        "add": {
+          "component_groups": [
+            "kamuy_water"
+          ]
+        }
+      },
+      "kamuy_none": {
+        "add": {
+          "component_groups": [
+            "kamuy_none"
+          ]
+        }
+      },
+      "frosty_cherry": {
+        "add": {
+          "component_groups": [
+            "frosty_cherry"
+          ]
+        }
+      },
+      "moonlightcherry": {
+        "add": {
+          "component_groups": [
+            "moonlightcherry"
+          ]
+        }
+      },
+      "greenmist": {
+        "add": {
+          "component_groups": [
+            "greenmist"
+          ]
+        }
+      },
+      "aquablaze": {
+        "add": {
+          "component_groups": [
+            "aquablaze"
+          ]
+        }
+      },
+      "blue": {
+        "add": {
+          "component_groups": [
+            "blue"
+          ]
+        }
+      },
+      "katana_red": {
+        "add": {
+          "component_groups": [
+            "katana_red"
+          ]
+        }
+      },
+      "tachi": {
+        "add": {
+          "component_groups": [
+            "tachi"
+          ]
+        }
+      },
+      "katana": {
+        "add": {
+          "component_groups": [
+            "katana"
+          ]
+        }
+      }
+    }
+  }
+}

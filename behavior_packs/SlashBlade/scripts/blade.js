@@ -353,7 +353,7 @@ export const bladeData = {
       "id": "knockback",
       "lvl": 2
     },
-    "insa": "water_drive"
+    "insa": "spear"
   },
   "kamuy_none": {
     "damage": 7,
