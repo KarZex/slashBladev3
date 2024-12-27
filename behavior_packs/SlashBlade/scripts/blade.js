@@ -243,7 +243,7 @@ export const bladeData = {
       "id": "fire_aspect",
       "lvl": 2
     },
-    "insa": "sakuraend"
+    "insa": "fireup"
   },
   "nihilbx": {
     "damage": 13,
@@ -260,7 +260,7 @@ export const bladeData = {
       "id": "unbreaking",
       "lvl": 3
     },
-    "insa": "sakuraend"
+    "insa": "spear"
   },
   "nihilul": {
     "damage": 12,
@@ -323,7 +323,7 @@ export const bladeData = {
       "id": "bane_of_arthropods",
       "lvl": 5
     },
-    "insa": "fire_spiral"
+    "insa": "flamethrower"
   },
   "kamuy_lightning": {
     "damage": 7,
@@ -373,7 +373,8 @@ export const bladeData = {
     "ench1": {
       "id": "smite",
       "lvl": 5
-    }
+    },
+    "insa": "circleslash"
   },
   "greenmist": {
     "damage": 7,
@@ -381,7 +382,8 @@ export const bladeData = {
     "ench1": {
       "id": "looting",
       "lvl": 1
-    }
+    },
+    "insa": "fireup"
   },
   "aquablaze": {
     "damage": 7,
@@ -389,7 +391,8 @@ export const bladeData = {
     "ench1": {
       "id": "fire_aspect",
       "lvl": 2
-    }
+    },
+    "insa": "circleslash"
   },
   "blue": {
     "damage": 7,

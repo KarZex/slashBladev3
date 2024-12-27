@@ -125,6 +125,7 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 		if( !user.isSneaking && user.isJumping && !user.isOnGround){
 			user.addEffect(`levitation`,5,{ amplifier:5 });
 		}
+		
 		if( user.isSneaking && user.isOnGround ){
 			user.playSound(`swingblade.c`);
 			const v = user.getVelocity();
@@ -137,7 +138,7 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 			user.addEffect(`resistance`,8,{ amplifier:255 });
 			user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
 		}
-		if( user.isSneaking && !user.isOnGround ){
+		else if( user.isSneaking && !user.isOnGround ){
 			user.playSound(`swingblade.c`);
 			user.applyKnockback(0,0,0,-5);
 			world.scoreboard.getObjective(`around`).setScore(user,8);
@@ -150,7 +151,6 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 		else if( e.useDuration <= -10 && blade.getDynamicProperty("sa") != undefined ){
 			const classRef = classReg[blade.getDynamicProperty("sa")];
 			const sa = new classRef();
-			world.sendMessage(`${blade.getDynamicProperty("sa")} ${sa.cost}`);
 			if( sa.cost <= blade.getDynamicProperty("ProudSoul") ){
 				const soul = blade.getDynamicProperty("ProudSoul") - sa.cost;
 				blade.setDynamicProperty("ProudSoul", soul );
@@ -180,8 +180,21 @@ world.afterEvents.entityHitEntity.subscribe( e => {
 	}
 } )
 
+world.afterEvents.projectileHitEntity.subscribe( e => {
+	if( e.projectile.typeId.includes("safire")){
+		const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
+		const sa = new classRef();
+		const dmg = sa.damage;
+		let vict = e.getEntityHit().entity;
+		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
+		let gunName = e.projectile.typeId
+		world.scoreboard.getObjective(`blade`).addScore(e.source,2);
+		world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
+	}
+})
+
 world.afterEvents.entityDie.subscribe( e => {
-	const killer = e.damageSource.damagingEntity;
+	let killer = e.damageSource.damagingEntity;
 	if( killer.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand).typeId.includes(`blade:`) ){
 		const blade = killer.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
 		const lore = blade.getLore();
