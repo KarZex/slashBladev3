@@ -1,74 +1,79 @@
 {
-  "format_version": "1.16.100",
+  "format_version": "1.21.20",
   "minecraft:block": {
     "description": {
       "identifier": "zex:wara",
-      "register_to_creative_menu": true,
-      "category": "Construction",
-	  "properties": { "tatami:facing": [ 1,2,3,4,5 ] }
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ]
+        }
+      },
+      "menu_category": {
+        "category": "construction"
+      }
     },
     "components": {
-	"minecraft:creative_category": {
-    "group": "itemGroup.name.kar_zex",
-    "category": "items"
-	},
       "minecraft:material_instances": {
         "*": {
           "texture": "wara",
           "render_method": "opaque"
         }
       },
-	  "minecraft:unit_cube": {},
-      "minecraft:loot": "loot_tables/blocks/wara.json",
-      "minecraft:destroy_time": 0.1,
-      "minecraft:explosion_resistance": 1,
-	  "minecraft:on_player_placing":{
-		"event" : "minecraft:ignite"
-	   },
-	  "minecraft:flammable":{
-		"burn_odds": 50,
-		"flame_odds": 50
-	  },
-      "minecraft:map_color": "#FF0000"
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:loot": "loot_tables/blocks/andon.json",
+      "minecraft:map_color": "#00ff00"
     },
-    "events": {
-	  "minecraft:ignite": {
-		"set_block_property": {
-			"tatami:facing": "query.block_face"
-		}
-	  }
-    },
-	"permutations": [
-		{
-		 "condition": "query.block_property('tatami:facing') == 1",
-		 "components": {
-		 "minecraft:rotation": [0,0,0]
-		  }
-		},
-		{
-		 "condition": "query.block_property('tatami:facing') == 2",
-		 "components": {
-		 "minecraft:rotation": [0,90,0]
-		  }
-		},
-		{
-		 "condition": "query.block_property('tatami:facing') == 3",
-		 "components": {
-		 "minecraft:rotation": [0,90,0]
-		  }
-		},
-		{
-		 "condition": "query.block_property('tatami:facing') == 4",
-		 "components": {
-		 "minecraft:rotation": [0,0,0]
-		  }
-		},
-		{
-		 "condition": "query.block_property('tatami:facing') == 5",
-		 "components": {
-		 "minecraft:rotation": [0,0,0]
-		  }
-		}
-	]
+    "permutations": [
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              270,
+              0
+            ]
+          }
+        }
+      }
+    ]
   }
 }

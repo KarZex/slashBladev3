@@ -7,8 +7,8 @@
     "tags": [ "crafting_table" ],
     "pattern": [
       "BBB",
-	  "BAB",
-	  "BCB"
+      "BAB",
+      "BCB"
     ],
     "key": {
       "A": {

@@ -1,23 +1,26 @@
 {
-  "format_version": "1.16.100",
+  "format_version": "1.21.20",
   "minecraft:block": {
     "description": {
       "identifier": "zex:millstonet",
-      "register_to_creative_menu": true,
-      "category": "Construction"
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ]
+        }
+      },
+      "menu_category": {
+        "category": "construction"
+      }
     },
     "components": {
-	"minecraft:creative_category": {
-    "group": "itemGroup.name.kar_zex",
-    "category": "items"
-	},
-	"minecraft:crafting_table": {
-                "grid_size": 3,
-                "custom_description": "tile.zex:millstonet.name",
-                "crafting_tags": [
-                    "millstonet"
-                ]
-     },
+      "minecraft:crafting_table": {
+        "crafting_tags": [
+          "millstonet"
+        ],
+        "table_name": "millstonet"
+      },
       "minecraft:material_instances": {
         "*": {
           "texture": "millstonet",
@@ -27,20 +30,64 @@
           "texture": "millstonet_top",
           "render_method": "opaque"
         },
-		"down": {
+        "down": {
           "texture": "millstonet_bottom",
           "render_method": "opaque"
         }
       },
-	  "minecraft:unit_cube": {},
-      "minecraft:loot": "loot_tables/blocks/tatami.json",
-      "minecraft:destroy_time": 1.0,
-      "minecraft:explosion_resistance": 1,
-	  "minecraft:flammable":{
-		"burn_odds": 50,
-		"flame_odds": 50
-	  },
-      "minecraft:map_color": "#FF0000"
-    }
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:loot": "loot_tables/blocks/andon.json",
+      "minecraft:map_color": "#00ff00"
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              270,
+              0
+            ]
+          }
+        }
+      }
+    ]
   }
 }

@@ -18,7 +18,8 @@
       "minecraft:material_instances": {
         "*": {
           "texture": "andon",
-          "render_method": "opaque"
+          "render_method": "alpha_test",
+          "ambient_occlusion": false
         }
       },
       "minecraft:geometry": "geometry.andon",
