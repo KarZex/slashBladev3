@@ -247,6 +247,9 @@
     },
     "tachi": {
       "textures": "textures/items/blade/tachi"
+    },
+    "bladestand": {
+      "textures": "textures/items/bladestand"
     }
   }
 }

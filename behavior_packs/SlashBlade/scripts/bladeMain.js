@@ -195,11 +195,13 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 
 world.afterEvents.entityDie.subscribe( e => {
 	let killer = e.damageSource.damagingEntity;
+	const loc = e.deadEntity.location;
 	if( killer.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand).typeId.includes(`blade:`) ){
 		const blade = killer.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
 		const lore = blade.getLore();
 		const kill = blade.getDynamicProperty("killCount") + 1;
 		blade.setDynamicProperty("killCount",kill);
+		killer.dimension.runCommand(`loot spawn ${loc.x} ${loc.y} ${loc.z} loot ps`);
 		if( kill >= 1000 ){
 			lore[0] = `§r§4KillCount: ${kill}`;
 			lore[4] = `§r§6B-A§r/§cS-SSS§r/§5Limit`

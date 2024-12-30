@@ -1,0 +1,52 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:Blade_blue_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BAC",
+      "AC ",
+      "DF "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:coal_block",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:dye",
+        "data": 4
+      },
+      "C": {
+        "item": "zex:bladesoulingot",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:stick",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:quartz"
+      },
+      "F": {
+        "item": "minecraft:string",
+        "data": 0
+      },
+      "G": {
+        "item": "minecraft:quartz_block",
+        "data": 0
+      },
+      "H": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      }
+    },
+    "result": {
+        "item": "blade:blue",
+        "count": 1
+    }
+  }
+  
+}

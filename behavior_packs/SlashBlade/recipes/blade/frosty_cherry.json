@@ -1,0 +1,52 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:Blade_frosty_cherry_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " FE",
+      "BC ",
+      "DE "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:iron_block",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:snow"
+      },
+      "C": {
+        "item": "zex:bladesoulsphere",
+        "data": 0
+      },
+      "D": {
+        "item": "blade:doutanuki",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:quartz",
+        "data": 10
+      },
+      "F": {
+        "item": "minecraft:ice",
+        "data": 0
+      },
+      "G": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      },
+      "H": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      }
+    },
+    "result": {
+        "item": "blade:frosty_cherry",
+        "count": 1
+    }
+  }
+  
+}

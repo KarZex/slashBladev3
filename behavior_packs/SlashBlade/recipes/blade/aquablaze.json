@@ -1,0 +1,59 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:Blade_aquablaze_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CBG",
+      "BA ",
+      "DEF"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:bucket",
+        "data": 10
+      },
+      "B": {
+        "item": "minecraft:redstone_block"
+      },
+      "C": {
+        "item": "zex:bladesoulsphere",
+        "data": 0
+      },
+      "D": {
+        "item": "blade:muramasa",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:gold_block",
+        "data": 10
+      },
+      "F": {
+        "item": "minecraft:quartz",
+        "data": 0
+      },
+      "G": {
+        "item": "minecraft:bucket",
+        "data": 8
+      },
+      "H": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      }
+    },
+    "result": [
+        {
+            "item": "blade:aquablaze",
+            "count": 1
+        },
+        { 
+            "item": "minecraft:bucket", 
+            "data": 0,
+            "count": 2
+        }
+    ]
+  }
+  
+}

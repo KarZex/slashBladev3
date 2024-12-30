@@ -4,7 +4,6 @@
     "description": {
       "identifier": "zex:bladestand",
       "spawn_category": "creature",
-      "runtime_identifier": "minecraft:armor_stand",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false
@@ -269,7 +268,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -288,7 +287,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -307,7 +306,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -326,7 +325,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -345,7 +344,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -364,7 +363,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -383,7 +382,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -402,7 +401,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -421,7 +420,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -440,7 +439,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -459,7 +458,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -478,7 +477,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -497,7 +496,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -516,7 +515,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -535,7 +534,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -554,7 +553,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -573,7 +572,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -592,7 +591,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -611,7 +610,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -630,7 +629,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -649,7 +648,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -668,7 +667,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -687,7 +686,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -706,7 +705,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -725,7 +724,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -744,7 +743,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -763,7 +762,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -782,7 +781,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -801,7 +800,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -820,7 +819,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -839,7 +838,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -858,7 +857,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -877,7 +876,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -896,7 +895,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -915,7 +914,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -934,7 +933,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -953,7 +952,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -972,7 +971,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -991,7 +990,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1010,7 +1009,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1029,7 +1028,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1048,7 +1047,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1067,7 +1066,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1086,7 +1085,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1105,7 +1104,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1124,7 +1123,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1143,7 +1142,7 @@
             }
           },
           {
-            "use_item": true,
+            "use_item": false,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {

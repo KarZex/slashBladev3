@@ -8,12 +8,10 @@
 			"arrays": {
 				"geometries": {
 					"Array.item_geo": [
-					"Geometry.blank"
 					]
 				},
 				"textures": {
 					"Array.item_texture": [
-					"Texture.blank"
 					]
 				}
 			} 

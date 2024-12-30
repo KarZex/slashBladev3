@@ -6,9 +6,9 @@
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "AAA",
-      " A ",
-      "ABA"
+      "BBB",
+      " B ",
+      "BBB"
     ],
     "key": {
       "B": {
@@ -29,7 +29,7 @@
       }
     },
     "result": {
-      "item": "zex:stand_spawn_egg",
+      "item": "zex:bladestand_spawn_egg",
       "count": 1
     }
   }

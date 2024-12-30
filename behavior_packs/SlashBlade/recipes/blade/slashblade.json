@@ -2,13 +2,13 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "Blade_slashblade"
+    "identifier": "zex:Blade_slashblade_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "XAB",
+      " AB",
       "CDE",
-      "FGX"
+      "FG "
     ],
     "key": {
       "A": {

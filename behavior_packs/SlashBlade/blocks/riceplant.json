@@ -3,29 +3,39 @@
   "minecraft:block": {
     "description": {
       "identifier": "zex:riceplant",
-      "traits": {
-        "minecraft:placement_direction": {
-          "enabled_states": [
-            "minecraft:cardinal_direction"
-          ]
-        }
+      "states": {
+        "zex:growth": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
       },
       "menu_category": {
         "category": "construction"
       }
     },
     "components": {
-      "minecraft:material_instances": {
-        "*": {
-          "texture": "andon",
-          "render_method": "alpha_test",
-          "ambient_occlusion": false
-        }
+      "minecraft:placement_filter": {
+        "conditions": [
+          {
+            "allowed_faces": [
+              "up"
+            ],
+            "block_filter": [
+              "minecraft:farmland"
+            ]
+          }
+        ]
       },
+      "minecraft:custom_components": [
+        "zex:glowth","zex:growing"
+      ],
       "minecraft:geometry": "geometry.crop",
       "minecraft:loot": "loot_tables/blocks/andon.json",
       "minecraft:map_color": "#00ff00",
-      "minecraft:light_emission": 15,
+      "minecraft:light_emission": 0,
       "minecraft:light_dampening": 0,
       "minecraft:collision_box": false,
       "minecraft:destructible_by_mining": {
@@ -34,51 +44,128 @@
     },
     "permutations": [
       {
-        "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+        "condition": "query.block_state('zex:growth') == 0",
         "components": {
-          "minecraft:transformation": {
-            "rotation": [
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "riceplant0",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
               0,
-              0,
-              0
+              -7
+            ],
+            "size": [
+              14,
+              2,
+              14
             ]
-          }
+          },
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
         }
       },
       {
-        "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+        "condition": "query.block_state('zex:growth') == 1",
         "components": {
-          "minecraft:transformation": {
-            "rotation": [
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "riceplant1",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
               0,
-              90,
-              0
+              -7
+            ],
+            "size": [
+              14,
+              4,
+              14
             ]
-          }
+          },
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
         }
       },
       {
-        "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+        "condition": "query.block_state('zex:growth') == 2",
         "components": {
-          "minecraft:transformation": {
-            "rotation": [
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "riceplant2",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
               0,
-              180,
-              0
+              -7
+            ],
+            "size": [
+              14,
+              8,
+              14
             ]
-          }
+          },
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
         }
       },
       {
-        "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+        "condition": "query.block_state('zex:growth') == 3",
         "components": {
-          "minecraft:transformation": {
-            "rotation": [
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "riceplant3",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
               0,
-              270,
-              0
+              -7
+            ],
+            "size": [
+              14,
+              12,
+              14
             ]
-          }
+          },
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+        }
+      },
+      {
+        "condition": "query.block_state('zex:growth') == 4",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "riceplant4",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              16,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/riceplant.json"
         }
       }
     ]

@@ -50,7 +50,7 @@ for row in csv_reader:
 
         stand_json["minecraft:entity"]["component_groups"]["{}".format(blade_id)] = {"minecraft:skin_id": {"value": row_count-1 }}
         newjson = {
-          "use_item": True,
+          "use_item": False,
           "play_sounds": "enderchest.open",
           "interact_text": "action.gvc.item",
           "on_interact": {

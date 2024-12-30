@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "Blade_muramasa"
+    "identifier": "zex:Blade_muramasa_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [

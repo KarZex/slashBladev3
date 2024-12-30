@@ -1,0 +1,52 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:Blade_greenmist_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CAB",
+      "AB ",
+      "DFE"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:redstone_block",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:emerald_block"
+      },
+      "C": {
+        "item": "zex:bladesoulsphere",
+        "data": 0
+      },
+      "D": {
+        "item": "blade:muramasa",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:quartz",
+        "data": 10
+      },
+      "F": {
+        "item": "minecraft:gold_block",
+        "data": 0
+      },
+      "G": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      },
+      "H": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      }
+    },
+    "result": {
+        "item": "blade:greenmist",
+        "count": 1
+    }
+  }
+  
+}

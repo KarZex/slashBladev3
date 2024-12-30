@@ -17,7 +17,7 @@
         
       },
 			"spawn_egg": {
-				"texture": "a1",
+				"texture": "bladestand",
 				"texture_index": 0
 			},
 			"scripts": {

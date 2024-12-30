@@ -1,0 +1,58 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:Blade_kamuy_fire_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CFC",
+      "BDG",
+      "CEC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:iron_block",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:fireball"
+      },
+      "C": {
+        "item": "zex:bladesoulsphere",
+        "data": 0
+      },
+      "D": {
+        "item": "blade:kamuy_none",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:bucket",
+        "data": 10
+      },
+      "F": {
+        "item": "minecraft:redstone_block",
+        "data": 0
+      },
+      "G": {
+        "item": "minecraft:blaze_rod",
+        "data": 0
+      },
+      "H": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      }
+    },
+    "result": [
+        {
+            "item": "blade:kamuy_fire",
+            "count": 1
+        },
+        { 
+            "item": "minecraft:bucket", 
+            "data": 0 
+        }
+    ]
+  }
+  
+}

@@ -1,0 +1,53 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:Blade_kamuy_lightning_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CFC",
+      "BDG",
+      "CEC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:iron_block",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:gold_block"
+      },
+      "C": {
+        "item": "zex:bladesoulsphere",
+        "data": 0
+      },
+      "D": {
+        "item": "blade:kamuy_none",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:emerald_block",
+        "data": 10
+      },
+      "F": {
+        "item": "minecraft:iron_block",
+        "data": 0
+      },
+      "G": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      },
+      "H": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      }
+    },
+    "result": 
+      {
+          "item": "blade:kamuy_lightning",
+          "count": 1
+      }
+  }
+  
+}

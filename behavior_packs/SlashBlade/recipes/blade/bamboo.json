@@ -2,22 +2,20 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "Blade_bamboo"
+    "identifier": "zex:bamboo_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "XXB",
-      "XBX",
-      "AXX"
+      "  B",
+      " B ",
+      "A  "
     ],
     "key": {
       "A": {
-        "item": "minecraft:wooden_sword",
-        "data": 0
+        "item": "blade:wood"
       },
       "B": {
-        "item": "zex:bamboot",
-        "data": 0
+        "item": "minecraft:bamboo"
       },
       "C": {
         "item": "minecraft:log",

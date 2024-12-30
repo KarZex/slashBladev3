@@ -4,12 +4,12 @@
     "description": {
       "identifier": "zex:bladestand",
       "materials": {
-        "default": "iron_golem"
+        "default": "iron_golem",
+        "fluorescentbar": "entity_emissive_alpha"
       },
       "textures": {
         "default": "textures/entity/stand",
         "blank": "textures/entity/stand",
-        "sample": "textures/models/sample",
         "slashblade": "textures/models/slashblade",
         "wood": "textures/models/wood",
         "bamboo": "textures/models/bamboo",
@@ -60,7 +60,6 @@
       "geometry": {
         "default": "geometry.bladestand",
         "blank": "geometry.blank",
-        "sample": "geometry.blank",
         "slashblade": "geometry.slashblade",
         "wood": "geometry.wood",
         "bamboo": "geometry.wood",
@@ -109,7 +108,7 @@
         "katana": "geometry.balkon"
       },
       "spawn_egg": {
-        "texture": "a1",
+        "texture": "bladestand",
         "texture_index": 0
       },
       "scripts": {

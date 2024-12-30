@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "Blade_tagayasan"
+    "identifier": "zex:Blade_tagayasan_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [

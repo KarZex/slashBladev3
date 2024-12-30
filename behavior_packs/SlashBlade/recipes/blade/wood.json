@@ -2,22 +2,20 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "SB_bamboo_pane"
+    "identifier": "zex:wood_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "XXX",
-      "AAA",
-      "AAA"
+      "  B",
+      " B ",
+      "A  "
     ],
     "key": {
       "A": {
-        "item": "zex:bamboot",
-        "data": 0
+        "item": "minecraft:wooden_sword"
       },
       "B": {
-        "item": "minecraft:log",
-        "data": 0
+        "item": "minecraft:log"
       },
       "C": {
         "item": "minecraft:log",
@@ -29,8 +27,8 @@
       }
     },
     "result": {
-      "item": "zex:bamboo_pane",
-      "count": 16
+      "item": "blade:wood",
+      "count": 1
     }
   }
   

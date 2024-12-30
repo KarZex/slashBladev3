@@ -1,0 +1,52 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:Blade_fluorescentbar_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " AC",
+      "ABA",
+      "CA "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:paper",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:stained_glass"
+      },
+      "C": {
+        "item": "zex:proudsoul",
+        "data": 0
+      },
+      "D": {
+        "item": "blade:doutanuki",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:netherstar",
+        "data": 0
+      },
+      "F": {
+        "item": "minecraft:iron_block",
+        "data": 0
+      },
+      "G": {
+        "item": "minecraft:gold_block",
+        "data": 0
+      },
+      "H": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "blade:fluorescentbar",
+      "count": 1
+    }
+  }
+  
+}

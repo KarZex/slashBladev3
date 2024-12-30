@@ -1,0 +1,52 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:Blade_yukari_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CBC",
+      "BDB",
+      "CBC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:paper",
+        "data": 0
+      },
+      "B": {
+        "item": "zex:bladesoulsphere"
+      },
+      "C": {
+        "item": "zex:bladesoulingot",
+        "data": 0
+      },
+      "D": {
+        "item": "blade:yuzukitukumo",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:netherstar",
+        "data": 0
+      },
+      "F": {
+        "item": "minecraft:iron_block",
+        "data": 0
+      },
+      "G": {
+        "item": "minecraft:gold_block",
+        "data": 0
+      },
+      "H": {
+        "item": "minecraft:diamond_block",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "blade:yukari",
+      "count": 1
+    }
+  }
+  
+}

@@ -14,8 +14,7 @@
       "arrays": {
         "geometries": {
           "Array.item_geo": [
-            "Geometry.blank",
-            "geometry.sample",
+            "geometry.blank",
             "geometry.slashblade",
             "geometry.wood",
             "geometry.bamboo",
@@ -66,8 +65,7 @@
         },
         "textures": {
           "Array.item_texture": [
-            "Texture.blank",
-            "texture.sample",
+            "texture.blank",
             "texture.slashblade",
             "texture.wood",
             "texture.bamboo",

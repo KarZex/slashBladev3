@@ -2,22 +2,20 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "Blade_white"
+    "identifier": "zex:white_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "XXB",
-      "XBX",
-      "ACX"
+      "  B",
+      " B ",
+      "AC "
     ],
     "key": {
       "A": {
-        "item": "blade:wood",
-        "data": 0
+        "item": "blade:wood"
       },
       "B": {
-        "item": "minecraft:iron_ingot",
-        "data": 0
+        "item": "minecraft:iron_ingot"
       },
       "C": {
         "item": "minecraft:gold_ingot",
