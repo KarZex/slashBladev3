@@ -6,13 +6,13 @@
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "XXX",
-      "AXA",
-      "XAX"
+      "   ",
+      "A A",
+      " A "
     ],
     "key": {
       "A": {
-        "item": "zex:bamboot",
+        "item": "minecraft:bamboo",
         "data": 0
       },
       "B": {

@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "SB_cherry_log"
+    "identifier": "SB_tudura"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
@@ -10,11 +10,11 @@
     ],
     "key": {
       "A": {
-        "item": "zex:cherry_log",
+        "item": "minecraft:bamboo",
         "data": 0
       },
       "B": {
-        "item": "minecraft:log",
+        "item": "minecraft:wheat",
         "data": 0
       },
       "C": {
@@ -27,8 +27,8 @@
       }
     },
     "result": {
-      "item": "zex:cherry_plank",
-      "count": 4
+      "item": "zex:tudura",
+      "count": 8
     }
   }
   

@@ -2,7 +2,7 @@
   "format_version": "1.21.20",
   "minecraft:block": {
     "description": {
-      "identifier": "zex:kayabuki",
+      "identifier": "zex:tatami_tan",
       "traits": {
         "minecraft:placement_direction": {
           "enabled_states": [
@@ -17,12 +17,12 @@
     "components": {
       "minecraft:material_instances": {
         "*": {
-          "texture": "kayabuki",
+          "texture": "tatami_tan",
           "render_method": "opaque"
         }
       },
       "minecraft:geometry": "minecraft:geometry.full_block",
-      "minecraft:loot": "loot_tables/blocks/kayabuki.json",
+      "minecraft:loot": "loot_tables/blocks/tatami_tan.json",
       "minecraft:map_color": "#00ff00",
       "minecraft:destructible_by_mining": {
         "seconds_to_destroy": 0.1

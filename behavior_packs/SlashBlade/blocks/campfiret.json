@@ -30,7 +30,36 @@
       },
       "minecraft:geometry": "geometry.andon",
       "minecraft:loot": "loot_tables/blocks/andon.json",
-      "minecraft:map_color": "#00ff00"
+      "minecraft:map_color": "#00ff00",
+      "minecraft:light_emission": 15,
+      "minecraft:light_dampening": 0,
+      "minecraft:selection_box": {
+        "origin": [
+          -8,
+          0.0,
+          -8.0
+        ],
+        "size": [
+          16,
+          2.0,
+          16.0
+        ]
+      },
+      "minecraft:collision_box": {
+        "origin": [
+          -8,
+          0.0,
+          -8.0
+        ],
+        "size": [
+          16,
+          2.0,
+          16.0
+        ]
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0
+      }
     },
     "permutations": [
       {

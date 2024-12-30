@@ -13,6 +13,9 @@ for file in os.listdir('.'):
         if "minecraft:material_instances" in fjson["minecraft:block"]["components"]:
             data_json["minecraft:block"]["components"]["minecraft:material_instances"] = fjson["minecraft:block"]["components"]["minecraft:material_instances"]
 
+        if "minecraft:loot" in fjson["minecraft:block"]["components"]:
+            data_json["minecraft:block"]["components"]["minecraft:loot"] = fjson["minecraft:block"]["components"]["minecraft:loot"]
+
         
         if "minecraft:geometry" in fjson["minecraft:block"]["components"]:
             data_json["minecraft:block"]["components"]["minecraft:geometry"] = fjson["minecraft:block"]["components"]["minecraft:geometry"]

@@ -7,12 +7,12 @@
     "tags": [ "crafting_table" ],
     "pattern": [
       "ABA",
-      "AXA",
-      "AXA"
+      "A A",
+      "A A"
     ],
     "key": {
       "A": {
-        "item": "zex:bamboot",
+        "item": "minecraft:bamboo",
         "data": 0
       },
       "B": {
