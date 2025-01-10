@@ -91,7 +91,9 @@ function bladeSwing( user,blade ){
 	const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
 	const level = world.scoreboard.getObjective(`blade`).getScore(user);
 	const d = callDamage( blade,level );
-	const victims = user.dimension.getEntities({location:user.location,maxDistance:3})
+	const victimsMob = user.dimension.getEntities({location:user.location,maxDistance:5,families:[ `mob` ] });
+	const victimsPlayer = user.dimension.getEntities({location:user.location,maxDistance:5,families:[`player`]});
+	const victims = victimsMob.concat(victimsPlayer);
 	if( victims.length > 1 ){
 		for( let i = 0; i < victims.length; i++ ){
 			if( victims[i].nameTag != user.nameTag ){
@@ -105,7 +107,7 @@ function bladeSwing( user,blade ){
 		}
 	}
 	else{
-		if (user.dimension.getEntities({location:user.location,maxDistance:5,families:[ `monster` ]}).length > 1){
+		if (user.dimension.getEntities({location:user.location,maxDistance:8,families:[ `monster` ]}).length > 1){
 			world.scoreboard.getObjective(`blade`).addScore(user,-3);
 		}
 	}
@@ -122,7 +124,7 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 		if( user.typeId == `minecraft:player` ){
 			bladeSoulcal( user,blade );
 		}
-		if( !user.isSneaking && user.isJumping && !user.isOnGround){
+		if( !user.isSneaking && !user.isOnGround){
 			user.addEffect(`levitation`,5,{ amplifier:5 });
 		}
 		

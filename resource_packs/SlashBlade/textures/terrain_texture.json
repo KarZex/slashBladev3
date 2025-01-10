@@ -10,11 +10,7 @@
 	
     "campfiret": { "textures": [ "textures/blocks/campfiret" ] },
 	
-    "cherry_leaves": { "textures": [ "textures/blocks/cherry_leaves" ] },
-	
-    "cherry_log_side": { "textures": [ "textures/blocks/sakura_log" ] },
-    "cherry_log_top": { "textures": [ "textures/blocks/sakura_log_top" ] },
-	
+
     "bambooblock_side": { "textures": [ "textures/blocks/bambooblock" ] },
     "bambooblock_top": { "textures": [ "textures/blocks/bambooblock_top" ] },
 	

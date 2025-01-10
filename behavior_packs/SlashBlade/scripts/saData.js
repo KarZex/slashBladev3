@@ -21,7 +21,9 @@ export class slashdimension {
     const pos = user.getViewDirection()
     const range = 5;
     const O = {x:user.location.x + range * pos.x,y:user.location.y + 1.5 + range * pos.y,z:user.location.z + range * pos.z};
-    const victims = user.dimension.getEntities({location:O,maxDistance:16,excludeNames:[user.nameTag],closest:1});
+    const victimsMob = user.dimension.getEntities({location:user.location,maxDistance:16,families:[ `mob` ],closest:1 });
+    const victimsPlayer = user.dimension.getEntities({location:user.location,maxDistance:16,excludeNames:[user.nameTag],families:[`player`],closest:1});
+    const victims = victimsMob.concat(victimsPlayer);
     if( victims.length > 0 ){
       const attackPos = victims[0].location;
       victims[0].applyDamage( 6,{ cause:`entityAttack`,damagingEntity:user });
@@ -132,7 +134,9 @@ export class lighting_swords {
     const pos = user.getViewDirection()
     const range = 5;
     const O = {x:user.location.x + range * pos.x,y:user.location.y + 1.5 + range * pos.y,z:user.location.z + range * pos.z};
-    const victims = user.dimension.getEntities({location:O,maxDistance:16,excludeNames:[user.nameTag],closest:1});
+    const victimsMob = user.dimension.getEntities({location:user.location,maxDistance:16,families:[ `mob` ],closest:1 });
+    const victimsPlayer = user.dimension.getEntities({location:user.location,maxDistance:16,excludeNames:[user.nameTag],families:[`player`],closest:1});
+    const victims = victimsMob.concat(victimsPlayer);
     if( victims.length > 0 ){
       const attackPos = victims[0].location;
       user.dimension.spawnEntity(`minecraft:lightning_bolt`,attackPos);
