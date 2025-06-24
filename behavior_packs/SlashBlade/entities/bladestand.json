@@ -4,6 +4,7 @@
     "description": {
       "identifier": "zex:bladestand",
       "spawn_category": "creature",
+      "runtime_identifier": "minecraft:armor_stand",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false

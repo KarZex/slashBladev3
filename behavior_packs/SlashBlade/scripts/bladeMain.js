@@ -84,6 +84,9 @@ function bladeSoulcal( user,blade ){
 		blade.setDynamicProperty("ProudSoul", soul );
 		user.setDynamicProperty("userXp",xp);
 	}
+	else{
+		user.setDynamicProperty("userXp",xp);
+	}
 }
 
 function bladeSwing( user,blade ){
@@ -114,7 +117,8 @@ function bladeSwing( user,blade ){
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
 }
 
-world.afterEvents.itemReleaseUse.subscribe( e => {
+
+world.afterEvents.itemStartUse.subscribe( e => {
 	if ( e.itemStack.typeId.includes(`blade:`) ){
 		const user = e.source;
 		const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
@@ -123,9 +127,6 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 		}
 		if( user.typeId == `minecraft:player` ){
 			bladeSoulcal( user,blade );
-		}
-		if( !user.isSneaking && !user.isOnGround){
-			user.addEffect(`levitation`,5,{ amplifier:5 });
 		}
 		
 		if( user.isSneaking && user.isOnGround ){
@@ -147,20 +148,11 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 			user.addEffect(`resistance`,8,{ amplifier:255 });
 			user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
 		}
-		else if( e.useDuration > -10 ){
-			bladeSwing( user,blade );
-		}
-		else if( e.useDuration <= -10 && blade.getDynamicProperty("sa") != undefined ){
-			const classRef = classReg[blade.getDynamicProperty("sa")];
-			const sa = new classRef();
-			if( sa.cost <= blade.getDynamicProperty("ProudSoul") ){
-				const soul = blade.getDynamicProperty("ProudSoul") - sa.cost;
-				blade.setDynamicProperty("ProudSoul", soul );
-				const lore = blade.getLore();
-				lore[1] = `§rProudSoul: ${soul}`;
-				blade.setLore(lore);
-				sa.fireSa( blade,user );
+		else {
+			if( user.isJumping){
+				user.addEffect(`levitation`,5,{ amplifier:5 });
 			}
+			bladeSwing( user,blade );
 		}
 	}
 } )
@@ -217,7 +209,20 @@ world.afterEvents.entityDie.subscribe( e => {
 
 world.afterEvents.itemCompleteUse.subscribe( e => {
 	if ( e.itemStack.typeId.includes(`blade:`) ){
-		e.source.runCommand(`say a`);
+		const user = e.source;
+		const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand); 
+		if( blade.getDynamicProperty("sa") != undefined ){
+			const classRef = classReg[blade.getDynamicProperty("sa")];
+			const sa = new classRef();
+			if( sa.cost <= blade.getDynamicProperty("ProudSoul") ){
+				const soul = blade.getDynamicProperty("ProudSoul") - sa.cost;
+				blade.setDynamicProperty("ProudSoul", soul );
+				const lore = blade.getLore();
+				lore[1] = `§rProudSoul: ${soul}`;
+				blade.setLore(lore);
+				sa.fireSa( blade,user );
+			}
+		}
 	}
 } )
 

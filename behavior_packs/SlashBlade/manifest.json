@@ -2,23 +2,23 @@
   "format_version": 2,
   "header": {
     "description": "抜刀剣modと竹modを再現したアドオンです。",
-    "name": "§gSlashBlade Addon V3.1",
-    "min_engine_version": [1, 21, 50 ],
-    "uuid": "802df5a1-3d62-4112-824d-861933922bd0",
-    "version": [1, 21, 50]
+    "name": "§gSlashBlade Addon V3.2",
+    "min_engine_version": [1, 21, 60 ],
+    "uuid": "534fa891-c8a4-46fa-816b-94d70f63bfd4",
+    "version": [1, 21, 60]
   },
   "modules": [
     {
       "description": "Data Module",
       "type": "data",
-      "uuid": "739a5d64-89c1-4fa4-9ecb-92de79ec872e",
+      "uuid": "4f62761d-c0d4-4a5b-a2bc-4f0cfe31a47c",
       "version": [1, 0, 0]
     },
     {
       "description": "Script API Module",
       "language": "javascript",
       "type": "script",
-      "uuid": "56354fdb-f3a7-4ec5-a852-e5e016fb9736",
+      "uuid": "68d538a2-71a5-41c7-8405-0e1eb60b9037",
       "version": [1, 0, 0],
       "entry": "scripts/bladeMain.js"
     }

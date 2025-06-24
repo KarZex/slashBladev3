@@ -27,8 +27,7 @@
         "data": 0
       },
       "E": {
-        "item": "minecraft:emerald_block",
-        "data": 10
+        "item": "minecraft:emerald_block"
       },
       "F": {
         "item": "minecraft:iron_block",

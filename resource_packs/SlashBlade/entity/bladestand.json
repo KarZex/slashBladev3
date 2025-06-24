@@ -10,6 +10,7 @@
       "textures": {
         "default": "textures/entity/stand",
         "blank": "textures/entity/stand",
+        "sample": "textures/models/sample",
         "slashblade": "textures/models/slashblade",
         "wood": "textures/models/wood",
         "bamboo": "textures/models/bamboo",
@@ -60,6 +61,7 @@
       "geometry": {
         "default": "geometry.bladestand",
         "blank": "geometry.blank",
+        "sample": "geometry.sample",
         "slashblade": "geometry.slashblade",
         "wood": "geometry.wood",
         "bamboo": "geometry.wood",
