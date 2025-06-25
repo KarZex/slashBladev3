@@ -235,9 +235,3 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		e.sourceEntity.getComponent(`minecraft:variant`).value = y
 	}
 } )
-
-system.runInterval( () => {
-	world.getDimension(`minecraft:overworld`).runCommand(`function out/over`);
-	world.getDimension(`minecraft:nether`).runCommand(`tag @a[x=-2048,y=0,z=-2048,dx=4096,dy=128,dz=4096] add noout`);
-	world.getDimension(`the_end`).runCommand(`function out/end`);
-},20 )
