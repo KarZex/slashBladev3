@@ -100,8 +100,8 @@ function bladeSwing( user,blade ){
 	const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
 	const level = world.scoreboard.getObjective(`blade`).getScore(user);
 	const d = callDamage( blade,level );
-	const victimsMob = user.dimension.getEntities({location:user.location,maxDistance:5,families:[ `mob` ] });
-	const victimsPlayer = user.dimension.getEntities({location:user.location,maxDistance:5,families:[`player`]});
+	const victimsMob = user.dimension.getEntities({location:user.location,maxDistance:6,families:[ `mob` ] });
+	const victimsPlayer = user.dimension.getEntities({location:user.location,maxDistance:6,families:[`player`]});
 	const victims = victimsMob.concat(victimsPlayer);
 	if( victims.length > 1 ){
 		for( let i = 0; i < victims.length; i++ ){
