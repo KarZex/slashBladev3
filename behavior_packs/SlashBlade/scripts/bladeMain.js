@@ -4,24 +4,30 @@ import { bladeData } from "./blade";
 import { classReg, drive, slashdimension } from "./saData";
 import "./compornents";
 
+const Rank = [ `D`,`C`,`B`,`A`,`1S`,`2S`,`3S`,`3S` ];
+
+function print( text ){
+	world.sendMessage(`§a[debug]§r:${text}`)
+}
+
 function callDamage( blade, score ){
 	const bladeId = blade.typeId.split(`:`)[1];
 	const atk = bladeData[`${bladeId}`][`damage`];
 	const atkPlus = blade.getDynamicProperty("damage");
 	const overkill = blade.getDynamicProperty("killCount") >= 1000;
-	if( score <= 19 ){
+	if( score < 32 * 2 ){
 		return 2;
 	}
-	else if( score >= 20 && score < 40 ){
+	else if( score >= 32 * 2 && score < 32 * 4 ){
 		return atk;
 	}
-	else if( score >= 40 && score < 47 && overkill == false ){
+	else if( score >= 32 * 4 && score < 150 && overkill == false ){
 		return atk;
 	}
-	else if( score >= 40 && score < 47 && overkill == true ){
+	else if( score >= 32 * 4 && score < 150 && overkill == true ){
 		return atkPlus;
 	}
-	else if ( score >= 47 ){
+	else if ( score >= 150 ){
 		return atkPlus;
 	}
 }
@@ -101,7 +107,7 @@ function bladeSwing( user,blade ){
 		for( let i = 0; i < victims.length; i++ ){
 			if( victims[i].nameTag != user.nameTag ){
 				victims[i].applyDamage( d,{ cause:`override`,damagingEntity:user });
-				world.scoreboard.getObjective(`blade`).addScore(user,2);
+				world.scoreboard.getObjective(`blade`).addScore(user,7);
 				victims[i].applyKnockback(0,0,0,0);
 				if( bladeItemEnch.hasEnchantment("minecraft:fire_aspect") ){
 					victims[i].setOnFire(5);
@@ -110,18 +116,16 @@ function bladeSwing( user,blade ){
 		}
 	}
 	else{
-		if (user.dimension.getEntities({location:user.location,maxDistance:8,families:[ `monster` ]}).length > 1){
-			world.scoreboard.getObjective(`blade`).addScore(user,-3);
-		}
+		world.scoreboard.getObjective(`blade`).addScore(user,-10);
 	}
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
 }
 
-
-world.afterEvents.itemStartUse.subscribe( e => {
-	if ( e.itemStack.typeId.includes(`blade:`) ){
-		const user = e.source;
-		const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+world.afterEvents.itemReleaseUse.subscribe( e => {
+	const user = e.source;
+	const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+	print(e.useDuration)
+	if ( e.itemStack.typeId.includes(`blade:`) && e.useDuration > 100000 ){
 		if( blade.getDynamicProperty("killCount") == undefined ){
 			bladeInstant( user,blade );
 		}
@@ -155,13 +159,25 @@ world.afterEvents.itemStartUse.subscribe( e => {
 			bladeSwing( user,blade );
 		}
 	}
+	else if( e.itemStack.typeId.includes(`blade:`) && blade.getDynamicProperty("sa") != undefined && e.useDuration < 100000 ){
+		const classRef = classReg[blade.getDynamicProperty("sa")];
+		const sa = new classRef();
+		if( sa.cost <= blade.getDynamicProperty("ProudSoul") ){
+			const soul = blade.getDynamicProperty("ProudSoul") - sa.cost;
+			blade.setDynamicProperty("ProudSoul", soul );
+			const lore = blade.getLore();
+			lore[1] = `§rProudSoul: ${soul}`;
+			blade.setLore(lore);
+			sa.fireSa( blade,user );
+		}
+	}
 } )
 
 world.afterEvents.entityHitEntity.subscribe( e => {
 	const attacker = e.damagingEntity;
 	if( attacker.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand).typeId.includes(`blade:`) ){
 		const vict = e.hitEntity;
-		world.scoreboard.getObjective(`blade`).addScore(attacker,2);
+		world.scoreboard.getObjective(`blade`).addScore(attacker,7);
 		world.scoreboard.getObjective(`printlevel`).setScore(attacker,100);
 		if( world.scoreboard.getObjective(`meleeup`).getScore( attacker ) == 0 ){
 			vict.applyKnockback(0,0,0,0.5);
@@ -182,7 +198,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		let vict = e.getEntityHit().entity;
 		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
 		let gunName = e.projectile.typeId
-		world.scoreboard.getObjective(`blade`).addScore(e.source,2);
+		world.scoreboard.getObjective(`blade`).addScore(e.source,7);
 		world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
 	}
 })
@@ -233,5 +249,39 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		let y =  Number(M[1]);
 		e.sourceEntity.getComponent(`minecraft:skin_id`).value = x
 		e.sourceEntity.getComponent(`minecraft:variant`).value = y
+	}
+	else if( e.id == "zex:printlevel" ){
+		const player = e.sourceEntity;
+		let score = world.scoreboard.getObjective(`blade`).getScore(player);
+		let r = Math.floor(score / 32);
+		if(score < 0){ 
+			world.scoreboard.getObjective(`blade`).setScore(player,0);
+			score = 0;
+		 }
+		else if(score > 160){ 
+			world.scoreboard.getObjective(`blade`).setScore(player,160);
+			score = 160;
+		}
+		let bar = score % 32;
+		//S,SS,SSS mode
+		if( r >= 4 ){
+			bar = score - 32 * 4;
+			r = 4 + Math.floor(bar / 11); 
+		}
+
+		//type 00, 01, 02, ...
+		if( bar < 10 ){
+			bar = `0${bar}`
+		}
+		//prevent over 33 
+		else if( bar > 32 ){
+			bar = `32`;
+		}
+
+		//prevent over 6 
+		if( r > 6 ){
+			r = 6;
+		}
+		player.runCommand(`title @s actionbar §rair.${Rank[r]}${bar}`)
 	}
 } )

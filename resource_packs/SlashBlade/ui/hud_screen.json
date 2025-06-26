@@ -1,0 +1,493 @@
+{
+    "hud_title_text": {
+        "type": "stack_panel",
+        "orientation": "vertical",
+        "offset": [
+            0,
+            -19
+        ],
+        "layer": 1,
+        "alpha": "@hud.anim_title_text_alpha_in",
+        "propagate_alpha": false,
+        "controls": [
+            {
+                "title_frame": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        "100%cm"
+                    ],
+                    "controls": [
+                        {
+                            "title_background": {
+                                "type": "image",
+                                "size": [
+                                    "100%sm + 30px",
+                                    "100%sm + 6px"
+                                ],
+                                "texture": "textures/ui/hud_tip_text_background",
+                                "alpha": "@hud.anim_title_background_alpha_in"
+                            }
+                        },
+                        {
+                            "title": {
+                                "type": "label",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "color": "$title_command_text_color",
+                                "enable_profanity_filter": true,
+                                "text": "#text",
+                                "layer": 31,
+                                "localize": false,
+                                "font_size": "extra_large",
+                                "variables": [
+                                    {
+                                        "requires": "(not $title_shadow)",
+                                        "$show_shadow": false
+                                    },
+                                    {
+                                        "requires": "$title_shadow",
+                                        "$show_shadow": true
+                                    }
+                                ],
+                                "shadow": "$show_shadow",
+                                "text_alignment": "center",
+                                "ignored": "(not($title_text=($title_text-'§rair.')))",
+                                "offset": [
+                                    0,
+                                    6
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_title_text_string",
+                                        "binding_name_override": "#text",
+                                        "binding_type": "global"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "subtitle_frame": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        "100%cm"
+                    ],
+                    "controls": [
+                        {
+                            "subtitle_background": {
+                                "type": "image",
+                                "size": [
+                                    "100%sm + 20px",
+                                    "100%sm + 5px"
+                                ],
+                                "offset": [
+                                    0,
+                                    16
+                                ],
+                                "texture": "textures/ui/hud_tip_text_background",
+                                "variables": [
+                                    {
+                                        "requires": "$subtitle_initially_visible",
+                                        "$subtitle_bg": "@hud.anim_title_background_alpha_in"
+                                    },
+                                    {
+                                        "requires": "(not $subtitle_initially_visible)",
+                                        "$subtitle_bg": "@hud.anim_subtitle_background_alpha_in"
+                                    }
+                                ],
+                                "alpha": "$subtitle_bg"
+                            }
+                        },
+                        {
+                            "subtitle": {
+                                "type": "label",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "color": "$title_command_text_color",
+                                "enable_profanity_filter": true,
+                                "text": "#text",
+                                "layer": 31,
+                                "localize": false,
+                                "font_size": "large",
+                                "variables": [
+                                    {
+                                        "requires": "$subtitle_initially_visible",
+                                        "$anim_type": 1.0
+                                    },
+                                    {
+                                        "requires": "(not $subtitle_initially_visible)",
+                                        "$anim_type": "@hud.anim_subtitle_text_alpha_in"
+                                    },
+                                    {
+                                        "requires": "(not $title_shadow)",
+                                        "$show_shadow": false
+                                    },
+                                    {
+                                        "requires": "$title_shadow",
+                                        "$show_shadow": true
+                                    }
+                                ],
+                                "shadow": "$show_shadow",
+                                "alpha": "$anim_type",
+                                "text_alignment": "center",
+                                "ignored": "(not($subtitle_text=($subtitle_text-'§rair.')))",
+                                "offset": [
+                                    1,
+                                    19
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#hud_subtitle_text_string",
+                                        "binding_name_override": "#text",
+                                        "binding_type": "global"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "hud_actionbar_rank_factory@hud.hud_actionbar_rank_factory": {}
+                    },
+                    {
+                        "hud_actionbar_bar_factory@hud.hud_actionbar_bar_factory": {}
+                    }
+                ]
+            }
+        ],
+        "type": "panel"
+    },
+    "hud_actionbar_rank_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_actionbar_text_factory",
+            "control_ids": {
+                "hud_actionbar_text": "hud_actionbar_text_rank@hud.hud_actionbar_text_rank"
+            }
+        }
+    },
+    "hud_actionbar_text_rank": {
+        "$texture|default": "textures/ui/rankD",
+        "$actb_string": "§rair.",
+        "$atext": "$actionbar_text",
+        "$S": "1S",
+        "$SS": "2S",
+        "$SSS": "3S",
+        "visible": "( not ($atext - $actb_string = $atext))",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "layer": 3,
+        "offset": [
+            "15%",
+            "-15%"
+        ],
+        "size": [
+            "8%",
+            "8%"
+        ],
+        "texture": "$texture",
+        "type": "image",
+        "variables": [
+            {
+                "$texture": "textures/ui/rankD",
+                "requires": "(not ($atext - D = $atext))"
+            },
+            {
+                "$texture": "textures/ui/rankC",
+                "requires": "(not ($atext - C = $atext))"
+            },
+            {
+                "$texture": "textures/ui/rankB",
+                "requires": "(not ($atext - B = $atext))"
+            },
+            {
+                "$texture": "textures/ui/rankA",
+                "requires": "(not ($atext - A = $atext))"
+            },
+            {
+                "$texture": "textures/ui/rankS",
+                "requires": "(not ($atext - $S = $atext))"
+            },
+            {
+                "$texture": "textures/ui/rankSS",
+                "requires": "(not ($atext - $SS = $atext))"
+            },
+            {
+                "$texture": "textures/ui/rankSSS",
+                "requires": "(not ($atext - $SSS = $atext))"
+            }
+        ]
+    },
+    "hud_actionbar_bar_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_actionbar_text_factory",
+            "control_ids": {
+                "hud_actionbar_text": "hud_actionbar_text_bar@hud.hud_actionbar_text_bar"
+            }
+        }
+    },
+    "hud_actionbar_text_bar": {
+        "$texture|default": "textures/ui/bar/bar00",
+        "$actb_string": "§rair.",
+        "$atext": "$actionbar_text",
+        "visible": "( not ($atext - $actb_string = $atext))",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "layer": 2,
+        "offset": [
+            "15%",
+            "-10%"
+        ],
+        "size": [
+            "5%",
+            "5%"
+        ],
+        "$bar00": "00",
+        "$bar01": "01",
+        "$bar02": "02",
+        "$bar03": "03",
+        "$bar04": "04",
+        "$bar05": "05",
+        "$bar06": "06",
+        "$bar07": "07",
+        "$bar08": "08",
+        "$bar09": "09",
+        "$bar10": "10",
+        "$bar11": "11",
+        "$bar12": "12",
+        "$bar13": "13",
+        "$bar14": "14",
+        "$bar15": "15",
+        "$bar16": "16",
+        "$bar17": "17",
+        "$bar18": "18",
+        "$bar19": "19",
+        "$bar20": "20",
+        "$bar21": "21",
+        "$bar22": "22",
+        "$bar23": "23",
+        "$bar24": "24",
+        "$bar25": "25",
+        "$bar26": "26",
+        "$bar27": "27",
+        "$bar28": "28",
+        "$bar29": "29",
+        "$bar30": "30",
+        "$bar31": "31",
+        "$bar32": "32",
+        "texture": "$texture",
+        "type": "image",
+        "variables": [
+            {
+                "$texture": "textures/ui/bar/bar00",
+                "requires": "(not ($atext - $bar00 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar01",
+                "requires": "(not ($atext - $bar01 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar02",
+                "requires": "(not ($atext - $bar02 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar03",
+                "requires": "(not ($atext - $bar03 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar04",
+                "requires": "(not ($atext - $bar04 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar05",
+                "requires": "(not ($atext - $bar05 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar06",
+                "requires": "(not ($atext - $bar06 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar07",
+                "requires": "(not ($atext - $bar07 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar08",
+                "requires": "(not ($atext - $bar08 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar09",
+                "requires": "(not ($atext - $bar09 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar10",
+                "requires": "(not ($atext - $bar10 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar11",
+                "requires": "(not ($atext - $bar11 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar12",
+                "requires": "(not ($atext - $bar12 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar13",
+                "requires": "(not ($atext - $bar13 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar14",
+                "requires": "(not ($atext - $bar14 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar15",
+                "requires": "(not ($atext - $bar15 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar16",
+                "requires": "(not ($atext - $bar16 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar17",
+                "requires": "(not ($atext - $bar17 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar18",
+                "requires": "(not ($atext - $bar18 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar19",
+                "requires": "(not ($atext - $bar19 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar20",
+                "requires": "(not ($atext - $bar20 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar21",
+                "requires": "(not ($atext - $bar21 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar22",
+                "requires": "(not ($atext - $bar22 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar23",
+                "requires": "(not ($atext - $bar23 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar24",
+                "requires": "(not ($atext - $bar24 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar25",
+                "requires": "(not ($atext - $bar25 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar26",
+                "requires": "(not ($atext - $bar26 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar27",
+                "requires": "(not ($atext - $bar27 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar28",
+                "requires": "(not ($atext - $bar28 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar29",
+                "requires": "(not ($atext - $bar29 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar30",
+                "requires": "(not ($atext - $bar30 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar31",
+                "requires": "(not ($atext - $bar31 = $atext))"
+            },
+
+            {
+                "$texture": "textures/ui/bar/bar32",
+                "requires": "(not ($atext - $bar32 = $atext))"
+            }
+        ]
+    },
+    "hud_actionbar_text": {
+        "$actb_string": "§rair",
+        "$atext": "$actionbar_text",
+        "type": "image",
+        "size": [
+            "100%c + 12px",
+            "100%c + 5px"
+        ],
+        "offset": [
+            0,
+            "50%-68px"
+        ],
+        "texture": "textures/ui/hud_tip_text_background",
+        "alpha": "@hud.anim_actionbar_text_background_alpha_out",
+        "visible": "($atext - $actb_string = $atext)",
+        "propagate_alpha": false,
+        "controls": [
+            {
+                "actionbar_message": {
+                    "type": "label",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "color": "$tool_tip_text",
+                    "enable_profanity_filter": true,
+                    "layer": 31,
+                    "text": "$actionbar_text",
+                    "localize": false,
+                    "alpha": "@hud.anim_actionbar_text_alpha_out"
+                }
+            }
+        ]
+    }
+}

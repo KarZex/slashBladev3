@@ -20,6 +20,10 @@
 			"scale_power_by_draw_duration" :false,
 			"charge_on_draw" :true
 		},
+		"minecraft:use_modifiers":{
+		  "use_duration": 5001.0,
+		  "movement_modifier": 0.4
+		},
       "minecraft:icon": "wood",
 	  "minecraft:durability": {
 		"max_durability": 60

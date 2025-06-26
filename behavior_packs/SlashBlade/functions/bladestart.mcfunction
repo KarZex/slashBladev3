@@ -5,7 +5,9 @@ function cooldown
 
 execute as @a[scores={blade=1..}] run function bladelevel 
 
-execute as @a[scores={printlevel=1..}] run function level
+tag @a[scores={printlevel=1..}] add printlevel
+
+execute as @a[tag=printlevel] run function level
 
 scoreboard players remove @a[scores={sa=1..}] sa 1
 scoreboard players remove @a[scores={meleeup=1..}] meleeup 1
