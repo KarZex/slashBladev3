@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.60",
+  "format_version": "1.21.20",
   "minecraft:item": {
     "description": {
       "identifier": "blade:muramasa",
@@ -17,10 +17,10 @@
       "minecraft:shooter": {
         "max_draw_duration": 1.0,
         "scale_power_by_draw_duration": false,
-        "charge_on_draw": false
+        "charge_on_draw": true
       },
       "minecraft:use_modifiers": {
-        "use_duration": 5001,
+        "use_duration": 5001.0,
         "movement_modifier": 0.4
       },
       "minecraft:icon": "muramasa",

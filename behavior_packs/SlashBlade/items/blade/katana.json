@@ -20,7 +20,7 @@
         "charge_on_draw": true
       },
       "minecraft:use_modifiers": {
-        "use_duration": 0.7,
+        "use_duration": 5001.0,
         "movement_modifier": 0.4
       },
       "minecraft:icon": "katana",
