@@ -133,7 +133,7 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 			bladeSoulcal( user,blade );
 		}
 		
-		if( user.isSneaking && user.isOnGround ){
+		if( user.isSneaking && (user.isOnGround || user.isJumping) ){
 			user.playSound(`swingblade.c`);
 			const v = user.getVelocity();
 			let abs_v = v.x*v.x + v.z*v.z;
@@ -145,7 +145,7 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 			user.addEffect(`resistance`,8,{ amplifier:255 });
 			user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
 		}
-		else if( user.isSneaking && !user.isOnGround ){
+		else if( user.isSneaking && !user.isOnGround && !user.isJumping ){
 			user.playSound(`swingblade.c`);
 			user.applyKnockback(0,0,0,-5);
 			world.scoreboard.getObjective(`around`).setScore(user,8);
