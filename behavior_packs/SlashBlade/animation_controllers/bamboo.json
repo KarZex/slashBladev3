@@ -130,6 +130,30 @@
         }
       }
     },
+    "controller.animation.absorb": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/particle zex:absorb_particle ~~~"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/particle zex:absorb_particle ~~~"
+          ]
+        }
+      }
+    },
     "controller.animation.dronespawn": {
       "states": {
         "default": {

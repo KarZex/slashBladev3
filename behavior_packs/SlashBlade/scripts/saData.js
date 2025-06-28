@@ -161,6 +161,22 @@ export class water_drive {
   }
 }
 
+export class absorb {
+  cost = 10
+  damage = 6
+  async fireSa( blade, user ){
+    user.playSound(`swingblade.sab`);
+    let FirePos = user.location
+    FirePos.y = FirePos.y + 1.125
+    for( let i = 0; i < 5; i++ ){
+      const fire = user.dimension.spawnEntity(`safire:absorb`,FirePos);
+      fire.getComponent(`minecraft:projectile`).owner = user
+      fire.getComponent(`minecraft:projectile`).shoot( user.getViewDirection() );
+      await system.waitTicks(1);
+    }
+  }
+}
+
 export const classReg = {
   drive,
   slashdimension,
@@ -171,5 +187,6 @@ export const classReg = {
   waveedge,
   fireup,
   lighting_swords,
-  water_drive
+  water_drive,
+  absorb
 }

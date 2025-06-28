@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+	"format_version": "1.16.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "safire:absorb",
@@ -8,10 +8,12 @@
 			"is_experimental": false,
 			"runtime_identifier": "minecraft:snowball",
 			"scripts": {
-			"animate": [ "walk" ]
+				"animate": [
+					"walk"
+				]
 			},
 			"animations": {
-			"walk": "controller.animation.saflame"
+				"walk": "controller.animation.absorb"
 			}
 		},
 		"components": {
@@ -27,21 +29,12 @@
 			},
 			"minecraft:projectile": {
 				"on_hit": {
-					"particle_on_hit": {
-						"particle_type": "smoke",
-						"num_particles": 50,
-						"on_entity_hit": false,
-						"on_other_hit": true
-					},
-					"catch_fire": true,
 					"impact_damage": {
 						"damage": 0,
-						"catch_fire": true,
 						"knockback": false
-					},
-					"remove_on_hit": {}
+					}
 				},
-				"power": 2,
+				"power": 0.5,
 				"gravity": 0,
 				"inertia": 1.5,
 				"uncertainty_base": 10,

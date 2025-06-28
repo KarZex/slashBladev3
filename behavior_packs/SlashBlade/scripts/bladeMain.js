@@ -165,7 +165,7 @@ function bladeSwing( user,blade ){
 world.afterEvents.itemReleaseUse.subscribe( e => {
 	const user = e.source;
 	const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-	if ( e.itemStack.typeId.includes(`blade:`) && e.useDuration > 100000 ){
+	if ( e.itemStack.typeId.includes(`blade:`) && e.useDuration > 100010 ){
 		if( blade.getDynamicProperty("killCount") == undefined  ){
 			bladeInstant( user,blade );
 		}
@@ -196,13 +196,11 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 			bladeSwing( user,blade );
 		}
 	}
-	else if( e.itemStack.typeId.includes(`blade:`) && blade.getDynamicProperty("sa") != undefined && e.useDuration < 100000 ){
+	else if( e.itemStack.typeId.includes(`blade:`) && blade.getDynamicProperty("sa") != undefined && e.useDuration <= 100010 ){
 		const classRef = classReg[blade.getDynamicProperty("sa")];
 		const sa = new classRef();
-		setBladeDamage(1,user);
 		if( sa.cost <= blade.getDynamicProperty("ProudSoul") ){
-			blade.getItem().getComponent(ItemComponentTypes.Durability).damage += 1;
-			user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand).setItem(blade.getItem())
+			setBladeDamage(1,user);
 			const soul = blade.getDynamicProperty("ProudSoul") - sa.cost;
 			blade.setDynamicProperty("ProudSoul", soul );
 			const lore = blade.getLore();
@@ -239,7 +237,24 @@ world.afterEvents.entityHitEntity.subscribe( e => {
 } )
 
 world.afterEvents.projectileHitEntity.subscribe( e => {
-	if( e.projectile.typeId.includes("safire")){
+	const vict = e.getEntityHit().entity;
+	const attacker = e.source;
+	if( e.projectile.typeId.includes("absorb") ){
+		if( attacker.nameTag != vict.nameTag ){
+			e.projectile.remove();
+			const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
+			const sa = new classRef();
+			const dmg = callDamage(attacker.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand),world.scoreboard.getObjective(`blade`).getScore(attacker));
+			vict.applyDamage(dmg,{ cause:`magic`,damagingEntity:e.source });
+			world.scoreboard.getObjective(`blade`).addScore(e.source,10);
+			world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
+			e.dimension.spawnParticle(`minecraft:crop_growth_emitter`,attacker.location);
+			const PHealth = attacker.getComponent(EntityComponentTypes.Health).currentValue;
+			const PMHealth = attacker.getComponent(EntityComponentTypes.Health).effectiveMax;
+			attacker.getComponent(EntityComponentTypes.Health).setCurrentValue(Math.min(PHealth + dmg,PMHealth));
+		}
+	}
+	else if( e.projectile.typeId.includes("safire")){
 		const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
 		const sa = new classRef();
 		const dmg = sa.damage;
@@ -252,7 +267,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 })
 
 world.afterEvents.entityDie.subscribe( e => {
-	let killer = e.damageSource.damagingEntity;
+	const killer = e.damageSource.damagingEntity;
 	if( killer.typeId == `minecraft:player` ){
 		if( killer.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand).typeId.includes(`blade:`) ){
 			const loc = e.deadEntity.location;
@@ -282,6 +297,15 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		let y =  Number(M[1]);
 		e.sourceEntity.getComponent(`minecraft:skin_id`).value = x
 		e.sourceEntity.getComponent(`minecraft:variant`).value = y
+	}
+	else if( e.id == "zex:setsa" ){	
+		const user = e.sourceEntity;
+		const bladeSlot = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+		const Tblade = user.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
+		bladeSlot.setDynamicProperty(`sa`,e.message);
+		const lore = bladeSlot.getLore();
+		lore[3] = `§rSA: ${bladeSlot.getDynamicProperty("sa")}`;
+		bladeSlot.setLore(lore);
 	}
 	else if( e.id == "zex:printlevel" ){
 		const player = e.sourceEntity;
