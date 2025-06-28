@@ -296,162 +296,130 @@
                 "$texture": "textures/ui/bar/bar00",
                 "requires": "(not ($atext - $bar00 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar01",
                 "requires": "(not ($atext - $bar01 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar02",
                 "requires": "(not ($atext - $bar02 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar03",
                 "requires": "(not ($atext - $bar03 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar04",
                 "requires": "(not ($atext - $bar04 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar05",
                 "requires": "(not ($atext - $bar05 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar06",
                 "requires": "(not ($atext - $bar06 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar07",
                 "requires": "(not ($atext - $bar07 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar08",
                 "requires": "(not ($atext - $bar08 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar09",
                 "requires": "(not ($atext - $bar09 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar10",
                 "requires": "(not ($atext - $bar10 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar11",
                 "requires": "(not ($atext - $bar11 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar12",
                 "requires": "(not ($atext - $bar12 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar13",
                 "requires": "(not ($atext - $bar13 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar14",
                 "requires": "(not ($atext - $bar14 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar15",
                 "requires": "(not ($atext - $bar15 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar16",
                 "requires": "(not ($atext - $bar16 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar17",
                 "requires": "(not ($atext - $bar17 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar18",
                 "requires": "(not ($atext - $bar18 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar19",
                 "requires": "(not ($atext - $bar19 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar20",
                 "requires": "(not ($atext - $bar20 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar21",
                 "requires": "(not ($atext - $bar21 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar22",
                 "requires": "(not ($atext - $bar22 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar23",
                 "requires": "(not ($atext - $bar23 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar24",
                 "requires": "(not ($atext - $bar24 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar25",
                 "requires": "(not ($atext - $bar25 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar26",
                 "requires": "(not ($atext - $bar26 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar27",
                 "requires": "(not ($atext - $bar27 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar28",
                 "requires": "(not ($atext - $bar28 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar29",
                 "requires": "(not ($atext - $bar29 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar30",
                 "requires": "(not ($atext - $bar30 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar31",
                 "requires": "(not ($atext - $bar31 = $atext))"
             },
-
             {
                 "$texture": "textures/ui/bar/bar32",
                 "requires": "(not ($atext - $bar32 = $atext))"
