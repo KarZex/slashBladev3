@@ -191,12 +191,12 @@
         "anchor_to": "center",
         "layer": 3,
         "offset": [
-            "15%",
-            "-15%"
+            "22.5%",
+            "-22.5%"
         ],
         "size": [
-            "8%",
-            "8%"
+            "15%",
+            "15%"
         ],
         "texture": "$texture",
         "type": "image",
@@ -249,8 +249,8 @@
         "anchor_to": "center",
         "layer": 2,
         "offset": [
-            "15%",
-            "-10%"
+            "22.5%",
+            "-17.5%"
         ],
         "size": [
             "5%",

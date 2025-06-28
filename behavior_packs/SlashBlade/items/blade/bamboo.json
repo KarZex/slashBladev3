@@ -23,9 +23,35 @@
         "use_duration": 5001.0,
         "movement_modifier": 0.4
       },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "zex:proudsoul"
+            ],
+            "repair_amount": 15
+          },
+          {
+            "items": [
+              "zex:bladesoulsphere"
+            ],
+            "repair_amount": 60
+          },
+          {
+            "items": [
+              "zex:tinyproudsoul"
+            ],
+            "repair_amount": 5
+          }
+        ]
+      },
       "minecraft:icon": "bamboo",
       "minecraft:durability": {
-        "max_durability": 60
+        "max_durability": 60,
+        "damage_chance": {
+          "max": 1,
+          "min": 1
+        }
       },
       "minecraft:enchantable": {
         "value": 14,
