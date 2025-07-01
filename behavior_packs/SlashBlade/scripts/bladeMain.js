@@ -339,6 +339,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		if( r > 6 ){
 			r = 6;
 		}
-		player.runCommand(`title @s actionbar §rair.${Rank[r]}${bar}`)
+		player.runCommand(`title @s actionbar §rzex.blade.${Rank[r]}${bar}`)
 	}
 } )

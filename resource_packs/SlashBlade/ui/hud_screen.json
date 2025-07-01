@@ -52,7 +52,7 @@
                                 ],
                                 "shadow": "$show_shadow",
                                 "text_alignment": "center",
-                                "ignored": "(not($title_text=($title_text-'§rair.')))",
+                                "ignored": "(not($title_text=($title_text-'§rzex.blade.')))",
                                 "offset": [
                                     0,
                                     6
@@ -134,7 +134,7 @@
                                 "shadow": "$show_shadow",
                                 "alpha": "$anim_type",
                                 "text_alignment": "center",
-                                "ignored": "(not($subtitle_text=($subtitle_text-'§rair.')))",
+                                "ignored": "(not($subtitle_text=($subtitle_text-'§rzex.blade.')))",
                                 "offset": [
                                     1,
                                     19
@@ -181,7 +181,7 @@
     },
     "hud_actionbar_text_rank": {
         "$texture|default": "textures/ui/rankD",
-        "$actb_string": "§rair.",
+        "$actb_string": "§rzex.blade.",
         "$atext": "$actionbar_text",
         "$S": "1S",
         "$SS": "2S",
@@ -242,7 +242,7 @@
     },
     "hud_actionbar_text_bar": {
         "$texture|default": "textures/ui/bar/bar00",
-        "$actb_string": "§rair.",
+        "$actb_string": "§rzex.blade.",
         "$atext": "$actionbar_text",
         "visible": "( not ($atext - $actb_string = $atext))",
         "anchor_from": "center",
@@ -427,7 +427,7 @@
         ]
     },
     "hud_actionbar_text": {
-        "$actb_string": "§rair",
+        "$actb_string": "§rzex.blade",
         "$atext": "$actionbar_text",
         "type": "image",
         "size": [
