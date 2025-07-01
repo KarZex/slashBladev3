@@ -47,7 +47,8 @@ export const bladeData = {
     "ench1": {
       "id": "looting",
       "lvl": 1
-    }
+    },
+    "insa": "slashdimension"
   },
   "stone_katana": {
     "damage": 4,
@@ -55,7 +56,8 @@ export const bladeData = {
     "ench1": {
       "id": "looting",
       "lvl": 1
-    }
+    },
+    "insa": "slashdimension"
   },
   "iron_katana": {
     "damage": 6,
@@ -63,7 +65,8 @@ export const bladeData = {
     "ench1": {
       "id": "looting",
       "lvl": 1
-    }
+    },
+    "insa": "slashdimension"
   },
   "diamond_katana": {
     "damage": 8,
@@ -71,7 +74,8 @@ export const bladeData = {
     "ench1": {
       "id": "looting",
       "lvl": 1
-    }
+    },
+    "insa": "slashdimension"
   },
   "golden_katana": {
     "damage": 2,
@@ -79,7 +83,8 @@ export const bladeData = {
     "ench1": {
       "id": "looting",
       "lvl": 1
-    }
+    },
+    "insa": "slashdimension"
   },
   "tagayasan": {
     "damage": 6,

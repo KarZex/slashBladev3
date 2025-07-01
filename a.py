@@ -2,7 +2,7 @@ import json
 import csv
 import shutil
 
-csv_path = open("blades.csv","r",encoding="utf-8")
+csv_path = open("blades.csv","r")
 csv_reader = csv.reader(csv_path) 
 row_count = 0
 

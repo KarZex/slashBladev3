@@ -1,0 +1,41 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "safire:slashdim",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "runtime_identifier": "minecraft:arrow",
+            "scripts": {
+                "animate": [
+                    "walk"
+                ]
+            },
+            "animations": {
+                "walk": "controller.animation.slashdim"
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "sabullet"
+                ]
+            },
+            "minecraft:explode": {
+                "fuse_length": 0.5,
+                "fuse_lit": true,
+                "power": 0,
+                "causes_fire": false
+            },
+            "minecraft:scale": {
+                "value": 1.4
+            },
+            "minecraft:collision_box": {
+                "width": 1.0,
+                "height": 1.0
+            },
+            "minecraft:physics": {}
+        }
+    }
+}

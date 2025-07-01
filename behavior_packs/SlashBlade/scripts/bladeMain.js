@@ -307,6 +307,30 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		lore[3] = `§rSA: ${bladeSlot.getDynamicProperty("sa")}`;
 		bladeSlot.setLore(lore);
 	}
+	else if( e.id == "zex:slashdim" ){	
+		try{
+			const fire = e.sourceEntity;
+			const user = world.getPlayers({name:fire.getDynamicProperty(`zex:owner`)})[0];
+			const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+			const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
+			const victims = fire.dimension.getEntities({location:fire.location,maxDistance:1.5,excludeTypes:[`item`,`xp_orb`] });
+			if( victims.length > 1 ){
+				for( let i = 0; i < victims.length; i++ ){
+					if( victims[i].nameTag != user.nameTag ){
+						victims[i].applyDamage( 3,{ cause:`override`,damagingEntity:user });
+						world.scoreboard.getObjective(`blade`).addScore(user,4);
+						if( bladeItemEnch.hasEnchantment("minecraft:fire_aspect") ){
+							victims[i].setOnFire(5);
+						}
+					}
+				}
+			}
+		}
+		catch{
+
+		}
+
+	}
 	else if( e.id == "zex:printlevel" ){
 		const player = e.sourceEntity;
 		let score = world.scoreboard.getObjective(`blade`).getScore(player);

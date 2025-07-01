@@ -13,6 +13,12 @@
 			   "sounds/sab"
 		   ]
 	   },
+		"swingblade.dim": {
+		   "category": "hostile",
+		   "sounds": [
+			   "sounds/dim"
+		   ]
+	   },
  		"swingblade.lightsaber": {
 			"category": "hostile",
 			"sounds": [

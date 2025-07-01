@@ -2,6 +2,8 @@ import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, Ite
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
 
+const dimension = world.getDimension(`overworld`);
+
 export class drive {
   cost = 10
   damage = 6
@@ -20,19 +22,23 @@ export class slashdimension {
   fireSa( blade, user ){
     const pos = user.getViewDirection()
     const range = 5;
-    const O = {x:user.location.x + range * pos.x,y:user.location.y + 1.5 + range * pos.y,z:user.location.z + range * pos.z};
-    const victimsMob = user.dimension.getEntities({location:user.location,maxDistance:16,families:[ `mob` ],closest:1 });
-    const victimsPlayer = user.dimension.getEntities({location:user.location,maxDistance:16,excludeNames:[user.nameTag],families:[`player`],closest:1});
-    const victims = victimsMob.concat(victimsPlayer);
-    if( victims.length > 0 ){
+    const O = {
+      x:user.location.x + range * pos.x,
+      y:user.location.y + 1.62 + range * pos.y,
+      z:user.location.z + range * pos.z
+    };
+		const victims = user.dimension.getEntities({location:O,maxDistance:19,excludeTypes:[`item`,`xp_orb`] });
+    if( victims.length > 0 && victims[0].nameTag != user.nameTag ){
       const attackPos = victims[0].location;
-      victims[0].applyDamage( 6,{ cause:`entityAttack`,damagingEntity:user });
-      user.dimension.spawnParticle(`zex:slashdimension_particle`,attackPos);
-      user.playSound(`swingblade.sab`);
+      const fire = user.dimension.spawnEntity(`safire:slashdim`,{ x:attackPos.x,y:attackPos.y+1,z:attackPos.z });
+			world.scoreboard.getObjective(`printlevel`).setScore(user,100);
+      fire.setDynamicProperty(`zex:owner`,user.nameTag);
+      user.playSound(`swingblade.dim`);
     }
     else{
-      user.dimension.spawnParticle(`zex:slashdimension_particle`,O);
-      user.playSound(`swingblade.sab`);
+      const fire = user.dimension.spawnEntity(`safire:slashdim`,O);
+      fire.setDynamicProperty(`zex:owner`,user.nameTag);
+      user.playSound(`swingblade.dim`);
     }
   }
 }

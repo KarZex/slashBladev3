@@ -17,7 +17,7 @@
             }
           ],
           "on_entry": [
-		    "/particle minecraft:basic_flame_particle ~~~"
+            "/particle minecraft:basic_flame_particle ~~~"
           ]
         },
         "asdfgh": {
@@ -27,7 +27,7 @@
             }
           ],
           "on_entry": [
-		    "/particle minecraft:basic_flame_particle ~~~"
+            "/particle minecraft:basic_flame_particle ~~~"
           ]
         },
         "ticking": {
@@ -37,7 +37,7 @@
             }
           ],
           "on_entry": [
-		    "/clear @p charcoal 0 1"
+            "/clear @p charcoal 0 1"
           ]
         }
       }
@@ -51,15 +51,15 @@
             }
           ],
           "on_entry": [
-		    "/execute @s ~~~ particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~3~~ particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~~~3 particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~-3~~ particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~~~-3 particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~3~~3 particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~3~~-3 particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~-3~~3 particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~-3~~-3 particle minecraft:huge_explosion_emitter ~~~"
+            "/execute @s ~~~ particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~3~~ particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~~~3 particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~-3~~ particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~~~-3 particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~3~~3 particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~3~~-3 particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~-3~~3 particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~-3~~-3 particle minecraft:huge_explosion_emitter ~~~"
           ]
         },
         "ticking": {
@@ -69,20 +69,20 @@
             }
           ],
           "on_entry": [
-		    "/execute @s ~~~ particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~3~~ particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~~~3 particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~-3~~ particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~~~-3 particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~3~~3 particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~3~~-3 particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~-3~~3 particle minecraft:huge_explosion_emitter ~~~",
-			"/execute @s ~-3~~-3 particle minecraft:huge_explosion_emitter ~~~"
+            "/execute @s ~~~ particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~3~~ particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~~~3 particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~-3~~ particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~~~-3 particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~3~~3 particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~3~~-3 particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~-3~~3 particle minecraft:huge_explosion_emitter ~~~",
+            "/execute @s ~-3~~-3 particle minecraft:huge_explosion_emitter ~~~"
           ]
         }
       }
     },
-    "controller.animation.doom": {
+    "controller.animation.slashdim": {
       "states": {
         "default": {
           "transitions": [
@@ -91,7 +91,7 @@
             }
           ],
           "on_entry": [
-		    "/kill @e[family=bullet,r=6]"
+            "/scriptevent zex:slashdim"
           ]
         },
         "ticking": {
@@ -101,7 +101,7 @@
             }
           ],
           "on_entry": [
-		    "/kill @e[family=bullet,r=6]"
+            "/scriptevent zex:slashdim"
           ]
         }
       }
@@ -115,7 +115,7 @@
             }
           ],
           "on_entry": [
-		    "/particle minecraft:basic_flame_particle ~~~"
+            "/particle minecraft:basic_flame_particle ~~~"
           ]
         },
         "ticking": {
@@ -125,7 +125,7 @@
             }
           ],
           "on_entry": [
-		    "/particle minecraft:basic_flame_particle ~~~"
+            "/particle minecraft:basic_flame_particle ~~~"
           ]
         }
       }
@@ -139,7 +139,7 @@
             }
           ],
           "on_entry": [
-		    "/particle zex:absorb_particle ~~~"
+            "/particle zex:absorb_particle ~~~"
           ]
         },
         "ticking": {
@@ -149,7 +149,7 @@
             }
           ],
           "on_entry": [
-		    "/particle zex:absorb_particle ~~~"
+            "/particle zex:absorb_particle ~~~"
           ]
         }
       }
@@ -170,8 +170,8 @@
             }
           ],
           "on_entry": [
-		    "/summon addon:gb6_drone ~~7~",
-		    "/event entity @s A"
+            "/summon addon:gb6_drone ~~7~",
+            "/event entity @s A"
           ]
         }
       }

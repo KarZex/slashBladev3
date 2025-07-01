@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "safire:slashdim",
+        "materials": {
+          "default": "entity_alphablend"
+        },
+        "textures": {
+          "default": "textures/entity/slashdim"
+        },
+        "geometry": {
+          "default": "geometry.slashdim"
+        },
+        "scripts": {
+          "animate": [ 
+            "fly"
+          ]
+        },
+        "animations": {
+          "fly": "animation.slashdim.rolling"
+        },
+        "render_controllers": [ 
+          "controller.render.arrow" 
+        ]
+      }
+    }
+}
