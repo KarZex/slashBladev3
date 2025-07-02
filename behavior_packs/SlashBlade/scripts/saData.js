@@ -6,14 +6,25 @@ const dimension = world.getDimension(`overworld`);
 
 export class drive {
   cost = 10
-  damage = 6
+  damage = 6;
   fireSa( blade, user ){
     user.playSound(`swingblade.sab`);
-    let FirePos = user.location
-    FirePos.y = FirePos.y + 1.125
+    const power = 0.1;
+    const O = user.location;
+    const V = user.getViewDirection();
+    const FirePos = {
+      x: O.x,
+      y: O.y + 1.125,
+      z: O.z 
+    }
+    const shootView = {
+      x: V.x * power,
+      y: V.y * power,
+      z: V.z * power 
+    }
     const fire = user.dimension.spawnEntity(`safire:drive`,FirePos);
     fire.getComponent(`minecraft:projectile`).owner = user
-    fire.getComponent(`minecraft:projectile`).shoot( user.getViewDirection() );
+    fire.getComponent(`minecraft:projectile`).shoot( shootView );
   }
 }
 
@@ -48,11 +59,22 @@ export class vdrive {
   damage = 6
   fireSa( blade, user ){
     user.playSound(`swingblade.sab`);
-    let FirePos = user.location
-    FirePos.y = FirePos.y + 1.125
+    const power = 0.1;
+    const O = user.location;
+    const V = user.getViewDirection();
+    const FirePos = {
+      x: O.x,
+      y: O.y + 1.125,
+      z: O.z 
+    }
+    const shootView = {
+      x: V.x * power,
+      y: V.y * power,
+      z: V.z * power 
+    }
     const fire = user.dimension.spawnEntity(`safire:vdrive`,FirePos);
     fire.getComponent(`minecraft:projectile`).owner = user
-    fire.getComponent(`minecraft:projectile`).shoot( user.getViewDirection() );
+    fire.getComponent(`minecraft:projectile`).shoot( shootView );
   }
 }
 
@@ -111,7 +133,7 @@ export class waveedge {
     const viewLocation = user.getViewDirection();
     FirePos.y = FirePos.y + 1;
     for( let i = 0; i < 4; i++ ){
-      let a = (0.1 * (i + 1));
+      let a = (0.05 * (i + 1));
       let shot = {
         x:viewLocation.x * a,
         y:viewLocation.y * a,
