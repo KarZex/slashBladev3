@@ -6,30 +6,28 @@
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier":"minecraft:arrow",
+      "runtime_identifier": "minecraft:arrow",
       "scripts": {
-	    "animate": [ "walk" ]
-	  },
-	  "animations": {
-	    "walk": "controller.animation.ding"
-	  }
+        "animate": [
+          "walk"
+        ]
+      },
+      "animations": {
+        "walk": "controller.animation.ding"
+      }
     },
     "components": {
       "minecraft:type_family": {
-        "family": [ "sabullet"]
+        "family": [
+          "sabullet"
+        ]
       },
-				"minecraft:explode": {
-				"fuseLength": 1.0,
-				"fuseLit": true,
-				"power": 0,
-				"causesFire": false
-			},
       "minecraft:collision_box": {
-        "width": 0.1,
-        "height": 2.0
+        "width": 0.5,
+        "height": 3.0
       },
       "minecraft:projectile": {
-        "onHit": {
+        "on_hit": {
           "impact_damage": {
             "damage": 0,
             "knockback": true
@@ -38,17 +36,23 @@
         "power": 0.2,
         "gravity": 0,
         "inertia": 1.5,
-        "uncertaintyBase": 0,
-        "uncertaintyMultiplier": 0,
+        "uncertainty_base": 0,
+        "uncertainty_multiplier": 0,
         "anchor": 1,
         "offset": [
           0,
           0.5,
           0
         ],
-        "catchFire": false
+        "catch_fire": false
       },
-	  "minecraft:physics": {}
-		}
-	}
+      "minecraft:explode": {
+        "fuse_length": 0.5,
+        "fuse_lit": true,
+        "power": 0,
+        "causes_fire": false
+      },
+      "minecraft:physics": {}
+    }
+  }
 }

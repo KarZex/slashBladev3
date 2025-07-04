@@ -155,7 +155,7 @@ function bladeSwing( user,blade ){
 		}
 	}
 	else{
-		const areaMobs = user.dimension.getEntities({location:user.location,maxDistance:10,families:[ `monster` ] });
+		const areaMobs = user.dimension.getEntities({location:user.location,maxDistance:10,excludeTypes:[`item`,`xp_orb`] });
 		if( areaMobs.length > 1 ){
 			world.scoreboard.getObjective(`blade`).addScore(user,-10);
 		}
@@ -254,13 +254,35 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			attacker.getComponent(EntityComponentTypes.Health).setCurrentValue(Math.min(PHealth + dmg,PMHealth));
 		}
 	}
-	else if( e.projectile.typeId.includes("safire")){
+	else if( e.projectile.typeId == "safire:drive" ){
 		const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
 		const sa = new classRef();
 		const dmg = sa.damage;
 		let vict = e.getEntityHit().entity;
 		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
 		let gunName = e.projectile.typeId
+		world.scoreboard.getObjective(`blade`).addScore(e.source,7);
+		world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
+	}
+	else if( e.projectile.typeId == "safire:vdrive" ){
+		const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
+		const sa = new classRef();
+		const dmg = sa.damage;
+		let vict = e.getEntityHit().entity;
+		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
+		let gunName = e.projectile.typeId;
+		vict.applyKnockback(0,0,0,1);
+		world.scoreboard.getObjective(`blade`).addScore(e.source,7);
+		world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
+	}
+	else if( e.projectile.typeId == "safire:flamethrower" ){
+		const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
+		const sa = new classRef();
+		const dmg = sa.damage;
+		let vict = e.getEntityHit().entity;
+		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
+		vict.setOnFire(5);
+		let gunName = e.projectile.typeId;
 		world.scoreboard.getObjective(`blade`).addScore(e.source,7);
 		world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
 	}
