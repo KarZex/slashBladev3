@@ -427,7 +427,7 @@
         ]
     },
     "hud_actionbar_text": {
-        "$actb_string": "§rzex.blade",
+        "$actb_string": "§rzex",
         "$atext": "$actionbar_text",
         "type": "image",
         "size": [

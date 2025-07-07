@@ -1,4 +1,4 @@
-import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, ItemComponentTypes,EnchantmentType, EntityDamageCause  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, ItemComponentTypes,EnchantmentType, EntityDamageCause, EnchantmentTypes  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
 import { classReg, drive, slashdimension } from "./saData";
@@ -147,7 +147,10 @@ function bladeSwing( user,blade ){
 			if( victims[i].nameTag != user.nameTag ){
 				victims[i].applyDamage( d,{ cause:`override`,damagingEntity:user });
 				world.scoreboard.getObjective(`blade`).addScore(user,7);
-				victims[i].applyKnockback(0,0,0,0);
+				try{
+					victims[i].applyKnockback(0,0,0,0);
+				}
+				catch{}
 				if( bladeItemEnch.hasEnchantment("minecraft:fire_aspect") ){
 					victims[i].setOnFire(5);
 				}
@@ -155,16 +158,38 @@ function bladeSwing( user,blade ){
 		}
 	}
 	else{
-		const areaMobs = user.dimension.getEntities({location:user.location,maxDistance:10,excludeTypes:[`item`,`xp_orb`] });
-		if( areaMobs.length > 1 ){
-			world.scoreboard.getObjective(`blade`).addScore(user,-10);
-		}
 	}
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
 }
-world.afterEvents.itemReleaseUse.subscribe( e => {
+function bladeSwingProjectile( user ){
+	const victims = user.dimension.getEntities({location:user.location,maxDistance:5 });
+	if( victims.length > 1 ){
+		for( let i = 0; i < victims.length; i++ ){
+			if( victims[i].hasComponent(EntityComponentTypes.Projectile) ){
+				if( victims[i].getComponent(EntityComponentTypes.Projectile).owner != undefined && victims[i].getComponent(EntityComponentTypes.Projectile).owner.nameTag == user.nameTag ){
+					continue;
+				}
+				else{
+					victims[i].getComponent(EntityComponentTypes.Projectile).owner = user;
+					const V_0 = victims[i].getVelocity();
+					//reflect the projectile
+					const V_t = {
+						x: V_0.x * -1.5,
+						y: V_0.y * -1.5,
+						z: V_0.z * -1.5
+					}
+					victims[i].clearVelocity();
+					victims[i].applyImpulse(V_t);
+
+				}
+			}
+		}
+	}
+}
+world.afterEvents.itemReleaseUse.subscribe( async e => {
 	const user = e.source;
 	const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+	
 	if ( e.itemStack.typeId.includes(`blade:`) && e.useDuration > 100010 ){
 		if( blade.getDynamicProperty("killCount") == undefined  ){
 			bladeInstant( user,blade );
@@ -208,6 +233,10 @@ world.afterEvents.itemReleaseUse.subscribe( e => {
 			blade.setLore(lore);
 			sa.fireSa( blade,user );
 		}
+	}
+	for( let i = 0; i < 5; i++ ){
+		await system.waitTicks(1)
+		bladeSwingProjectile( user );
 	}
 } )
 
