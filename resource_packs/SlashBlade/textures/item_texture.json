@@ -33,7 +33,7 @@
       "textures": "textures/items/ramen"
     },
     "rice": {
-      "textures": "textures/items/meshi"
+      "textures": "textures/items/food/rice"
     },
     "tamagyumeshi": {
       "textures": "textures/items/tamagyumeshi"
@@ -250,6 +250,36 @@
     },
     "bladestand": {
       "textures": "textures/items/bladestand"
+    },
+    "cheese": {
+      "textures": "textures/items/cheese"
+    },
+    "rice_pork": {
+      "textures": "textures/items/food/rice_pork"
+    },
+    "brown_rice": {
+      "textures": "textures/items/food/brown_rice"
+    },
+    "cooking_pot": {
+      "textures": "textures/items/cooking_pot"
+    },
+    "rice_cooked": {
+      "textures": "textures/items/food/rice_cooked"
+    },
+    "rice_mushroom": {
+      "textures": "textures/items/food/rice_mushroom"
+    },
+    "rice_chicken": {
+      "textures": "textures/items/food/rice_chicken"
+    },
+    "rice_beef": {
+      "textures": "textures/items/food/rice_beef"
+    },
+    "rice_bamboo": {
+      "textures": "textures/items/food/rice_bamboo"
+    },
+    "rice_oyako": {
+      "textures": "textures/items/food/rice_oyako"
     }
   }
 }

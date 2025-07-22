@@ -1,0 +1,181 @@
+{
+  "format_version": "1.21.20",
+  "minecraft:block": {
+    "description": {
+      "identifier": "zex:campfire_cooking_pot",
+      "states": {
+        "zex:isFire": [
+          0,
+          1
+        ],
+        "zex:water": [
+          "nothing",
+          "water",
+          "oil"
+        ]
+      },
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ]
+        }
+      },
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "campfire_cooking_pot",
+          "render_method": "blend"
+        }
+      },
+      "minecraft:tick": {
+        "interval_range": [ 0 , 1 ],
+        "looping": true
+      },
+      "minecraft:geometry": "geometry.campfire_cooking_pot",
+      "minecraft:loot": "loot_tables/blocks/campfire_cooking_pot.json",
+      "minecraft:map_color": "#00ff00",
+      "minecraft:light_emission": 0,
+      "minecraft:light_dampening": 0,
+      "minecraft:selection_box": {
+        "origin": [
+          -8,
+          0.0,
+          -8.0
+        ],
+        "size": [
+          16,
+          12.0,
+          16.0
+        ]
+      },
+      "minecraft:collision_box": {
+        "origin": [
+          -8,
+          0.0,
+          -8.0
+        ],
+        "size": [
+          16,
+          12.0,
+          16.0
+        ]
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('zex:water') == 'nothing' && q.block_state('zex:isFire') == 0",
+        "components": {
+          "minecraft:custom_components": [
+            "zex:campfire_cooking_pot_liq",
+            "zex:campfire_cooking_pot_fire_start"
+          ]
+        }
+      },
+      {
+        "condition": "q.block_state('zex:water') == 'nothing' && q.block_state('zex:isFire') == 1",
+        "components": {
+          "minecraft:custom_components": [
+            "zex:campfire_cooking_pot_liq",
+            "zex:campfire_cooking_pot_fire",
+            "zex:campfire_particle"
+          ],
+          "minecraft:light_emission": 15
+        }
+      },
+      {
+        "condition": "q.block_state('zex:isFire') == 0 && q.block_state('zex:water') == 'water'",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "campfire_cooking_pot_water",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:custom_components": [
+            "zex:campfire_cooking_pot_liqX",
+            "zex:campfire_cooking_pot_fire_start"
+          ]
+        }
+      },
+      {
+        "condition": "q.block_state('zex:isFire') == 1 && q.block_state('zex:water') == 'water'",
+        "components": {
+          "minecraft:crafting_table": {
+            "crafting_tags": [
+              "cooking_pot_water"
+            ],
+            "table_name": "tile.zex:cooking_pot.name"
+          },
+          "minecraft:light_emission": 15,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "campfire_cooking_pot_water",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:custom_components": [
+            "zex:campfire_cooking_pot_liqX",
+            "zex:campfire_cooking_pot_fire",
+            "zex:campfire_particle"
+          ]
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              270,
+              0
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

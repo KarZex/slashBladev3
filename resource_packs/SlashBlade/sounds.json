@@ -1,0 +1,34 @@
+{
+  "entity_sounds": {
+    "entities": {
+      "stark:iceblock": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "explode": {
+            "sound": "hit.snow"
+          }
+        }
+      },
+         "zex:samurai" : {
+            "events" : {
+               "ambient" : "mob.vindicator.idle",
+               "ambient.in.raid" : {
+                  "pitch" : [ 0.80, 1.20 ],
+                  "sound" : "mob.vindicator.idle",
+                  "volume" : 3.0
+               },
+               "celebrate" : "mob.vindicator.celebrate",
+               "death" : "mob.vindicator.death",
+               "hurt" : "mob.vindicator.hurt"
+            },
+            "pitch" : [ 0.80, 1.20 ],
+            "variants" : {
+               "key" : null
+            },
+            "volume" : 1.0
+         }
+
+    }
+  }
+}

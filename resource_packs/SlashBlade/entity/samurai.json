@@ -1,0 +1,38 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "zex:samurai",
+      "materials": {
+        "default": "vindicator"
+      },
+      "textures": {
+        "default": "textures/entity/samuraiillager"
+      },
+      "geometry": {
+        "default": "geometry.vindicator"
+      },
+      "scripts": {
+        "scale": "0.9375"
+      },
+      "animations": {
+        "vindicator_base": "animation.samurai.base",
+        "vindicator_attack": "animation.samurai.attack",
+        "vindicator_walk": "animation.samurai.walk"
+      },
+      "animation_controllers": [
+        {
+          "vindicator_base": "controller.animation.vindicator.base.v1.0"
+        }
+      ],
+      "render_controllers": [
+        "controller.render.vindicator"
+      ],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "texture": "spawn_egg"
+      },
+      "hide_armor": true
+    }
+  }
+}

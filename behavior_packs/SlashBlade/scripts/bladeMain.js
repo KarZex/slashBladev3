@@ -28,7 +28,10 @@ function setBladeDamage( damage,user ){
 			user.getComponent("minecraft:inventory").container.setItem(user.selectedSlotIndex, Tblade);
 		}
 		else {
-			user.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 air`);
+			Tblade.getComponent(ItemComponentTypes.Durability).damage = MaxDamage;
+			Tblade.setDynamicProperty("currentDurability",MaxDamage);
+			user.getComponent("minecraft:inventory").container.setItem(user.selectedSlotIndex, Tblade);
+			user.dimension.playSound(`random.break`,user.location);
 		}
 	}
 
@@ -189,14 +192,9 @@ function bladeSwingProjectile( user ){
 world.afterEvents.itemReleaseUse.subscribe( async e => {
 	const user = e.source;
 	const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-	
-	if ( e.itemStack.typeId.includes(`blade:`) && e.useDuration > 100010 ){
-		if( blade.getDynamicProperty("killCount") == undefined  ){
-			bladeInstant( user,blade );
-		}
-		if( user.typeId == `minecraft:player` ){
-			bladeSoulcal( user,blade );
-		}
+	const Tblade = user.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
+	const dmgCom = Tblade.getComponent(ItemComponentTypes.Durability);	
+	if ( e.itemStack.typeId.includes(`blade:`) && e.useDuration > 100010 && dmgCom.damage < dmgCom.maxDurability ){
 		
 		if( user.isSneaking && (user.isOnGround || user.isJumping) ){
 			user.playSound(`swingblade.c`);
@@ -416,4 +414,15 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		}
 		player.runCommand(`title @s actionbar §rzex.blade.${Rank[r]}${bar}`)
 	}
-} )
+	else if( e.id == "zex:haveBlade" ){
+		const user = e.sourceEntity;
+		const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+		const bladeId = e.message;
+		if( blade.getDynamicProperty("killCount") == undefined  ){
+			bladeInstant( user,blade );
+		}
+		if( user.typeId == `minecraft:player` ){
+			bladeSoulcal( user,blade );
+		}
+	}
+})

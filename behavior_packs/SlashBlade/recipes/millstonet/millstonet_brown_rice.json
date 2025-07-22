@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "zex.millstonet_rawrice"
+    "identifier": "zex.millstonet_brown_rice"
     },
     "tags": [ "millstonet" ],
     "pattern": [
@@ -20,8 +20,8 @@
       }
     },
     "result": {
-      "item": "zex:rawrice",
-      "count": 1
+      "item": "zex:brown_rice",
+      "count": 2
     }
   }
   

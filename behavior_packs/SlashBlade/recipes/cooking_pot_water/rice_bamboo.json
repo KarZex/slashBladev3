@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:rice_bamboo_recipe"
+    },
+    "tags": [ "cooking_pot_water" ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:rice",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:bamboo",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:rice_bamboo",
+      "count": 2
+    }
+  }
+  
+}

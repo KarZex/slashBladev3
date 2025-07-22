@@ -1,0 +1,78 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+		"animation.samurai.attack" : {
+			"loop" : true,
+			"bones" : {
+				"leftarm" : {
+					"rotation" : [ "query.is_riding ? 0.0 : ((math.cos(0 * 20.0 * 10.89) * 28.65) + (math.sin(variable.attack_time * 180.0) * 68.76 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0)) * 22.92))", 0.0, 0.0 ]
+				},
+				"rightarm" : {
+					"rotation" : [ "(-108 + math.cos(0 * 20.0 * 3.84) * 2.87) + (math.sin(variable.attack_time * 180.0) * 126.05 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0)) * 22.92)", 0.0, 0.0 ]
+				}
+			}
+		},
+		"animation.samurai.hand_attack" : {
+			"loop" : true,
+			"bones" : {
+				"leftarm" : {
+					"rotation" : [ "(-108 + math.cos(0 * 20.0 * 3.84) * 2.87) + (math.sin(variable.attack_time * 180.0) * 126.05 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0)) * 22.92)", 0.0, 0.0 ]
+				},
+				"rightarm" : {
+					"rotation" : [ "(-108 + math.cos(0 * 20.0 * 3.84) * 2.87) + (math.sin(variable.attack_time * 180.0) * 126.05 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0)) * 22.92)", 0.0, 0.0 ]
+				}
+			}
+		},
+		"animation.samurai.base" : {
+			"loop" : true,
+			"bones" : {
+				"arms" : {
+					"position" : [ 0.0, "-3.0 - this", "-1.0 - this" ],
+					"rotation" : [ "-42.97 - this", 0.0, 0.0 ]
+				},
+				"leftarm" : {
+					"rotation" : [ "1 * 2.87", -9.0, "-1 * (1 * 2.87 + 2.87)" ]
+				},
+				"rightarm" : {
+					"rotation" : [ "1 * 2.87", 9.0, "1 * 2.87 + 2.87" ]
+				},
+				"rightItem" : {
+					"scale": "query.is_angry ? 1.0 : 0.0"
+				},
+				"leftItem" : {
+					"scale": "query.is_angry ? 1.0 : 0.0"
+				}
+			}
+		},
+		"animation.samurai.riding.arms" : {
+			"loop" : true,
+			"bones" : {
+				"leftarm" : {
+					"rotation" : [ -36.0, 0.0, 0.0 ]
+				}
+			}
+		},
+		"animation.samurai.riding.legs" : {
+			"loop" : true,
+			"bones" : {
+				"leg0" : {
+					"rotation" : [ "-72.0 - this", "18.0 - this", "-this" ]
+				},
+				"leg1" : {
+					"rotation" : [ "-72.0 - this", "-18.0 - this", "-this" ]
+				}
+			}
+		},
+		"animation.samurai.walk" : {
+			"loop" : true,
+			"bones" : {
+				"leg0" : {
+					"rotation" : [ "(math.cos(query.modified_distance_moved * 38.17) * 80.21) * query.modified_move_speed * 0.5", 0.0, 0.0 ]
+				},
+				"leg1" : {
+					"rotation" : [ "(math.cos(query.modified_distance_moved * 38.17 + 180) * 80.21) * query.modified_move_speed * 0.5", 0.0, 0.0 ]
+				}
+			}
+		}
+	}
+}

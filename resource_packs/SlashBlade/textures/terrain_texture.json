@@ -4,6 +4,10 @@
   "padding": 8,
   "num_mip_levels": 4,
   "texture_data": {
+    "campfire": { "textures": [ "textures/blocks/cooking_pot/cooking_pot_0" ] },
+    "campfire_cooking_pot": { "textures": [ "textures/blocks/cooking_pot/cooking_pot_0" ] },
+    "campfire_cooking_pot_water": { "textures": [ "textures/blocks/cooking_pot/cooking_pot_w" ] },
+
     "andon": { "textures": [ "textures/blocks/andon" ] },
 	
     "bamboo_pane": { "textures": [ "textures/blocks/bamboo_pane" ] },

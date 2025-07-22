@@ -17,6 +17,8 @@ text = ""
 anicont = ""
 lang = ""
 
+func = ""
+
 for row in csv_reader:
     if row_count == 0:
         row_count += 1
@@ -135,7 +137,8 @@ for row in csv_reader:
         
         with open("behavior_packs/SlashBlade/loot_tables/blade/{}.json".format(blade_id),"w") as f:
             json.dump(loot_table,f,indent=2)
-            
+
+        func += "execute if entity @s[hasitem={{item=blade:{},location=slot.weapon.mainhand}}] run scriptevent zex:haveBlade {}\n".format(blade_id, blade_id)
 
         with open("tool/ak47.json","r") as f:
             gun_item = json.load(f)
@@ -171,6 +174,8 @@ with open("behavior_packs/SlashBlade/scripts/blade.js","w") as f:
 with open("resource_packs/SlashBlade/animation_controllers/player.animation_controllers.json","w") as f:
     json.dump(animation_controllers_json,f,indent=2)
 
+with open("behavior_packs/SlashBlade/functions/blade_functions.mcfunction","w") as f:
+    f.write(func)
     
 with open("resource_packs/SlashBlade/textures/item_texture.json","w") as f:
     json.dump(texture_json,f,indent=2)

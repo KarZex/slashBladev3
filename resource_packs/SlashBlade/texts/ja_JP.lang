@@ -91,3 +91,9 @@ tile.zex:bambooblock.name=竹ブロック
 tile.zex:kawara.name=瓦
 tile.zex:kayabuki.name=茅葺
 tile.zex:wara.name=ワラブロック
+
+item.zex:brown_rice=玄米
+item.zex:rice=米
+item.zex:rice_cooked=ご飯
+item.zex:cooking_pot=調理鍋
+item.zex:rice_pork=豚丼
