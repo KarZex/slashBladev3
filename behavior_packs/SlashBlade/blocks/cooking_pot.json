@@ -129,6 +129,44 @@
         }
       },
       {
+        "condition": "q.block_state('zex:isFire') == 0 && q.block_state('zex:water') == 'oil'",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "campfire_cooking_pot_oil",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:custom_components": [
+            "zex:campfire_cooking_pot_liqX",
+            "zex:campfire_cooking_pot_fire_start"
+          ]
+        }
+      },
+      {
+        "condition": "q.block_state('zex:isFire') == 1 && q.block_state('zex:water') == 'oil'",
+        "components": {
+          "minecraft:crafting_table": {
+            "crafting_tags": [
+              "cooking_pot_oil"
+            ],
+            "table_name": "tile.zex:cooking_pot.name"
+          },
+          "minecraft:light_emission": 15,
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "campfire_cooking_pot_oil",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:custom_components": [
+            "zex:campfire_cooking_pot_liqX",
+            "zex:campfire_cooking_pot_fire",
+            "zex:campfire_particle"
+          ]
+        }
+      },
+      {
         "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
         "components": {
           "minecraft:transformation": {

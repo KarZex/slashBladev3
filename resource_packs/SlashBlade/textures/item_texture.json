@@ -280,6 +280,60 @@
     },
     "rice_oyako": {
       "textures": "textures/items/food/rice_oyako"
+    },
+    "rice_fish": {
+      "textures": "textures/items/food/rice_fish"
+    },
+    "flour_rice": {
+      "textures": "textures/items/food/flour_rice"
+    },
+    "dough_rice": {
+      "textures": "textures/items/food/dough_rice"
+    },
+    "rice_beef_egg": {
+      "textures": "textures/items/food/rice_beef_egg"
+    },
+    "rice_bread": {
+      "textures": "textures/items/food/rice_bread"
+    },
+    "rice_egg": {
+      "textures": "textures/items/food/rice_egg"
+    },
+    "rice_pork_egg": {
+      "textures": "textures/items/food/rice_pork_egg"
+    },
+    "peppercorn_red": {
+      "textures": "textures/items/food/peppercorn_red"
+    },
+    "peppercorn_green": {
+      "textures": "textures/items/food/peppercorn_green"
+    },
+    "salt": {
+      "textures": "textures/items/food/salt"
+    },
+    "breadcrumbs": {
+      "textures": "textures/items/food/breadcrumbs"
+    },
+    "rapeseeds": {
+      "textures": "textures/items/food/rapeseeds"
+    },
+    "oil_bucket": {
+      "textures": "textures/items/food/oil_bucket"
+    },
+    "black_pepper": {
+      "textures": "textures/items/food/black_pepper"
+    },
+    "white_pepper": {
+      "textures": "textures/items/food/white_pepper"
+    },
+    "flour": {
+      "textures": "textures/items/food/flour"
+    },
+    "fried_chicken": {
+      "textures": "textures/items/food/fried_chicken"
+    },
+    "katsu": {
+      "textures": "textures/items/food/katsu"
     }
   }
 }

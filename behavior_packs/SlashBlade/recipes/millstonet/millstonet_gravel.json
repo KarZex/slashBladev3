@@ -18,10 +18,16 @@
         "data": 0
       }
     },
-    "result": {
-      "item": "minecraft:gravel",
-      "count": 2
-    }
+    "result": [
+      {
+        "item": "minecraft:gravel",
+        "count": 1
+      },
+      {
+        "item": "zex:salt",
+        "count": 1
+      }
+    ]
   }
   
 }

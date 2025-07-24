@@ -1,0 +1,24 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:white_pepper_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:peppercorn_red"
+      }
+    },
+    "result": [
+      {
+        "item": "zex:white_pepper",
+        "count": 1
+      }
+    ]
+  }
+  
+}

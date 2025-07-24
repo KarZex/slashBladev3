@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex.millstonet_flour_rice"
+    },
+    "tags": [ "millstonet" ],
+    "pattern": [
+      "AA"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:rice"
+      }
+    },
+    "result": {
+      "item": "zex:flour_rice",
+      "count": 2
+    }
+  }
+  
+}

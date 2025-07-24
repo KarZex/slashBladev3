@@ -20,6 +20,9 @@ scoreboard objectives add coolw dummy
 scoreboard objectives add sa dummy
 scoreboard objectives add meleeup dummy
 
+scoreboard objectives add combotype dummy
+scoreboard objectives add combocool dummy
+
 execute as @a[tag=!startedblade] run scoreboard players set @s cooldown 20
 execute as @a[tag=!startedblade] run scoreboard players set @s blade 0
 execute as @a[tag=!startedblade] run scoreboard players set @s around 0

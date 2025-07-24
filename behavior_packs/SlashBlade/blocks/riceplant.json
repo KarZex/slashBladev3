@@ -9,7 +9,10 @@
           1,
           2,
           3,
-          4
+          4,
+          5,
+          6,
+          7
         ]
       },
       "menu_category": {
@@ -30,7 +33,7 @@
         ]
       },
       "minecraft:custom_components": [
-        "zex:glowth","zex:growing"
+        "zex:glowth7","zex:growing7"
       ],
       "minecraft:geometry": "geometry.crop",
       "minecraft:loot": "loot_tables/blocks/andon.json",
@@ -52,7 +55,7 @@
               "render_method": "blend"
             }
           },
-          "minecraft:geometry": "geometry.crop",
+          "minecraft:geometry": "geometry.crop2",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -77,7 +80,7 @@
               "render_method": "blend"
             }
           },
-          "minecraft:geometry": "geometry.crop",
+          "minecraft:geometry": "geometry.crop2",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -102,7 +105,7 @@
               "render_method": "blend"
             }
           },
-          "minecraft:geometry": "geometry.crop",
+          "minecraft:geometry": "geometry.crop2",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -127,7 +130,7 @@
               "render_method": "blend"
             }
           },
-          "minecraft:geometry": "geometry.crop",
+          "minecraft:geometry": "geometry.crop2",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -149,6 +152,81 @@
           "minecraft:material_instances": {
             "*": {
               "texture": "riceplant4",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              16,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+        }
+      },
+      {
+        "condition": "query.block_state('zex:growth') == 5",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "riceplant5",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              16,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+        }
+      },
+      {
+        "condition": "query.block_state('zex:growth') == 6",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "riceplant6",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              16,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+        }
+      },
+      {
+        "condition": "query.block_state('zex:growth') == 7",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "riceplant7",
               "render_method": "blend"
             }
           },

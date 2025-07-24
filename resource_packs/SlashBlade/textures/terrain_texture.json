@@ -4,9 +4,37 @@
   "padding": 8,
   "num_mip_levels": 4,
   "texture_data": {
+    "rapeseed0": { "textures": [ "textures/blocks/rapeseed/rapeseed_0" ] },
+    "rapeseed1": { "textures": [ "textures/blocks/rapeseed/rapeseed_1" ] },
+    "rapeseed2": { "textures": [ "textures/blocks/rapeseed/rapeseed_2" ] },
+    "rapeseed3": { "textures": [ "textures/blocks/rapeseed/rapeseed_3" ] },
+    "rapeseed4": { "textures": [ "textures/blocks/rapeseed/rapeseed_4" ] },
+    "rapeseed5": { "textures": [ "textures/blocks/rapeseed/rapeseed_5" ] },
+    "rapeseed6": { "textures": [ "textures/blocks/rapeseed/rapeseed_6" ] },
+    "rapeseed7": { "textures": [ "textures/blocks/rapeseed/rapeseed_7" ] },
+
+    "riceplant0": { "textures": [ "textures/blocks/riceplant/rice_0" ] },
+    "riceplant1": { "textures": [ "textures/blocks/riceplant/rice_1" ] },
+    "riceplant2": { "textures": [ "textures/blocks/riceplant/rice_2" ] },
+    "riceplant3": { "textures": [ "textures/blocks/riceplant/rice_3" ] },
+    "riceplant4": { "textures": [ "textures/blocks/riceplant/rice_4" ] },
+    "riceplant5": { "textures": [ "textures/blocks/riceplant/rice_5" ] },
+    "riceplant6": { "textures": [ "textures/blocks/riceplant/rice_6" ] },
+    "riceplant7": { "textures": [ "textures/blocks/riceplant/rice_7" ] },
+
+    
+    "pepper_splint_0": { "textures": [ "textures/blocks/pepper_splint/pepper_splint_0" ] },
+    "pepper_splint_1": { "textures": [ "textures/blocks/pepper_splint/pepper_splint_1" ] },
+    "pepper_splint_2": { "textures": [ "textures/blocks/pepper_splint/pepper_splint_2" ] },
+    "pepper_splint_3": { "textures": [ "textures/blocks/pepper_splint/pepper_splint_3" ] },
+    "pepper_splint_4": { "textures": [ "textures/blocks/pepper_splint/pepper_splint_4" ] },
+    "pepper_splint_5": { "textures": [ "textures/blocks/pepper_splint/pepper_splint_5" ] },
+    "pepper_splint_6": { "textures": [ "textures/blocks/pepper_splint/pepper_splint_6" ] },
+
     "campfire": { "textures": [ "textures/blocks/cooking_pot/cooking_pot_0" ] },
     "campfire_cooking_pot": { "textures": [ "textures/blocks/cooking_pot/cooking_pot_0" ] },
     "campfire_cooking_pot_water": { "textures": [ "textures/blocks/cooking_pot/cooking_pot_w" ] },
+    "campfire_cooking_pot_oil": { "textures": [ "textures/blocks/cooking_pot/cooking_pot_o" ] },
 
     "andon": { "textures": [ "textures/blocks/andon" ] },
 	
@@ -29,12 +57,6 @@
     "kawara": { "textures": [ "textures/blocks/kawara" ] },
 	
     "kayabuki": { "textures": [ "textures/blocks/kayabuki" ] },
-	
-    "riceplant0": { "textures": [ "textures/blocks/riceplant_stage_0" ] },
-    "riceplant1": { "textures": [ "textures/blocks/riceplant_stage_1" ] },
-    "riceplant2": { "textures": [ "textures/blocks/riceplant_stage_2" ] },
-    "riceplant3": { "textures": [ "textures/blocks/riceplant_stage_3" ] },
-    "riceplant4": { "textures": [ "textures/blocks/riceplant_stage_4" ] },
 	
     "cherry_plank": { "textures": [ "textures/blocks/sakuraplank" ] },
 	

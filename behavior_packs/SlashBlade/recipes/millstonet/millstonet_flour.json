@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex.millstonet_flour"
+    },
+    "tags": [ "millstonet" ],
+    "pattern": [
+      "A"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:wheat"
+      }
+    },
+    "result": {
+      "item": "zex:flour",
+      "count": 1
+    }
+  }
+  
+}

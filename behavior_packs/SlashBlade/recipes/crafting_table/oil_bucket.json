@@ -1,0 +1,30 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:oil_bucket_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BBB",
+      "BBB",
+      "BBA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:bucket", 
+        "data": 0 
+      },
+      "B": {
+        "item": "zex:rapeseeds"
+      }
+    },
+    "result": [
+      {
+        "item": "zex:oil_bucket",
+        "count": 1
+      }
+    ]
+  }
+  
+}

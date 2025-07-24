@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex.millstonet_breadcrumbs"
+    },
+    "tags": [ "millstonet" ],
+    "pattern": [
+      "A"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:bread",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:tnt",
+        "data": 0
+      }
+    },
+    "result": [
+      {
+        "item": "zex:breadcrumbs",
+        "count": 2
+      }
+    ]
+  }
+  
+}
