@@ -6,6 +6,10 @@ import "./compornents";
 
 const Rank = [ `D`,`C`,`B`,`A`,`1S`,`2S`,`3S`,`3S` ];
 
+const allies = [
+	`villager`
+]
+
 function print( text ){
 	world.sendMessage(`§a[debug]§r:${text}`)
 }
@@ -138,22 +142,58 @@ function bladeSoulcal( user,blade ){
 	}
 }
 
-function bladeSwing( user,blade ){
+async function bladeSwing( user,blade,IsOnGround ){
 	user.playSound(`swingblade.c`);
 	const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
 	const level = world.scoreboard.getObjective(`blade`).getScore(user);
-	const d = callDamage( blade,level );
+	let d = callDamage( blade,level );
 	const victims = user.dimension.getEntities({location:user.location,maxDistance:5,excludeTypes:[`item`,`xp_orb`] });
+	let knockback = false;
+	let knockbackpower = 0.5;
+	if(IsOnGround == true){
+		world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
+		world.scoreboard.getObjective(`groundcomboA`).addScore(user,1);
+		if( world.scoreboard.getObjective(`groundcomboA`).getScore(user) >= 3 ){
+			world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
+			d = d * 1.5;
+			user.dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:user.location.x,y:user.location.y+1,z:user.location.z});
+			knockback = true;
+		}
+		world.scoreboard.getObjective(`combocool`).setScore(user,20);
+	}
+	else if(IsOnGround == false){
+		world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
+		world.scoreboard.getObjective(`aircomboA`).addScore(user,1);
+		if( world.scoreboard.getObjective(`aircomboA`).getScore(user) == 3 ){
+			world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
+			d = d * 1.2;
+			user.dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:user.location.x,y:user.location.y+1,z:user.location.z});
+			knockback = true;
+			knockbackpower = 1;
+		}
+		else if( world.scoreboard.getObjective(`aircomboA`).getScore(user) >= 4 ){
+			world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
+			d = d * 1.5;
+			user.dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:user.location.x,y:user.location.y+1,z:user.location.z});
+			knockback = true;
+			knockbackpower = -1;
+		}
+		world.scoreboard.getObjective(`combocool`).setScore(user,20);
+	}
 	if( victims.length > 1 ){
 		setBladeDamage(1,user);
 		for( let i = 0; i < victims.length; i++ ){
 			if( victims[i].nameTag != user.nameTag ){
-				victims[i].applyDamage( d,{ cause:`override`,damagingEntity:user });
-				world.scoreboard.getObjective(`blade`).addScore(user,7);
 				try{
+					victims[i].applyDamage( d,{ cause:`override`,damagingEntity:user });
 					victims[i].applyKnockback(0,0,0,0);
 				}
 				catch{}
+				if(knockback == true){
+					victims[i].applyKnockback(user.getViewDirection().x,user.getViewDirection().z,2,knockbackpower);
+					victims[i].dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:victims[i].location.x,y:victims[i].location.y+1,z:victims[i].location.z});
+				}
+				world.scoreboard.getObjective(`blade`).addScore(user,7);
 				if( bladeItemEnch.hasEnchantment("minecraft:fire_aspect") ){
 					victims[i].setOnFire(5);
 				}
@@ -163,6 +203,11 @@ function bladeSwing( user,blade ){
 	else{
 	}
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
+	const PerLocation = user.location;
+	await system.waitTicks(20);
+	if( PerLocation == user.location ){
+		print(`aaaaaaa`)
+	}
 }
 function bladeSwingProjectile( user ){
 	const victims = user.dimension.getEntities({location:user.location,maxDistance:5 });
@@ -216,7 +261,7 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 			if( user.isJumping){
 				user.addEffect(`levitation`,5,{ amplifier:5 });
 			}
-			bladeSwing( user,blade );
+			bladeSwing( user,blade,user.isOnGround );
 		}
 	}
 	else if( e.itemStack.typeId.includes(`blade:`) && blade.getDynamicProperty("sa") != undefined && e.useDuration <= 100010 ){

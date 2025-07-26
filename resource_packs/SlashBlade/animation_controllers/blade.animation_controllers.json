@@ -7,13 +7,94 @@
 				"default" : {
 					"transitions" : [
 						{
-							"pre" : "query.is_using_item && !query.is_sneaking"
+							"gpre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
 						},
 						{
-							"melee" : "(variable.attack_time > 0) && !query.is_using_item"
+							"pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
 						},
 						{
-							"fall" : "query.is_using_item && query.is_using_item && !query.is_on_ground"
+							"melee" : "query.is_delayed_attacking && !query.is_using_item"
+						},
+						{
+							"fall" : "query.is_sneaking && query.is_jumping && query.is_using_item && !query.is_on_ground"
+						},
+						{
+							"nattack" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground || query.is_jumping )"
+						}
+					]
+				},
+				"gpre" : {
+					"transitions" : [
+						{
+							"gattack" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 0.5)"
+						},
+						{
+							"usesa" : "!query.is_using_item && ((query.is_sneaking && !query.is_on_ground) || query.state_time > 0.5)"
+						},
+						{
+							"default" : "!query.is_on_ground"
+						}
+					]
+				},
+				"gattack" : {
+					"animations" : [ "gattack" ],
+					"transitions" : [
+						{
+							"gpre2" : "query.is_using_item"
+						},
+						{
+							"default" : "query.state_time > 1.0 || !query.is_on_ground"
+						}
+					]
+				},
+				"gpre2" : {
+					"transitions" : [
+						{
+							"gattack2" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 0.5)"
+						},
+						{
+							"default" : "!query.is_on_ground"
+						}
+					]
+				},
+				"gattack2" : {
+					"animations" : [ "gattack2" ],
+					"transitions" : [
+						{
+							"gpre3" : "query.is_using_item"
+						},
+						{
+							"default" : "query.state_time > 1.0 || !query.is_on_ground"
+						}
+					]
+				},
+				"gpre3" : {
+					"transitions" : [
+						{
+							"gattack3" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 0.5)"
+						},
+						{
+							"default" : "!query.is_on_ground"
+						}
+					]
+				},
+				"gattack3" : {
+					"animations" : [ "use" ],
+					"transitions" : [
+						{
+							"gpre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
+						},
+						{
+							"pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
+						},
+						{
+							"melee" : "query.is_delayed_attacking && !query.is_using_item"
+						},
+						{
+							"fall" : "query.is_sneaking && query.is_jumping && query.is_using_item && !query.is_on_ground"
+						},
+						{
+							"nattack" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground || query.is_jumping )"
 						}
 					]
 				},
@@ -28,6 +109,15 @@
 					]
 				},
 				"usesa" : {
+					"animations" : [ "gattack" ],
+					"transitions" : [
+						{
+							"default" : "query.state_time > 0.5"
+						}
+					]
+				},
+
+				"nattack" : {
 					"animations" : [ "use" ],
 					"transitions" : [
 						{
@@ -35,6 +125,8 @@
 						}
 					]
 				},
+
+
 				"attack" : {
 					"animations" : [ "use" ],
 					"transitions" : [
@@ -42,7 +134,7 @@
 							"pre2" : "query.is_using_item"
 						},
 						{
-							"default" : "query.state_time > 0.5"
+							"default" : "query.state_time > 1.0 || query.is_on_ground"
 						}
 					]
 				},
@@ -60,7 +152,7 @@
 							"pre3" : "query.is_using_item"
 						},
 						{
-							"default" : "query.state_time > 0.5"
+							"default" : "query.state_time > 1.0 || query.is_on_ground"
 						}
 					]
 				},
@@ -78,7 +170,7 @@
 							"pre4" : "query.is_using_item"
 						},
 						{
-							"default" : "query.state_time > 0.5"
+							"default" : "query.state_time > 1.0 || query.is_on_ground"
 						}
 					]
 				},
@@ -96,7 +188,25 @@
 							"pre" : "query.is_using_item"
 						},
 						{
-							"default" : "query.state_time > 0.5"
+							"default" : "query.state_time > 1.0"
+						}
+					]
+				},
+				"pre5" : {
+					"transitions" : [
+						{
+							"attack5" : "!query.is_using_item"
+						}
+					]
+				},
+				"attack5" : {
+					"animations" : [ "use" ],
+					"transitions" : [
+						{
+							"pre" : "query.is_using_item"
+						},
+						{
+							"default" : "query.state_time > 1.0 || query.is_on_ground"
 						}
 					]
 				},

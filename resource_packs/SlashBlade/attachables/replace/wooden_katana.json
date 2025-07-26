@@ -10,7 +10,7 @@
         "default": "textures/models/wooden_katana"
       },
       "geometry": {
-        "default": "geometry.balkon"
+        "default": "geometry.newslashblade"
       },
       "animations": {
         "root": "controller.animation.blade",
@@ -21,6 +21,8 @@
         "use3": "animation.sword.use3",
         "use4": "animation.sword.use4",
         "first": "animation.sword.first2",
+        "gattack": "animation.sword.useaaaa",
+        "gattack2": "animation.sword.usebbbb",
         "third": "animation.sword.third"
       },
       "scripts": {

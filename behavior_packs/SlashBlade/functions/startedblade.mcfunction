@@ -23,6 +23,9 @@ scoreboard objectives add meleeup dummy
 scoreboard objectives add combotype dummy
 scoreboard objectives add combocool dummy
 
+scoreboard objectives add groundcomboA dummy
+scoreboard objectives add aircomboA dummy
+
 execute as @a[tag=!startedblade] run scoreboard players set @s cooldown 20
 execute as @a[tag=!startedblade] run scoreboard players set @s blade 0
 execute as @a[tag=!startedblade] run scoreboard players set @s around 0
@@ -34,4 +37,11 @@ execute as @a[tag=!startedblade] run scoreboard players set @s cool 0
 execute as @a[tag=!startedblade] run scoreboard players set @s coolw 0
 execute as @a[tag=!startedblade] run scoreboard players set @s wood 0
 execute as @a[tag=!startedblade] run scoreboard players set @s rep 0
+
+execute as @a[tag=!startedblade] run scoreboard players set @s combotype 0
+execute as @a[tag=!startedblade] run scoreboard players set @s combocool 0
+execute as @a[tag=!startedblade] run scoreboard players set @s groundcomboA 0
+execute as @a[tag=!startedblade] run scoreboard players set @s groundcomboC 0
+execute as @a[tag=!startedblade] run scoreboard players set @s aircomboA 0
+execute as @a[tag=!startedblade] run scoreboard players set @s groundcomboA 0
 tag @a[tag=!startedblade] add startedblade 

@@ -334,6 +334,30 @@
     },
     "katsu": {
       "textures": "textures/items/food/katsu"
+    },
+    "onigiri": {
+      "textures": "textures/items/food/onigiri"
+    },
+    "onigiri_bamboo": {
+      "textures": "textures/items/food/onigiri_bamboo"
+    },
+    "onigiri_fish": {
+      "textures": "textures/items/food/onigiri_fish"
+    },
+    "onigiri_seaweed": {
+      "textures": "textures/items/food/onigiri_seaweed"
+    },
+    "bonito": {
+      "textures": "textures/items/food/bonito"
+    },
+    "shrimp": {
+      "textures": "textures/items/food/shrimp"
+    },
+    "tempura": {
+      "textures": "textures/items/food/tempura"
+    },
+    "onigiri_tempura": {
+      "textures": "textures/items/food/onigiri_tempura"
     }
   }
 }

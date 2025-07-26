@@ -98,6 +98,26 @@
 				}
 			}
 		},
+		"animation.sword.first.usings": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"rightItem": {
+					"position": [0, -800, 0]
+				},
+				"sword": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.125": [0, 0, 262.5],
+						"0.4": [0, 0, 262.5]
+					},
+					"position": {
+						"0.0": [0, 6, 0],
+						"0.125": [-12, 6, 0]
+					}
+				}
+			}
+		},
 		"animation.sword.first.using2": {
 			"loop": true,
 			"animation_length": 1,
@@ -223,7 +243,24 @@
 			}
 		},
 		"animation.sword.use": {
-			"animation_length": 0.5,
+			"animation_length": 1,
+			"bones": {
+				"swordat": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.05": [0, 0, -45.94824],
+						"0.1": [0, 0, -194.05176],
+						"0.15": [0, 0, -240]
+					},
+					"position": {
+						"0.0": [0, 15, 0],
+						"1.0": [0, 15, 0]
+					}
+				}
+			}
+		},
+		"animation.sword.useaaaa": {
+			"animation_length": 1,
 			"bones": {
 				"swordat": {
 					"rotation": {
@@ -235,6 +272,47 @@
 					"position": {
 						"0.0": [0, 15, 0],
 						"0.5": [0, 15, 0]
+					}
+				},
+				"bone41": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.05": [0, 0, -45.94824],
+						"0.1": [0, 0, -194.05176],
+						"0.15": [0, 0, -240]
+					},
+					"position": {
+						"0.0": [0, 15, 0],
+						"1.0": [0, 15, 0]
+					}
+				}
+			}
+		},
+		"animation.sword.usebbbb": {
+			"animation_length": 1,
+			"bones": {
+				"swordat": {
+					"rotation": {
+						"0.0": [0, 0, -240],
+						"0.05": [0, 0, -194.05176],
+						"0.1": [0, 0, -45.94824],
+						"0.15": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 15, 0],
+						"0.15": [0, 15, 0]
+					}
+				},
+				"bone41": {
+					"rotation": {
+						"0.0": [0, 0, -240],
+						"0.05": [0, 0, -194.05176],
+						"0.1": [0, 0, -45.94824],
+						"0.15": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 15, 0],
+						"0.15": [0, 15, 0]
 					}
 				}
 			}
@@ -257,7 +335,7 @@
 			}
 		},
 		"animation.sword.ack": {
-			"animation_length": 0.5,
+			"animation_length": 1,
 			"bones": {
 				"swordat": {
 					"rotation": {
@@ -271,7 +349,7 @@
 			}
 		},
 		"animation.sword.use2": {
-			"animation_length": 0.5,
+			"animation_length": 1,
 			"bones": {
 				"swordat": {
 					"rotation": {
@@ -286,7 +364,7 @@
 			}
 		},
 		"animation.sword.use3": {
-			"animation_length": 0.5,
+			"animation_length": 1,
 			"bones": {
 				"swordat": {
 					"rotation": {
@@ -303,7 +381,7 @@
 			}
 		},
 		"animation.sword.use4": {
-			"animation_length": 0.5,
+			"animation_length": 1,
 			"bones": {
 				"swordat": {
 					"rotation": {

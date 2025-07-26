@@ -9,6 +9,10 @@ tag @a[scores={printlevel=1..}] add printlevel
 
 execute as @a[tag=printlevel] run function level
 
+tag @a[scores={combocool=1..}] add combocool
+
+execute as @a[tag=combocool] run function combocool
+
 scoreboard players remove @a[scores={sa=1..}] sa 1
 scoreboard players remove @a[scores={meleeup=1..}] meleeup 1
 
