@@ -16,7 +16,7 @@
 							"melee" : "query.is_delayed_attacking && !query.is_using_item"
 						},
 						{
-							"fall" : "query.is_sneaking && query.is_jumping && query.is_using_item && !query.is_on_ground"
+							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
 						},
 						{
 							"nattack" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground || query.is_jumping )"
