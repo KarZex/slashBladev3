@@ -4,10 +4,12 @@
     "description": {
       "identifier": "blade:yasha",
       "materials": {
-        "default": "entity_alphatest"
+        "default": "entity_alphatest",
+        "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/yasha"
+        "default": "textures/models/yasha",
+        "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {
         "default": "geometry.yasha"
@@ -40,7 +42,7 @@
         ]
       },
       "render_controllers": [
-        "controller.render.default"
+        "controller.render.armor"
       ]
     }
   }

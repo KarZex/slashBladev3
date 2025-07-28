@@ -4,6 +4,8 @@
   "padding": 8,
   "num_mip_levels": 4,
   "texture_data": {
+    "bladestand1": { "textures": [ "textures/blocks/bladestand" ] },
+
     "rapeseed0": { "textures": [ "textures/blocks/rapeseed/rapeseed_0" ] },
     "rapeseed1": { "textures": [ "textures/blocks/rapeseed/rapeseed_1" ] },
     "rapeseed2": { "textures": [ "textures/blocks/rapeseed/rapeseed_2" ] },

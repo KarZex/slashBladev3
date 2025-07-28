@@ -4,13 +4,15 @@
     "description": {
       "identifier": "blade:sample",
       "materials": {
-        "default": "entity_alphatest"
+        "default": "entity_alphatest",
+        "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/sample"
+        "default": "textures/models/sample",
+        "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {
-        "default": "geometry.sample"
+        "default": "geometry.wooddebug"
       },
       "animations": {
         "root": "controller.animation.blade",
@@ -40,7 +42,7 @@
         ]
       },
       "render_controllers": [
-        "controller.render.default"
+        "controller.render.armor"
       ]
     }
   }

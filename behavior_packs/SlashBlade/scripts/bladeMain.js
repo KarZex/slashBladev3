@@ -10,6 +10,7 @@ const allies = [
 	`villager`
 ]
 
+
 function print( text ){
 	world.sendMessage(`§a[debug]§r:${text}`)
 }

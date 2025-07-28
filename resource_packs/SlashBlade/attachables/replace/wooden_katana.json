@@ -4,10 +4,12 @@
     "description": {
       "identifier": "blade:wooden_katana",
       "materials": {
-        "default": "entity_alphatest"
+        "default": "entity_alphatest",
+        "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/wooden_katana"
+        "default": "textures/models/wooden_katana",
+        "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {
         "default": "geometry.newslashblade"
@@ -40,7 +42,7 @@
         ]
       },
       "render_controllers": [
-        "controller.render.default"
+        "controller.render.armor"
       ]
     }
   }

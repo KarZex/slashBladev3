@@ -1,0 +1,40 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "blade:kamuy_fire.bladestand1",
+      "item": {
+        "blade:kamuy_fire": "query.owner_identifier == 'zex:bladestand1'"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/models/kamuy_fire"
+      },
+      "geometry": {
+        "default": "geometry.kamuy"
+      },
+      "animations": {
+        "root": "animation.sword.stand"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.main_hand = c.item_slot == 'main_hand';"
+        ],
+        "animate": [
+          "root",
+          {
+            "first": "(v.main_hand && c.is_first_person)"
+          },
+          {
+            "third": "v.main_hand && !c.is_first_person"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

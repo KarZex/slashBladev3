@@ -1,0 +1,60 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "zex:bladestand1",
+      "spawn_category": "creature",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+    },
+    "components": {
+      "minecraft:behavior.trade_with_player": {},
+      "minecraft:experience_reward": {
+        "on_death": "0"
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/stand.json"
+      },
+      "minecraft:health": {
+        "value": 32767,
+        "max": 32767
+      },
+      "minecraft:push_through": {
+        "value": 0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:physics": {
+        "has_collision": false,
+        "has_gravity": false,
+        "push_towards_closest_space": false
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+      }
+    },
+    "events": {
+    }
+  }
+}

@@ -140,9 +140,38 @@ for row in csv_reader:
 
         func += "execute if entity @s[hasitem={{item=blade:{},location=slot.weapon.mainhand}}] run scriptevent zex:haveBlade {}\n".format(blade_id, blade_id)
 
-        with open("tool/ak47.json","r") as f:
+        if(blade_mate == ""):
+            with open("tool/ak47.json","r") as f:
+                gun_item = json.load(f)
+                gun_item["minecraft:attachable"]["description"]["identifier"] = "blade:{}".format(blade_id)
+                gun_item["minecraft:attachable"]["description"]["textures"]["default"] = "textures/models/{}".format(blade_id)
+                if blade_mate != "":
+                    gun_item["minecraft:attachable"]["description"]["materials"]["default"] = "{}".format(blade_mate)
+                if blade_geo != "":
+                    gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_geo)
+                else:
+                    gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_id)
+            with open("resource_packs/SlashBlade/attachables/replace/{}.json".format(blade_id),"w") as f:
+                json.dump(gun_item,f,indent=2)
+        else:
+            with open("tool/ak47s.json","r") as f:
+                gun_item = json.load(f)
+                gun_item["minecraft:attachable"]["description"]["identifier"] = "blade:{}".format(blade_id)
+                gun_item["minecraft:attachable"]["description"]["textures"]["default"] = "textures/models/{}".format(blade_id)
+                if blade_mate != "":
+                    gun_item["minecraft:attachable"]["description"]["materials"]["default"] = "{}".format(blade_mate)
+                if blade_geo != "":
+                    gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_geo)
+                else:
+                    gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_id)
+            with open("resource_packs/SlashBlade/attachables/replace/{}.json".format(blade_id),"w") as f:
+                json.dump(gun_item,f,indent=2)
+
+        
+        with open("tool/bladestand2.json","r") as f:
             gun_item = json.load(f)
-            gun_item["minecraft:attachable"]["description"]["identifier"] = "blade:{}".format(blade_id)
+            gun_item["minecraft:attachable"]["description"]["identifier"] = "blade:{}.bladestand2".format(blade_id)
+            gun_item["minecraft:attachable"]["description"]["item"] = { "blade:{}".format(blade_id) : "query.owner_identifier == 'zex:bladestand2'" }
             gun_item["minecraft:attachable"]["description"]["textures"]["default"] = "textures/models/{}".format(blade_id)
             if blade_mate != "":
                 gun_item["minecraft:attachable"]["description"]["materials"]["default"] = "{}".format(blade_mate)
@@ -150,8 +179,24 @@ for row in csv_reader:
                 gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_geo)
             else:
                 gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_id)
-        with open("resource_packs/SlashBlade/attachables/replace/{}.json".format(blade_id),"w") as f:
+        with open("resource_packs/SlashBlade/attachables/replace/stand2/{}.json".format(blade_id),"w") as f:
             json.dump(gun_item,f,indent=2)
+
+        
+        with open("tool/stand1.json","r") as f:
+            gun_item = json.load(f)
+            gun_item["minecraft:attachable"]["description"]["identifier"] = "blade:{}.bladestand1".format(blade_id)
+            gun_item["minecraft:attachable"]["description"]["item"] = { "blade:{}".format(blade_id) : "query.owner_identifier == 'zex:bladestand1'" }
+            gun_item["minecraft:attachable"]["description"]["textures"]["default"] = "textures/models/{}".format(blade_id)
+            if blade_mate != "":
+                gun_item["minecraft:attachable"]["description"]["materials"]["default"] = "{}".format(blade_mate)
+            if blade_geo != "":
+                gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_geo)
+            else:
+                gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_id)
+        with open("resource_packs/SlashBlade/attachables/replace/stand1/{}.json".format(blade_id),"w") as f:
+            json.dump(gun_item,f,indent=2)
+
 
         
         standrender_json["render_controllers"]["controller.render.bladeitem"]["arrays"]["geometries"]["Array.item_geo"].append("geometry.{}".format(blade_id))  

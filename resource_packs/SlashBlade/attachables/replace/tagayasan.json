@@ -4,13 +4,15 @@
     "description": {
       "identifier": "blade:tagayasan",
       "materials": {
-        "default": "entity_alphatest"
+        "default": "entity_alphatest",
+        "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/tagayasan"
+        "default": "textures/models/tagayasan",
+        "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {
-        "default": "geometry.tagayasan"
+        "default": "geometry.wood"
       },
       "animations": {
         "root": "controller.animation.blade",
@@ -40,7 +42,7 @@
         ]
       },
       "render_controllers": [
-        "controller.render.default"
+        "controller.render.armor"
       ]
     }
   }

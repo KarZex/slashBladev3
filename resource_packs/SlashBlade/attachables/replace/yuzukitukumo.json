@@ -4,13 +4,15 @@
     "description": {
       "identifier": "blade:yuzukitukumo",
       "materials": {
-        "default": "entity_alphatest"
+        "default": "entity_alphatest",
+        "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/yuzukitukumo"
+        "default": "textures/models/yuzukitukumo",
+        "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {
-        "default": "geometry.tukumo"
+        "default": "geometry.blade2"
       },
       "animations": {
         "root": "controller.animation.blade",
@@ -40,7 +42,7 @@
         ]
       },
       "render_controllers": [
-        "controller.render.default"
+        "controller.render.armor"
       ]
     }
   }
