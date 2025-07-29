@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:ramen_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BA",
+      "CB"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:water_bucket"
+      },
+      "B": {
+        "item": "zex:flour"
+      },
+      "C": {
+        "item": "zex:alkaline"
+      }
+    },
+    "result": [
+      {
+        "item": "zex:ramen",
+        "count": 1
+      },
+      {
+        "item": "minecraft:bucket", 
+        "data": 0 
+      }
+    ]
+  }
+  
+}

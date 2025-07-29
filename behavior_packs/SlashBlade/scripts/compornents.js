@@ -7,7 +7,8 @@ function slashBlade7CropsInteractEvent( event ){
     if ( item.typeId == `minecraft:bone_meal` ){
         const level =  event.block.permutation.getState(`zex:growth`);
         if( level < 7 ){
-            block.setPermutation(block.permutation.withState(`zex:growth`,1 + level));
+            const nextLlevel = Math.min(7,level + Math.floor(1+ Math.random() * 3));
+            block.setPermutation(block.permutation.withState(`zex:growth`,nextLlevel));
             event.dimension.spawnParticle(`minecraft:crop_growth_emitter`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
         }
     }
@@ -15,7 +16,30 @@ function slashBlade7CropsInteractEvent( event ){
 function slashBlade7CropsGrowingEvent( event ){
     const block = event.block;
     const level =  event.block.permutation.getState(`zex:growth`);
-    if( level < 7 ){
+    const rand = Math.random();
+        if( level < 7 && rand < 1/4  ){
+        block.setPermutation(block.permutation.withState(`zex:growth`,1 + level));
+    }
+}
+
+function slashBlade6CropsInteractEvent( event ){
+    const user = event.player;
+    const block = event.block;
+    const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+    if ( item.typeId == `minecraft:bone_meal` ){
+        const level =  event.block.permutation.getState(`zex:growth`);
+        if( level < 6 ){
+            const nextLlevel = Math.min(6,level + Math.floor( 1 + Math.random() * 3));
+            block.setPermutation(block.permutation.withState(`zex:growth`,nextLlevel));
+            event.dimension.spawnParticle(`minecraft:crop_growth_emitter`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
+        }
+    }
+}
+function slashBlade6CropsGrowingEvent( event ){
+    const block = event.block;
+    const level =  event.block.permutation.getState(`zex:growth`);
+    const rand = Math.random();
+    if( level < 6 && rand < 1/4  ){
         block.setPermutation(block.permutation.withState(`zex:growth`,1 + level));
     }
 }
@@ -28,7 +52,8 @@ function slashBladePepperInteractEvent( event ){
         if ( item.typeId == `minecraft:bone_meal` ){
             const level =  event.block.permutation.getState(`zex:growth`);
             if( level < 5 ){
-                block.setPermutation(block.permutation.withState(`zex:growth`,1 + level));
+                const nextLlevel = Math.min(5,level + Math.floor(1+ Math.random() * 2));
+                block.setPermutation(block.permutation.withState(`zex:growth`,nextLlevel));
                 event.dimension.spawnParticle(`minecraft:crop_growth_emitter`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
             }
         }
@@ -54,7 +79,8 @@ function slashBladePepperInteractEvent( event ){
 function slashBladePepperGrowingEvent( event ){
     const block = event.block;
     const level =  event.block.permutation.getState(`zex:growth`);
-    if( level < 5 ){
+    const rand = Math.random();
+    if( level < 5 && rand < 1/4  ){
         block.setPermutation(block.permutation.withState(`zex:growth`,1 + level));
     }
 }
@@ -109,7 +135,8 @@ function slashBladeCookingPotLiqEvent( event ){
 function slashBladeCookingPotLiqXEvent( event ){
     const block = event.block;
     const level =  event.block.permutation.getState(`zex:water`);
-    if ( level != `nothing` ){
+    const rand = Math.random();
+    if ( level != `nothing` && rand < 1/8 ){
         block.setPermutation(block.permutation.withState(`zex:water`,"nothing"));
     }
 }
@@ -204,10 +231,32 @@ function slashBladeStandBreak2Event( event ){
         }
     }catch{}
 }
+function slashBladeNoodleEvent( event ){
+    const d = event.dimension;
+    const block = event.block;
+    const level =  event.block.permutation.getState(`zex:noodle`);
+    const rand = Math.random();
+    if( level == 0 && rand < 1/8 ){
+        block.setPermutation(block.permutation.withState(`zex:noodle`,1));
+    }
+}
+function slashBladeNoodleCutEvent( event ){
+    const user = event.player;
+    const d = event.dimension;
+    const block = event.block;
+    const blockType = block.typeId.split(`:`)[1];
+    const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+    if( item.typeId.includes(`blade:`) ){
+        event.dimension.runCommand(`loot spawn ${block.location.x+0.5} ${block.location.y} ${block.location.z+0.5} loot "blocks/${blockType}_raw"`);
+        event.dimension.setBlockType(block.location,`minecraft:air`);
+    }
+}
 
 world.beforeEvents.worldInitialize.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`zex:glowth7`,{onPlayerInteract: slashBlade7CropsInteractEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:growing7`,{onRandomTick: slashBlade7CropsGrowingEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:glowth6`,{onPlayerInteract: slashBlade6CropsInteractEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:growing6`,{onRandomTick: slashBlade6CropsGrowingEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:campfire`,{onPlayerInteract: slashBladeCampfireEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:campfire_cooking_pot_fire_start`,{onPlayerInteract: slashBladeCookingPotStartFireEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:campfire_cooking_pot_fire`,{onRandomTick: slashBladeCookingPotFireEvent});
@@ -221,4 +270,6 @@ world.beforeEvents.worldInitialize.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`zex:bladestand2`,{onPlayerInteract: slashBladeStandInteract2Event});
     e.blockComponentRegistry.registerCustomComponent(`zex:bladestand1b`,{onPlayerDestroy: slashBladeStandBreakEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:bladestand2b`,{onPlayerDestroy: slashBladeStandBreak2Event});
+    e.blockComponentRegistry.registerCustomComponent(`zex:noodle`,{onStepOn: slashBladeNoodleEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:noodle2`,{onPlayerInteract: slashBladeNoodleCutEvent});
 } )

@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:pasta_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BB",
+      "AC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:water_bucket"
+      },
+      "B": {
+        "item": "zex:flour"
+      },
+      "C": {
+        "item": "minecraft:egg"
+      }
+    },
+    "result": [
+      {
+        "item": "zex:pasta",
+        "count": 1
+      },
+      {
+        "item": "minecraft:bucket", 
+        "data": 0 
+      }
+    ]
+  }
+  
+}

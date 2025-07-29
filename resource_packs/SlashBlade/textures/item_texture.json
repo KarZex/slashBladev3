@@ -30,7 +30,7 @@
       "textures": "textures/items/oyako"
     },
     "ramen": {
-      "textures": "textures/items/ramen"
+      "textures": "textures/items/food/ramen"
     },
     "rice": {
       "textures": "textures/items/food/rice"
@@ -358,6 +358,57 @@
     },
     "onigiri_tempura": {
       "textures": "textures/items/food/onigiri_tempura"
+    },
+    "buckwheatseed": {
+      "textures": "textures/items/food/buckwheatseed"
+    },
+    "pasta_raw": {
+      "textures": "textures/items/food/pasta_raw"
+    },
+    "udon_raw": {
+      "textures": "textures/items/food/udon_raw"
+    },
+    "soba_raw": {
+      "textures": "textures/items/food/soba_raw"
+    },
+    "ramen_raw": {
+      "textures": "textures/items/food/ramen_raw"
+    },
+    "flour_buckwheat": {
+      "textures": "textures/items/food/flour_buckwheat"
+    },
+    "alkaline": {
+      "textures": "textures/items/food/alkaline"
+    },
+    "rice_pork_fried": {
+      "textures": "textures/items/food/rice_pork_fried"
+    },
+    "tomato_sauce": {
+      "textures": "textures/items/food/tomato_sauce"
+    },
+    "tomato": {
+      "textures": "textures/items/food/tomato"
+    },
+    "tomatoseed": {
+      "textures": "textures/items/food/tomatoseed"
+    },
+    "ramen_beef": {
+      "textures": "textures/items/food/ramen_beef"
+    },
+    "ramen_chicken": {
+      "textures": "textures/items/food/ramen_chicken"
+    },
+    "ramen_egg": {
+      "textures": "textures/items/food/ramen_egg"
+    },
+    "ramen_katsu": {
+      "textures": "textures/items/food/ramen_katsu"
+    },
+    "ramen_large": {
+      "textures": "textures/items/food/ramen_large"
+    },
+    "ramen_tempura": {
+      "textures": "textures/items/food/ramen_tempura"
     }
   }
 }

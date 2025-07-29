@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex.millstonet_flour_buckwheat"
+    },
+    "tags": [ "millstonet" ],
+    "pattern": [
+      "AA"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:buckwheatseed",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:tnt",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:flour_buckwheat",
+      "count": 2
+    }
+  }
+  
+}

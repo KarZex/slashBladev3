@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:tomato_sauce_recipe"
+    },
+    "tags": [ "cooking_pot_water" ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:tomato",
+        "data": 0
+      },
+      "B": {
+        "item": "zex:sugar",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:egg",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:tomato_sauce",
+      "count": 1
+    }
+  }
+  
+}

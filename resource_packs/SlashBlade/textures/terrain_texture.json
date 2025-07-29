@@ -6,6 +6,28 @@
   "texture_data": {
     "bladestand1": { "textures": [ "textures/blocks/bladestand" ] },
 
+    "udon": { "textures": [ "textures/blocks/udon" ] },
+    "ramen": { "textures": [ "textures/blocks/ramen" ] },
+    "soba": { "textures": [ "textures/blocks/soba" ] },
+    "pasta": { "textures": [ "textures/blocks/pasta" ] },
+    
+    "tomato_0": { "textures": [ "textures/blocks/tomato_model/tomato_0" ] },
+    "tomato_1": { "textures": [ "textures/blocks/tomato_model/tomato_1" ] },
+    "tomato_2": { "textures": [ "textures/blocks/tomato_model/tomato_2" ] },
+    "tomato_3": { "textures": [ "textures/blocks/tomato_model/tomato_3" ] },
+    "tomato_4": { "textures": [ "textures/blocks/tomato_model/tomato_4" ] },
+    "tomato_5": { "textures": [ "textures/blocks/tomato_model/tomato_5" ] },
+    "tomato_6": { "textures": [ "textures/blocks/tomato_model/tomato_6" ] },
+
+    "buckwheat0": { "textures": [ "textures/blocks/buckwheat/buckwheat_0" ] },
+    "buckwheat1": { "textures": [ "textures/blocks/buckwheat/buckwheat_1" ] },
+    "buckwheat2": { "textures": [ "textures/blocks/buckwheat/buckwheat_2" ] },
+    "buckwheat3": { "textures": [ "textures/blocks/buckwheat/buckwheat_3" ] },
+    "buckwheat4": { "textures": [ "textures/blocks/buckwheat/buckwheat_4" ] },  
+    "buckwheat5": { "textures": [ "textures/blocks/buckwheat/buckwheat_5" ] },
+    "buckwheat6": { "textures": [ "textures/blocks/buckwheat/buckwheat_6" ] },
+    "buckwheat7": { "textures": [ "textures/blocks/buckwheat/buckwheat_7" ] },
+
     "rapeseed0": { "textures": [ "textures/blocks/rapeseed/rapeseed_0" ] },
     "rapeseed1": { "textures": [ "textures/blocks/rapeseed/rapeseed_1" ] },
     "rapeseed2": { "textures": [ "textures/blocks/rapeseed/rapeseed_2" ] },

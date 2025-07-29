@@ -1,0 +1,251 @@
+{
+  "format_version": "1.21.20",
+  "minecraft:block": {
+    "description": {
+      "identifier": "zex:buckwheat",
+      "states": {
+        "zex:growth": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:placement_filter": {
+        "conditions": [
+          {
+            "allowed_faces": [
+              "up"
+            ],
+            "block_filter": [
+              "minecraft:farmland"
+            ]
+          }
+        ]
+      },
+      "minecraft:custom_components": [
+        "zex:glowth7","zex:growing7"
+      ],
+      "minecraft:geometry": "geometry.crop",
+      "minecraft:loot": "loot_tables/blocks/andon.json",
+      "minecraft:map_color": "#00ff00",
+      "minecraft:light_emission": 0,
+      "minecraft:light_dampening": 0,
+      "minecraft:collision_box": false,
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0
+      }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('zex:growth') == 0",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "buckwheat0",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              2,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/buckwheatseed.json"
+        }
+      },
+      {
+        "condition": "query.block_state('zex:growth') == 1",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "buckwheat1",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              4,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/buckwheatseed.json"
+        }
+      },
+      {
+        "condition": "query.block_state('zex:growth') == 2",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "buckwheat2",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              8,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/buckwheatseed.json"
+        }
+      },
+      {
+        "condition": "query.block_state('zex:growth') == 3",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "buckwheat3",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              12,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/buckwheatseed.json"
+        }
+      },
+      {
+        "condition": "query.block_state('zex:growth') == 4",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "buckwheat4",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              16,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/buckwheatseed.json"
+        }
+      },
+      {
+        "condition": "query.block_state('zex:growth') == 5",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "buckwheat5",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              16,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/buckwheatseed.json"
+        }
+      },
+      {
+        "condition": "query.block_state('zex:growth') == 6",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "buckwheat6",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              16,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/buckwheatseed.json"
+        }
+      },
+      {
+        "condition": "query.block_state('zex:growth') == 7",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "buckwheat7",
+              "render_method": "blend"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              16,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/buckwheat.json"
+        }
+      }
+    ]
+  }
+}

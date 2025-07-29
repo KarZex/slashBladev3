@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex.millstonet_cobblestone"
+    },
+    "tags": [ "millstonet" ],
+    "pattern": [
+      "A"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:stone",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:tnt",
+        "data": 0
+      }
+    },
+    "result": [
+      {
+        "item": "minecraft:cobblestone",
+        "count": 1
+      },
+      {
+        "item": "zex:alkaline",
+        "count": 2
+      }
+    ]
+  }
+  
+}

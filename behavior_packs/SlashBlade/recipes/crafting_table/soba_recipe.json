@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:soba_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BA",
+      "BC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:water_bucket"
+      },
+      "B": {
+        "item": "zex:flour"
+      },
+      "C": {
+        "item": "zex:flour_buckwheat"
+      }
+    },
+    "result": [
+      {
+        "item": "zex:soba",
+        "count": 1
+      },
+      {
+        "item": "minecraft:bucket", 
+        "data": 0 
+      }
+    ]
+  }
+  
+}

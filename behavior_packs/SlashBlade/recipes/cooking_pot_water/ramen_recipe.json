@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:ramen_recipe"
+    },
+    "tags": [ "cooking_pot_water" ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:ramen_raw",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:kelp",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:ramen",
+      "count": 2
+    }
+  }
+  
+}
