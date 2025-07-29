@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "zex:tomato_sauce_recipe"
+    "identifier": "zex:pasta_whitesauce_recipe"
     },
     "tags": [ "cooking_pot_water" ],
     "pattern": [
@@ -10,20 +10,16 @@
     ],
     "key": {
       "A": {
-        "item": "zex:tomato",
+        "item": "zex:pasta_raw",
         "data": 0
       },
       "B": {
-        "item": "minecraft:sugar",
-        "data": 0
-      },
-      "C": {
-        "item": "minecraft:egg",
+        "item": "zex:white_sauce",
         "data": 0
       }
     },
     "result": {
-      "item": "zex:tomato_sauce",
+      "item": "zex:pasta_whitesauce",
       "count": 1
     }
   }

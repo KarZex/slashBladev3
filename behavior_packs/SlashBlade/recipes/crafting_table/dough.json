@@ -1,0 +1,32 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:dough_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:water_bucket"
+      },
+      "B": {
+        "item": "zex:flour"
+      }
+    },
+    "result": [
+      {
+        "item": "zex:dough",
+        "count": 1
+      },
+      { 
+        "item": "minecraft:bucket",
+        "count": 1, 
+        "data": 0 
+      }
+    ]
+  }
+  
+}

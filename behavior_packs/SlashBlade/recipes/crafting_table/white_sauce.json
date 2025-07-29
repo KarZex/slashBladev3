@@ -1,0 +1,39 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:white_sauce_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ABC",
+      "D  "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:milk_bucket"
+      },
+      "B": {
+        "item": "zex:flour"
+      },
+      "C": {
+        "item": "zex:salt"
+      },
+      "D": {
+        "item": "zex:white_pepper"
+      }
+    },
+    "result": [
+      {
+        "item": "zex:white_sauce",
+        "count": 2
+      },
+      { 
+        "item": "minecraft:bucket",
+        "count": 1, 
+        "data": 0 
+      }
+    ]
+  }
+  
+}

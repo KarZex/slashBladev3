@@ -409,6 +409,15 @@
     },
     "ramen_tempura": {
       "textures": "textures/items/food/ramen_tempura"
+    },
+    "dough": {
+      "textures": "textures/items/food/dough"
+    },
+    "white_sauce": {
+      "textures": "textures/items/food/white_sauce"
+    },
+    "pasta_whitesauce": {
+      "textures": "textures/items/food/pasta_whitesauce"
     }
   }
 }
