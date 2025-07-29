@@ -101,7 +101,15 @@ function bladeInstant( user,blade ){
 	blade.setDynamicProperty("damagemax",bladeData[`${bladeId}`][`damageplus`]);
 	const attack = bladeData[`${bladeId}`][`damage`];
 	const mac = bladeData[`${bladeId}`][`damageplus`];
-	blade.setLore([`§rKillCount: ${blade.getDynamicProperty("killCount")}`,`§rProudSoul: ${blade.getDynamicProperty("ProudSoul")}`,`§rRefine: ${blade.getDynamicProperty("Refine")}`,`§rSA: ${blade.getDynamicProperty("sa")}`,`§r§4RankAttackDamage`,`§r§6B-SS§r/§cSSS§r/§5Limit`,`§r§6+${attack}.0§r/§c+${attack}.0§r/§5+${mac}.0`]);
+	blade.setLore([
+		`§rKillCount: ${blade.getDynamicProperty("killCount")}`,
+		`§rProudSoul: ${blade.getDynamicProperty("ProudSoul")}`,
+		`§rRefine: ${blade.getDynamicProperty("Refine")}`,
+		`§rSA: ${blade.getDynamicProperty("sa")}`,
+		`§r§4RankAttackDamage`,
+		`§r§6B-SS§r/§cSSS§r/§5Limit`,
+		`§r§6+${attack}.0§r/§c+${attack}.0§r/§5+${mac}.0`
+	]);
 }
 
 function bladeSoulcal( user,blade ){

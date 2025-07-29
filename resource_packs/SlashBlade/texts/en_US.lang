@@ -118,3 +118,17 @@ tile.zex:riceplant.name=Riceplant
 tile.zex:tatami.name=Tatami
 tile.zex:tatami_tan.name=Tatami Tan
 tile.zex:wara.name=Wara
+
+script.zex:drive.name=Drive
+script.zex:slashdimension.name=Slash Dimension
+script.zex:vdrive.name=Vertical-Drive
+script.zex:spear.name=Spear
+script.zex:circleslash.name=Circle Slash
+script.zex:flamethrower.name=Flamethrower
+script.zex:waveedge.name=Wave Edge
+script.zex:fireup.name=Fire Up
+script.zex:lighting_swords.name=Lighting Swords
+script.zex:water_drive.name=Water Drive
+script.zex:absorb.name=Absorb
+
+
