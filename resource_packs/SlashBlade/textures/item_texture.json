@@ -418,6 +418,18 @@
     },
     "pasta_whitesauce": {
       "textures": "textures/items/food/pasta_whitesauce"
+    },
+    "pasta_mushroom": {
+      "textures": "textures/items/food/pasta_mushroom"
+    },
+    "pasta_tomato": {
+      "textures": "textures/items/food/pasta_tomato"
+    },
+    "onion": {
+      "textures": "textures/items/food/onion"
+    },
+    "onionseed": {
+      "textures": "textures/items/food/onionseed"
     }
   }
 }
