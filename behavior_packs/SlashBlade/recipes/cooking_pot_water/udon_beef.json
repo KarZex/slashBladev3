@@ -1,0 +1,32 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "zex:udon_beef_recipe"
+    },
+    "tags": [
+      "cooking_pot_water"
+    ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:udon_raw",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:kelp",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:beef",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:udon_beef",
+      "count": 2
+    }
+  }
+}

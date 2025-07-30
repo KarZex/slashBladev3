@@ -1,0 +1,32 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "zex:udon_katsu_recipe"
+    },
+    "tags": [
+      "cooking_pot_water"
+    ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:udon_raw",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:kelp",
+        "data": 0
+      },
+      "C": {
+        "item": "zex:katsu",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:udon_katsu",
+      "count": 2
+    }
+  }
+}
