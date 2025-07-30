@@ -1,0 +1,32 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "zex:udon_egg_recipe"
+    },
+    "tags": [
+      "cooking_pot_water"
+    ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:udon_raw",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:kelp",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:egg",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:udon_egg",
+      "count": 2
+    }
+  }
+}

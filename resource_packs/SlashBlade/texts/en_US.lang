@@ -81,8 +81,24 @@ item.zex:rice_pork=Rice Pork
 item.zex:rice_pork_egg=Rice Pork Egg
 item.zex:rice_pork_fried=Rice Pork Fried
 item.zex:shrimp=Shrimp
+item.zex:soba=Soba
+item.zex:soba_beef=Soba Beef
+item.zex:soba_chicken=Soba Chicken
+item.zex:soba_croquette=Soba Croquette
+item.zex:soba_egg=Soba Egg
+item.zex:soba_katsu=Soba Katsu
+item.zex:soba_large=Soba Large
+item.zex:soba_tempura=Soba Tempura
 item.zex:tempura=Tempura
 item.zex:tomato=Tomato
+item.zex:udon=Udon
+item.zex:udon_beef=Udon Beef
+item.zex:udon_chicken=Udon Chicken
+item.zex:udon_croquette=Udon Croquette
+item.zex:udon_egg=Udon Egg
+item.zex:udon_katsu=Udon Katsu
+item.zex:udon_large=Udon Large
+item.zex:udon_tempura=Udon Tempura
 item.zex:alkaline=Alkaline
 item.zex:black_pepper=Black Pepper
 item.zex:breadcrumbs=Breadcrumbs
@@ -114,7 +130,6 @@ item.zex:bladesoulsphere=Bladesoulsphere
 item.zex:proudsoul=Proudsoul
 item.zex:tinyproudsoul=Tinyproudsoul
 
-
 tile.zex:andon.name=Andon
 tile.zex:bamboo_pane.name=Bamboo Pane
 tile.zex:bladestand1.name=Bladestand1
@@ -138,7 +153,6 @@ tile.zex:tatami_tan.name=Tatami Tan
 tile.zex:tomato_crop.name=Tomato Crop
 tile.zex:udon.name=Udon
 tile.zex:wara.name=Wara
-
 
 script.zex:drive.name=Drive
 script.zex:slashdimension.name=Slash Dimension

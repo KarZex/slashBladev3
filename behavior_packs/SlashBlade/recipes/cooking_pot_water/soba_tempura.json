@@ -1,0 +1,32 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "zex:soba_tempura_recipe"
+    },
+    "tags": [
+      "cooking_pot_water"
+    ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:soba_raw",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:kelp",
+        "data": 0
+      },
+      "C": {
+        "item": "zex:tempura",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:soba_tempura",
+      "count": 2
+    }
+  }
+}

@@ -430,6 +430,54 @@
     },
     "onionseed": {
       "textures": "textures/items/food/onionseed"
+    },
+    "udon": {
+      "textures": "textures/items/food/udon"
+    },
+    "udon_beef": {
+      "textures": "textures/items/food/udon_beef"
+    },
+    "udon_chicken": {
+      "textures": "textures/items/food/udon_chicken"
+    },
+    "udon_croquette": {
+      "textures": "textures/items/food/udon_croquette"
+    },
+    "udon_egg": {
+      "textures": "textures/items/food/udon_egg"
+    },
+    "udon_katsu": {
+      "textures": "textures/items/food/udon_katsu"
+    },
+    "udon_large": {
+      "textures": "textures/items/food/udon_large"
+    },
+    "udon_tempura": {
+      "textures": "textures/items/food/udon_tempura"
+    },
+    "soba": {
+      "textures": "textures/items/food/soba"
+    },
+    "soba_beef": {
+      "textures": "textures/items/food/soba_beef"
+    },
+    "soba_chicken": {
+      "textures": "textures/items/food/soba_chicken"
+    },
+    "soba_croquette": {
+      "textures": "textures/items/food/soba_croquette"
+    },
+    "soba_egg": {
+      "textures": "textures/items/food/soba_egg"
+    },
+    "soba_katsu": {
+      "textures": "textures/items/food/soba_katsu"
+    },
+    "soba_large": {
+      "textures": "textures/items/food/soba_large"
+    },
+    "soba_tempura": {
+      "textures": "textures/items/food/soba_tempura"
     }
   }
 }
