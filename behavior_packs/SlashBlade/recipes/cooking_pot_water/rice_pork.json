@@ -16,6 +16,9 @@
       "B": {
         "item": "minecraft:porkchop",
         "data": 0
+      },
+      "D": {
+        "item": "zex:onion"
       }
     },
     "result": {

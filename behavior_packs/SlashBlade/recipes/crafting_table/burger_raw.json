@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:burger_raw_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ABC",
+      "DE "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:porkchop"
+      },
+      "B": {
+        "item": "minecraft:beef"
+      },
+      "C": {
+        "item": "minecraft:milk_bucket"
+      },
+      "D": {
+        "item": "zex:onion"
+      },
+      "E": {
+        "item": "zex:breadcrumbs"
+      }
+    },
+    "result": [
+      {
+        "item": "zex:burger_raw",
+        "count": 4
+      }
+    ]
+  }
+  
+}

@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:fries_recipe"
+    },
+    "tags": [ "cooking_pot_oil" ],
+    "pattern": [
+      "ACE"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:potato"
+        },
+      "C": {
+        "item": "zex:salt"
+      },
+      "E": {
+        "item": "zex:black_pepper"
+      }
+
+    },
+    "result": {
+      "item": "zex:fries",
+      "count": 2
+    }
+  }
+  
+}

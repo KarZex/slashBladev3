@@ -2,11 +2,11 @@
   "format_version": "1.20.10",
   "minecraft:recipe_furnace": {
     "description": {
-    "identifier": "zex:furnace_rice_bread"
+    "identifier": "zex:furnace_bun"
     },
     "tags": ["furnace", "smoker" ],
-    "input": "zex:dough_rice",
-    "output": "zex:rice_bread"
+    "input": "zex:dough",
+    "output": "zex:bun"
   }
   
 }

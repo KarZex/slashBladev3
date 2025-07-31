@@ -6,7 +6,8 @@
     },
     "tags": [ "cooking_pot_water" ],
     "pattern": [
-      "ABC"
+      "ABC",
+      "D  "
     ],
     "key": {
       "A": {
@@ -20,6 +21,9 @@
       "C": {
         "item": "minecraft:chicken",
         "data": 0
+      },
+      "D": {
+        "item": "zex:onion"
       }
     },
     "result": {

@@ -2,16 +2,13 @@
   "format_version": "1.21.20",
   "minecraft:block": {
     "description": {
-      "identifier": "zex:tomato_crop",
+      "identifier": "zex:onion_crop",
       "states": {
         "zex:growth": [
           0,
           1,
           2,
-          3,
-          4,
-          5,
-          6
+          3
         ]
       },
       "menu_category": {
@@ -32,9 +29,9 @@
         ]
       },
       "minecraft:custom_components": [
-        "zex:glowth6","zex:growing6"
+        "zex:glowth3","zex:growing3"
       ],
-      "minecraft:geometry": "geometry.crop",
+      "minecraft:geometry": "geometry.onion0",
       "minecraft:loot": "loot_tables/blocks/andon.json",
       "minecraft:map_color": "#00ff00",
       "minecraft:light_emission": 0,
@@ -50,11 +47,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "tomato_0",
+              "texture": "onion_crop",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.tomato_model",
+          "minecraft:geometry": "geometry.onion0",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -67,7 +64,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
+          "minecraft:loot": "loot_tables/blocks/onionseeds.json"
         }
       },
       {
@@ -75,11 +72,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "tomato_1",
+              "texture": "onion_crop",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.tomato_model",
+          "minecraft:geometry": "geometry.onion1",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -92,7 +89,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
+          "minecraft:loot": "loot_tables/blocks/onionseeds.json"
         }
       },
       {
@@ -100,11 +97,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "tomato_2",
+              "texture": "onion_crop",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.tomato_model",
+          "minecraft:geometry": "geometry.onion2",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -117,7 +114,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
+          "minecraft:loot": "loot_tables/blocks/onionseeds.json"
         }
       },
       {
@@ -125,11 +122,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "tomato_3",
+              "texture": "onion_crop",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.tomato_model",
+          "minecraft:geometry": "geometry.onion3",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -142,82 +139,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
-        }
-      },
-      {
-        "condition": "query.block_state('zex:growth') == 4",
-        "components": {
-          "minecraft:material_instances": {
-            "*": {
-              "texture": "tomato_4",
-              "render_method": "alpha_test"
-            }
-          },
-          "minecraft:geometry": "geometry.tomato_4",
-          "minecraft:selection_box": {
-            "origin": [
-              -7,
-              0,
-              -7
-            ],
-            "size": [
-              14,
-              16,
-              14
-            ]
-          },
-          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
-        }
-      },
-      {
-        "condition": "query.block_state('zex:growth') == 5",
-        "components": {
-          "minecraft:material_instances": {
-            "*": {
-              "texture": "tomato_5",
-              "render_method": "alpha_test"
-            }
-          },
-          "minecraft:geometry": "geometry.tomato_5",
-          "minecraft:selection_box": {
-            "origin": [
-              -7,
-              0,
-              -7
-            ],
-            "size": [
-              14,
-              16,
-              14
-            ]
-          },
-          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
-        }
-      },
-      {
-        "condition": "query.block_state('zex:growth') == 6",
-        "components": {
-          "minecraft:material_instances": {
-            "*": {
-              "texture": "tomato_6",
-              "render_method": "alpha_test"
-            }
-          },
-          "minecraft:geometry": "geometry.tomato_6",
-          "minecraft:selection_box": {
-            "origin": [
-              -7,
-              0,
-              -7
-            ],
-            "size": [
-              14,
-              16,
-              14
-            ]
-          },
-          "minecraft:loot": "loot_tables/blocks/tomato.json"
+          "minecraft:loot": "loot_tables/blocks/onion.json"
         }
       }
     ]

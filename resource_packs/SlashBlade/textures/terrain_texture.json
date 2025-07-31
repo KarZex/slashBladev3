@@ -6,6 +6,8 @@
   "texture_data": {
     "bladestand1": { "textures": [ "textures/blocks/bladestand" ] },
 
+    "onion_crop": { "textures": [ "textures/blocks/onion/onion_crop" ] },
+
     "udon": { "textures": [ "textures/blocks/udon" ] },
     "ramen": { "textures": [ "textures/blocks/ramen" ] },
     "soba": { "textures": [ "textures/blocks/soba" ] },

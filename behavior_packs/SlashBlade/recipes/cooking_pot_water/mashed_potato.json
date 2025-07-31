@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:mashed_potato_recipe"
+    },
+    "tags": [ "cooking_pot_water" ],
+    "pattern": [
+      "ABB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:salt"
+      },
+      "B": {
+        "item": "minecraft:potato"
+      }
+    },
+    "result": {
+      "item": "zex:mashed_potato",
+      "count": 4
+    }
+  }
+  
+}

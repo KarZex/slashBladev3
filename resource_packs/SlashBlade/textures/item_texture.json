@@ -252,7 +252,7 @@
       "textures": "textures/items/bladestand"
     },
     "cheese": {
-      "textures": "textures/items/cheese"
+      "textures": "textures/items/food/cheese"
     },
     "rice_pork": {
       "textures": "textures/items/food/rice_pork"
@@ -478,6 +478,33 @@
     },
     "soba_tempura": {
       "textures": "textures/items/food/soba_tempura"
+    },
+    "bun": {
+      "textures": "textures/items/food/bun"
+    },
+    "burger": {
+      "textures": "textures/items/food/burger"
+    },
+    "burger_raw": {
+      "textures": "textures/items/food/burger_raw"
+    },
+    "hamburger": {
+      "textures": "textures/items/food/hamburger"
+    },
+    "mashed_potato": {
+      "textures": "textures/items/food/mashed_potato"
+    },
+    "cheese_burger": {
+      "textures": "textures/items/food/cheese_burger"
+    },
+    "fries": {
+      "textures": "textures/items/food/fries"
+    },
+    "omurice": {
+      "textures": "textures/items/food/omurice"
+    },
+    "croquette": {
+      "textures": "textures/items/food/croquette"
     }
   }
 }

@@ -17,7 +17,7 @@ function slashBlade7CropsGrowingEvent( event ){
     const block = event.block;
     const level =  event.block.permutation.getState(`zex:growth`);
     const rand = Math.random();
-        if( level < 7 && rand < 1/4  ){
+        if( level < 7 && rand < 1/3  ){
         block.setPermutation(block.permutation.withState(`zex:growth`,1 + level));
     }
 }
@@ -39,7 +39,29 @@ function slashBlade6CropsGrowingEvent( event ){
     const block = event.block;
     const level =  event.block.permutation.getState(`zex:growth`);
     const rand = Math.random();
-    if( level < 6 && rand < 1/4  ){
+    if( level < 6 && rand < 1/3  ){
+        block.setPermutation(block.permutation.withState(`zex:growth`,1 + level));
+    }
+}
+
+function slashBlade3CropsInteractEvent( event ){
+    const user = event.player;
+    const block = event.block;
+    const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+    if ( item.typeId == `minecraft:bone_meal` ){
+        const level =  event.block.permutation.getState(`zex:growth`);
+        if( level < 3 ){
+            const nextLlevel = Math.min(3,level + Math.floor( 1 + Math.random()));
+            block.setPermutation(block.permutation.withState(`zex:growth`,nextLlevel));
+            event.dimension.spawnParticle(`minecraft:crop_growth_emitter`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
+        }
+    }
+}
+function slashBlade3CropsGrowingEvent( event ){
+    const block = event.block;
+    const level =  event.block.permutation.getState(`zex:growth`);
+    const rand = Math.random();
+    if( level < 3 && rand < 1/4  ){
         block.setPermutation(block.permutation.withState(`zex:growth`,1 + level));
     }
 }
@@ -130,6 +152,15 @@ function slashBladeCookingPotLiqEvent( event ){
     else if ( item.typeId == `zex:oil_bucket` ){
         block.setPermutation(block.permutation.withState(`zex:water`,"oil"));
         user.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 minecraft:bucket`);
+    }
+    else if ( item.typeId == `minecraft:bucket` ){
+        const level =  event.block.permutation.getState(`zex:water`);
+        if( level == `water` ){
+            user.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 minecraft:water_bucket`);
+        }
+        else if( level == `oil` ){
+            user.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 zex:oil_bucket`);
+        }
     }
 }
 function slashBladeCookingPotLiqXEvent( event ){
@@ -257,6 +288,8 @@ world.beforeEvents.worldInitialize.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`zex:growing7`,{onRandomTick: slashBlade7CropsGrowingEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:glowth6`,{onPlayerInteract: slashBlade6CropsInteractEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:growing6`,{onRandomTick: slashBlade6CropsGrowingEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:glowth3`,{onPlayerInteract: slashBlade3CropsInteractEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:growing3`,{onRandomTick: slashBlade3CropsGrowingEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:campfire`,{onPlayerInteract: slashBladeCampfireEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:campfire_cooking_pot_fire_start`,{onPlayerInteract: slashBladeCookingPotStartFireEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:campfire_cooking_pot_fire`,{onRandomTick: slashBladeCookingPotFireEvent});
