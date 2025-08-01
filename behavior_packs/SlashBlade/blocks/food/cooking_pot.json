@@ -22,14 +22,14 @@
         }
       },
       "menu_category": {
-        "category": "construction"
+        "category": "none"
       }
     },
     "components": {
       "minecraft:material_instances": {
         "*": {
           "texture": "campfire_cooking_pot",
-          "render_method": "blend"
+          "render_method": "alpha_test"
         }
       },
       "minecraft:tick": {
@@ -96,7 +96,7 @@
           "minecraft:material_instances": {
             "*": {
               "texture": "campfire_cooking_pot_water",
-              "render_method": "blend"
+              "render_method": "alpha_test"
             }
           },
           "minecraft:custom_components": [
@@ -112,13 +112,13 @@
             "crafting_tags": [
               "cooking_pot_water"
             ],
-            "table_name": "tile.zex:cooking_pot.name"
+            "table_name": "craft.zex:cooking_pot_water.name"
           },
           "minecraft:light_emission": 15,
           "minecraft:material_instances": {
             "*": {
               "texture": "campfire_cooking_pot_water",
-              "render_method": "blend"
+              "render_method": "alpha_test"
             }
           },
           "minecraft:custom_components": [
@@ -134,7 +134,7 @@
           "minecraft:material_instances": {
             "*": {
               "texture": "campfire_cooking_pot_oil",
-              "render_method": "blend"
+              "render_method": "alpha_test"
             }
           },
           "minecraft:custom_components": [
@@ -150,13 +150,13 @@
             "crafting_tags": [
               "cooking_pot_oil"
             ],
-            "table_name": "tile.zex:cooking_pot.name"
+            "table_name": "craft.zex:cooking_pot_oil.name"
           },
           "minecraft:light_emission": 15,
           "minecraft:material_instances": {
             "*": {
               "texture": "campfire_cooking_pot_oil",
-              "render_method": "blend"
+              "render_method": "alpha_test"
             }
           },
           "minecraft:custom_components": [

@@ -2,7 +2,7 @@
   "format_version": "1.21.20",
   "minecraft:block": {
     "description": {
-      "identifier": "zex:rapeseed",
+      "identifier": "zex:riceplant",
       "states": {
         "zex:growth": [
           0,
@@ -16,7 +16,7 @@
         ]
       },
       "menu_category": {
-        "category": "construction"
+        "category": "none"
       }
     },
     "components": {
@@ -51,7 +51,7 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "rapeseed0",
+              "texture": "riceplant0",
               "render_method": "alpha_test"
             }
           },
@@ -68,7 +68,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
         }
       },
       {
@@ -76,7 +76,7 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "rapeseed1",
+              "texture": "riceplant1",
               "render_method": "alpha_test"
             }
           },
@@ -93,7 +93,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
         }
       },
       {
@@ -101,7 +101,7 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "rapeseed2",
+              "texture": "riceplant2",
               "render_method": "alpha_test"
             }
           },
@@ -118,7 +118,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
         }
       },
       {
@@ -126,7 +126,7 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "rapeseed3",
+              "texture": "riceplant3",
               "render_method": "alpha_test"
             }
           },
@@ -143,7 +143,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
         }
       },
       {
@@ -151,7 +151,7 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "rapeseed4",
+              "texture": "riceplant4",
               "render_method": "alpha_test"
             }
           },
@@ -168,7 +168,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
         }
       },
       {
@@ -176,7 +176,7 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "rapeseed5",
+              "texture": "riceplant5",
               "render_method": "alpha_test"
             }
           },
@@ -193,7 +193,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
         }
       },
       {
@@ -201,7 +201,7 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "rapeseed6",
+              "texture": "riceplant6",
               "render_method": "alpha_test"
             }
           },
@@ -218,7 +218,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
+          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
         }
       },
       {
@@ -226,7 +226,7 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "rapeseed7",
+              "texture": "riceplant7",
               "render_method": "alpha_test"
             }
           },
@@ -243,7 +243,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/rapeseed.json"
+          "minecraft:loot": "loot_tables/blocks/riceplant.json"
         }
       }
     ]

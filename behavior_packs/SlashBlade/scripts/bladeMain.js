@@ -42,6 +42,17 @@ function setBladeDamage( damage,user ){
 
 }
 
+world.beforeEvents.playerBreakBlock.subscribe( e => {
+	const block = e.block;
+	const dimensiontype = e.dimension.id;
+	const dimension = world.getDimension(dimensiontype);
+	if( block.typeId.includes(`short_grass`) || block.typeId.includes(`tall_grass`) ){
+		system.run(() => {
+			dimension.runCommand(`loot spawn ${block.location.x+0.5} ${block.location.y+0.5} ${block.location.z+0.5} loot "blocks/seeds"`);
+		});
+	}
+} )
+
 world.afterEvents.entityHurt.subscribe( e => {
 	const player = e.hurtEntity;
 	if( player.typeId == `minecraft:player` ){
@@ -159,10 +170,12 @@ async function bladeSwing( user,blade,IsOnGround ){
 	const victims = user.dimension.getEntities({location:user.location,maxDistance:5,excludeTypes:[`item`,`xp_orb`] });
 	let knockback = false;
 	let knockbackpower = 0.5;
+	let comboG = 0;
 	if(IsOnGround == true){
-		world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
+		const combo = world.scoreboard.getObjective(`groundcomboA`).getScore(user);
+		comboG = combo;
 		world.scoreboard.getObjective(`groundcomboA`).addScore(user,1);
-		if( world.scoreboard.getObjective(`groundcomboA`).getScore(user) >= 3 ){
+		if( combo >= 3 ){
 			world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
 			d = d * 1.5;
 			user.dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:user.location.x,y:user.location.y+1,z:user.location.z});
@@ -171,16 +184,16 @@ async function bladeSwing( user,blade,IsOnGround ){
 		world.scoreboard.getObjective(`combocool`).setScore(user,20);
 	}
 	else if(IsOnGround == false){
-		world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
+		const combo = world.scoreboard.getObjective(`aircomboA`).getScore(user);
+		comboG = combo;
 		world.scoreboard.getObjective(`aircomboA`).addScore(user,1);
-		if( world.scoreboard.getObjective(`aircomboA`).getScore(user) == 3 ){
-			world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
+		if( combo == 3 ){
 			d = d * 1.2;
 			user.dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:user.location.x,y:user.location.y+1,z:user.location.z});
 			knockback = true;
 			knockbackpower = 1;
 		}
-		else if( world.scoreboard.getObjective(`aircomboA`).getScore(user) >= 4 ){
+		else if( combo >= 4 ){
 			world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
 			d = d * 1.5;
 			user.dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:user.location.x,y:user.location.y+1,z:user.location.z});
@@ -202,7 +215,7 @@ async function bladeSwing( user,blade,IsOnGround ){
 					victims[i].applyKnockback(user.getViewDirection().x,user.getViewDirection().z,2,knockbackpower);
 					victims[i].dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:victims[i].location.x,y:victims[i].location.y+1,z:victims[i].location.z});
 				}
-				world.scoreboard.getObjective(`blade`).addScore(user,7);
+				world.scoreboard.getObjective(`blade`).addScore(user,7 * ( 1 + 0.5 * comboG));
 				if( bladeItemEnch.hasEnchantment("minecraft:fire_aspect") ){
 					victims[i].setOnFire(5);
 				}
@@ -370,26 +383,29 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 })
 
 world.afterEvents.entityDie.subscribe( e => {
-	const killer = e.damageSource.damagingEntity;
-	if( killer.typeId == `minecraft:player` ){
-		if( killer.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand).typeId.includes(`blade:`) ){
-			const loc = e.deadEntity.location;
-			const blade = killer.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-			const lore = blade.getLore();
-			const kill = blade.getDynamicProperty("killCount") + 1;
-			blade.setDynamicProperty("killCount",kill);
-			killer.dimension.runCommand(`loot spawn ${loc.x} ${loc.y} ${loc.z} loot ps`);
-			if( kill >= 1000 ){
-				lore[0] = `§r§4KillCount: ${kill}`;
-				lore[5] = `§r§6B-A§r/§cS-SSS§r/§5Limit`
+	try{
+		const killer = e.damageSource.damagingEntity;
+		if( killer.typeId == `minecraft:player` ){
+			if( killer.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand).typeId.includes(`blade:`) ){
+				const loc = e.deadEntity.location;
+				const blade = killer.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+				const lore = blade.getLore();
+				const kill = blade.getDynamicProperty("killCount") + 1;
+				blade.setDynamicProperty("killCount",kill);
+				killer.dimension.runCommand(`loot spawn ${loc.x} ${loc.y} ${loc.z} loot ps`);
+				if( kill >= 1000 ){
+					lore[0] = `§r§4KillCount: ${kill}`;
+					lore[5] = `§r§6B-A§r/§cS-SSS§r/§5Limit`
+				}
+				else {
+					lore[0] = `§rKillCount: ${kill}`;
+				}
+				blade.setLore(lore);
 			}
-			else {
-				lore[0] = `§rKillCount: ${kill}`;
-			}
-			blade.setLore(lore);
-		}
 
-	}
+		}
+	}catch{}
+
 })
 
 
@@ -477,6 +493,12 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		}
 		if( user.typeId == `minecraft:player` ){
 			bladeSoulcal( user,blade );
+			if( user.isOnGround ){
+				world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
+			}
+			else if( !user.isOnGround ){
+				world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
+			}
 		}
 	}
 })

@@ -6,14 +6,8 @@
   "zex:thatched": {
     "sound": "grass"
   },
-  "zex:tatami": {
-    "sound": "grass"
-  },
   "zex:riceplant": {
     "sound": "grass"
-  },
-  "zex:cherry_log": {
-    "sound": "wood"
   },
   "zex:cherry_plank": {
     "sound": "wood"
@@ -42,17 +36,11 @@
   "zex:wara": {
     "sound": "grass"
   },
-  "zex:kawara": {
-    "sound": "nether_brick"
-  },
   "zex:plaster": {
     "sound": "gravel"
   },
   "zex:cherry_log": {
     "sound": "wood"
-  },
-  "zex:tatami": {
-    "sound": "grass"
   },
    "zex:tatami": {
     "sound": "grass"
@@ -69,7 +57,25 @@
    "zex:tatami_tan_n": {
     "sound": "grass"
   },
-   "zex:tatami_tan_e": {
+   "zex:rapeseed": {
     "sound": "grass"
+  },
+   "zex:onion_crop": {
+    "sound": "grass"
+  },
+   "zex:tomato_crop": {
+    "sound": "grass"
+  },
+   "zex:buckwheat": {
+    "sound": "grass"
+  },
+   "zex:pepper_splint": {
+    "sound": "wood"
+  },
+   "zex:campfire": {
+    "sound": "wood"
+  },
+   "zex:cooking_pot": {
+    "sound": "metal"
   }
 }

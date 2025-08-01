@@ -2,7 +2,7 @@
   "format_version": "1.21.20",
   "minecraft:block": {
     "description": {
-      "identifier": "zex:riceplant",
+      "identifier": "zex:tomato_crop",
       "states": {
         "zex:growth": [
           0,
@@ -11,12 +11,11 @@
           3,
           4,
           5,
-          6,
-          7
+          6
         ]
       },
       "menu_category": {
-        "category": "construction"
+        "category": "none"
       }
     },
     "components": {
@@ -33,7 +32,7 @@
         ]
       },
       "minecraft:custom_components": [
-        "zex:glowth7","zex:growing7"
+        "zex:glowth6","zex:growing6"
       ],
       "minecraft:geometry": "geometry.crop",
       "minecraft:loot": "loot_tables/blocks/andon.json",
@@ -51,11 +50,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "riceplant0",
+              "texture": "tomato_0",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.crop2",
+          "minecraft:geometry": "geometry.tomato_model",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -68,7 +67,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
         }
       },
       {
@@ -76,11 +75,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "riceplant1",
+              "texture": "tomato_1",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.crop2",
+          "minecraft:geometry": "geometry.tomato_model",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -93,7 +92,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
         }
       },
       {
@@ -101,11 +100,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "riceplant2",
+              "texture": "tomato_2",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.crop2",
+          "minecraft:geometry": "geometry.tomato_model",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -118,7 +117,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
         }
       },
       {
@@ -126,11 +125,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "riceplant3",
+              "texture": "tomato_3",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.crop2",
+          "minecraft:geometry": "geometry.tomato_model",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -143,7 +142,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
         }
       },
       {
@@ -151,11 +150,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "riceplant4",
+              "texture": "tomato_4",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.crop2",
+          "minecraft:geometry": "geometry.tomato_4",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -168,7 +167,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
         }
       },
       {
@@ -176,11 +175,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "riceplant5",
+              "texture": "tomato_5",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.crop2",
+          "minecraft:geometry": "geometry.tomato_5",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -193,7 +192,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
+          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
         }
       },
       {
@@ -201,11 +200,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "riceplant6",
+              "texture": "tomato_6",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.crop2",
+          "minecraft:geometry": "geometry.tomato_6",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -218,32 +217,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/riceplantseed.json"
-        }
-      },
-      {
-        "condition": "query.block_state('zex:growth') == 7",
-        "components": {
-          "minecraft:material_instances": {
-            "*": {
-              "texture": "riceplant7",
-              "render_method": "alpha_test"
-            }
-          },
-          "minecraft:geometry": "geometry.crop2",
-          "minecraft:selection_box": {
-            "origin": [
-              -7,
-              0,
-              -7
-            ],
-            "size": [
-              14,
-              16,
-              14
-            ]
-          },
-          "minecraft:loot": "loot_tables/blocks/riceplant.json"
+          "minecraft:loot": "loot_tables/blocks/tomato.json"
         }
       }
     ]

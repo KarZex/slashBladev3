@@ -505,6 +505,15 @@
     },
     "croquette": {
       "textures": "textures/items/food/croquette"
+    },
+    "rice_large_cheese_beef": {
+      "textures": "textures/items/food/rice_large_cheese_beef"
+    },
+    "rice_large_heese_beef": {
+      "textures": "textures/items/food/rice_large_heese_beef"
+    },
+    "rice_cheese_beef": {
+      "textures": "textures/items/food/rice_cheese_beef"
     }
   }
 }

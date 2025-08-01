@@ -99,11 +99,7 @@
               "trader_exp": 1,
               "max_uses": 16,
               "reward_exp": true
-            }
-          ]
-        },
-        {
-          "trades": [
+            },
             {
               "wants": [
                 {
@@ -114,18 +110,14 @@
               ],
               "gives": [
                 {
-                  "item": "minecraft:bread",
-                  "quantity": 6
+                  "item": "zex:cheese",
+                  "quantity": 2
                 }
               ],
               "trader_exp": 1,
               "max_uses": 16,
               "reward_exp": true
-            }
-          ]
-        },
-        {
-          "trades": [
+            },
             {
               "wants": [
                 {
@@ -136,18 +128,14 @@
               ],
               "gives": [
                 {
-                  "item": "minecraft:bread",
-                  "quantity": 6
+                  "item": "zex:onionseed",
+                  "quantity": 8
                 }
               ],
               "trader_exp": 1,
               "max_uses": 16,
               "reward_exp": true
-            }
-          ]
-        },
-        {
-          "trades": [
+            },
             {
               "wants": [
                 {
@@ -158,8 +146,62 @@
               ],
               "gives": [
                 {
-                  "item": "minecraft:bread",
-                  "quantity": 6
+                  "item": "zex:tomatoseed",
+                  "quantity": 8
+                }
+              ],
+              "trader_exp": 1,
+              "max_uses": 16,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 1,
+                  "price_multiplier": 0.05
+                }
+              ],
+              "gives": [
+                {
+                  "item": "zex:buckwheatseed",
+                  "quantity": 8
+                }
+              ],
+              "trader_exp": 1,
+              "max_uses": 16,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 1,
+                  "price_multiplier": 0.05
+                }
+              ],
+              "gives": [
+                {
+                  "item": "zex:riceplantseed",
+                  "quantity": 8
+                }
+              ],
+              "trader_exp": 1,
+              "max_uses": 16,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 1,
+                  "price_multiplier": 0.05
+                }
+              ],
+              "gives": [
+                {
+                  "item": "zex:rapeseeds",
+                  "quantity": 8
                 }
               ],
               "trader_exp": 1,

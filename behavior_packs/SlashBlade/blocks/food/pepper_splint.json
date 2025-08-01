@@ -31,6 +31,7 @@
           }
         ]
       },
+      "tag:minecraft:is_axe_item_destructible": {},
       "minecraft:custom_components": [
         "zex:pepper_splint_glowth","zex:pepper_splint_growing","zex:pepper_splint_place"
       ],
@@ -70,7 +71,7 @@
       "minecraft:light_emission": 0,
       "minecraft:light_dampening": 0,
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 0
+        "seconds_to_destroy": 3
       }
     },
     "permutations": [

@@ -2,12 +2,12 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "zex:hamburger_recipe"
+    "identifier": "zex:cheese_burger_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
       "AB",
-      "C "
+      "CD"
     ],
     "key": {
       "A": {
@@ -18,11 +18,14 @@
       },
       "C": {
         "item": "zex:tomato_sauce"
+      },
+      "D": {
+        "item": "zex:cheese"
       }
     },
     "result": [
       {
-        "item": "zex:hamburger",
+        "item": "zex:cheese_burger",
         "count": 1
       }
     ]

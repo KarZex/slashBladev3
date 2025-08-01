@@ -2,7 +2,7 @@
   "format_version": "1.21.20",
   "minecraft:block": {
     "description": {
-      "identifier": "zex:tomato_crop",
+      "identifier": "zex:rapeseed",
       "states": {
         "zex:growth": [
           0,
@@ -11,11 +11,12 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ]
       },
       "menu_category": {
-        "category": "construction"
+        "category": "none"
       }
     },
     "components": {
@@ -32,7 +33,7 @@
         ]
       },
       "minecraft:custom_components": [
-        "zex:glowth6","zex:growing6"
+        "zex:glowth7","zex:growing7"
       ],
       "minecraft:geometry": "geometry.crop",
       "minecraft:loot": "loot_tables/blocks/andon.json",
@@ -50,11 +51,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "tomato_0",
+              "texture": "rapeseed0",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.tomato_model",
+          "minecraft:geometry": "geometry.crop2",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -67,7 +68,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
+          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
         }
       },
       {
@@ -75,11 +76,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "tomato_1",
+              "texture": "rapeseed1",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.tomato_model",
+          "minecraft:geometry": "geometry.crop2",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -92,7 +93,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
+          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
         }
       },
       {
@@ -100,11 +101,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "tomato_2",
+              "texture": "rapeseed2",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.tomato_model",
+          "minecraft:geometry": "geometry.crop2",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -117,7 +118,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
+          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
         }
       },
       {
@@ -125,11 +126,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "tomato_3",
+              "texture": "rapeseed3",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.tomato_model",
+          "minecraft:geometry": "geometry.crop2",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -142,7 +143,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
+          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
         }
       },
       {
@@ -150,11 +151,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "tomato_4",
+              "texture": "rapeseed4",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.tomato_4",
+          "minecraft:geometry": "geometry.crop2",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -167,7 +168,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
+          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
         }
       },
       {
@@ -175,11 +176,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "tomato_5",
+              "texture": "rapeseed5",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.tomato_5",
+          "minecraft:geometry": "geometry.crop2",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -192,7 +193,7 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/tomatoseed.json"
+          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
         }
       },
       {
@@ -200,11 +201,11 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "tomato_6",
+              "texture": "rapeseed6",
               "render_method": "alpha_test"
             }
           },
-          "minecraft:geometry": "geometry.tomato_6",
+          "minecraft:geometry": "geometry.crop2",
           "minecraft:selection_box": {
             "origin": [
               -7,
@@ -217,7 +218,32 @@
               14
             ]
           },
-          "minecraft:loot": "loot_tables/blocks/tomato.json"
+          "minecraft:loot": "loot_tables/blocks/rapeseeds.json"
+        }
+      },
+      {
+        "condition": "query.block_state('zex:growth') == 7",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "rapeseed7",
+              "render_method": "alpha_test"
+            }
+          },
+          "minecraft:geometry": "geometry.crop2",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              16,
+              14
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/rapeseed.json"
         }
       }
     ]
