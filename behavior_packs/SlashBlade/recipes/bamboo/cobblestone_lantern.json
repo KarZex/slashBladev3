@@ -2,34 +2,34 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "SB.stand"
+    "identifier": "zex:cobblestone_lantern_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "BBB",
       " B ",
-      "BBB"
+      "BCB",
+      "BAB"
     ],
     "key": {
-      "B": {
+      "A": {
         "item": "zex:tudura",
         "data": 0
       },
-      "A": {
+      "B": {
         "item": "minecraft:cobblestone",
         "data": 0
       },
       "C": {
-        "item": "minecraft:flint_and_steel",
+        "item": "minecraft:torch",
         "data": 0
       },
       "D": {
-        "item": "minecraft:coal",
+        "item": "minecraft:book",
         "data": 0
       }
     },
     "result": {
-      "item": "zex:bladestand_spawn_egg",
+      "item": "zex:cobblestone_lantern",
       "count": 1
     }
   }

@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:yukimi_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " AA",
+      " AA",
+      " CC"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:tudura",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:paper",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:glass_pane",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:yukimi",
+      "count": 1
+    }
+  }
+  
+}

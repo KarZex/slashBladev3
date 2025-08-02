@@ -4,7 +4,20 @@
   "padding": 8,
   "num_mip_levels": 4,
   "texture_data": {
+    "yukimi_down": { "textures": [ "textures/blocks/husuma/yukimi_down" ] },
+    "yukimi_top": { "textures": [ "textures/blocks/husuma/yukimi_top" ] },
+
+    "syouzi_down": { "textures": [ "textures/blocks/husuma/syouzi_down" ] },
+    "syouzi_top": { "textures": [ "textures/blocks/husuma/syouzi_top" ] },
+
+    "husuma_down": { "textures": [ "textures/blocks/husuma/husuma_down" ] },
+    "husuma_top": { "textures": [ "textures/blocks/husuma/husuma_top" ] },
+
     "bladestand1": { "textures": [ "textures/blocks/bladestand" ] },
+
+    "cobblestone_lantern": { "textures": [ "textures/blocks/cobblestone_lantern" ] },
+    "stone_lantern": { "textures": [ "textures/blocks/stone_lantern" ] },
+    "mossy_lantern":{ "textures": [ "textures/blocks/mossy_lantern" ] },
 
     "onion_crop": { "textures": [ "textures/blocks/onion/onion_crop" ] },
 
@@ -48,7 +61,6 @@
     "riceplant6": { "textures": [ "textures/blocks/riceplant/rice_6" ] },
     "riceplant7": { "textures": [ "textures/blocks/riceplant/rice_7" ] },
 
-    
     "pepper_splint_0": { "textures": [ "textures/blocks/pepper_splint/pepper_splint_0" ] },
     "pepper_splint_1": { "textures": [ "textures/blocks/pepper_splint/pepper_splint_1" ] },
     "pepper_splint_2": { "textures": [ "textures/blocks/pepper_splint/pepper_splint_2" ] },

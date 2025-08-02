@@ -1,0 +1,583 @@
+{
+  "format_version": "1.21.20",
+  "minecraft:block": {
+    "description": {
+      "identifier": "zex:husuma_down",
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ]
+        }
+      },
+      "states": {
+        "zex:pos": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "zex:openly": [
+          0,
+          1
+        ]
+      },
+      "menu_category": {
+        "category": "none"
+      }
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "husuma_down",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:custom_components": [
+        "zex:husuma_down_destroy","zex:husuma_down_use","zex:husuma_down_place"
+      ],
+      "minecraft:light_emission": 0,
+      "minecraft:light_dampening": 0,
+      "tag:minecraft:is_axe_item_destructible": {},
+      "minecraft:loot": "loot_tables/blocks/husuma.json",
+      "minecraft:map_color": "#00ff00",
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 2
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('zex:openly') == 0 && q.block_state('zex:pos') == 0",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_00",
+            "minecraft:selection_box":{
+                "origin": [
+                    -8,
+                    0,
+                    6
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    -8,
+                    0,
+                    6
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 0 && q.block_state('zex:pos') == 1",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_01",
+            "minecraft:selection_box":{
+                "origin": [
+                    -8,
+                    0,
+                    4
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    -8,
+                    0,
+                    4
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 0 && q.block_state('zex:pos') == 2",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_02",
+            "minecraft:selection_box":{
+                "origin": [
+                    -8,
+                    0,
+                    2
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    -8,
+                    0,
+                    2
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 0 && q.block_state('zex:pos') == 3",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_03",
+            "minecraft:selection_box":{
+                "origin": [
+                    -8,
+                    0,
+                    0
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    -8,
+                    0,
+                    0
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 0 && q.block_state('zex:pos') == 4",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_04",
+            "minecraft:selection_box":{
+                "origin": [
+                    -8,
+                    0,
+                    -2
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    -8,
+                    0,
+                    -2
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 0 && q.block_state('zex:pos') == 5",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_05",
+            "minecraft:selection_box":{
+                "origin": [
+                    -8,
+                    0,
+                    -4
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    -8,
+                    0,
+                    -4
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 0 && q.block_state('zex:pos') == 6",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_06",
+            "minecraft:selection_box":{
+                "origin": [
+                    -8,
+                    0,
+                    -6
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    -8,
+                    0,
+                    -6
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 0 && q.block_state('zex:pos') == 7",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_07",
+            "minecraft:selection_box":{
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 1 && q.block_state('zex:pos') == 0",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_10",
+            "minecraft:selection_box":{
+                "origin": [
+                    6,
+                    0,
+                    6
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    6,
+                    0,
+                    6
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 1 && q.block_state('zex:pos') == 1",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_11",
+            "minecraft:selection_box":{
+                "origin": [
+                    6,
+                    0,
+                    4
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    6,
+                    0,
+                    4
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 1 && q.block_state('zex:pos') == 2",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_12",
+            "minecraft:selection_box":{
+                "origin": [
+                    6,
+                    0,
+                    2
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    6,
+                    0,
+                    2
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 1 && q.block_state('zex:pos') == 3",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_13",
+            "minecraft:selection_box":{
+                "origin": [
+                    6,
+                    0,
+                    0
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    6,
+                    0,
+                    0
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 1 && q.block_state('zex:pos') == 4",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_14",
+            "minecraft:selection_box":{
+                "origin": [
+                    6,
+                    0,
+                    -2
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    6,
+                    0,
+                    -2
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 1 && q.block_state('zex:pos') == 5",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_15",
+            "minecraft:selection_box":{
+                "origin": [
+                    6,
+                    0,
+                    -4
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    6,
+                    0,
+                    -4
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 1 && q.block_state('zex:pos') == 6",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_16",
+            "minecraft:selection_box":{
+                "origin": [
+                    6,
+                    0,
+                    -6
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    6,
+                    0,
+                    -6
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('zex:openly') == 1 && q.block_state('zex:pos') == 7",
+        "components": {
+            "minecraft:geometry": "geometry.husuma_17",
+            "minecraft:selection_box":{
+                "origin": [
+                    6,
+                    0,
+                    -8
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            },
+            "minecraft:collision_box":{
+                "origin": [
+                    6,
+                    0,
+                    -8
+                ],
+                "size": [
+                    2,
+                    16,
+                    2
+                ]
+            }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              270,
+              0
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

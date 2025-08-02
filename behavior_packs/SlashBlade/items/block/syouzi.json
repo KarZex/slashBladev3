@@ -1,0 +1,18 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:syouzi",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 64,
+      "minecraft:icon": "syouzi",
+      "minecraft:block_placer": {
+        "block": "zex:syouzi_down"
+      }
+    }
+  }
+}

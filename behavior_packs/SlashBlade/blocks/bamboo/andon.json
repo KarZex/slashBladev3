@@ -28,26 +28,26 @@
       "minecraft:light_dampening": 0,
       "minecraft:selection_box": {
         "origin": [
-          -4,
+          -5,
           0.0,
-          -4
+          -5
         ],
         "size": [
-          8,
-          12.0,
-          8
+          10,
+          16.0,
+          10
         ]
       },
       "minecraft:collision_box": {
         "origin": [
-          -4,
+          -5,
           0.0,
-          -4
+          -5
         ],
         "size": [
-          8,
+          10,
           12.0,
-          8
+          10
         ]
       },
       "minecraft:destructible_by_mining": {

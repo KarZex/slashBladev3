@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "SB_kayabuki"
+    "identifier": "zex:kayabuki_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [

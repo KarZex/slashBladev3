@@ -514,6 +514,21 @@
     },
     "rice_cheese_beef": {
       "textures": "textures/items/food/rice_cheese_beef"
+    },
+    "husuma": {
+      "textures": "textures/items/block/husuma"
+    },
+    "syouzi": {
+      "textures": "textures/items/block/syouzi"
+    },
+    "yukimi": {
+      "textures": "textures/items/block/yukimi"
+    },
+    "glassdoor": {
+      "textures": "textures/items/block/glassdoor"
+    },
+    "gridglassdoor": {
+      "textures": "textures/items/block/gridglassdoor"
     }
   }
 }

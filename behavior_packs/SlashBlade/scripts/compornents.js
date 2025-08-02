@@ -283,6 +283,82 @@ function slashBladeNoodleCutEvent( event ){
     }
 }
 
+function slashBladeHusumaTopUseEvent( event ){
+    const block = event.block;
+    const ublock = event.block.below(1);
+    const user = event.player;
+    const blockState = block.permutation.getState(`zex:pos`);
+    const IsOpen = block.permutation.getState(`zex:openly`);
+    const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+    try{
+        if( item.typeId.includes(`axe`) ){
+            let nextLlevel = blockState + 1;
+            if( nextLlevel > 7 ){ nextLlevel = 0; }
+            block.setPermutation(block.permutation.withState(`zex:pos`,nextLlevel));
+            ublock.setPermutation(ublock.permutation.withState(`zex:pos`,nextLlevel));
+        }
+        else{
+            let nextLlevel = IsOpen + 1;
+            if( nextLlevel > 1 ){ nextLlevel = 0; }
+            block.setPermutation(block.permutation.withState(`zex:openly`,nextLlevel));
+            ublock.setPermutation(ublock.permutation.withState(`zex:openly`,nextLlevel));
+        }
+    }
+    catch{
+        let nextLlevel = IsOpen + 1;
+        if( nextLlevel > 1 ){ nextLlevel = 0; }
+        block.setPermutation(block.permutation.withState(`zex:openly`,nextLlevel));
+        ublock.setPermutation(ublock.permutation.withState(`zex:openly`,nextLlevel));
+    }
+}
+function slashBladeHusumaTopDestroyEvent( event ){
+    const block = event.block;
+    const ublock = block.below(1);
+    event.dimension.setBlockType(ublock.location,`minecraft:air`);
+}
+
+function slashBladeHusumaDownUseEvent( event ){
+    const block = event.block;
+    const oblock = block.above(1);
+    const user = event.player;
+    const blockState = block.permutation.getState(`zex:pos`);
+    const IsOpen = block.permutation.getState(`zex:openly`);
+    const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+    try{
+        if( item.typeId.includes(`axe`) ){
+            let nextLlevel = blockState + 1;
+            if( nextLlevel > 7 ){ nextLlevel = 0; }
+            block.setPermutation(block.permutation.withState(`zex:pos`,nextLlevel));
+            oblock.setPermutation(oblock.permutation.withState(`zex:pos`,nextLlevel));
+        }
+        else{
+            let nextLlevel = IsOpen + 1;
+            if( nextLlevel > 1 ){ nextLlevel = 0; }
+            block.setPermutation(block.permutation.withState(`zex:openly`,nextLlevel));
+            oblock.setPermutation(oblock.permutation.withState(`zex:openly`,nextLlevel));
+        }
+    }
+    catch{
+        let nextLlevel = IsOpen + 1;
+        if( nextLlevel > 1 ){ nextLlevel = 0; }
+        block.setPermutation(block.permutation.withState(`zex:openly`,nextLlevel));
+        oblock.setPermutation(oblock.permutation.withState(`zex:openly`,nextLlevel));
+    }
+}
+function slashBladeHusumaDownDestroyEvent( event ){
+    const block = event.block;
+    const oblock = block.above(1);
+    event.dimension.setBlockType(oblock.location,`minecraft:air`);
+}
+function slashBladeHusumaDownPlaceEvent( event ){
+    const block = event.block;
+    const blockId = block.typeId.replace(`down`,`top`)
+    const oblock = block.above(1);
+    const blockrotation = block.permutation.getState(`minecraft:cardinal_direction`);
+    event.dimension.setBlockType(oblock.location,blockId);
+    oblock.setPermutation(oblock.permutation.withState(`minecraft:cardinal_direction`,blockrotation));
+}
+
 world.beforeEvents.worldInitialize.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`zex:glowth7`,{onPlayerInteract: slashBlade7CropsInteractEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:growing7`,{onRandomTick: slashBlade7CropsGrowingEvent});
@@ -305,4 +381,9 @@ world.beforeEvents.worldInitialize.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`zex:bladestand2b`,{onPlayerDestroy: slashBladeStandBreak2Event});
     e.blockComponentRegistry.registerCustomComponent(`zex:noodle`,{onStepOn: slashBladeNoodleEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:noodle2`,{onPlayerInteract: slashBladeNoodleCutEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:husuma_top_use`,{onPlayerInteract: slashBladeHusumaTopUseEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:husuma_top_destroy`,{onPlayerDestroy: slashBladeHusumaTopDestroyEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:husuma_down_use`,{onPlayerInteract: slashBladeHusumaDownUseEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:husuma_down_destroy`,{onPlayerDestroy: slashBladeHusumaDownDestroyEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:husuma_down_place`,{onPlace: slashBladeHusumaDownPlaceEvent});
 } )

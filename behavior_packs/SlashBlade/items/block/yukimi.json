@@ -1,0 +1,18 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:yukimi",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 64,
+      "minecraft:icon": "yukimi",
+      "minecraft:block_placer": {
+        "block": "zex:yukimi_down"
+      }
+    }
+  }
+}

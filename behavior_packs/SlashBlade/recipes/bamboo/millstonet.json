@@ -2,12 +2,12 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "SB_millstonet"
+    "identifier": "zex:millstonet_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
+      "B  ",
       "AAA",
-      "BAB",
       "AAA"
     ],
     "key": {
@@ -16,7 +16,7 @@
         "data": 0
       },
       "A": {
-        "item": "minecraft:cobblestone",
+        "item": "minecraft:cobblestone_slab",
         "data": 0
       },
       "C": {

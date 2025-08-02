@@ -2,25 +2,25 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "SB_aaaaaa"
+    "identifier": "zex:stone_lantern_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "ABA",
-      "A A",
-      "A A"
+      " B ",
+      "BCB",
+      "BAB"
     ],
     "key": {
       "A": {
-        "item": "minecraft:bamboo",
+        "item": "zex:tudura",
         "data": 0
       },
       "B": {
-        "item": "minecraft:string",
+        "item": "minecraft:stone",
         "data": 0
       },
       "C": {
-        "item": "minecraft:log",
+        "item": "minecraft:torch",
         "data": 0
       },
       "D": {
@@ -29,8 +29,8 @@
       }
     },
     "result": {
-      "item": "minecraft:scaffolding",
-      "count": 16
+      "item": "zex:stone_lantern",
+      "count": 1
     }
   }
   

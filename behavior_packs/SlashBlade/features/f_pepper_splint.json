@@ -1,0 +1,14 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "zex:f_pepper_splint"
+    },
+    "places_block": "zex:pepper_splint",
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_attach_to": {
+      "bottom":"minecraft:grass"
+    }
+  }
+}

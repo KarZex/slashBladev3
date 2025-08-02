@@ -2,13 +2,13 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "SB_campfiret"
+    "identifier": "zex:mossy_lantern_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      " A ",
+      " B ",
       "BCB",
-      "DDD"
+      "BAB"
     ],
     "key": {
       "A": {
@@ -16,20 +16,20 @@
         "data": 0
       },
       "B": {
-        "item": "minecraft:iron_bars",
+        "item": "minecraft:mossy_cobblestone",
         "data": 0
       },
       "C": {
-        "item": "minecraft:flint_and_steel",
+        "item": "minecraft:torch",
         "data": 0
       },
       "D": {
-        "item": "minecraft:coal",
+        "item": "minecraft:book",
         "data": 0
       }
     },
     "result": {
-      "item": "zex:campfiret",
+      "item": "zex:mossy_lantern",
       "count": 1
     }
   }

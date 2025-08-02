@@ -172,9 +172,9 @@ async function bladeSwing( user,blade,IsOnGround ){
 	let knockbackpower = 0.5;
 	let comboG = 0;
 	if(IsOnGround == true){
+		world.scoreboard.getObjective(`groundcomboA`).addScore(user,1);
 		const combo = world.scoreboard.getObjective(`groundcomboA`).getScore(user);
 		comboG = combo;
-		world.scoreboard.getObjective(`groundcomboA`).addScore(user,1);
 		if( combo >= 3 ){
 			world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
 			d = d * 1.5;
@@ -184,9 +184,9 @@ async function bladeSwing( user,blade,IsOnGround ){
 		world.scoreboard.getObjective(`combocool`).setScore(user,20);
 	}
 	else if(IsOnGround == false){
+		world.scoreboard.getObjective(`aircomboA`).addScore(user,1);
 		const combo = world.scoreboard.getObjective(`aircomboA`).getScore(user);
 		comboG = combo;
-		world.scoreboard.getObjective(`aircomboA`).addScore(user,1);
 		if( combo == 3 ){
 			d = d * 1.2;
 			user.dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:user.location.x,y:user.location.y+1,z:user.location.z});

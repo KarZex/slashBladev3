@@ -2,11 +2,11 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "SB.kawara"
+    "identifier": "zex:kawara_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "BBB",
+    "BBB",
 	  "BAB",
 	  "BBB"
     ],

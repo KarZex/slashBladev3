@@ -2,25 +2,25 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "SB.bamboobasket"
+    "identifier": "zex:pepper_splint_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "   ",
-      "A A",
-      " A "
+      "B B",
+      " A ",
+      "B B"
     ],
     "key": {
       "A": {
-        "item": "minecraft:bamboo",
+        "item": "zex:tudura",
         "data": 0
       },
       "B": {
-        "item": "minecraft:log",
+        "item": "minecraft:stick",
         "data": 0
       },
       "C": {
-        "item": "minecraft:log",
+        "item": "minecraft:torch",
         "data": 0
       },
       "D": {
@@ -29,8 +29,8 @@
       }
     },
     "result": {
-      "item": "zex:bamboobasket",
-      "count": 1
+      "item": "zex:pepper_splint",
+      "count": 2
     }
   }
   

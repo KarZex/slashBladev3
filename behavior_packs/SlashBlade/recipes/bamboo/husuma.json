@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:husuma_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BBA",
+      "BBA",
+      "BBA"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:tudura",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:paper",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:torch",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:husuma",
+      "count": 1
+    }
+  }
+  
+}
