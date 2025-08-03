@@ -5,6 +5,7 @@ function slashBlade7CropsInteractEvent( event ){
     const block = event.block;
     const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
     if ( item.typeId == `minecraft:bone_meal` ){
+        user.playSound(`item.bone_meal.use`);
         const level =  event.block.permutation.getState(`zex:growth`);
         if( level < 7 ){
             const nextLlevel = Math.min(7,level + Math.floor(1+ Math.random() * 3));
@@ -27,6 +28,7 @@ function slashBlade6CropsInteractEvent( event ){
     const block = event.block;
     const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
     if ( item.typeId == `minecraft:bone_meal` ){
+        user.playSound(`item.bone_meal.use`);
         const level =  event.block.permutation.getState(`zex:growth`);
         if( level < 6 ){
             const nextLlevel = Math.min(6,level + Math.floor( 1 + Math.random() * 3));
@@ -49,6 +51,7 @@ function slashBlade3CropsInteractEvent( event ){
     const block = event.block;
     const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
     if ( item.typeId == `minecraft:bone_meal` ){
+        user.playSound(`item.bone_meal.use`);
         const level =  event.block.permutation.getState(`zex:growth`);
         if( level < 3 ){
             const nextLlevel = Math.min(3,level + Math.floor( 1 + Math.random()));
@@ -72,6 +75,7 @@ function slashBladePepperInteractEvent( event ){
     try{
         const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
         if ( item.typeId == `minecraft:bone_meal` ){
+            user.playSound(`item.bone_meal.use`);
             const level =  event.block.permutation.getState(`zex:growth`);
             if( level < 5 ){
                 const nextLlevel = Math.min(5,level + Math.floor(1+ Math.random() * 2));
@@ -80,6 +84,7 @@ function slashBladePepperInteractEvent( event ){
             }
         }
         else if ( item.typeId == `zex:peppercorn_red` ){
+            user.playSound(`block.sweet_berry_bush.pick	`);
             const level =  event.block.permutation.getState(`zex:growth`);
             if( level == 6 ){
                 block.setPermutation(block.permutation.withState(`zex:growth`,0));
@@ -117,6 +122,7 @@ function slashBladeCampfireEvent( event ){
     const block = event.block;
     const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
     if ( item.typeId == `zex:cooking_pot` ){
+        user.playSound(`random.anvil_land`);
         event.dimension.setBlockType(block.location,`zex:campfire_cooking_pot`);
     }
 }
@@ -133,6 +139,7 @@ function slashBladeCookingPotStartFireEvent( event ){
     const block = event.block;
     const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
     if ( item.typeId == `minecraft:flint_and_steel` ){
+        user.playSound(`mob.blaze.shoot`);
         block.setPermutation(block.permutation.withState(`zex:isFire`,1));
     }
 }
@@ -146,10 +153,12 @@ function slashBladeCookingPotLiqEvent( event ){
     const block = event.block;
     const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
     if ( item.typeId == `minecraft:water_bucket` ){
+        user.playSound(`bucket.empty_water`);
         block.setPermutation(block.permutation.withState(`zex:water`,"water"));
         user.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 minecraft:bucket`);
     }
     else if ( item.typeId == `zex:oil_bucket` ){
+        user.playSound(`bucket.empty_water`);
         block.setPermutation(block.permutation.withState(`zex:water`,"oil"));
         user.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 minecraft:bucket`);
     }
@@ -294,19 +303,34 @@ function slashBladeHusumaTopUseEvent( event ){
         if( item.typeId.includes(`axe`) ){
             let nextLlevel = blockState + 1;
             if( nextLlevel > 7 ){ nextLlevel = 0; }
+            user.playSound(`place.cherry_wood`); 
             block.setPermutation(block.permutation.withState(`zex:pos`,nextLlevel));
             ublock.setPermutation(ublock.permutation.withState(`zex:pos`,nextLlevel));
         }
         else{
-            let nextLlevel = IsOpen + 1;
-            if( nextLlevel > 1 ){ nextLlevel = 0; }
+            let nextLlevel = IsOpen
+            if( nextLlevel == 0 ){ 
+                nextLlevel = 1;
+                user.playSound(`open.wooden_door`); 
+            }
+            else{
+                user.playSound(`close.wooden_door`);
+                nextLlevel = 0;
+            }
             block.setPermutation(block.permutation.withState(`zex:openly`,nextLlevel));
             ublock.setPermutation(ublock.permutation.withState(`zex:openly`,nextLlevel));
         }
     }
     catch{
-        let nextLlevel = IsOpen + 1;
-        if( nextLlevel > 1 ){ nextLlevel = 0; }
+        let nextLlevel = IsOpen
+        if( nextLlevel == 0 ){ 
+            nextLlevel = 1;
+            user.playSound(`open.wooden_door`); 
+        }
+        else{
+            user.playSound(`close.wooden_door`);
+            nextLlevel = 0;
+        }
         block.setPermutation(block.permutation.withState(`zex:openly`,nextLlevel));
         ublock.setPermutation(ublock.permutation.withState(`zex:openly`,nextLlevel));
     }
@@ -328,19 +352,34 @@ function slashBladeHusumaDownUseEvent( event ){
         if( item.typeId.includes(`axe`) ){
             let nextLlevel = blockState + 1;
             if( nextLlevel > 7 ){ nextLlevel = 0; }
+            user.playSound(`place.cherry_wood`); 
             block.setPermutation(block.permutation.withState(`zex:pos`,nextLlevel));
             oblock.setPermutation(oblock.permutation.withState(`zex:pos`,nextLlevel));
         }
         else{
-            let nextLlevel = IsOpen + 1;
-            if( nextLlevel > 1 ){ nextLlevel = 0; }
+            let nextLlevel = IsOpen
+            if( nextLlevel == 0 ){ 
+                nextLlevel = 1;
+                user.playSound(`open.wooden_door`); 
+            }
+            else{
+                user.playSound(`close.wooden_door`);
+                nextLlevel = 0;
+            }
             block.setPermutation(block.permutation.withState(`zex:openly`,nextLlevel));
             oblock.setPermutation(oblock.permutation.withState(`zex:openly`,nextLlevel));
         }
     }
     catch{
-        let nextLlevel = IsOpen + 1;
-        if( nextLlevel > 1 ){ nextLlevel = 0; }
+        let nextLlevel = IsOpen
+        if( nextLlevel == 0 ){ 
+            nextLlevel = 1;
+            user.playSound(`open.wooden_door`); 
+        }
+        else{
+            user.playSound(`close.wooden_door`);
+            nextLlevel = 0;
+        }
         block.setPermutation(block.permutation.withState(`zex:openly`,nextLlevel));
         oblock.setPermutation(oblock.permutation.withState(`zex:openly`,nextLlevel));
     }

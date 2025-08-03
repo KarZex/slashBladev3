@@ -3,12 +3,9 @@ import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
 import { classReg, drive, slashdimension } from "./saData";
 import "./compornents";
+import { bladeImmuneEntities } from "./config";
 
 const Rank = [ `D`,`C`,`B`,`A`,`1S`,`2S`,`3S`,`3S` ];
-
-const allies = [
-	`villager`
-]
 
 
 function print( text ){
@@ -167,7 +164,7 @@ async function bladeSwing( user,blade,IsOnGround ){
 	const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
 	const level = world.scoreboard.getObjective(`blade`).getScore(user);
 	let d = callDamage( blade,level );
-	const victims = user.dimension.getEntities({location:user.location,maxDistance:5,excludeTypes:[`item`,`xp_orb`] });
+	const victims = user.dimension.getEntities({location:user.location,maxDistance:5,excludeTypes:bladeImmuneEntities });
 	let knockback = false;
 	let knockbackpower = 0.5;
 	let comboG = 0;
@@ -432,7 +429,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const user = world.getPlayers({name:fire.getDynamicProperty(`zex:owner`)})[0];
 			const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
 			const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
-			const victims = fire.dimension.getEntities({location:fire.location,maxDistance:1.5,excludeTypes:[`item`,`xp_orb`] });
+			const victims = fire.dimension.getEntities({location:fire.location,maxDistance:1.5,excludeTypes:bladeImmuneEntities });
 			if( victims.length > 1 ){
 				for( let i = 0; i < victims.length; i++ ){
 					if( victims[i].nameTag != user.nameTag ){

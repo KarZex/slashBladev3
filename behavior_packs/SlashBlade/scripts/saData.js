@@ -1,6 +1,7 @@
 import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, ItemComponentTypes,EnchantmentType  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
+import { bladeImmuneEntities} from "./config"
 
 const dimension = world.getDimension(`overworld`);
 
@@ -38,7 +39,7 @@ export class slashdimension {
       y:user.location.y + 1.62 + range * pos.y,
       z:user.location.z + range * pos.z
     };
-		const victims = user.dimension.getEntities({location:O,maxDistance:19,excludeTypes:[`item`,`xp_orb`] });
+		const victims = user.dimension.getEntities({location:O,maxDistance:19,excludeTypes:bladeImmuneEntities });
     if( victims.length > 0 && victims[0].nameTag != user.nameTag ){
       const attackPos = victims[0].location;
       const fire = user.dimension.spawnEntity(`safire:slashdim`,{ x:attackPos.x,y:attackPos.y+1,z:attackPos.z });
@@ -162,9 +163,7 @@ export class lighting_swords {
     const pos = user.getViewDirection()
     const range = 5;
     const O = {x:user.location.x + range * pos.x,y:user.location.y + 1.5 + range * pos.y,z:user.location.z + range * pos.z};
-    const victimsMob = user.dimension.getEntities({location:user.location,maxDistance:16,families:[ `mob` ],closest:1 });
-    const victimsPlayer = user.dimension.getEntities({location:user.location,maxDistance:16,excludeNames:[user.nameTag],families:[`player`],closest:1});
-    const victims = victimsMob.concat(victimsPlayer);
+    const victims = user.dimension.getEntities({location:O,maxDistance:19,excludeTypes:bladeImmuneEntities,closest:1 });
     if( victims.length > 0 ){
       const attackPos = victims[0].location;
       user.dimension.spawnEntity(`minecraft:lightning_bolt`,attackPos);

@@ -14,5 +14,6 @@
       "uuid": "80c589b5-632b-4a87-a81a-30e6ff1fe369",
       "version": [1, 21, 60]
     }
-  ]
+  ],
+  "dependencies": []
 }
