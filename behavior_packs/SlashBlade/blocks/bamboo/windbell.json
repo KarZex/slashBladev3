@@ -2,7 +2,7 @@
   "format_version": "1.21.20",
   "minecraft:block": {
     "description": {
-      "identifier": "zex:bamboo_pane",
+      "identifier": "zex:windbell",
       "traits": {
         "minecraft:placement_direction": {
           "enabled_states": [
@@ -17,39 +17,41 @@
     "components": {
       "minecraft:material_instances": {
         "*": {
-          "texture": "bamboo_pane",
-          "render_method": "blend"
+          "texture": "windbell",
+          "render_method": "opaque"
         }
       },
-      "minecraft:geometry": "geometry.bamboo_pane",
-      "minecraft:loot": "loot_tables/blocks/bamboo_pane.json",
+      "minecraft:placement_filter": {
+        "conditions": [
+          {
+            "allowed_faces": [
+              "down"
+            ]
+          }
+        ]
+      },
+      "tag:minecraft:is_axe_item_destructible":{},
+      "minecraft:geometry": "geometry.windbell",
+      "minecraft:loot": "loot_tables/blocks/windbell.json",
       "minecraft:map_color": "#00ff00",
       "minecraft:light_emission": 0,
       "minecraft:light_dampening": 0,
       "minecraft:selection_box": {
         "origin": [
-          -8,
-          0.0,
-          -1
+          -3,
+          4,
+          -3
         ],
         "size": [
-          16.0,
-          16.0,
-          2
+          6,
+          12,
+          6
         ]
       },
-      "minecraft:collision_box": {
-        "origin": [
-          -8,
-          0.0,
-          -1
-        ],
-        "size": [
-          16.0,
-          16.0,
-          2
-        ]
-      },
+      "minecraft:collision_box": false,
+      "minecraft:custom_components": [
+        "zex:belling"
+      ],
       "minecraft:destructible_by_mining": {
         "seconds_to_destroy": 0.1
       }

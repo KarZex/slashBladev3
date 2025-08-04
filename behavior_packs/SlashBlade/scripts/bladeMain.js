@@ -160,7 +160,6 @@ function bladeSoulcal( user,blade ){
 }
 
 async function bladeSwing( user,blade,IsOnGround ){
-	user.playSound(`swingblade.c`);
 	const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
 	const level = world.scoreboard.getObjective(`blade`).getScore(user);
 	let d = callDamage( blade,level );
@@ -259,9 +258,10 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 	const Tblade = user.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
 	const dmgCom = Tblade.getComponent(ItemComponentTypes.Durability);	
 	if ( e.itemStack.typeId.includes(`blade:`) && e.useDuration > 100010 && dmgCom.damage < dmgCom.maxDurability ){
-		
+		const bladeId = e.itemStack.typeId.split(`:`)[1];
+		const sound = bladeData[`${bladeId}`][`sound`];
 		if( user.isSneaking && (user.isOnGround || user.isJumping) ){
-			user.playSound(`swingblade.c`);
+			user.playSound(sound);
 			const v = user.getVelocity();
 			let abs_v = 5;
 			const d = user.getViewDirection();
@@ -270,7 +270,7 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 			user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
 		}
 		else if( user.isSneaking && !user.isOnGround && !user.isJumping ){
-			user.playSound(`swingblade.c`);
+			user.playSound(sound);
 			user.applyKnockback(0,0,0,-5);
 			world.scoreboard.getObjective(`around`).setScore(user,8);
 			user.addEffect(`resistance`,8,{ amplifier:255 });
@@ -280,6 +280,7 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 			if( user.isJumping){
 				user.addEffect(`levitation`,5,{ amplifier:5 });
 			}
+			user.playSound(sound);
 			bladeSwing( user,blade,user.isOnGround );
 		}
 	}

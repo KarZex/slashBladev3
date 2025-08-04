@@ -4,6 +4,14 @@
   "padding": 8,
   "num_mip_levels": 4,
   "texture_data": {
+
+    "windbell":{ "textures": [ "textures/blocks/windbell" ] },
+
+    "zabuton":{ "textures": [ "textures/blocks/zabuton" ] },
+
+    "white_lantern": { "textures": [ "textures/blocks/white_lantern" ] },
+    "red_lantern": { "textures": [ "textures/blocks/red_lantern" ] },
+
     "yukimi_down": { "textures": [ "textures/blocks/husuma/yukimi_down" ] },
     "yukimi_top": { "textures": [ "textures/blocks/husuma/yukimi_top" ] },
 
@@ -85,8 +93,6 @@
     "bambooblock_top": { "textures": [ "textures/blocks/bambooblock_top" ] },
 	
     "millstonet": { "textures": [ "textures/blocks/millstone" ] },
-    "millstonet_top": { "textures": [ "textures/blocks/millstonet_top" ] },
-    "millstonet_bottom": { "textures": [ "textures/blocks/millstonet_bottom" ] },
 	
     "bamboot": { "textures": [ "textures/blocks/bamboot" ] },
 	

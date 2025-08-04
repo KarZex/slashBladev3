@@ -38,6 +38,7 @@ for row in csv_reader:
         blade_rare = row[11]
         blade_geo = row[12]
         blade_mate = row[13]
+        blade_sound = row[14]
 
 
         lang += "item.blade:{}={}\n".format(blade_id,blade_name)
@@ -49,6 +50,7 @@ for row in csv_reader:
         bladedata_json["{}".format(blade_id)] = {}
         bladedata_json["{}".format(blade_id)]["damage"] = blade_attack
         bladedata_json["{}".format(blade_id)]["damageplus"] = blade_attack_plus
+        bladedata_json["{}".format(blade_id)]["sound"] = blade_sound
 
         stand_json["minecraft:entity"]["component_groups"]["{}".format(blade_id)] = {"minecraft:skin_id": {"value": row_count-1 }}
         newjson = {

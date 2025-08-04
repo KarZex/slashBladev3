@@ -25,17 +25,10 @@
         "*": {
           "texture": "millstonet",
           "render_method": "opaque"
-        },
-        "up": {
-          "texture": "millstonet_top",
-          "render_method": "opaque"
-        },
-        "down": {
-          "texture": "millstonet_bottom",
-          "render_method": "opaque"
         }
       },
-      "minecraft:geometry": "minecraft:geometry.full_block",
+      "tag:minecraft:is_pickaxe_item_destructible":{},
+      "minecraft:geometry": "geometry.millstonet",
       "minecraft:loot": "loot_tables/blocks/millstonet.json",
       "minecraft:map_color": "#00ff00",
       "minecraft:destructible_by_mining": {

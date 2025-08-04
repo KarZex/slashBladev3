@@ -126,7 +126,7 @@
       "textures": "textures/items/blade/sabigatana"
     },
     "lightsaber": {
-      "textures": "textures/blade/lightsaber"
+      "textures": "textures/items/blade/lightsaber"
     },
     "doutanuki": {
       "textures": "textures/items/blade/doutanuki"

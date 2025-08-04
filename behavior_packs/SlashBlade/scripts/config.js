@@ -1,7 +1,7 @@
 import { world,BlockPermutation, Block,EntityComponentTypes,EquipmentSlot, system } from "@minecraft/server";
 
-//剣の攻撃を無効化するエンティティ
-//The list of entities that are immune to sword attacks
+//抜刀剣の攻撃を無効化するエンティティ
+//The list of entities that are immune to blade attacks
 export const bladeImmuneEntities = [
     `armor_stand`,
     `area_effect_cloud`,
@@ -9,8 +9,11 @@ export const bladeImmuneEntities = [
     `bee`,
     `item`,
     `xp_orb`,
+    `moo_shroom`,
+    `wandering_trader`,
+    `llama`,
     `lightning_bolt`,
-    `villlager`,
+    `villager`,
     `cow`,
     `pig`,
     `sheep`,

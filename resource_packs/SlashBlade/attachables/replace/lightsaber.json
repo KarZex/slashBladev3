@@ -1,0 +1,47 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "blade:lightsaber",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/models/lightsaber"
+      },
+      "geometry": {
+        "default": "geometry.lightsaber"
+      },
+      "animations": {
+        "root": "controller.animation.blade",
+        "usesa": "animation.sword.usesa",
+        "atk": "animation.sword.ack",
+        "use": "animation.sword.use",
+        "use2": "animation.sword.use2",
+        "use3": "animation.sword.use3",
+        "use4": "animation.sword.use4",
+        "first": "animation.sword.first2",
+        "gattack": "animation.sword.useaaaa",
+        "gattack2": "animation.sword.usebbbb",
+        "third": "animation.sword.third"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.main_hand = c.item_slot == 'main_hand';"
+        ],
+        "animate": [
+          "root",
+          {
+            "first": "(v.main_hand && c.is_first_person)"
+          },
+          {
+            "third": "v.main_hand && !c.is_first_person"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

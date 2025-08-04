@@ -45,3 +45,4 @@ item.blade:blue=利刀「蒼梅」
 item.blade:katana_red=刀
 item.blade:tachi=太刀
 item.blade:katana=利刀「無名」紅玉
+item.blade:lightsaber=ライトセーバー

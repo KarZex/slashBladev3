@@ -244,6 +244,11 @@
         "minecraft:skin_id": {
           "value": 46
         }
+      },
+      "lightsaber": {
+        "minecraft:skin_id": {
+          "value": 47
+        }
       }
     },
     "components": {
@@ -1160,6 +1165,25 @@
               "event": "katana",
               "target": "self"
             }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blade:lightsaber"
+                  }
+                ]
+              },
+              "event": "lightsaber",
+              "target": "self"
+            }
           }
         ]
       },
@@ -1646,6 +1670,13 @@
         "add": {
           "component_groups": [
             "katana"
+          ]
+        }
+      },
+      "lightsaber": {
+        "add": {
+          "component_groups": [
+            "lightsaber"
           ]
         }
       }

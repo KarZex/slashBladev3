@@ -45,3 +45,4 @@ execute if entity @s[hasitem={item=blade:blue,location=slot.weapon.mainhand}] ru
 execute if entity @s[hasitem={item=blade:katana_red,location=slot.weapon.mainhand}] run scriptevent zex:haveBlade katana_red
 execute if entity @s[hasitem={item=blade:tachi,location=slot.weapon.mainhand}] run scriptevent zex:haveBlade tachi
 execute if entity @s[hasitem={item=blade:katana,location=slot.weapon.mainhand}] run scriptevent zex:haveBlade katana
+execute if entity @s[hasitem={item=blade:lightsaber,location=slot.weapon.mainhand}] run scriptevent zex:haveBlade lightsaber

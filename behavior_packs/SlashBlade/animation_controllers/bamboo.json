@@ -154,24 +154,23 @@
         }
       }
     },
-    "controller.animation.dronespawn": {
+    "controller.animation.bamboochair": {
       "states": {
         "default": {
           "transitions": [
             {
-              "ticking": "(1.0)"
+              "no_rider": "!query.has_rider"
             }
           ]
         },
-        "ticking": {
+        "no_rider": {
           "transitions": [
             {
               "default": "(1.0)"
             }
           ],
           "on_entry": [
-            "/summon addon:gb6_drone ~~7~",
-            "/event entity @s A"
+            "/event entity @s despawning"
           ]
         }
       }

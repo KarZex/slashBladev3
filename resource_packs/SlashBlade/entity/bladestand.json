@@ -5,7 +5,8 @@
       "identifier": "zex:bladestand",
       "materials": {
         "default": "iron_golem",
-        "fluorescentbar": "entity_emissive_alpha"
+        "fluorescentbar": "entity_emissive_alpha",
+        "lightsaber": "entity_emissive_alpha"
       },
       "textures": {
         "default": "textures/entity/stand",
@@ -56,7 +57,8 @@
         "blue": "textures/models/blue",
         "katana_red": "textures/models/katana_red",
         "tachi": "textures/models/tachi",
-        "katana": "textures/models/katana"
+        "katana": "textures/models/katana",
+        "lightsaber": "textures/models/lightsaber"
       },
       "geometry": {
         "default": "geometry.bladestand",
@@ -107,7 +109,8 @@
         "blue": "geometry.raven",
         "katana_red": "geometry.raven",
         "tachi": "geometry.raven",
-        "katana": "geometry.newslashblade"
+        "katana": "geometry.newslashblade",
+        "lightsaber": "geometry.lightsaber"
       },
       "spawn_egg": {
         "texture": "bladestand",

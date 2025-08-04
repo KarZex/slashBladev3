@@ -75,7 +75,40 @@
    "zex:campfire": {
     "sound": "wood"
   },
-   "zex:cooking_pot": {
-    "sound": "metal"
+   "zex:husuma_down": {
+    "sound": "wood"
+  },
+   "zex:husuma_top": {
+    "sound": "wood"
+  },
+   "zex:syouzi_down": {
+    "sound": "wood"
+  },
+   "zex:yukimi_top": {
+    "sound": "wood"
+  },
+   "zex:yukimi_down": {
+    "sound": "wood"
+  },
+   "zex:syouzi_top": {
+    "sound": "wood"
+  },
+   "zex:stone_lantern": {
+    "sound": "stone"
+  },
+   "zex:cobblestone_lantern": {
+    "sound": "stone"
+  },
+   "zex:red_lantern": {
+    "sound": "grass"
+  },
+   "zex:white_lantern": {
+    "sound": "grass"
+  },
+   "zex:zabuton": {
+    "sound": "cloth"
+  },
+   "zex:windbell": {
+    "sound": "cloth"
   }
 }

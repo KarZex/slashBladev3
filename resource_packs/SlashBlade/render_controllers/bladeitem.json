@@ -60,7 +60,8 @@
             "geometry.blue",
             "geometry.katana_red",
             "geometry.tachi",
-            "geometry.katana"
+            "geometry.katana",
+            "geometry.lightsaber"
           ]
         },
         "textures": {
@@ -111,7 +112,8 @@
             "texture.blue",
             "texture.katana_red",
             "texture.tachi",
-            "texture.katana"
+            "texture.katana",
+            "texture.lightsaber"
           ]
         }
       }

@@ -398,6 +398,19 @@ function slashBladeHusumaDownPlaceEvent( event ){
     oblock.setPermutation(oblock.permutation.withState(`minecraft:cardinal_direction`,blockrotation));
 }
 
+function slashBladeSittableEvent( event ){
+    const block = event.block;
+    const user = event.player;
+    const summon = user.dimension.spawnEntity(`zex:chair`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
+    summon.getComponent(EntityComponentTypes.Rideable).addRider(user);
+    summon.addEffect(`invisibility`,19999999,{ showParticles:false });
+}
+
+function slashBladeBellingEvent( event ){
+    const block = event.block;
+    block.dimension.playSound(`note.bell`,block.location,{ pitch:3, volume:3 });
+}
+
 world.beforeEvents.worldInitialize.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`zex:glowth7`,{onPlayerInteract: slashBlade7CropsInteractEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:growing7`,{onRandomTick: slashBlade7CropsGrowingEvent});
@@ -425,4 +438,6 @@ world.beforeEvents.worldInitialize.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`zex:husuma_down_use`,{onPlayerInteract: slashBladeHusumaDownUseEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:husuma_down_destroy`,{onPlayerDestroy: slashBladeHusumaDownDestroyEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:husuma_down_place`,{onPlace: slashBladeHusumaDownPlaceEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:sittable`,{onPlayerInteract: slashBladeSittableEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:belling`,{onRandomTick: slashBladeBellingEvent});
 } )
