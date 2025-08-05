@@ -47,7 +47,7 @@
       },
       "minecraft:icon": "silverbanboo",
       "minecraft:durability": {
-        "max_durability": 60,
+        "max_durability": 240,
         "damage_chance": {
           "max": 1,
           "min": 1

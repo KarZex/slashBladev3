@@ -10,7 +10,7 @@
     "components": {
       "minecraft:hand_equipped": false,
       "minecraft:food": {
-        "nutrition": 10,
+        "nutrition": 14,
         "saturation_modifier": 20,
         "can_always_eat": false
       },

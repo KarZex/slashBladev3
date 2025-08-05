@@ -34,6 +34,15 @@
     "soba": { "textures": [ "textures/blocks/soba" ] },
     "pasta": { "textures": [ "textures/blocks/pasta" ] },
     
+    "beanplant0": { "textures": [ "textures/blocks/beanplant/beanplant_0" ] },
+    "beanplant1": { "textures": [ "textures/blocks/beanplant/beanplant_1" ] },
+    "beanplant2": { "textures": [ "textures/blocks/beanplant/beanplant_2" ] },
+    "beanplant3": { "textures": [ "textures/blocks/beanplant/beanplant_3" ] },
+    "beanplant4": { "textures": [ "textures/blocks/beanplant/beanplant_4" ] },  
+    "beanplant5": { "textures": [ "textures/blocks/beanplant/beanplant_5" ] },
+    "beanplant6": { "textures": [ "textures/blocks/beanplant/beanplant_6" ] },
+    "beanplant7": { "textures": [ "textures/blocks/beanplant/beanplant_7" ] },
+    
     "tomato_0": { "textures": [ "textures/blocks/tomato_model/tomato_0" ] },
     "tomato_1": { "textures": [ "textures/blocks/tomato_model/tomato_1" ] },
     "tomato_2": { "textures": [ "textures/blocks/tomato_model/tomato_2" ] },

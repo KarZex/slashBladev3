@@ -29,5 +29,8 @@ export const bladeImmuneEntities = [
     `turtle`,
     `wolf`,
     `iron_golem`,
-    `snow_golem`
+    `snow_golem`,
+    `zex:bladestand1`,
+    `zex:bladestand2`,
+    `zex:chair`
 ]

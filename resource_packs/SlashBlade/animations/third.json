@@ -28,8 +28,25 @@
 					"rotation": [-12.5, 0, 0]
 				},
 				"sword": {
-					"rotation": [97.48436, 0.75155, -2.38443],
-					"position": [11, 38, -30],
+					"rotation": [114.234, -16.21876, 3.21398],
+					"position": [6, 46, -24],
+					"scale": 0.3
+				}
+			}
+		},
+		"animation.sword.linearstand1": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [-5, 0, 0],
+					"position": [-26, 22.25, 3.75]
+				},
+				"leftArm": {
+					"rotation": [-12.5, 0, 0]
+				},
+				"sword": {
+					"rotation": [180, -7.5, -90],
+					"position": [-1, 6.48288, -0.3922],
 					"scale": 0.3
 				}
 			}
@@ -124,6 +141,30 @@
 				"bone41": {
 					"rotation": [0, 0, -2.5],
 					"position": [-15.05164, 14.36651, 5.29638]
+				}
+			}
+		},
+		"animation.sword.linearstand2": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [-5, 0, 0],
+					"position": [-26, 22.25, 3.75]
+				},
+				"leftArm": {
+					"rotation": [-12.5, 0, 0]
+				},
+				"sword": {
+					"rotation": [180, -7.5, -90],
+					"position": [-3, 6.73288, -0.3922],
+					"scale": 0.3
+				},
+				"bone41": {
+					"rotation": [0, 0, 0],
+					"position": [-11.05164, 0.36651, 5.29638]
+				},
+				"swordat": {
+					"position": [0, -10, 0]
 				}
 			}
 		}

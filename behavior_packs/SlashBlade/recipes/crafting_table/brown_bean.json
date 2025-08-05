@@ -1,0 +1,30 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:brown_bean_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:brown_soybean"
+      },
+      "B": {
+        "item": "zex:flour"
+      },
+      "C": {
+        "item": "zex:salt"
+      }
+    },
+    "result": [
+      {
+        "item": "zex:brown_bean", 
+        "count": 3
+      }
+    ]
+  }
+  
+}

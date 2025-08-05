@@ -26,7 +26,30 @@
       "minecraft:map_color": "#00ff00",
       "minecraft:light_emission": 15,
       "minecraft:light_dampening": 0,
-      "minecraft:collision_box": false,
+      "minecraft:selection_box": {
+        "origin": [
+          -5,
+          0.0,
+          -5
+        ],
+        "size": [
+          10,
+          16.0,
+          10
+        ]
+      },
+      "minecraft:collision_box": {
+        "origin": [
+          -5,
+          0.0,
+          -5
+        ],
+        "size": [
+          10,
+          12.0,
+          10
+        ]
+      },
       "minecraft:destructible_by_mining": {
         "seconds_to_destroy": 0.1
       }

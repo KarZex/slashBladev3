@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:noodle_soup_recipe"
+    },
+    "tags": [ "cooking_pot_water" ],
+    "pattern": [
+      "AB",
+      "CD"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:soysauce"
+      },
+      "B": {
+        "item": "minecraft:kelp"
+      },
+      "C": {
+        "item": "zex:salt"
+      }
+    },
+    "result": {
+      "item": "zex:noodle_soup",
+      "count": 2
+    }
+  }
+  
+}

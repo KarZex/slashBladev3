@@ -16,7 +16,7 @@
         "default": "geometry.lightsaber"
       },
       "animations": {
-        "root": "animation.sword.stand2"
+        "root": "animation.sword.linearstand2"
       },
       "scripts": {
         "pre_animation": [

@@ -39,6 +39,7 @@ for row in csv_reader:
         blade_geo = row[12]
         blade_mate = row[13]
         blade_sound = row[14]
+        blade_li = row[15]
 
 
         lang += "item.blade:{}={}\n".format(blade_id,blade_name)
@@ -181,6 +182,8 @@ for row in csv_reader:
                 gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_geo)
             else:
                 gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_id)
+            if blade_li == "T":
+                 gun_item["minecraft:attachable"]["description"]["animations"]["root"] = "animation.sword.linearstand2"
         with open("resource_packs/SlashBlade/attachables/replace/stand2/{}.json".format(blade_id),"w") as f:
             json.dump(gun_item,f,indent=2)
 
@@ -196,6 +199,8 @@ for row in csv_reader:
                 gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_geo)
             else:
                 gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_id)
+            if blade_li == "T":
+                 gun_item["minecraft:attachable"]["description"]["animations"]["root"] = "animation.sword.linearstand2"
         with open("resource_packs/SlashBlade/attachables/replace/stand1/{}.json".format(blade_id),"w") as f:
             json.dump(gun_item,f,indent=2)
 

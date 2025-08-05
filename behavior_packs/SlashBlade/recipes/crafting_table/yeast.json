@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:yeast_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AB",
+      "BB"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:bone_meal"
+      },
+      "B": {
+        "item": "zex:flour"
+      },
+      "C": {
+        "item": "minecraft:milk_bucket"
+      },
+      "D": {
+        "item": "zex:onion"
+      },
+      "E": {
+        "item": "zex:breadcrumbs"
+      }
+    },
+    "result": [
+      {
+        "item": "zex:yeast",
+        "count": 4
+      }
+    ]
+  }
+  
+}

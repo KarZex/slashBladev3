@@ -1,0 +1,36 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:yaki_soba_recipe"
+    },
+    "tags": [ "cooking_pot_oil" ],
+    "pattern": [
+      "AB",
+      "DEC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:porkchop"
+        },
+      "B": {
+        "item": "zex:ramen_raw"
+      },
+      "C": {
+        "item": "minecraft:carrot"
+      },
+      "D": {
+        "item": "zex:onion"
+      },
+      "E": {
+        "item": "zex:worcester_sauce"
+      }
+
+    },
+    "result": {
+      "item": "zex:yaki_soba",
+      "count": 2
+    }
+  }
+  
+}

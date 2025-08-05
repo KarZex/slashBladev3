@@ -7,6 +7,10 @@ import { bladeImmuneEntities } from "./config";
 
 const Rank = [ `D`,`C`,`B`,`A`,`1S`,`2S`,`3S`,`3S` ];
 
+function roundTo(value, decimals) {
+  const factor = Math.pow(10, decimals);
+  return Math.round(value * factor) / factor;
+}
 
 function print( text ){
 	world.sendMessage(`§a[debug]§r:${text}`)
@@ -221,10 +225,41 @@ async function bladeSwing( user,blade,IsOnGround ){
 	else{
 	}
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
-	const PerLocation = user.location;
-	await system.waitTicks(20);
-	if( PerLocation == user.location ){
-		print(`aaaaaaa`)
+	const PerLocation = {
+		x:roundTo(user.location.x,2),
+		y:roundTo(user.location.y,2),
+		z:roundTo(user.location.z,2)
+	}
+	let i = 0;
+	user.addEffect(`slow_falling`,20,{ amplifier:1 });
+	while( true ){
+		let nowLocation = {
+			x:roundTo(user.location.x,2),
+			y:roundTo(user.location.y,2),
+			z:roundTo(user.location.z,2)
+		}
+		if( PerLocation.x != nowLocation.x || PerLocation.y != nowLocation.y || PerLocation.z != nowLocation.z ){
+			break;
+		}
+		await system.waitTicks(1);
+		i++;
+		if( i > 20 ){
+			const victims = user.dimension.getEntities({location:user.location,maxDistance:16,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
+			if( victims.length > 1 ){
+				world.scoreboard.getObjective(`printlevel`).setScore(user,100);
+				world.scoreboard.getObjective(`blade`).addScore(user,32);
+				user.playSound(`mob.blaze.shoot`);
+				for( let i = 0; i < victims.length; i++ ){
+					if( victims[i].nameTag != user.nameTag ){
+						victims[i].addEffect(`speed`,600,{ amplifier:1 });
+						victims[i].addEffect(`strength`,600,{ amplifier:1 });
+						user.dimension.spawnParticle(`minecraft:bleach`,{x:victims[i].location.x,y:victims[i].location.y+1.8,z:victims[i].location.z});
+						victims[i].applyDamage( 0.1,{ cause:`override`,damagingEntity:user });
+					}
+				}
+			}
+			break;
+		}
 	}
 }
 function bladeSwingProjectile( user ){

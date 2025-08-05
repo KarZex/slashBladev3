@@ -19,7 +19,8 @@
         "crafting_tags": [
           "millstonet"
         ],
-        "table_name": "millstonet"
+        
+        "table_name": "tile.zex:millstonet.name"
       },
       "minecraft:material_instances": {
         "*": {

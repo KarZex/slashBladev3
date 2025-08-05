@@ -16,7 +16,7 @@
         "default": "geometry.fluorescentbar"
       },
       "animations": {
-        "root": "animation.sword.stand"
+        "root": "animation.sword.linearstand2"
       },
       "scripts": {
         "pre_animation": [

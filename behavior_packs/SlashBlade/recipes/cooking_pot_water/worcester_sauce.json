@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:worcester_sauce_recipe"
+    },
+    "tags": [ "cooking_pot_water" ],
+    "pattern": [
+      "AA",
+      "BC"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:soysauce"
+      },
+      "B": {
+        "item": "minecraft:sugar"
+      },
+      "C": {
+        "item": "minecraft:apple"
+      }
+    },
+    "result": {
+      "item": "zex:worcester_sauce",
+      "count": 2
+    }
+  }
+  
+}

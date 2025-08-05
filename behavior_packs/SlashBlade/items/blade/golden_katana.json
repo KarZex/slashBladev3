@@ -47,7 +47,7 @@
       },
       "minecraft:icon": "golden_katana",
       "minecraft:durability": {
-        "max_durability": 60,
+        "max_durability": 450,
         "damage_chance": {
           "max": 1,
           "min": 1

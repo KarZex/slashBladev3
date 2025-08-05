@@ -1,0 +1,32 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:natto_recipe"
+    },
+    "tags": [ "cooking_pot_water" ],
+    "pattern": [
+      "AB",
+      "CD"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:yeast"
+      },
+      "B": {
+        "item": "zex:brown_bean"
+      },
+      "C": {
+        "item": "minecraft:bone_meal"
+      },
+      "D": {
+        "item": "zex:straw"
+      }
+    },
+    "result": {
+      "item": "zex:natto",
+      "count": 1
+    }
+  }
+  
+}

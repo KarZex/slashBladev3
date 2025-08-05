@@ -529,6 +529,51 @@
     },
     "gridglassdoor": {
       "textures": "textures/items/block/gridglassdoor"
+    },
+    "brown_bean": {
+      "textures": "textures/items/food/brown_bean"
+    },
+    "green_bean": {
+      "textures": "textures/items/food/green_bean"
+    },
+    "green_soybean": {
+      "textures": "textures/items/food/green_soybean"
+    },
+    "brown_soybean": {
+      "textures": "textures/items/food/brown_soybean"
+    },
+    "soysauce": {
+      "textures": "textures/items/food/soysauce"
+    },
+    "yeast": {
+      "textures": "textures/items/food/yeast"
+    },
+    "noodle_soup": {
+      "textures": "textures/items/food/noodle_soup"
+    },
+    "worcester_sauce": {
+      "textures": "textures/items/food/worcester_sauce"
+    },
+    "tofu": {
+      "textures": "textures/items/food/tofu"
+    },
+    "tofu_fried": {
+      "textures": "textures/items/food/tofu_fried"
+    },
+    "natto": {
+      "textures": "textures/items/food/natto"
+    },
+    "rice_natto": {
+      "textures": "textures/items/food/rice_natto"
+    },
+    "yaki_soba": {
+      "textures": "textures/items/food/yaki_soba"
+    },
+    "yaki_udon": {
+      "textures": "textures/items/food/yaki_udon"
+    },
+    "rice_beans": {
+      "textures": "textures/items/food/rice_beans"
     }
   }
 }

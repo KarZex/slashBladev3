@@ -16,8 +16,8 @@
 					"pivot": [0, 0, 0],
 					"cubes": [
 						{
-							"origin": [-8, 0, -8],
-							"size": [16, 4, 16],
+							"origin": [-6, 0, -6],
+							"size": [12, 4, 12],
 							"uv": {
 								"north": {"uv": [0, 12], "uv_size": [16, 4]},
 								"east": {"uv": [0, 0], "uv_size": [4, 16], "uv_rotation": 90},

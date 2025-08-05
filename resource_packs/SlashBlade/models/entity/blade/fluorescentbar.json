@@ -57,7 +57,7 @@
 							"size": [5, 84, 5],
 							"inflate": 0.25,
 							"uv": {
-								"north": {"uv": [62, 0], "uv_size": [-62, 17]},
+								"north": {"uv": [64, 0], "uv_size": [-64, 31]},
 								"east": {"uv": [0, 0], "uv_size": [62, 17]},
 								"south": {"uv": [0, 0], "uv_size": [60, 28]},
 								"west": {"uv": [0, 0], "uv_size": [62, 17]},
@@ -792,6 +792,10 @@
 					"name": "leftArm",
 					"parent": "leftArmA",
 					"pivot": [5, 22, 0]
+				},
+				{
+					"name": "bone60",
+					"pivot": [0, 0, 0]
 				}
 			]
 		}

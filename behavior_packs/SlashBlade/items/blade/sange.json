@@ -47,7 +47,7 @@
       },
       "minecraft:icon": "sange",
       "minecraft:durability": {
-        "max_durability": 60,
+        "max_durability": 300,
         "damage_chance": {
           "max": 1,
           "min": 1

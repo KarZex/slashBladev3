@@ -11,12 +11,10 @@
     ],
     "key": {
       "A": {
-        "item": "zex:tudura",
-        "data": 0
+        "item": "zex:tudura"
       },
       "B": {
-        "item": "minecraft:logs",
-        "data": 0
+        "item": "minecraft:log2"
       },
       "C": {
         "item": "minecraft:iron_bars",

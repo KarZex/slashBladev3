@@ -29,14 +29,14 @@
       "minecraft:light_dampening": 0,
       "minecraft:selection_box": {
         "origin": [
-          -8,
+          -6,
           0.0,
-          -8
+          -6
         ],
         "size": [
-          16,
+          12,
           4,
-          16
+          12
         ]
       },
       "minecraft:collision_box": {

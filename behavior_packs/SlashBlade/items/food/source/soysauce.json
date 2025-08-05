@@ -1,0 +1,16 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:soysauce",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 64,
+      "minecraft:icon": "soysauce",
+      "minecraft:render_offsets": "seeds"
+    }
+  }
+}
