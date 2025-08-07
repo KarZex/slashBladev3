@@ -32,5 +32,6 @@ export const bladeImmuneEntities = [
     `snow_golem`,
     `zex:bladestand1`,
     `zex:bladestand2`,
-    `zex:chair`
+    `zex:chair`,
+    `zex:bladeshadow`
 ]

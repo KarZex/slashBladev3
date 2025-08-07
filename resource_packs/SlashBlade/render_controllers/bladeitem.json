@@ -2,7 +2,7 @@
   "format_version": "1.8.0",
   "render_controllers": {
     "controller.render.bladeshadow": {
-      "geometry": "Array.item_geo[query.variant]",
+      "geometry": "Geometry.default",
       "materials": [
         {
           "*": "material.default"
@@ -12,16 +12,6 @@
         "Array.item_texture[query.skin_id]"
       ],
       "arrays": {
-        "geometries": {
-          "Array.item_geo": [
-            "geometry.default",
-            "geometry.1st",
-            "geometry.2nd",
-            "geometry.3rd",
-            "geometry.4th",
-            "geometry.5th"
-          ]
-        },
         "textures": {
           "Array.item_texture": [
             "texture.white",
@@ -42,7 +32,17 @@
             "texture.black"
           ]
         }
-      }
+      },
+			"uv_anim": {
+				"offset": [
+					0.0,
+					"math.mod(math.floor(query.life_time*20),10) / 10"
+				],
+				"scale": [
+					1.0,
+					"1 / 10"
+				]
+			}
     }
   }
 }

@@ -1,8 +1,9 @@
-import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, ItemComponentTypes,EnchantmentType, EntityDamageCause, EnchantmentTypes  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, ItemComponentTypes,EnchantmentType, EntityDamageCause, EnchantmentTypes, EffectType, EffectTypes, Effect  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
 import { classReg, drive, slashdimension } from "./saData";
 import "./compornents";
+import { isMoving , absVector3 } from "./usefulFunction";
 import { bladeImmuneEntities } from "./config";
 
 const Rank = [ `D`,`C`,`B`,`A`,`1S`,`2S`,`3S`,`3S` ];
@@ -11,6 +12,7 @@ function roundTo(value, decimals) {
   const factor = Math.pow(10, decimals);
   return Math.round(value * factor) / factor;
 }
+
 
 function print( text ){
 	world.sendMessage(`§a[debug]§r:${text}`)
@@ -163,6 +165,7 @@ function bladeSoulcal( user,blade ){
 	}
 }
 
+
 async function bladeSwing( user,blade,IsOnGround ){
 	const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
 	const level = world.scoreboard.getObjective(`blade`).getScore(user);
@@ -175,7 +178,23 @@ async function bladeSwing( user,blade,IsOnGround ){
 		world.scoreboard.getObjective(`groundcomboA`).addScore(user,1);
 		const combo = world.scoreboard.getObjective(`groundcomboA`).getScore(user);
 		comboG = combo;
+		if( combo == 1 ){
+			const spawn = user.dimension.spawnEntity(`zex:bladeshadow`,user.location);
+			spawn.triggerEvent(`blue`);
+			spawn.triggerEvent(`1st`);
+			spawn.setRotation({y:user.getRotation().y,x:0});
+		}
+		if( combo == 2 ){
+			const spawn = user.dimension.spawnEntity(`zex:bladeshadow`,user.location);
+			spawn.triggerEvent(`blue`);
+			spawn.triggerEvent(`2nd`);
+			spawn.setRotation({y:user.getRotation().y,x:0});
+		}
 		if( combo >= 3 ){
+			const spawn = user.dimension.spawnEntity(`zex:bladeshadow`,user.location);
+			spawn.triggerEvent(`blue`);
+			spawn.triggerEvent(`1st`);
+			spawn.setRotation({y:user.getRotation().y,x:0});
 			world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
 			d = d * 1.5;
 			user.dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:user.location.x,y:user.location.y+1,z:user.location.z});
@@ -184,10 +203,28 @@ async function bladeSwing( user,blade,IsOnGround ){
 		world.scoreboard.getObjective(`combocool`).setScore(user,20);
 	}
 	else if(IsOnGround == false){
+		user.addEffect(`slow_falling`,20,{ amplifier:1 });
 		world.scoreboard.getObjective(`aircomboA`).addScore(user,1);
 		const combo = world.scoreboard.getObjective(`aircomboA`).getScore(user);
 		comboG = combo;
+		if( combo == 1 ){
+			const spawn = user.dimension.spawnEntity(`zex:bladeshadow`,user.location);
+			spawn.triggerEvent(`blue`);
+			spawn.triggerEvent(`1st`);
+			spawn.setRotation({y:user.getRotation().y,x:0});
+		}
+		if( combo == 2 ){
+			const spawn = user.dimension.spawnEntity(`zex:bladeshadow`,user.location);
+			spawn.triggerEvent(`blue`);
+			spawn.triggerEvent(`2nd`);
+			spawn.setRotation({y:user.getRotation().y,x:0});
+		}
 		if( combo == 3 ){
+			user.applyKnockback(0,0,0,1);
+			const spawn = user.dimension.spawnEntity(`zex:bladeshadow`,user.location);
+			spawn.triggerEvent(`blue`);
+			spawn.triggerEvent(`3rd`);
+			spawn.setRotation({y:user.getRotation().y,x:0});
 			d = d * 1.2;
 			user.dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:user.location.x,y:user.location.y+1,z:user.location.z});
 			knockback = true;
@@ -195,6 +232,10 @@ async function bladeSwing( user,blade,IsOnGround ){
 		}
 		else if( combo >= 4 ){
 			world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
+			const spawn = user.dimension.spawnEntity(`zex:bladeshadow`,user.location);
+			spawn.triggerEvent(`blue`);
+			spawn.triggerEvent(`4th`);
+			spawn.setRotation({y:user.getRotation().y,x:0});
 			d = d * 1.5;
 			user.dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:user.location.x,y:user.location.y+1,z:user.location.z});
 			knockback = true;
@@ -225,20 +266,14 @@ async function bladeSwing( user,blade,IsOnGround ){
 	else{
 	}
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
-	const PerLocation = {
-		x:roundTo(user.location.x,2),
-		y:roundTo(user.location.y,2),
-		z:roundTo(user.location.z,2)
-	}
 	let i = 0;
-	user.addEffect(`slow_falling`,20,{ amplifier:1 });
 	while( true ){
 		let nowLocation = {
 			x:roundTo(user.location.x,2),
 			y:roundTo(user.location.y,2),
 			z:roundTo(user.location.z,2)
 		}
-		if( PerLocation.x != nowLocation.x || PerLocation.y != nowLocation.y || PerLocation.z != nowLocation.z ){
+		if( isMoving(user) ){
 			break;
 		}
 		await system.waitTicks(1);
@@ -295,14 +330,22 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 	if ( e.itemStack.typeId.includes(`blade:`) && e.useDuration > 100010 && dmgCom.damage < dmgCom.maxDurability ){
 		const bladeId = e.itemStack.typeId.split(`:`)[1];
 		const sound = bladeData[`${bladeId}`][`sound`];
-		if( user.isSneaking && (user.isOnGround || user.isJumping) ){
-			user.playSound(sound);
-			const v = user.getVelocity();
-			let abs_v = 5;
-			const d = user.getViewDirection();
-			user.applyKnockback(d.x,d.z,abs_v,0)
-			user.addEffect(`resistance`,8,{ amplifier:255 });
-			user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
+		if( user.isSneaking && (user.isOnGround) && isMoving(user) ){
+			let v = user.getVelocity();
+			user.addEffect(`resistance`,5,{ amplifier:255 });
+			for( let i = 0; i < 3; i++ ){
+				user.playSound(sound);
+				bladeSwing( user,blade,user.isOnGround );
+				user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
+				let abs_v = 1;
+				let d = user.getViewDirection();
+				user.applyKnockback(d.x,d.z,abs_v,0)
+				await system.waitTicks(1);
+				user.applyKnockback(d.x,d.z,abs_v,0)
+				await system.waitTicks(1);
+				user.applyKnockback(d.x,d.z,abs_v,0)
+				await system.waitTicks(1);
+			}
 		}
 		else if( user.isSneaking && !user.isOnGround && !user.isJumping ){
 			user.playSound(sound);
@@ -312,9 +355,6 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 			user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
 		}
 		else {
-			if( user.isJumping){
-				user.addEffect(`levitation`,5,{ amplifier:5 });
-			}
 			user.playSound(sound);
 			bladeSwing( user,blade,user.isOnGround );
 		}
@@ -528,9 +568,17 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			bladeSoulcal( user,blade );
 			if( user.isOnGround ){
 				world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
+				if( user.hasTag(`jumped`) )
+					user.removeTag(`jumped`);
 			}
 			else if( !user.isOnGround ){
 				world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
+			}
+
+			if( user.isJumping && !user.hasTag(`jumped`) && !user.isOnGround && user.getVelocity().y < 0 ){
+				//user.clearVelocity();
+				user.applyKnockback(0,0,0,-(0.5*user.getVelocity().y)+0.7);
+				user.addTag(`jumped`);
 			}
 		}
 	}

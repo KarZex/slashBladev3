@@ -1,0 +1,16 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.sword.bladeshadow": {
+			"animation_length": 1.5,
+			"bones": {
+				"bone": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"1.5": [1.2, 1.2, 1.2]
+					}
+				}
+			}
+		}
+	}
+}

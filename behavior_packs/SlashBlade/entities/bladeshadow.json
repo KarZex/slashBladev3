@@ -7,9 +7,25 @@
             "runtime_identifier": "minecraft:armor_stand",
             "is_spawnable": true,
             "is_summonable": true,
-            "is_experimental": false
+            "is_experimental": false,
+            "animations": {
+                "a":"controller.animation.bladeshadow"
+            },
+            "scripts": {
+                "animate": [
+                    "a"
+                ]
+            },
+            "properties": {
+                "zex:rotate": { "client_sync": true, "type": "int", "default": 0, "range": [0, 359] }
+            }
         },
         "component_groups": {
+            "despawn": {
+                "minecraft:instant_despawn": {
+                    "remove_child_entities": false
+                }
+            },
             "white": {
                 "minecraft:skin_id": {
                     "value": 0
@@ -97,22 +113,22 @@
             },
             "2nd": {
                 "minecraft:variant": {
-                    "value": 1
+                    "value": 2
                 }
             },
             "3rd": {
                 "minecraft:variant": {
-                    "value": 1
+                    "value": 3
                 }
             },
             "4th": {
                 "minecraft:variant": {
-                    "value": 1
+                    "value": 4
                 }
             },
             "5th": {
                 "minecraft:variant": {
-                    "value": 1
+                    "value": 5
                 }
             }
         },
@@ -138,8 +154,22 @@
                 "width": 0.5,
                 "height": 0.5
             },
+            "minecraft:skin_id": {
+                "value": 0
+            },
+            "minecraft:variant": {
+                "value": 0
+            },
             "minecraft:loot": {
                 "table": "loot_tables/empty.json"
+            },
+            "minecraft:timer": {
+                "time": 0.25,
+                "looping": true,
+                "time_down_event": {
+                    "event": "zex:despawn",
+                    "target": "self"
+                }
             },
             "minecraft:health": {
                 "value": 32767,
@@ -160,6 +190,13 @@
             "minecraft:conditional_bandwidth_optimization": {}
         },
         "events": {
+            "zex:despawn": {
+                "add": {
+                    "component_groups": [
+                        "despawn"
+                    ]
+                }
+            },
             "white": {
                 "add": {
                     "component_groups": [
@@ -273,32 +310,16 @@
                 }
             },
             "1st": {
-                "add": {
-                    "component_groups": [
-                        "1st"
-                    ]
-                }
+                 "set_property": { "zex:rotate": 30 }
             },
             "2nd": {
-                "add": {
-                    "component_groups": [
-                        "2nd"
-                    ]
-                }
+                 "set_property": { "zex:rotate": 210 }
             },
             "3rd": {
-                "add": {
-                    "component_groups": [
-                        "3rd"
-                    ]
-                }
+                 "set_property": { "zex:rotate": 60 }
             },
             "4th": {
-                "add": {
-                    "component_groups": [
-                        "4th"
-                    ]
-                }
+                 "set_property": { "zex:rotate": 270 }
             },
             "5th": {
                 "add": {

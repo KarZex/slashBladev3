@@ -19,7 +19,47 @@
 							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
 						},
 						{
-							"nattack" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground || query.is_jumping )"
+							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
+						}
+					]
+				},
+				"is_using_item_pre":{
+					"transitions": [
+						{
+							"ground_move": "!query.is_using_item && query.state_time < 0.5"
+						},
+						{
+							"usesa": "!query.is_using_item && query.state_time >= 0.5"
+						}
+					]
+				},
+				"ground_move":{
+					"animations": [
+						"use"
+					],
+					"transitions": [
+						{
+							"ground_move1": "query.state_time > 0.15"
+						}
+					]
+				},
+				"ground_move1":{
+					"animations": [
+						"use2"
+					],
+					"transitions": [
+						{
+							"ground_move2": "query.state_time > 0.15"
+						}
+					]
+				},
+				"ground_move2":{
+					"animations": [
+						"use3"
+					],
+					"transitions": [
+						{
+							"default": "query.state_time > 0.15"
 						}
 					]
 				},
@@ -40,7 +80,7 @@
 					"animations" : [ "gattack" ],
 					"transitions" : [
 						{
-							"gpre2" : "query.is_using_item"
+							"gpre2" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
 							"default" : "query.state_time > 1.0 || !query.is_on_ground"
@@ -61,7 +101,7 @@
 					"animations" : [ "gattack2" ],
 					"transitions" : [
 						{
-							"gpre3" : "query.is_using_item"
+							"gpre3" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
 							"default" : "query.state_time > 1.0 || !query.is_on_ground"
@@ -131,7 +171,7 @@
 					"animations" : [ "use" ],
 					"transitions" : [
 						{
-							"pre2" : "query.is_using_item"
+							"pre2" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
 							"default" : "query.state_time > 1.0 || query.is_on_ground"
@@ -149,7 +189,7 @@
 					"animations" : [ "use2" ],
 					"transitions" : [
 						{
-							"pre3" : "query.is_using_item"
+							"pre3" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
 							"default" : "query.state_time > 1.0 || query.is_on_ground"
@@ -167,7 +207,7 @@
 					"animations" : [ "use3" ],
 					"transitions" : [
 						{
-							"pre4" : "query.is_using_item"
+							"pre4" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
 							"default" : "query.state_time > 1.0 || query.is_on_ground"
@@ -185,7 +225,7 @@
 					"animations" : [ "use4" ],
 					"transitions" : [
 						{
-							"pre" : "query.is_using_item"
+							"pre" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
 							"default" : "query.state_time > 1.0"
@@ -203,7 +243,7 @@
 					"animations" : [ "use" ],
 					"transitions" : [
 						{
-							"pre" : "query.is_using_item"
+							"pre" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
 							"default" : "query.state_time > 1.0 || query.is_on_ground"

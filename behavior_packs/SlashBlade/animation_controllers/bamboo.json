@@ -130,6 +130,79 @@
         }
       }
     },
+    "controller.animation.bladeshadow": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "first": "query.variant == 1"
+            },
+            {
+              "second": "query.variant == 2"
+            },
+            {
+              "third": "query.variant == 3"
+            },
+            {
+              "fourth": "query.variant == 4"
+            },
+            {
+              "fifth": "query.variant == 5"
+            }
+          ]
+        },
+        "first": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/say 1"
+          ]
+        },
+        "second": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/say 1"
+          ]
+        },
+        "third": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/say 1"
+          ]
+        },
+        "fourth": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/say 1"
+          ]
+        },
+        "fifth": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/say 1"
+          ]
+        }
+      }
+    },
     "controller.animation.absorb": {
       "states": {
         "default": {

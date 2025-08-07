@@ -4,10 +4,10 @@
     "description": {
       "identifier": "zex:bladeshadow",
       "materials": {
-        "default": "entity_alphablend"
+        "default": "custom_animated"
       },
       "textures": {
-        "default": "textures/entity/stand",
+        "default": "textures/entity/bladeshadow/bladeshadow_0",
         "white":"textures/entity/bladeshadow/bladeshadow_0",
         "orange":"textures/entity/bladeshadow/bladeshadow_1",
         "magenta":"textures/entity/bladeshadow/bladeshadow_2",
@@ -26,12 +26,7 @@
         "black":"textures/entity/bladeshadow/bladeshadow_15"
       },
       "geometry": {
-        "default": "geometry.bladeshadow",
-        "1st": "geometry.bladeshadow1",
-        "2nd": "geometry.bladeshadow2",
-        "3rd": "geometry.bladeshadow3",
-        "4th": "geometry.bladeshadow4",
-        "5th": "geometry.bladeshadow5"
+        "default": "geometry.bladeslash_0"
       },
       "spawn_egg": {
         "texture": "bladestand",
@@ -43,7 +38,7 @@
         ]
       },
       "animations": {
-        "float": "animation.sword.bladeshadow"
+        "float": "animation.bladeslash.role"
       },
       "render_controllers": [
         "controller.render.bladeshadow"
