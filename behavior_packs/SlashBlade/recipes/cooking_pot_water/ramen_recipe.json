@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "zex:ramen_recipe"
+    "identifier": "zex:ramen_cooked_recipe"
     },
     "tags": [ "cooking_pot_water" ],
     "pattern": [
@@ -14,12 +14,11 @@
         "data": 0
       },
       "B": {
-        "item": "minecraft:kelp",
-        "data": 0
+        "item": "zex:noodle_soup"
       }
     },
     "result": {
-      "item": "zex:ramen",
+      "item": "zex:ramen_cooked",
       "count": 2
     }
   }

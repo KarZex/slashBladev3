@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "zex.millstonet_gravel"
+    "identifier": "zex.millstonet_cobblestone2"
     },
     "tags": [ "millstonet" ],
     "pattern": [
@@ -10,7 +10,7 @@
     ],
     "key": {
       "A": {
-        "item": "minecraft:cobblestone",
+        "item": "minecraft:cobbled_deepslate",
         "data": 0
       },
       "B": {
@@ -20,12 +20,8 @@
     },
     "result": [
       {
-        "item": "minecraft:gravel",
+        "item": "minecraft:cobblestone",
         "count": 2
-      },
-      {
-        "item": "zex:salt",
-        "count": 1
       }
     ]
   }

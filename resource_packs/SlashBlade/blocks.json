@@ -9,6 +9,9 @@
   "zex:riceplant": {
     "sound": "grass"
   },
+  "zex:beanplant": {
+    "sound": "grass"
+  },
   "zex:cherry_plank": {
     "sound": "wood"
   },

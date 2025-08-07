@@ -1,0 +1,312 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "zex:bladeshadow",
+            "spawn_category": "creature",
+            "runtime_identifier": "minecraft:armor_stand",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "white": {
+                "minecraft:skin_id": {
+                    "value": 0
+                }
+            },
+            "orange": {
+                "minecraft:skin_id": {
+                    "value": 1
+                }
+            },
+            "magenta": {
+                "minecraft:skin_id": {
+                    "value": 2
+                }
+            },
+            "light_blue": {
+                "minecraft:skin_id": {
+                    "value": 3
+                }
+            },
+            "yellow": {
+                "minecraft:skin_id": {
+                    "value": 4
+                }
+            },
+            "lime": {
+                "minecraft:skin_id": {
+                    "value": 5
+                }
+            },
+            "pink": {
+                "minecraft:skin_id": {
+                    "value": 6
+                }
+            },
+            "gray": {
+                "minecraft:skin_id": {
+                    "value": 7
+                }
+            },
+            "light_gray": {
+                "minecraft:skin_id": {
+                    "value": 8
+                }
+            },
+            "cyan": {
+                "minecraft:skin_id": {
+                    "value": 9
+                }
+            },
+            "purple": {
+                "minecraft:skin_id": {
+                    "value": 10
+                }
+            },
+            "blue": {
+                "minecraft:skin_id": {
+                    "value": 11
+                }
+            },
+            "brown": {
+                "minecraft:skin_id": {
+                    "value": 12
+                }
+            },
+            "green": {
+                "minecraft:skin_id": {
+                    "value": 13
+                }
+            },
+            "red": {
+                "minecraft:skin_id": {
+                    "value": 14
+                }
+            },
+            "black": {
+                "minecraft:skin_id": {
+                    "value": 15
+                }
+            },
+            "1st": {
+                "minecraft:variant": {
+                    "value": 1
+                }
+            },
+            "2nd": {
+                "minecraft:variant": {
+                    "value": 1
+                }
+            },
+            "3rd": {
+                "minecraft:variant": {
+                    "value": 1
+                }
+            },
+            "4th": {
+                "minecraft:variant": {
+                    "value": 1
+                }
+            },
+            "5th": {
+                "minecraft:variant": {
+                    "value": 1
+                }
+            }
+        },
+        "components": {
+            "minecraft:behavior.trade_with_player": {},
+            "minecraft:experience_reward": {
+                "on_death": "0"
+            },
+            "minecraft:fire_immune": {},
+            "minecraft:knockback_resistance": {
+                "value": 1,
+                "max": 1
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            },
+            "minecraft:collision_box": {
+                "width": 0.5,
+                "height": 0.5
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/empty.json"
+            },
+            "minecraft:health": {
+                "value": 32767,
+                "max": 32767
+            },
+            "minecraft:push_through": {
+                "value": 0
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:physics": {
+                "has_collision": false,
+                "has_gravity": false,
+                "push_towards_closest_space": false
+            },
+            "minecraft:conditional_bandwidth_optimization": {}
+        },
+        "events": {
+            "white": {
+                "add": {
+                    "component_groups": [
+                        "white"
+                    ]
+                }
+            },
+            "orange": {
+                "add": {
+                    "component_groups": [
+                        "orange"
+                    ]
+                }
+            },
+            "magenta": {
+                "add": {
+                    "component_groups": [
+                        "magenta"
+                    ]
+                }
+            },
+            "light_blue": {
+                "add": {
+                    "component_groups": [
+                        "light_blue"
+                    ]
+                }
+            },
+            "yellow": {
+                "add": {
+                    "component_groups": [
+                        "yellow"
+                    ]
+                }
+            },
+            "lime": {
+                "add": {
+                    "component_groups": [
+                        "lime"
+                    ]
+                }
+            },
+            "pink": {
+                "add": {
+                    "component_groups": [
+                        "pink"
+                    ]
+                }
+            },
+            "gray": {
+                "add": {
+                    "component_groups": [
+                        "gray"
+                    ]
+                }
+            },
+            "light_gray": {
+                "add": {
+                    "component_groups": [
+                        "light_gray"
+                    ]
+                }
+            },
+            "cyan": {
+                "add": {
+                    "component_groups": [
+                        "cyan"
+                    ]
+                }
+            },
+            "purple": {
+                "add": {
+                    "component_groups": [
+                        "purple"
+                    ]
+                }
+            },
+            "blue": {
+                "add": {
+                    "component_groups": [
+                        "blue"
+                    ]
+                }
+            },
+            "brown": {
+                "add": {
+                    "component_groups": [
+                        "brown"
+                    ]
+                }
+            },
+            "green": {
+                "add": {
+                    "component_groups": [
+                        "green"
+                    ]
+                }
+            },
+            "red": {
+                "add": {
+                    "component_groups": [
+                        "red"
+                    ]
+                }
+            },
+            "black": {
+                "add": {
+                    "component_groups": [
+                        "black"
+                    ]
+                }
+            },
+            "1st": {
+                "add": {
+                    "component_groups": [
+                        "1st"
+                    ]
+                }
+            },
+            "2nd": {
+                "add": {
+                    "component_groups": [
+                        "2nd"
+                    ]
+                }
+            },
+            "3rd": {
+                "add": {
+                    "component_groups": [
+                        "3rd"
+                    ]
+                }
+            },
+            "4th": {
+                "add": {
+                    "component_groups": [
+                        "4th"
+                    ]
+                }
+            },
+            "5th": {
+                "add": {
+                    "component_groups": [
+                        "5th"
+                    ]
+                }
+            }
+        }
+    }
+}

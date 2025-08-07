@@ -2,31 +2,32 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "zex:soba_katsu_recipe"
+    "identifier": "zex:rice_natto_recipe"
     },
-    "tags": [
-      "cooking_pot_water"
-    ],
+    "tags": [ "cooking_pot_water" ],
     "pattern": [
-      "ABC"
+      "AB"
     ],
     "key": {
       "A": {
-        "item": "zex:soba_raw",
+        "item": "zex:rice",
         "data": 0
       },
       "B": {
-        "item": "zex:noodle_soup",
+        "item": "zex:natto",
         "data": 0
       },
       "C": {
-        "item": "zex:katsu",
-        "data": 0
+        "item": "minecraft:egg"
+      },
+      "D": {
+        "item": "zex:onion"
       }
     },
     "result": {
-      "item": "zex:soba_katsu",
+      "item": "zex:rice_natto",
       "count": 2
     }
   }
+  
 }

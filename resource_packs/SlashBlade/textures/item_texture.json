@@ -574,6 +574,12 @@
     },
     "rice_beans": {
       "textures": "textures/items/food/rice_beans"
+    },
+    "udon_cooked": {
+      "textures": "textures/items/food/udon_cooked"
+    },
+    "soba_cooked": {
+      "textures": "textures/items/food/soba_cooked"
     }
   }
 }

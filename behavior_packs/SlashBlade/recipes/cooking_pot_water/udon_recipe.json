@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "zex:udon_recipe"
+      "identifier": "zex:udon_cooked_recipe"
     },
     "tags": [
       "cooking_pot_water"
@@ -16,12 +16,11 @@
         "data": 0
       },
       "B": {
-        "item": "minecraft:kelp",
-        "data": 0
+        "item": "zex:noodle_soup"
       }
     },
     "result": {
-      "item": "zex:udon",
+      "item": "zex:udon_cooked",
       "count": 2
     }
   }

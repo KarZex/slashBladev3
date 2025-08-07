@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "zex:soba_recipe"
+      "identifier": "zex:soba_cooked_recipe"
     },
     "tags": [
       "cooking_pot_water"
@@ -16,12 +16,11 @@
         "data": 0
       },
       "B": {
-        "item": "minecraft:kelp",
-        "data": 0
+        "item": "zex:noodle_soup"
       }
     },
     "result": {
-      "item": "zex:soba",
+      "item": "zex:soba_cooked",
       "count": 2
     }
   }

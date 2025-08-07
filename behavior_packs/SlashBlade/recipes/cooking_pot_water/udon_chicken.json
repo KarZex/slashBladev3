@@ -13,16 +13,13 @@
     ],
     "key": {
       "A": {
-        "item": "zex:udon_raw",
-        "data": 0
+        "item": "zex:udon_raw"
       },
       "B": {
-        "item": "minecraft:kelp",
-        "data": 0
+        "item": "zex:noodle_soup"
       },
       "C": {
-        "item": "minecraft:chicken",
-        "data": 0
+        "item": "minecraft:chicken"
       },
       "D": {
         "item": "zex:onion"
