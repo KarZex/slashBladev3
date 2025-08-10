@@ -406,7 +406,7 @@ export async function bladeComboA3_B( user,blade,sound ){
     summonBladeShadow(user,color,60);
 	await system.waitTicks(3);
 	user.applyKnockback(0,0,0,1);
-    rangeAttack(user,d,true,1,5,isFire,comboG/2);
+    rangeAttack(user,d,true,1,8,isFire,comboG/2);
     playBladeSound(user,sound);
     summonBladeShadow(user,color,75);
     //after

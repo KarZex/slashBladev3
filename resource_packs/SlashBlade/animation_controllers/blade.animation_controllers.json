@@ -40,7 +40,10 @@
 							"acombo2_pre" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
-							"acombo1_reset" : "query.state_time > 2.0 || query.is_on_ground"
+							"acombo1_reset" : "query.state_time > 2.0"
+						},
+						{
+							"default" : "query.is_on_ground"
 						}
 					]
 				},
@@ -59,7 +62,7 @@
 							"acombo2" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
 						},
 						{
-							"acombo1_reset" : "query.is_on_ground"
+							"default" : "query.is_on_ground"
 						}
 					]
 				},
@@ -73,7 +76,10 @@
 							"acombo3b_pre" : "query.is_using_item && query.state_time > 0.75"
 						},
 						{
-							"acombo2_reset" : "query.state_time > 2.0 || query.is_on_ground"
+							"acombo2_reset" : "query.state_time > 2.0"
+						},
+						{
+							"default" : "query.is_on_ground"
 						}
 					]
 				},
@@ -92,7 +98,7 @@
 							"acombo3" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
 						},
 						{
-							"acombo2_reset" : "query.is_on_ground"
+							"default" : "query.is_on_ground"
 						}
 					]
 				},
@@ -115,7 +121,7 @@
 							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
 						},
 						{
-							"acombo3_reset" : "query.state_time > 2.0 || query.is_on_ground"
+							"acombo3_reset" : "query.state_time > 2.0"
 						}
 					]
 				},
@@ -134,7 +140,7 @@
 							"acombo3b" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
 						},
 						{
-							"gcombo2_reset" : "query.is_on_ground"
+							"default" : "query.is_on_ground"
 						}
 					]
 				},
@@ -145,7 +151,10 @@
 							"acombo4b_pre" : "query.is_using_item && query.state_time > 0.15 && query.state_time <= 1"
 						},
 						{
-							"acombo3b_reset" : "query.state_time > 2.0 || query.is_on_ground"
+							"acombo3b_reset" : "query.state_time > 2.0"
+						},
+						{
+							"default" : "query.is_on_ground"
 						}
 					]
 				},
@@ -164,7 +173,7 @@
 							"acombo4b" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
 						},
 						{
-							"acombo3b_reset" : "query.is_on_ground"
+							"default" : "query.is_on_ground"
 						}
 					]
 				},
@@ -259,7 +268,10 @@
 							"gcombo2_pre" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
-							"gcombo1_reset" : "query.state_time > 2.0 || !query.is_on_ground"
+							"gcombo1_reset" : "query.state_time > 2.0"
+						},
+						{
+							"default" : "!query.is_on_ground"
 						}
 					]
 				},
@@ -278,7 +290,7 @@
 							"gcombo2" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
 						},
 						{
-							"gcombo1_reset" : "!query.is_on_ground"
+							"default" : "!query.is_on_ground"
 						}
 					]
 				},
@@ -292,7 +304,10 @@
 							"gcombo3c_pre" : "query.is_using_item && query.state_time > 1"
 						},
 						{
-							"gcombo2_reset" : "query.state_time > 2.0 || !query.is_on_ground"
+							"gcombo2_reset" : "query.state_time > 2.0"
+						},
+						{
+							"default" : "!query.is_on_ground"
 						}
 					]
 				},
@@ -311,7 +326,7 @@
 							"gcombo3" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
 						},
 						{
-							"gcombo2_reset" : "!query.is_on_ground"
+							"default" : "!query.is_on_ground"
 						}
 					]
 				},
@@ -325,7 +340,10 @@
 							"gcombo4b_pre" : "query.is_using_item && query.state_time > 1"
 						},
 						{
-							"gcombo3_reset" : "query.state_time > 2.0 || !query.is_on_ground"
+							"gcombo3_reset" : "query.state_time > 2.0"
+						},
+						{
+							"default" : "!query.is_on_ground"
 						}
 					]
 				},
@@ -344,7 +362,7 @@
 							"gcombo3c" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
 						},
 						{
-							"gcombo2_reset" : "!query.is_on_ground"
+							"default" : "!query.is_on_ground"
 						}
 					]
 				},
@@ -367,7 +385,7 @@
 							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
 						},
 						{
-							"gcombo3_reset" : "query.state_time > 2.0 || !query.is_on_ground"
+							"gcombo3_reset" : "query.state_time > 2.0"
 						}
 					]
 				},
@@ -386,7 +404,7 @@
 							"gcombo4" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
 						},
 						{
-							"gcombo3_reset" : "!query.is_on_ground"
+							"default" : "!query.is_on_ground"
 						}
 					]
 				},
@@ -428,7 +446,7 @@
 							"gcombo4b" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) )"
 						},
 						{
-							"gcombo3_reset" : "!query.is_on_ground"
+							"default" : "!query.is_on_ground"
 						}
 					]
 				},

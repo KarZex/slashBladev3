@@ -211,6 +211,7 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 	const Tblade = user.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
 	const dmgCom = Tblade.getComponent(ItemComponentTypes.Durability);	
 	if ( e.itemStack.typeId.includes(`blade:`) & bladecool == 0 && e.useDuration > 100010 && dmgCom.damage < dmgCom.maxDurability ){
+		bladeSoulcal( user,blade );
 		const bladeId = e.itemStack.typeId.split(`:`)[1];
 		const sound = bladeData[`${bladeId}`][`sound`];
 		const color = bladeData[`${bladeId}`][`color`];
@@ -472,9 +473,12 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			bladeInstant( user,blade );
 		}
 		if( user.typeId == `minecraft:player` ){
-			bladeSoulcal( user,blade );
 			if( user.isOnGround ){
-				world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
+				const Ascore = world.scoreboard.getObjective(`aircomboA`).getScore(user);
+				if( Ascore > 0 ){
+					world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
+					world.scoreboard.getObjective(`combocool`).setScore(user,-99);
+				}
 				if( user.hasTag(`jumped`) )
 					user.removeTag(`jumped`);
 			}
@@ -482,7 +486,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				const Gscore = world.scoreboard.getObjective(`groundcomboA`).getScore(user);
 				if( Gscore > 0 ){
 					world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
-					world.scoreboard.getObjective(`combocool`).setScore(user,0);
+					world.scoreboard.getObjective(`combocool`).setScore(user,-99);
 				}
 			}
 
