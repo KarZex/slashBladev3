@@ -3,4 +3,5 @@ scoreboard players set @s[scores={combocool=..0}] groundcomboA 0
 scoreboard players set @s[scores={combocool=..0}] groundcomboC 0
 scoreboard players set @s[scores={combocool=..0}] groundcomboA 0
 scoreboard players set @s[scores={combocool=..0}] aircomboA 0
-tag @s[scores={printlevel=..0}] remove combocool
+scoreboard players set @s[scores={combocool=..0}] bladecool 20
+tag @s[scores={combocool=..0}] remove combocool

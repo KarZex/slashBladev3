@@ -36,7 +36,7 @@
 			"uv_anim": {
 				"offset": [
 					0.0,
-					"math.mod(math.floor(query.life_time*20),10) / 10"
+					"math.mod(math.floor(query.life_time*10),10) / 10"
 				],
 				"scale": [
 					1.0,

@@ -1,4 +1,4 @@
-execute as @a[tag=!startedblade] run function startedblade
+execute as @a[tag=!startedbladeV4] run function startedblade
 
 execute as @a run function blade_functions
 function cooldown
@@ -15,6 +15,7 @@ execute as @a[tag=combocool] run function combocool
 
 scoreboard players remove @a[scores={sa=1..}] sa 1
 scoreboard players remove @a[scores={meleeup=1..}] meleeup 1
+scoreboard players remove @a[scores={bladecool=1..}] bladecool 1
 
 execute as @a[scores={around=1..}] run function fly
 execute as @a[scores={antipro=1..}] run function antipro

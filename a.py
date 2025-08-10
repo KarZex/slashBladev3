@@ -40,6 +40,7 @@ for row in csv_reader:
         blade_mate = row[13]
         blade_sound = row[14]
         blade_li = row[15]
+        blade_color = row[16]
 
 
         lang += "item.blade:{}={}\n".format(blade_id,blade_name)
@@ -52,44 +53,7 @@ for row in csv_reader:
         bladedata_json["{}".format(blade_id)]["damage"] = blade_attack
         bladedata_json["{}".format(blade_id)]["damageplus"] = blade_attack_plus
         bladedata_json["{}".format(blade_id)]["sound"] = blade_sound
-
-        stand_json["minecraft:entity"]["component_groups"]["{}".format(blade_id)] = {"minecraft:skin_id": {"value": row_count-1 }}
-        newjson = {
-          "use_item": False,
-          "play_sounds": "enderchest.open",
-          "interact_text": "action.gvc.item",
-          "on_interact": {
-            "filters": {
-              "all_of": [
-                {
-                  "test": "has_equipment",
-                  "subject": "other",
-                  "domain": "hand",
-                  "value": "blade:{}".format(blade_id)
-                }
-              ]
-            },
-            "event": "{}".format(blade_id),
-            "target": "self"
-          }
-        }
-
-        stand_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(newjson)
-        stand_json["minecraft:entity"]["events"]["{}".format(blade_id)] = {
-            "add": {
-                "component_groups": [
-                    "{}".format(blade_id)
-                ]
-            }
-        }
-
-        standrp_json["minecraft:client_entity"]["description"]["textures"]["{}".format(blade_id)] = "textures/models/{}".format(blade_id)
-        if blade_mate != "":
-            standrp_json["minecraft:client_entity"]["description"]["materials"]["{}".format(blade_id)] = "{}".format(blade_mate)
-        if blade_geo != "":
-            standrp_json["minecraft:client_entity"]["description"]["geometry"]["{}".format(blade_id)] = "geometry.{}".format(blade_geo)
-        else:
-            standrp_json["minecraft:client_entity"]["description"]["geometry"]["{}".format(blade_id)] = "geometry.{}".format(blade_id)
+        bladedata_json["{}".format(blade_id)]["color"] = blade_color
 
         if blade_ench1 != "":
             Ench = blade_ench1.split("-")
@@ -235,11 +199,4 @@ with open("resource_packs/SlashBlade/textures/item_texture.json","w") as f:
 with open("resource_packs/SlashBlade/texts/blade.txt","w") as f:
     f.write(lang)
 
-with open("behavior_packs/SlashBlade/entities/bladestand.json","w") as f:
-    json.dump(stand_json,f,indent=2)
 
-with open("resource_packs/SlashBlade/entity/bladestand.json","w") as f:
-    json.dump(standrp_json,f,indent=2)
-
-with open("resource_packs/SlashBlade/render_controllers/bladeitem.json","w") as f:
-    json.dump(standrender_json,f,indent=2)

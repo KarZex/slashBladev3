@@ -164,7 +164,7 @@
                 "table": "loot_tables/empty.json"
             },
             "minecraft:timer": {
-                "time": 0.25,
+                "time": 0.5,
                 "looping": true,
                 "time_down_event": {
                     "event": "zex:despawn",

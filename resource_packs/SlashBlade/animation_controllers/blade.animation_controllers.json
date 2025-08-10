@@ -7,10 +7,10 @@
 				"default" : {
 					"transitions" : [
 						{
-							"gpre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
+							"gcombo_pre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
 						},
 						{
-							"pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
+							"acombo_pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
 						},
 						{
 							"melee" : "query.is_delayed_attacking && !query.is_using_item"
@@ -20,6 +20,182 @@
 						},
 						{
 							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
+						}
+					]
+				},
+				"acombo_pre" : {
+					"transitions" : [
+						{
+							"acombo1" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 0.5)"
+						},
+						{
+							"default" : "query.is_on_ground"
+						}
+					]
+				},
+				"acombo1" : {
+					"animations" : [ "acombo1" ],
+					"transitions" : [
+						{
+							"acombo2_pre" : "query.is_using_item && query.state_time > 0.15"
+						},
+						{
+							"acombo1_reset" : "query.state_time > 2.0 || query.is_on_ground"
+						}
+					]
+				},
+				"acombo1_reset":{
+					"animations" : [ "acombo1_reset" ],
+					"transitions" : [
+						{
+							"default" : "query.state_time > 1.0"
+						}
+					]
+				},
+				"acombo2_pre" : {
+					"animations" : [ "acombo2_pre" ],
+					"transitions" : [
+						{
+							"acombo2" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
+						},
+						{
+							"acombo1_reset" : "query.is_on_ground"
+						}
+					]
+				},
+				"acombo2" : {
+					"animations" : [ "acombo2" ],
+					"transitions" : [
+						{
+							"acombo3_pre" : "query.is_using_item && query.state_time > 0.15 && query.state_time <= 0.75"
+						},
+						{
+							"acombo3b_pre" : "query.is_using_item && query.state_time > 0.75"
+						},
+						{
+							"acombo2_reset" : "query.state_time > 2.0 || query.is_on_ground"
+						}
+					]
+				},
+				"acombo2_reset":{
+					"animations" : [ "acombo2_reset" ],
+					"transitions" : [
+						{
+							"default" : "query.state_time > 1.0"
+						}
+					]
+				},
+				"acombo3_pre" : {
+					"animations" : [ "acombo3_pre" ],
+					"transitions" : [
+						{
+							"acombo3" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
+						},
+						{
+							"acombo2_reset" : "query.is_on_ground"
+						}
+					]
+				},
+				"acombo3" : {
+					"animations" : [ "acombo3" ],
+					"transitions" : [
+						{
+							"gcombo_pre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
+						},
+						{
+							"acombo_pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
+						},
+						{
+							"melee" : "query.is_delayed_attacking && !query.is_using_item"
+						},
+						{
+							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
+						},
+						{
+							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
+						},
+						{
+							"acombo3_reset" : "query.state_time > 2.0 || query.is_on_ground"
+						}
+					]
+				},
+				"acombo3_reset":{
+					"animations" : [ "acombo3_reset" ],
+					"transitions" : [
+						{
+							"default" : "query.state_time > 1.0"
+						}
+					]
+				},
+				"acombo3b_pre" : {
+					"animations" : [ "acombo3_pre" ],
+					"transitions" : [
+						{
+							"acombo3b" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
+						},
+						{
+							"gcombo2_reset" : "query.is_on_ground"
+						}
+					]
+				},
+				"acombo3b" : {
+					"animations" : [ "acombo3b" ],
+					"transitions" : [
+						{
+							"acombo4b_pre" : "query.is_using_item && query.state_time > 0.15 && query.state_time <= 1"
+						},
+						{
+							"acombo3b_reset" : "query.state_time > 2.0 || query.is_on_ground"
+						}
+					]
+				},
+				"acombo3b_reset":{
+					"animations" : [ "acombo3b_reset" ],
+					"transitions" : [
+						{
+							"default" : "query.state_time > 1.0"
+						}
+					]
+				},
+				"acombo4b_pre" : {
+					"animations" : [ "acombo4b_pre" ],
+					"transitions" : [
+						{
+							"acombo4b" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
+						},
+						{
+							"acombo3b_reset" : "query.is_on_ground"
+						}
+					]
+				},
+				"acombo4b" : {
+					"animations" : [ "acombo4b" ],
+					"transitions" : [
+						{
+							"gcombo_pre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
+						},
+						{
+							"acombo_pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
+						},
+						{
+							"melee" : "query.is_delayed_attacking && !query.is_using_item"
+						},
+						{
+							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
+						},
+						{
+							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
+						},
+						{
+							"acombo4b_reset" : "query.state_time > 2.0"
+						}
+					]
+				},
+				"acombo4b_reset":{
+					"animations" : [ "acombo4b_reset" ],
+					"transitions" : [
+						{
+							"default" : "query.state_time > 1.0"
 						}
 					]
 				},
@@ -59,14 +235,14 @@
 					],
 					"transitions": [
 						{
-							"default": "query.state_time > 0.15"
+							"reset": "query.state_time > 0.15"
 						}
 					]
 				},
-				"gpre" : {
+				"gcombo_pre" : {
 					"transitions" : [
 						{
-							"gattack" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 0.5)"
+							"gcombo1" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 0.5)"
 						},
 						{
 							"usesa" : "!query.is_using_item && ((query.is_sneaking && !query.is_on_ground) || query.state_time > 0.5)"
@@ -76,65 +252,214 @@
 						}
 					]
 				},
-				"gattack" : {
-					"animations" : [ "gattack" ],
+				"gcombo1" : {
+					"animations" : [ "gcombo1" ],
 					"transitions" : [
 						{
-							"gpre2" : "query.is_using_item && query.state_time > 0.15"
+							"gcombo2_pre" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
-							"default" : "query.state_time > 1.0 || !query.is_on_ground"
+							"gcombo1_reset" : "query.state_time > 2.0 || !query.is_on_ground"
 						}
 					]
 				},
-				"gpre2" : {
+				"gcombo1_reset":{
+					"animations" : [ "gcombo1_reset" ],
 					"transitions" : [
 						{
-							"gattack2" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 0.5)"
-						},
-						{
-							"default" : "!query.is_on_ground"
+							"default" : "query.state_time > 1.0"
 						}
 					]
 				},
-				"gattack2" : {
-					"animations" : [ "gattack2" ],
+				"gcombo2_pre" : {
+					"animations" : [ "gcombo2_pre" ],
 					"transitions" : [
 						{
-							"gpre3" : "query.is_using_item && query.state_time > 0.15"
+							"gcombo2" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
 						},
 						{
-							"default" : "query.state_time > 1.0 || !query.is_on_ground"
+							"gcombo1_reset" : "!query.is_on_ground"
 						}
 					]
 				},
-				"gpre3" : {
+				"gcombo2" : {
+					"animations" : [ "gcombo2" ],
 					"transitions" : [
 						{
-							"gattack3" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 0.5)"
+							"gcombo3_pre" : "query.is_using_item && query.state_time > 0.15 && query.state_time <= 1"
 						},
 						{
-							"default" : "!query.is_on_ground"
+							"gcombo3c_pre" : "query.is_using_item && query.state_time > 1"
+						},
+						{
+							"gcombo2_reset" : "query.state_time > 2.0 || !query.is_on_ground"
 						}
 					]
 				},
-				"gattack3" : {
-					"animations" : [ "use" ],
+				"gcombo2_reset":{
+					"animations" : [ "gcombo2_reset" ],
 					"transitions" : [
 						{
-							"gpre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
+							"default" : "query.state_time > 1.0"
+						}
+					]
+				},
+				"gcombo3_pre" : {
+					"animations" : [ "gcombo3_pre" ],
+					"transitions" : [
+						{
+							"gcombo3" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
 						},
 						{
-							"pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
+							"gcombo2_reset" : "!query.is_on_ground"
+						}
+					]
+				},
+				"gcombo3" : {
+					"animations" : [ "gcombo3" ],
+					"transitions" : [
+						{
+							"gcombo4_pre" : "query.is_using_item && query.state_time > 0.15 && query.state_time <= 1"
+						},
+						{
+							"gcombo4b_pre" : "query.is_using_item && query.state_time > 1"
+						},
+						{
+							"gcombo3_reset" : "query.state_time > 2.0 || !query.is_on_ground"
+						}
+					]
+				},
+				"gcombo3_reset":{
+					"animations" : [ "gcombo3_reset" ],
+					"transitions" : [
+						{
+							"default" : "query.state_time > 1.0"
+						}
+					]
+				},
+				"gcombo3c_pre" : {
+					"animations" : [ "gcombo3_pre" ],
+					"transitions" : [
+						{
+							"gcombo3c" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
+						},
+						{
+							"gcombo2_reset" : "!query.is_on_ground"
+						}
+					]
+				},
+				"gcombo3c" : {
+					"animations" : [ "gcombo3c" ],
+					"transitions" : [
+						{
+							"gcombo_pre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
+						},
+						{
+							"acombo_pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
 						},
 						{
 							"melee" : "query.is_delayed_attacking && !query.is_using_item"
 						},
 						{
-							"fall" : "query.is_sneaking && query.is_jumping && query.is_using_item && !query.is_on_ground"
+							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
 						},
 						{
-							"nattack" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground || query.is_jumping )"
+							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
+						},
+						{
+							"gcombo3_reset" : "query.state_time > 2.0 || !query.is_on_ground"
+						}
+					]
+				},
+				"gcombo3c_reset":{
+					"animations" : [ "gcombo3c_reset" ],
+					"transitions" : [
+						{
+							"default" : "query.state_time > 1.0"
+						}
+					]
+				},
+				"gcombo4_pre" : {
+					"animations" : [ "gcombo4_pre" ],
+					"transitions" : [
+						{
+							"gcombo4" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
+						},
+						{
+							"gcombo3_reset" : "!query.is_on_ground"
+						}
+					]
+				},
+				"gcombo4" : {
+					"animations" : [ "gcombo4" ],
+					"transitions" : [
+						{
+							"gcombo_pre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
+						},
+						{
+							"acombo_pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
+						},
+						{
+							"melee" : "query.is_delayed_attacking && !query.is_using_item"
+						},
+						{
+							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
+						},
+						{
+							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
+						},
+						{
+							"gcombo4_reset" : "query.state_time > 2.0"
+						}
+					]
+				},
+				"gcombo4_reset":{
+					"animations" : [ "gcombo4_reset" ],
+					"transitions" : [
+						{
+							"default" : "query.state_time > 1.0"
+						}
+					]
+				},
+				"gcombo4b_pre" : {
+					"animations" : [ "gcombo4_pre" ],
+					"transitions" : [
+						{
+							"gcombo4b" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) )"
+						},
+						{
+							"gcombo3_reset" : "!query.is_on_ground"
+						}
+					]
+				},
+				"gcombo4b" : {
+					"animations" : [ "gcombo4b" ],
+					"transitions" : [
+						{
+							"gcombo_pre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
+						},
+						{
+							"acombo_pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
+						},
+						{
+							"melee" : "query.is_delayed_attacking && !query.is_using_item"
+						},
+						{
+							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
+						},
+						{
+							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
+						},
+						{
+							"gcombo4b_reset" : "query.state_time > 2.0"
+						}
+					]
+				},
+				"gcombo4b_reset":{
+					"animations" : [ "gcombo4b_reset" ],
+					"transitions" : [
+						{
+							"default" : "query.state_time > 1.0"
 						}
 					]
 				},
@@ -267,8 +592,15 @@
 							"attack4" : "!query.is_using_item"
 						}
 					]
+				},
+				"reset":{
+					"animations" : [ "reset" ],
+					"transitions" : [
+						{
+							"default" : "query.state_time > 1"
+						}
+					]
 				}
-
 			}
 		}
 	}
