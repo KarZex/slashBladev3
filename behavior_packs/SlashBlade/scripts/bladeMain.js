@@ -264,28 +264,43 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 			lore[1] = `§rProudSoul: ${soul}`;
 			blade.setLore(lore);
 			sa.fireSa( blade,user );
+
 		}
 	}
 	else if ( dmgCom.damage == dmgCom.maxDurability ){
 		const xp = user.level;
 		const ProudSoul = blade.getDynamicProperty("ProudSoul");
 		const damage = dmgCom.damage;
+		const bladeId = e.itemStack.typeId.split(`:`)[1];
 		if( ProudSoul/5 >= damage){
-			blade.setDynamicProperty("ProudSoul",ProudSoul-damage*5);
-			print(blade.getDynamicProperty("ProudSoul"))
+			const soul = Tblade.getDynamicProperty("ProudSoul") - damage*5
+			Tblade.setDynamicProperty("ProudSoul",soul);
 			dmgCom.damage = 0;
+			const lore = Tblade.getLore();
+			lore[1] = `§rProudSoul: ${soul}`;
+			Tblade.setDynamicProperty("currentDurability",Tblade.getComponent(ItemComponentTypes.Durability).damage);
+			const Refine = Tblade.getDynamicProperty("Refine") + 1;
+			Tblade.setDynamicProperty("Refine",Refine);
+			Tblade.setDynamicProperty("damagemax",bladeData[`${bladeId}`][`damageplus`] + Refine);
+			lore[2] = `§rRefine: ${Refine}`;
+			lore[6] = `§r§6+${bladeData[`${bladeId}`][`damage`]}.0§r/§c+${Tblade.getDynamicProperty("damage")}.0§r/§5+${Tblade.getDynamicProperty("damagemax")}.0`;
+			Tblade.setLore(lore);
 			user.getComponent("minecraft:inventory").container.setItem(user.selectedSlotIndex, Tblade);
-			const lore = blade.getLore();
-			lore[1] = `§rProudSoul: ${ProudSoul-damage*5}`;
-			blade.setLore(lore);
 		}
 		else{
 			dmgCom.damage = dmgCom.maxDurability - Math.floor(ProudSoul/5);
-			blade.setDynamicProperty("ProudSoul",0);
+			Tblade.setDynamicProperty("ProudSoul",0);
 			user.getComponent("minecraft:inventory").container.setItem(user.selectedSlotIndex, Tblade);
-			const lore = blade.getLore();
+			const lore = Tblade.getLore();
 			lore[1] = `§rProudSoul: 0`;
-			blade.setLore(lore);
+			Tblade.setDynamicProperty("currentDurability",Tblade.getComponent(ItemComponentTypes.Durability).damage);
+			const Refine = Tblade.getDynamicProperty("Refine") + 1;
+			Tblade.setDynamicProperty("Refine",Refine);
+			Tblade.setDynamicProperty("damagemax",bladeData[`${bladeId}`][`damageplus`] + Refine);
+			lore[2] = `§rRefine: ${Refine}`;
+			lore[6] = `§r§6+${bladeData[`${bladeId}`][`damage`]}.0§r/§c+${Tblade.getDynamicProperty("damage")}.0§r/§5+${Tblade.getDynamicProperty("damagemax")}.0`;
+			Tblade.setLore(lore);
+			user.getComponent("minecraft:inventory").container.setItem(user.selectedSlotIndex, Tblade);
 		}
 	}
 } )
@@ -481,7 +496,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			bladeInstant( user,blade );
 		}
 		if( user.typeId == `minecraft:player` ){
-			bladeSoulcal( user,blade );
+			const comboSocre = world.scoreboard.getObjective(`combocool`).getScore(user);
+			if( comboSocre == 0 ){
+				bladeSoulcal( user,blade );
+			}
 			if( user.isSprinting && user.isOnGround ){
 				if( !user.hasTag(`sprint`) ){
 					user.addTag(`sprint`);

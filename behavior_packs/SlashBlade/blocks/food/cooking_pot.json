@@ -36,6 +36,7 @@
         "interval_range": [ 0 , 1 ],
         "looping": true
       },
+      "tag:minecraft:is_pickaxe_item_destructible":{},
       "minecraft:geometry": "geometry.campfire_cooking_pot",
       "minecraft:loot": "loot_tables/blocks/campfire_cooking_pot.json",
       "minecraft:map_color": "#00ff00",
@@ -66,7 +67,7 @@
         ]
       },
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 0
+        "seconds_to_destroy": 10
       }
     },
     "permutations": [
@@ -100,6 +101,7 @@
             }
           },
           "minecraft:custom_components": [
+            "zex:campfire_cooking_pot_liq",
             "zex:campfire_cooking_pot_liqX",
             "zex:campfire_cooking_pot_fire_start"
           ]
@@ -138,6 +140,7 @@
             }
           },
           "minecraft:custom_components": [
+            "zex:campfire_cooking_pot_liq",
             "zex:campfire_cooking_pot_liqX",
             "zex:campfire_cooking_pot_fire_start"
           ]

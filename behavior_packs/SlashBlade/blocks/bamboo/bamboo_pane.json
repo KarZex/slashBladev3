@@ -21,6 +21,7 @@
           "render_method": "blend"
         }
       },
+      "tag:minecraft:is_axe_item_destructible":{},
       "minecraft:geometry": "geometry.bamboo_pane",
       "minecraft:loot": "loot_tables/blocks/bamboo_pane.json",
       "minecraft:map_color": "#00ff00",

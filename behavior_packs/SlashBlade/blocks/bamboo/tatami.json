@@ -21,11 +21,12 @@
           "render_method": "opaque"
         }
       },
+      "tag:minecraft:is_hoe_item_destructible":{},
       "minecraft:geometry": "minecraft:geometry.full_block",
       "minecraft:loot": "loot_tables/blocks/tatami.json",
       "minecraft:map_color": "#00ff00",
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 0.1
+        "seconds_to_destroy": 1.0
       }
     },
     "permutations": [

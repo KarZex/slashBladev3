@@ -26,6 +26,7 @@
       "minecraft:map_color": "#00ff00",
       "minecraft:light_emission": 15,
       "minecraft:light_dampening": 0,
+      "tag:minecraft:is_axe_item_destructible":{},
       "minecraft:selection_box": {
         "origin": [
           -8,
@@ -54,7 +55,7 @@
         "zex:campfire"
       ],
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 0
+        "seconds_to_destroy": 3
       }
     },
     "permutations": [

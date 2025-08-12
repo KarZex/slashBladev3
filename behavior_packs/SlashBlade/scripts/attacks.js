@@ -75,6 +75,10 @@ export function rangeAttack(user,damage,knockback,knockbackpower,range,Isfire,co
 		}
 	}
 	else{
+        const victims2 = user.dimension.getEntities({location:user.location,maxDistance:range*1.5,excludeTypes:bladeImmuneEntities });
+        if( victims2.length > 1 ){
+			world.scoreboard.getObjective(`blade`).addScore(user,-12);
+        }
 	}
 }
 

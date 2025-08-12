@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "zex.millstonet_blaze_powder"
+    "identifier": "zex.millstonet_wind_charge"
     },
     "tags": [ "millstonet" ],
     "pattern": [
@@ -10,7 +10,7 @@
     ],
     "key": {
       "A": {
-        "item": "minecraft:blaze_rod",
+        "item": "minecraft:breeze_rod",
         "data": 0
       },
       "B": {
@@ -19,8 +19,8 @@
       }
     },
     "result": {
-      "item": "minecraft:blaze_powder",
-      "count": 8
+      "item": "minecraft:wind_charge",
+      "count": 64
     }
   }
   

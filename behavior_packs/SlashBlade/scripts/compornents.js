@@ -10,6 +10,7 @@ function slashBlade7CropsInteractEvent( event ){
         if( level < 7 ){
             const nextLlevel = Math.min(7,level + Math.floor(1+ Math.random() * 3));
             block.setPermutation(block.permutation.withState(`zex:growth`,nextLlevel));
+            user.runCommand(`clear @s bone_meal 0 1`);
             event.dimension.spawnParticle(`minecraft:crop_growth_emitter`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
         }
     }
@@ -34,6 +35,7 @@ function slashBlade6CropsInteractEvent( event ){
             const nextLlevel = Math.min(6,level + Math.floor( 1 + Math.random() * 3));
             block.setPermutation(block.permutation.withState(`zex:growth`,nextLlevel));
             event.dimension.spawnParticle(`minecraft:crop_growth_emitter`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
+            user.runCommand(`clear @s bone_meal 0 1`);
         }
     }
 }
@@ -57,6 +59,7 @@ function slashBlade3CropsInteractEvent( event ){
             const nextLlevel = Math.min(3,level + Math.floor( 1 + Math.random()));
             block.setPermutation(block.permutation.withState(`zex:growth`,nextLlevel));
             event.dimension.spawnParticle(`minecraft:crop_growth_emitter`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
+            user.runCommand(`clear @s bone_meal 0 1`);
         }
     }
 }
@@ -81,6 +84,7 @@ function slashBladePepperInteractEvent( event ){
                 const nextLlevel = Math.min(5,level + Math.floor(1+ Math.random() * 2));
                 block.setPermutation(block.permutation.withState(`zex:growth`,nextLlevel));
                 event.dimension.spawnParticle(`minecraft:crop_growth_emitter`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
+                user.runCommand(`clear @s bone_meal 0 1`);
             }
         }
         else if ( item.typeId == `zex:peppercorn_red` ){
@@ -88,6 +92,7 @@ function slashBladePepperInteractEvent( event ){
             const level =  event.block.permutation.getState(`zex:growth`);
             if( level == 6 ){
                 block.setPermutation(block.permutation.withState(`zex:growth`,0));
+                user.runCommand(`clear @s zex:peppercorn_red 0 1`);
             }
         }
     } 
@@ -124,6 +129,7 @@ function slashBladeCampfireEvent( event ){
     if ( item.typeId == `zex:cooking_pot` ){
         user.playSound(`random.anvil_land`);
         event.dimension.setBlockType(block.location,`zex:campfire_cooking_pot`);
+        user.runCommand(`clear @s zex:cooking_pot 0 1`);
     }
 }
 
@@ -152,22 +158,26 @@ function slashBladeCookingPotLiqEvent( event ){
     const user = event.player;
     const block = event.block;
     const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-    if ( item.typeId == `minecraft:water_bucket` ){
+    const level =  event.block.permutation.getState(`zex:water`);
+    if ( item.typeId == `minecraft:water_bucket` && level == `nothing` ){
         user.playSound(`bucket.empty_water`);
         block.setPermutation(block.permutation.withState(`zex:water`,"water"));
         user.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 minecraft:bucket`);
     }
-    else if ( item.typeId == `zex:oil_bucket` ){
+    else if ( item.typeId == `zex:oil_bucket` && level == `nothing` ){
         user.playSound(`bucket.empty_water`);
         block.setPermutation(block.permutation.withState(`zex:water`,"oil"));
         user.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 minecraft:bucket`);
     }
-    else if ( item.typeId == `minecraft:bucket` ){
-        const level =  event.block.permutation.getState(`zex:water`);
+    else if ( item.typeId == `minecraft:bucket` && level != `nothing` ){
         if( level == `water` ){
+            block.setPermutation(block.permutation.withState(`zex:water`,"nothing"));
+            user.playSound(`bucket.empty_water`);
             user.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 minecraft:water_bucket`);
         }
         else if( level == `oil` ){
+            block.setPermutation(block.permutation.withState(`zex:water`,"nothing"));
+            user.playSound(`bucket.empty_water`);
             user.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 zex:oil_bucket`);
         }
     }
