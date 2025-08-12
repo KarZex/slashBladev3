@@ -12,7 +12,7 @@
     ],
     "key": {
       "A": {
-        "item": "minecraft:quartz_block",
+        "item": "minecraft:quartz_block"
       },
       "B": {
         "item": "blade:diamond_katana",

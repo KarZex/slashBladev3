@@ -35,3 +35,17 @@ export const bladeImmuneEntities = [
     `zex:chair`,
     `zex:bladeshadow`
 ]
+//エネミーステップを無効化するエンティティ
+//The list of entities that are immune to EnemyStep
+export const bladeNoEnemyStepEntities = [
+    `area_effect_cloud`,
+    `item`,
+    `xp_orb`,
+    `lightning_bolt`,
+    `zex:bladestand1`,
+    `zex:bladestand2`,
+    `zex:chair`,
+    `zex:bladeshadow`
+]
+
+export const SNEAK_TIME = 2

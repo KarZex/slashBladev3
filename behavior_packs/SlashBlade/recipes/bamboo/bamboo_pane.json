@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:bamboo_pane_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AAA",
+      "AAA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:bamboo"
+      },
+      "B": {
+        "item": "minecraft:wheat",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:log",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:bamboo_pane",
+      "count": 16
+    }
+  }
+  
+}

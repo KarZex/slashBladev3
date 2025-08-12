@@ -12,6 +12,46 @@ export function summonBladeShadow(user,color,thita){
     spawn.setRotation({y:user.getRotation().y,x:0});
 }
 
+export async function rapidSlash( user,blade,sound,color ){
+    const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
+    const level = world.scoreboard.getObjective(`blade`).getScore(user);
+    const damage = callDamage( blade,level ) / 6;
+    let sound2 = `item.trident.throw`
+    if( sound != `swingblade.c` ){
+        sound2 = sound;
+    }
+    let abs_v = 9;
+    let d = user.getViewDirection();
+    user.applyKnockback(d.x,d.z,abs_v,0);
+    for( let i = 0; i < 6; i++ ){
+        playBladeSound(user,sound2);
+        user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
+        summonBladeShadow(user,color,(i%2)*90+30+30*Math.random());
+        rangeAttack(user,damage,false,0,2,false,1);
+        await system.waitTicks(2);
+    }
+}
+
+export async function risingStar( user,target,blade,sound,color ){
+    const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
+    const level = world.scoreboard.getObjective(`blade`).getScore(user);
+    const damage = callDamage( blade,level ) / 6;
+    let sound2 = `item.trident.throw`
+    if( sound != `swingblade.c` ){
+        sound2 = sound;
+    }
+	user.addEffect(`resistance`,12,{ amplifier:255 });
+    for( let i = 0; i < 6; i++ ){
+        playBladeSound(user,sound2);
+        user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
+        summonBladeShadow(user,color,(i%2)*90+30+30*Math.random());
+        rangeAttack(user,damage,true,0.5,2,false,1);
+        target.applyKnockback(0,0,0,0.5);
+        user.applyKnockback(0,0,0,0.5);
+        await system.waitTicks(2);
+    }
+}
+
 export function rangeAttack(user,damage,knockback,knockbackpower,range,Isfire,combo){
     const victims = user.dimension.getEntities({location:user.location,maxDistance:range,excludeTypes:bladeImmuneEntities });
 	if( victims.length > 1 ){
@@ -21,12 +61,12 @@ export function rangeAttack(user,damage,knockback,knockbackpower,range,Isfire,co
 				try{
 					victims[i].applyDamage( damage,{ cause:`override`,damagingEntity:user });
 					victims[i].applyKnockback(0,0,0,0);
+                    if(knockback == true){
+                        victims[i].applyKnockback(user.getViewDirection().x,user.getViewDirection().z,2,knockbackpower);
+                        victims[i].dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:victims[i].location.x,y:victims[i].location.y+1,z:victims[i].location.z});
+                    }
 				}
 				catch{}
-				if(knockback == true){
-					victims[i].applyKnockback(user.getViewDirection().x,user.getViewDirection().z,2,knockbackpower);
-					victims[i].dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:victims[i].location.x,y:victims[i].location.y+1,z:victims[i].location.z});
-				}
 				world.scoreboard.getObjective(`blade`).addScore(user,7 * ( 1 + 0.5 * combo));
 				if( Isfire ){
 					victims[i].setOnFire(5);
@@ -127,6 +167,7 @@ export async function bladeComboG3_C( user,blade,sound ){
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);
     playBladeSound(user,sound);
     summonBladeShadow(user,color,45);
+    user.dimension.playSound(`mob.wither.hurt`,user.location,{ pitch:0.55, volume:3 });
     //after
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
     world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
@@ -150,6 +191,7 @@ export async function bladeComboG4_A( user,blade,sound ){
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);
     playBladeSound(user,sound);
     summonBladeShadow(user,color,330);
+    user.dimension.playSound(`mob.wither.hurt`,user.location,{ pitch:0.55, volume:3 });
     //after
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
     world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
@@ -179,6 +221,7 @@ export async function bladeComboG4_B( user,blade,sound ){
     rangeAttack(user,d*1.5,knockback,knockbackpower,5,isFire,comboG);
     playBladeSound(user,sound);
     summonBladeShadow(user,color,0);
+    user.dimension.playSound(`mob.wither.hurt`,user.location,{ pitch:0.55, volume:3 });
     //after
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
     world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
@@ -240,6 +283,7 @@ export async function bladeComboA3( user,blade,sound ){
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);
     playBladeSound(user,sound);
     summonBladeShadow(user,color,30);
+    user.dimension.playSound(`mob.wither.hurt`,user.location,{ pitch:0.55, volume:3 });
     //after
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
     world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
@@ -286,6 +330,7 @@ export async function bladeComboA4_B( user,blade,sound ){
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);
     playBladeSound(user,sound);
     summonBladeShadow(user,color,270);
+    user.dimension.playSound(`mob.wither.hurt`,user.location,{ pitch:0.55, volume:3 });
     //after
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
     world.scoreboard.getObjective(`aircomboA`).setScore(user,0);

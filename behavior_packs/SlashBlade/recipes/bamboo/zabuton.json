@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:zabuton_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " A ",
+      "BBB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:tudura",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:wool"
+      },
+      "C": {
+        "item": "minecraft:string",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:zabuton",
+      "count": 1
+    }
+  }
+  
+}

@@ -1,0 +1,34 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:campfire_recipe2"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " B ",
+      "BAB"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:tudura"
+      },
+      "B": {
+        "item": "minecraft:log"
+      },
+      "C": {
+        "item": "minecraft:iron_bars",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:campfire",
+      "count": 1
+    }
+  }
+  
+}

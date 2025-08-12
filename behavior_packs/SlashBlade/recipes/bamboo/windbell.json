@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:windbell_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "C",
+      "A",
+      "B"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:tudura",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:paper",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:string",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:windbell",
+      "count": 1
+    }
+  }
+  
+}

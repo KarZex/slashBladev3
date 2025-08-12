@@ -23,7 +23,7 @@
         ]
       },
       "minecraft:collision_box": {
-        "width": 0.5,
+        "width": 1.0,
         "height": 3.0
       },
       "minecraft:projectile": {

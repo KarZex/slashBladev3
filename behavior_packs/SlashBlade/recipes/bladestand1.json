@@ -2,25 +2,24 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "zex:riceplantseed_recipe"
+    "identifier": "zex:bladestand1_proudsoul"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "A"
+      "AB"
     ],
     "key": {
       "A": {
-        "item": "minecraft:wheat_seeds",
+        "item": "minecraft:oak_fence",
         "data": 0
       },
       "B": {
-        "item": "minecraft:wheat_seeds",
-        "data": 0
+        "item": "zex:proudsoul"
       }
     },
     "result": {
-      "item": "zex:riceplantseed",
-      "count": 2
+      "item": "zex:bladestand1",
+      "count": 1
     }
   }
   

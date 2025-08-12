@@ -59,7 +59,7 @@ export const bladeData = {
     "damage": 2,
     "damageplus": 12,
     "sound": "swingblade.c",
-    "color": "orange",
+    "color": "blue",
     "ench1": {
       "id": "looting",
       "lvl": 1
@@ -114,7 +114,7 @@ export const bladeData = {
     "damage": 6,
     "damageplus": 16,
     "sound": "swingblade.c",
-    "color": "orange",
+    "color": "blue",
     "ench1": {
       "id": "unbreaking",
       "lvl": 3
@@ -126,10 +126,10 @@ export const bladeData = {
     "insa": "vdrive"
   },
   "yamato": {
-    "damage": 7,
-    "damageplus": 17,
+    "damage": 9,
+    "damageplus": 19,
     "sound": "swingblade.c",
-    "color": "orange",
+    "color": "blue",
     "ench1": {
       "id": "sharpness",
       "lvl": 3
@@ -163,7 +163,8 @@ export const bladeData = {
     "damage": 6,
     "damageplus": 16,
     "sound": "swingblade.c",
-    "color": "blue"
+    "color": "blue",
+    "insa": "drive"
   },
   "agito_rust": {
     "damage": 5,
@@ -175,23 +176,38 @@ export const bladeData = {
     "damage": 7,
     "damageplus": 17,
     "sound": "swingblade.c",
-    "color": "blue"
+    "color": "blue",
+    "insa": "drive"
   },
   "sange": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 9,
+    "damageplus": 19,
     "sound": "swingblade.c",
-    "color": "yellow"
+    "color": "blue",
+    "ench1": {
+      "id": "sharpness",
+      "lvl": 4
+    },
+    "ench2": {
+      "id": "unbreaking",
+      "lvl": 3
+    },
+    "ench3": {
+      "id": "fire_aspect",
+      "lvl": 2
+    },
+    "insa": "slashdimension"
   },
   "yasha": {
     "damage": 6,
     "damageplus": 16,
     "sound": "swingblade.c",
-    "color": "blue"
+    "color": "blue",
+    "insa": "slashdimension"
   },
   "fox_white": {
-    "damage": 4,
-    "damageplus": 14,
+    "damage": 9,
+    "damageplus": 19,
     "sound": "swingblade.c",
     "color": "white",
     "ench1": {
@@ -213,8 +229,8 @@ export const bladeData = {
     "insa": "slashdimension"
   },
   "fox_black": {
-    "damage": 4,
-    "damageplus": 14,
+    "damage": 9,
+    "damageplus": 19,
     "sound": "swingblade.c",
     "color": "black",
     "ench1": {
@@ -232,14 +248,14 @@ export const bladeData = {
     "insa": "spear"
   },
   "muramasa": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 7,
+    "damageplus": 17,
     "sound": "swingblade.c",
     "color": "yellow"
   },
   "sabigatana": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 4,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "gray"
   },
@@ -247,11 +263,11 @@ export const bladeData = {
     "damage": 6,
     "damageplus": 16,
     "sound": "swingblade.c",
-    "color": "magenta"
+    "color": "blue"
   },
   "nihil": {
-    "damage": 8,
-    "damageplus": 18,
+    "damage": 10,
+    "damageplus": 20,
     "sound": "swingblade.c",
     "color": "purple",
     "ench1": {
@@ -310,7 +326,7 @@ export const bladeData = {
     "damage": 13,
     "damageplus": 23,
     "sound": "swingblade.c",
-    "color": "purple",
+    "color": "red",
     "ench1": {
       "id": "sharpness",
       "lvl": 5
@@ -329,7 +345,7 @@ export const bladeData = {
     "damage": 12,
     "damageplus": 22,
     "sound": "swingblade.c",
-    "color": "purple",
+    "color": "red",
     "ench1": {
       "id": "unbreaking",
       "lvl": 3
@@ -349,16 +365,46 @@ export const bladeData = {
     "insa": "waveedge"
   },
   "snowcrow": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 7,
+    "damageplus": 17,
     "sound": "swingblade.c",
-    "color": "white"
+    "color": "white",
+    "ench1": {
+      "id": "fire_aspect",
+      "lvl": 2
+    },
+    "ench2": {
+      "id": "knockback",
+      "lvl": 2
+    },
+    "ench3": {
+      "id": "unbreaking",
+      "lvl": 3
+    },
+    "ench4": {
+      "id": "looting",
+      "lvl": 3
+    },
+    "insa": "slashdimension"
   },
   "darkraven": {
     "damage": 7,
     "damageplus": 17,
     "sound": "swingblade.c",
-    "color": "black"
+    "color": "black",
+    "ench1": {
+      "id": "smite",
+      "lvl": 4
+    },
+    "ench2": {
+      "id": "fire_aspect",
+      "lvl": 2
+    },
+    "ench3": {
+      "id": "knockback",
+      "lvl": 2
+    },
+    "insa": "spear"
   },
   "toyako": {
     "damage": 5,
@@ -370,7 +416,7 @@ export const bladeData = {
     "damage": 2,
     "damageplus": 12,
     "sound": "swingblade.c",
-    "color": "blue",
+    "color": "white",
     "ench1": {
       "id": "unbreaking",
       "lvl": 3
@@ -381,7 +427,8 @@ export const bladeData = {
     "damage": 7,
     "damageplus": 17,
     "sound": "swingblade.c",
-    "color": "purple"
+    "color": "pink",
+    "insa": "drive"
   },
   "kamuy_fire": {
     "damage": 7,
@@ -492,22 +539,22 @@ export const bladeData = {
     "color": "blue"
   },
   "katana_red": {
-    "damage": 3,
-    "damageplus": 13,
+    "damage": 6,
+    "damageplus": 16,
     "sound": "swingblade.c",
     "color": "red"
   },
   "tachi": {
-    "damage": 3,
-    "damageplus": 13,
+    "damage": 7,
+    "damageplus": 17,
     "sound": "swingblade.c",
     "color": "blue"
   },
   "katana": {
-    "damage": 4,
-    "damageplus": 14,
+    "damage": 6,
+    "damageplus": 16,
     "sound": "swingblade.c",
-    "color": "blue"
+    "color": "red"
   },
   "lightsaber": {
     "damage": 13,

@@ -1,0 +1,45 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:toyako_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "D D",
+      " A ",
+      "D D"
+    ],
+    "key": {
+      "A": {
+        "item": "blade:wood",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:ender_eye",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:ender_pearl",
+        "data": 0
+      },
+      "D": {
+        "item": "zex:tinyproudsoul",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      },
+      "F": {
+        "item": "minecraft:string",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "blade:toyako",
+      "count": 1
+    }
+  }
+  
+}

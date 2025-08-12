@@ -21,6 +21,7 @@
         "use3": "animation.sword.use3",
         "use4": "animation.sword.use4",
         "first": "animation.sword.first2",
+        "rapidSlash": "animation.sword.rapidSlash",
         "acombo1": "animation.sword.acombo1",
         "acombo1_reset": "animation.sword.acombo1_reset",
         "acombo2_pre": "animation.sword.acombo2_pre",

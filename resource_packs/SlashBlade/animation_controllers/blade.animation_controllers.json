@@ -220,11 +220,26 @@
 				},
 				"ground_move":{
 					"animations": [
-						"use"
+						"rapidSlash"
 					],
 					"transitions": [
 						{
-							"ground_move1": "query.state_time > 0.15"
+							"gcombo_pre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
+						},
+						{
+							"acombo_pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
+						},
+						{
+							"melee" : "query.is_delayed_attacking && !query.is_using_item"
+						},
+						{
+							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
+						},
+						{
+							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
+						},
+						{
+							"acombo3_reset" : "query.state_time > 2.0"
 						}
 					]
 				},

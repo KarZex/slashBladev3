@@ -6,13 +6,13 @@
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "BBB",
-      "BDB",
-      "BBB"
+      "BBC",
+      "BCB",
+      "ABB"
     ],
     "key": {
       "A": {
-        "item": "minecraft:emerald_block",
+        "item": "minecraft:dragon_head",
         "data": 0
       },
       "B": {
@@ -20,7 +20,7 @@
         "data": 0
       },
       "C": {
-        "item": "minecraft:lapis_block",
+        "item": "minecraft:purpur_block",
         "data": 0
       },
       "D": {

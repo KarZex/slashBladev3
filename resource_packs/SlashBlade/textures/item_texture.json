@@ -580,6 +580,15 @@
     },
     "soba_cooked": {
       "textures": "textures/items/food/soba_cooked"
+    },
+    "raman_cooked": {
+      "textures": "textures/items/food/raman_cooked"
+    },
+    "ramen_cooked": {
+      "textures": "textures/items/food/ramen_cooked"
+    },
+    "ramen_croquette": {
+      "textures": "textures/items/food/ramen_croquette"
     }
   }
 }

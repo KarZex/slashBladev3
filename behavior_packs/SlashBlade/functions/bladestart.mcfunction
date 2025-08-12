@@ -8,10 +8,13 @@ execute as @a[scores={blade=1..}] run function bladelevel
 tag @a[scores={printlevel=1..}] add printlevel
 
 execute as @a[tag=printlevel] run function level
+#sneaking
 
 tag @a[scores={combocool=1..}] add combocool
 
 execute as @a[tag=combocool] run function combocool
+
+execute as @a[scores={bladecool=4}] run playsound block.lantern.break @a ^^^0.5 5 1.8 1 
 
 scoreboard players remove @a[scores={sa=1..}] sa 1
 scoreboard players remove @a[scores={meleeup=1..}] meleeup 1

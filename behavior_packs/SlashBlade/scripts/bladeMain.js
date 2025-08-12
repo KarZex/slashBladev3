@@ -1,17 +1,30 @@
-import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, ItemComponentTypes,EnchantmentType, EntityDamageCause, EnchantmentTypes, EffectType, EffectTypes, Effect  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, ItemComponentTypes,EnchantmentType, EntityDamageCause, EnchantmentTypes, EffectType, EffectTypes, Effect, EntityIsShakingComponent  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
 import { classReg, drive, slashdimension } from "./saData";
 import "./compornents";
 import { playBladeSound,isMoving , absVector3,roundTo,print,setBladeDamage,callDamage  } from "./usefulFunction";
-import { bladeComboG1,bladeComboG2,bladeComboG3,bladeComboG3_C,bladeComboG4_A,bladeComboG4_B,bladeComboA1,bladeComboA2,bladeComboA3,bladeComboA3_B,bladeComboA4_B  } from "./attacks";
-import { bladeImmuneEntities } from "./config";
+import { rapidSlash,risingStar,bladeComboG1,bladeComboG2,bladeComboG3,bladeComboG3_C,bladeComboG4_A,bladeComboG4_B,bladeComboA1,bladeComboA2,bladeComboA3,bladeComboA3_B,bladeComboA4_B  } from "./attacks";
+import { bladeImmuneEntities,bladeNoEnemyStepEntities,SNEAK_TIME } from "./config";
 
 const Rank = [ `D`,`C`,`B`,`A`,`1S`,`2S`,`3S`,`3S` ];
 
 world.beforeEvents.playerInteractWithEntity.subscribe( e => {
 	if( e.target.typeId == "zex:bladeshadow" ){
 		e.cancel = true;
+	}
+} )
+
+world.afterEvents.entityHurt.subscribe( e => {
+	if( e.hurtEntity.typeId == `player` && e.hurtEntity.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand).typeId.includes(`blade:`) ){
+		const sneak = world.scoreboard.getObjective(`sneaking`).getScore(user);
+		if( 1 <= sneak && sneak < SNEAK_TIME ){
+			for( let i = 0; i < 30; i++ ){//random.totem
+				e.hurtEntity.dimension.spawnParticle(`minecraft:totem_particle`);
+				e.hurtEntity.dimension.playSound(`random.totem`,e.hurtEntity.location);
+			}
+			
+		}
 	}
 } )
 
@@ -145,7 +158,7 @@ async function bladeSwing( user,blade,IsOnGround,sound ){
 	}
 	else if(IsOnGround == false){
 		user.addEffect(`slow_falling`,40,{ amplifier:1 });
-		user.addEffect(`levitation`,10,{ amplifier:2 });
+		user.addEffect(`levitation`,2,{ amplifier:16 });
 		world.scoreboard.getObjective(`aircomboA`).addScore(user,1);
 		const combo = world.scoreboard.getObjective(`aircomboA`).getScore(user);
 		const time =  user.getDynamicProperty(`BladeStartOn`);
@@ -168,8 +181,9 @@ async function bladeSwing( user,blade,IsOnGround,sound ){
 	}
 }
 function bladeSwingProjectile( user ){
-	const victims = user.dimension.getEntities({location:user.location,maxDistance:5 });
-	if( victims.length > 1 ){
+	////({location:user.location,maxDistance:1.5,closest:1,excludeNames:[ user.nameTag ] });
+	const victims = user.dimension.getEntities({location:user.location,maxDistance:5,excludeNames:[ user.nameTag ] });
+	if( victims.length > 0 ){
 		for( let i = 0; i < victims.length; i++ ){
 			if( victims[i].hasComponent(EntityComponentTypes.Projectile) ){
 				if( victims[i].getComponent(EntityComponentTypes.Projectile).owner != undefined && victims[i].getComponent(EntityComponentTypes.Projectile).owner.nameTag == user.nameTag ){
@@ -211,53 +225,21 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 	const Tblade = user.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
 	const dmgCom = Tblade.getComponent(ItemComponentTypes.Durability);	
 	if ( e.itemStack.typeId.includes(`blade:`) & bladecool == 0 && e.useDuration > 100010 && dmgCom.damage < dmgCom.maxDurability ){
-		bladeSoulcal( user,blade );
 		const bladeId = e.itemStack.typeId.split(`:`)[1];
 		const sound = bladeData[`${bladeId}`][`sound`];
 		const color = bladeData[`${bladeId}`][`color`];
-		if( user.isSneaking && (user.isOnGround) && isMoving(user) ){
-		const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
-			let v = user.getVelocity();
-			let sound2 = `item.trident.throw`
-			let sound2Pitch = 0.7;
-			if( sound != `swingblade.c` ){
-				sound2 = sound;
-				sound2Pitch = 1;
+		if( user.isSneaking && (user.isOnGround)  ){
+			const targets = user.dimension.getEntities({ location:user.location,excludeTypes: bladeImmuneEntities,closest:1,maxDistance:1.5,excludeNames:[ user.nameTag ] });
+			if( targets.length > 0 ){
+				const targetEntity = targets[0];
+				risingStar(user,targetEntity,blade,sound,color);
 			}
-			user.addEffect(`resistance`,5,{ amplifier:255 });
-			for( let i = 0; i < 9; i++ ){
-    			user.dimension.playSound( sound2,user.location,{ pitch:sound2Pitch, volume:3 });
-				user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
-				const spawn = user.dimension.spawnEntity(`zex:bladeshadow`,user.location);
-				spawn.triggerEvent(`${color}`);
-				spawn.setProperty(`zex:rotate`,(i%2)*90+30+30*Math.random());
-				spawn.setRotation({y:user.getRotation().y,x:0});
-				const victims = user.dimension.getEntities({location:user.location,maxDistance:5,excludeTypes:bladeImmuneEntities });
-				const level = world.scoreboard.getObjective(`blade`).getScore(user);
-				let damage = callDamage( blade,level ) / 3;
-				if( victims.length > 1 ){
-					setBladeDamage(1,user);
-					for( let i = 0; i < victims.length; i++ ){
-						if( victims[i].nameTag != user.nameTag ){
-							try{
-								victims[i].applyDamage( damage,{ cause:`override`,damagingEntity:user });
-								victims[i].applyKnockback(0,0,0,0);
-							}
-							catch{}
-							world.scoreboard.getObjective(`blade`).addScore(user,7);
-							if( bladeItemEnch.hasEnchantment("minecraft:fire_aspect") ){
-								victims[i].setOnFire(5);
-							}
-						}
-					}
-				}
-				let abs_v = 1;
-				let d = user.getViewDirection();
-				user.applyKnockback(d.x,d.z,abs_v,0)
-				await system.waitTicks(1);
+			else{
+				rapidSlash(user,blade,sound,color);
 			}
+			world.scoreboard.getObjective(`combocool`).setScore(user,40);
 		}
-		else if( user.isSneaking && !user.isOnGround && !user.isJumping ){
+		else if( user.isSneaking && !user.isOnGround ){
 			user.applyKnockback(0,0,0,-5);
 			world.scoreboard.getObjective(`around`).setScore(user,8);
 			user.addEffect(`resistance`,8,{ amplifier:255 });
@@ -266,8 +248,12 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 		else {
 			bladeSwing( user,blade,user.isOnGround,sound,color );
 		}
+		for( let i = 0; i < 5; i++ ){
+			await system.waitTicks(1)
+			bladeSwingProjectile( user );
+		}
 	}
-	else if( e.itemStack.typeId.includes(`blade:`) && blade.getDynamicProperty("sa") != undefined && e.useDuration <= 100010 ){
+	else if( e.itemStack.typeId.includes(`blade:`) && blade.getDynamicProperty("sa") != undefined && e.useDuration <= 100010 && dmgCom.damage < dmgCom.maxDurability ){
 		const classRef = classReg[blade.getDynamicProperty("sa")];
 		const sa = new classRef();
 		if( sa.cost <= blade.getDynamicProperty("ProudSoul") ){
@@ -280,9 +266,27 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 			sa.fireSa( blade,user );
 		}
 	}
-	for( let i = 0; i < 5; i++ ){
-		await system.waitTicks(1)
-		bladeSwingProjectile( user );
+	else if ( dmgCom.damage == dmgCom.maxDurability ){
+		const xp = user.level;
+		const ProudSoul = blade.getDynamicProperty("ProudSoul");
+		const damage = dmgCom.damage;
+		if( ProudSoul/5 >= damage){
+			blade.setDynamicProperty("ProudSoul",ProudSoul-damage*5);
+			print(blade.getDynamicProperty("ProudSoul"))
+			dmgCom.damage = 0;
+			user.getComponent("minecraft:inventory").container.setItem(user.selectedSlotIndex, Tblade);
+			const lore = blade.getLore();
+			lore[1] = `§rProudSoul: ${ProudSoul-damage*5}`;
+			blade.setLore(lore);
+		}
+		else{
+			dmgCom.damage = dmgCom.maxDurability - Math.floor(ProudSoul/5);
+			blade.setDynamicProperty("ProudSoul",0);
+			user.getComponent("minecraft:inventory").container.setItem(user.selectedSlotIndex, Tblade);
+			const lore = blade.getLore();
+			lore[1] = `§rProudSoul: 0`;
+			blade.setLore(lore);
+		}
 	}
 } )
 
@@ -319,7 +323,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			e.projectile.remove();
 			const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
 			const sa = new classRef();
-			const dmg = callDamage(attacker.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand),world.scoreboard.getObjective(`blade`).getScore(attacker));
+			const dmg = callDamage(attacker.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand),world.scoreboard.getObjective(`blade`).getScore(attacker));
 			vict.applyDamage(dmg,{ cause:`magic`,damagingEntity:e.source });
 			world.scoreboard.getObjective(`blade`).addScore(e.source,10);
 			world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
@@ -332,7 +336,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 	else if( e.projectile.typeId == "safire:drive" ){
 		const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
 		const sa = new classRef();
-		const dmg = sa.damage;
+		const dmg = sa.damage + callDamage(attacker.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand),world.scoreboard.getObjective(`blade`).getScore(attacker));;
 		let vict = e.getEntityHit().entity;
 		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
 		let gunName = e.projectile.typeId
@@ -342,7 +346,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 	else if( e.projectile.typeId == "safire:vdrive" ){
 		const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
 		const sa = new classRef();
-		const dmg = sa.damage;
+		const dmg = sa.damage + callDamage(attacker.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand),world.scoreboard.getObjective(`blade`).getScore(attacker));;
 		let vict = e.getEntityHit().entity;
 		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
 		let gunName = e.projectile.typeId;
@@ -353,7 +357,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 	else if( e.projectile.typeId == "safire:flamethrower" ){
 		const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
 		const sa = new classRef();
-		const dmg = sa.damage;
+		const dmg = sa.damage + callDamage(attacker.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand),world.scoreboard.getObjective(`blade`).getScore(attacker));;
 		let vict = e.getEntityHit().entity;
 		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
 		vict.setOnFire(5);
@@ -385,6 +389,10 @@ world.afterEvents.entityDie.subscribe( e => {
 			}
 
 		}
+		if( e.deadEntity.typeId == `wither` ){
+				const loc = e.deadEntity.location;
+				killer.dimension.runCommand(`loot spawn ${loc.x} ${loc.y} ${loc.z} loot entities/sange`);
+		}
 	}catch{}
 
 })
@@ -412,8 +420,8 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const fire = e.sourceEntity;
 			const user = world.getPlayers({name:fire.getDynamicProperty(`zex:owner`)})[0];
 			const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-			const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);
-			const victims = fire.dimension.getEntities({location:fire.location,maxDistance:1.5,excludeTypes:bladeImmuneEntities });
+			const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);//({location:user.location,maxDistance:1.5,closest:1,excludeNames:[ user.nameTag ] });
+			const victims = fire.dimension.getEntities({location:fire.location,maxDistance:1.5,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
 			if( victims.length > 1 ){
 				for( let i = 0; i < victims.length; i++ ){
 					if( victims[i].nameTag != user.nameTag ){
@@ -473,6 +481,30 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			bladeInstant( user,blade );
 		}
 		if( user.typeId == `minecraft:player` ){
+			bladeSoulcal( user,blade );
+			if( user.isSprinting && user.isOnGround ){
+				if( !user.hasTag(`sprint`) ){
+					user.addTag(`sprint`);
+					let abs_v = 4;
+					let d = user.getViewDirection();
+					user.applyKnockback(d.x,d.z,abs_v,0);
+					//user.addEffect(`hunger`,20,{ amplifier:20 });
+					user.dimension.playSound(`mob.shulker.teleport`,user.location,{ pitch:1.2, volume:3 });
+				}
+			}
+			if( user.isSneaking ){
+				world.scoreboard.getObjective(`sneaking`).addScore(user,1);
+				const sneak = world.scoreboard.getObjective(`sneaking`).getScore(user);
+				if( 1 == sneak ){
+					user.addEffect(`resistance`,SNEAK_TIME,{ amplifier:255 });
+				}
+			}
+			if( !user.isSneaking && world.scoreboard.getObjective(`sneaking`).getScore(user) != 0 ){
+				world.scoreboard.getObjective(`sneaking`).setScore(user,0);
+			}
+			if( !user.isSprinting ){
+				user.removeTag(`sprint`);
+			}
 			if( user.isOnGround ){
 				const Ascore = world.scoreboard.getObjective(`aircomboA`).getScore(user);
 				if( Ascore > 0 ){
@@ -488,12 +520,21 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
 					world.scoreboard.getObjective(`combocool`).setScore(user,-99);
 				}
+				if( user.isJumping && user.getVelocity().y < 0 ){
+					const victims = user.dimension.getEntities({location:user.location,maxDistance:1.5,closest:1,excludeTypes:bladeNoEnemyStepEntities,excludeNames:[ user.nameTag ] });
+					if( victims.length > 0 ){
+						user.applyKnockback(0,0,0,0.6);
+						user.removeTag(`jumped`);
+						user.addEffect(`resistance`,10,{ amplifier:20 });
+					}
+				}
 			}
 
 			if( user.isJumping && !user.hasTag(`jumped`) && user.isSneaking && !user.isOnGround && user.getVelocity().y < 0 ){
 				//user.clearVelocity();
 				user.applyKnockback(0,0,0,-(0.5*user.getVelocity().y)+0.8);
 				user.addTag(`jumped`);
+				user.dimension.playSound(`mob.shulker.teleport`,user.location,{ pitch:1.2, volume:3 });
 			}
 		}
 	}

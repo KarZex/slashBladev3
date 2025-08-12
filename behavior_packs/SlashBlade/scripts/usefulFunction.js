@@ -91,7 +91,11 @@ export function callDamage( blade, score ){
     if( bladeItemEnch.hasEnchantment("minecraft:sharpness") ){
         const EnchLevel = bladeItemEnch.getEnchantment("minecraft:sharpness").level;
         damage += EnchLevel * 2;
-    }
+    }//smite
+    if( bladeItemEnch.hasEnchantment("minecraft:smite") ){
+        const EnchLevel = bladeItemEnch.getEnchantment("minecraft:smite").level;
+        damage += EnchLevel * 2;
+    }//smite
     return damage;
 }
 

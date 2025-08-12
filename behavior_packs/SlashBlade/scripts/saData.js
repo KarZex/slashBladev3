@@ -9,7 +9,7 @@ export class drive {
   cost = 10
   damage = 6;
   fireSa( blade, user ){
-    user.playSound(`swingblade.sab`);
+    user.dimension.playSound(`swingblade.sab`,user.location,{ pitch:1, volume:3 });
     const power = 0.1;
     const O = user.location;
     const V = user.getViewDirection();
@@ -45,12 +45,12 @@ export class slashdimension {
       const fire = user.dimension.spawnEntity(`safire:slashdim`,{ x:attackPos.x,y:attackPos.y+1,z:attackPos.z });
 			world.scoreboard.getObjective(`printlevel`).setScore(user,100);
       fire.setDynamicProperty(`zex:owner`,user.nameTag);
-      user.playSound(`swingblade.dim`);
+      user.dimension.playSound(`mob.wither.hurt`,O,{ pitch:0.55, volume:3 });
     }
     else{
       const fire = user.dimension.spawnEntity(`safire:slashdim`,O);
       fire.setDynamicProperty(`zex:owner`,user.nameTag);
-      user.playSound(`swingblade.dim`);
+      user.dimension.playSound(`mob.wither.hurt`,O,{ pitch:0.55, volume:3 });
     }
   }
 }
