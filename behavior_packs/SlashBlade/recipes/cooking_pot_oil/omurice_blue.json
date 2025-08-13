@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "zex:omurice_recipe_blue"
+    },
+    "tags": [
+      "cooking_pot_oil"
+    ],
+    "pattern": [
+      "ACE",
+      "BB "
+    ],
+    "key": {
+      "A": {
+        "item": "zex:rice"
+      },
+      "B": {
+        "item": "minecraft:blue_egg"
+      },
+      "C": {
+        "item": "zex:tomato"
+      },
+      "E": {
+        "item": "zex:tomato_sauce"
+      }
+    },
+    "result": {
+      "item": "zex:omurice",
+      "count": 2
+    }
+  }
+}

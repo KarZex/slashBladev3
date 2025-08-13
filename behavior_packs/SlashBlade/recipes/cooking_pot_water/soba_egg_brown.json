@@ -1,0 +1,32 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "zex:soba_egg_recipe_brown"
+    },
+    "tags": [
+      "cooking_pot_water"
+    ],
+    "pattern": [
+      "ABC"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:soba_raw",
+        "data": 0
+      },
+      "B": {
+        "item": "zex:noodle_soup",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:brown_egg",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "zex:soba_egg",
+      "count": 2
+    }
+  }
+}

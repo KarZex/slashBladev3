@@ -1,0 +1,41 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "zex:tachi_recipe_blue"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "  B",
+      " B ",
+      "AB "
+    ],
+    "key": {
+      "A": {
+        "item": "blade:katana"
+      },
+      "B": {
+        "item": "zex:bladesoulsphere"
+      },
+      "C": {
+        "item": "minecraft:string"
+      },
+      "D": {
+        "item": "minecraft:dye",
+        "data": 0
+      },
+      "E": {
+        "item": "minecraft:iron_ingot"
+      },
+      "F": {
+        "item": "minecraft:blue_egg"
+      }
+    },
+    "result": {
+      "item": "blade:tachi",
+      "count": 1
+    }
+  }
+}

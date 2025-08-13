@@ -44,8 +44,8 @@ for root, dirs, files in os.walk(directory):
                 try:
                     data = json.load(f)
                     if( len(search_json(data,"minecraft:egg")) > 0 ):
-                        data_blue = replace_value(data,"minecraft:egg", "minecraft:egg_blue")
-                        data_brown = replace_value(data,"minecraft:egg", "minecraft:egg_brown")
+                        data_blue = replace_value(data,"minecraft:egg", "minecraft:blue_egg")
+                        data_brown = replace_value(data,"minecraft:egg", "minecraft:brown_egg")
                         file_path_blue = file_path.replace(".json","_blue.json")
                         file_path_brown = file_path.replace(".json","_brown.json")
                         with open(file_path_blue,"w") as f:

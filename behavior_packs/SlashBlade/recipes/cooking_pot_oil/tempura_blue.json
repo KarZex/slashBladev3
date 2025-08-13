@@ -1,0 +1,39 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "zex:tempura_recipe_blue"
+    },
+    "tags": [
+      "cooking_pot_oil"
+    ],
+    "pattern": [
+      "ABC",
+      "D  "
+    ],
+    "key": {
+      "A": {
+        "item": "zex:shrimp"
+      },
+      "B": {
+        "item": "minecraft:blue_egg"
+      },
+      "C": {
+        "item": "zex:salt"
+      },
+      "D": {
+        "item": "zex:flour"
+      },
+      "E": {
+        "item": "zex:black_pepper"
+      },
+      "F": {
+        "item": "zex:flour"
+      }
+    },
+    "result": {
+      "item": "zex:tempura",
+      "count": 2
+    }
+  }
+}

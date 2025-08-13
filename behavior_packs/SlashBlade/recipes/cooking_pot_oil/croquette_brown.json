@@ -1,0 +1,36 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "zex:croquette_recipe_brown"
+    },
+    "tags": [
+      "cooking_pot_oil"
+    ],
+    "pattern": [
+      "ABC",
+      "DE "
+    ],
+    "key": {
+      "A": {
+        "item": "zex:burger_raw"
+      },
+      "B": {
+        "item": "minecraft:brown_egg"
+      },
+      "C": {
+        "item": "zex:salt"
+      },
+      "D": {
+        "item": "zex:mashed_potato"
+      },
+      "E": {
+        "item": "zex:black_pepper"
+      }
+    },
+    "result": {
+      "item": "zex:croquette",
+      "count": 4
+    }
+  }
+}

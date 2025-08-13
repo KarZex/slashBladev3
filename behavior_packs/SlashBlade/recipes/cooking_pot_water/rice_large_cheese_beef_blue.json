@@ -1,0 +1,38 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "zex:rice_large_cheese_beef_recipe_blue"
+    },
+    "tags": [
+      "cooking_pot_water"
+    ],
+    "pattern": [
+      "AAA",
+      "BCB",
+      "DE "
+    ],
+    "key": {
+      "A": {
+        "item": "zex:rice",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:beef"
+      },
+      "C": {
+        "item": "zex:cheese"
+      },
+      "D": {
+        "item": "zex:onion"
+      },
+      "E": {
+        "item": "minecraft:blue_egg"
+      }
+    },
+    "result": {
+      "item": "zex:rice_large_cheese_beef",
+      "count": 1
+    }
+  }
+}

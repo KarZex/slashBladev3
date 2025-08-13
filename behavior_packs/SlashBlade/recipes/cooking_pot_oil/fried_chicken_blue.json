@@ -1,0 +1,39 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "zex:fried_chicken_recipe_blue"
+    },
+    "tags": [
+      "cooking_pot_oil"
+    ],
+    "pattern": [
+      "ABC",
+      "DEF"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:chicken"
+      },
+      "B": {
+        "item": "minecraft:blue_egg"
+      },
+      "C": {
+        "item": "zex:salt"
+      },
+      "D": {
+        "item": "zex:breadcrumbs"
+      },
+      "E": {
+        "item": "zex:black_pepper"
+      },
+      "F": {
+        "item": "zex:flour"
+      }
+    },
+    "result": {
+      "item": "zex:fried_chicken",
+      "count": 3
+    }
+  }
+}

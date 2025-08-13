@@ -1,0 +1,36 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "zex:rice_beef_egg_recipe_brown"
+    },
+    "tags": [
+      "cooking_pot_water"
+    ],
+    "pattern": [
+      "ABC",
+      "D  "
+    ],
+    "key": {
+      "A": {
+        "item": "zex:rice",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:beef",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:brown_egg",
+        "data": 0
+      },
+      "D": {
+        "item": "zex:onion"
+      }
+    },
+    "result": {
+      "item": "zex:rice_beef_egg",
+      "count": 2
+    }
+  }
+}
