@@ -46,15 +46,15 @@ for root, dirs, files in os.walk(directory):
                     if( len(search_json(data,"minecraft:egg")) > 0 ):
                         data_blue = replace_value(data,"minecraft:egg", "minecraft:egg_blue")
                         data_brown = replace_value(data,"minecraft:egg", "minecraft:egg_brown")
-                        file_path_blue = file_path + "_blue"
-                        file_path_brown = file_path + "_brown"
+                        file_path_blue = file_path.replace(".json","_blue.json")
+                        file_path_brown = file_path.replace(".json","_brown.json")
                         with open(file_path_blue,"w") as f:
                             idaaaa = data_blue["minecraft:recipe_shaped"]["description"]["identifier"]
-                            data_blue["minecraft:recipe_shaped"]["description"]["identifier"] = idaaaa.replace(".json","_blue.json")
+                            data_blue["minecraft:recipe_shaped"]["description"]["identifier"] = idaaaa + "_blue"
                             json.dump(data_blue,f,indent=2)
                         with open(file_path_brown,"w") as f:
                             idaaaa = data_brown["minecraft:recipe_shaped"]["description"]["identifier"]
-                            data_brown["minecraft:recipe_shaped"]["description"]["identifier"] = idaaaa.replace(".json","_brown.json")
+                            data_brown["minecraft:recipe_shaped"]["description"]["identifier"] = idaaaa + "_brown"
                             json.dump(data_brown,f,indent=2)
 
 
