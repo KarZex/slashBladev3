@@ -221,6 +221,7 @@ tile.zex:pepper_splint.name=コショウ用の添え木
 tile.zex:ramen.name=ラーメン
 tile.zex:soba.name=そば
 tile.zex:udon.name=うどん
+item.zex:rice_beans=枝豆ご飯
 
 craft.zex:cooking_pot_oil.name=§e調理鍋(食用油)
 craft.zex:cooking_pot_water.name=§9調理鍋(水)

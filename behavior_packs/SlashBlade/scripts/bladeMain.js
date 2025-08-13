@@ -248,10 +248,6 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 		else {
 			bladeSwing( user,blade,user.isOnGround,sound,color );
 		}
-		for( let i = 0; i < 5; i++ ){
-			await system.waitTicks(1)
-			bladeSwingProjectile( user );
-		}
 	}
 	else if( e.itemStack.typeId.includes(`blade:`) && blade.getDynamicProperty("sa") != undefined && e.useDuration <= 100010 && dmgCom.damage < dmgCom.maxDurability ){
 		const classRef = classReg[blade.getDynamicProperty("sa")];
@@ -511,6 +507,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				}
 			}
 			if( user.isSneaking ){
+				if( !isMoving(user) ){
+					bladeSwingProjectile( user );
+				}
 				world.scoreboard.getObjective(`sneaking`).addScore(user,1);
 				const sneak = world.scoreboard.getObjective(`sneaking`).getScore(user);
 				if( 1 == sneak ){
