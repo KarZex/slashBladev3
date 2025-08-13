@@ -433,7 +433,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
 			const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);//({location:user.location,maxDistance:1.5,closest:1,excludeNames:[ user.nameTag ] });
 			const victims = fire.dimension.getEntities({location:fire.location,maxDistance:1.5,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
-			if( victims.length > 1 ){
+			if( victims.length > 0 ){
 				for( let i = 0; i < victims.length; i++ ){
 					if( victims[i].nameTag != user.nameTag ){
 						victims[i].applyDamage( 3,{ cause:`override`,damagingEntity:user });

@@ -53,8 +53,8 @@ export async function risingStar( user,target,blade,sound,color ){
 }
 
 export function rangeAttack(user,damage,knockback,knockbackpower,range,Isfire,combo){
-    const victims = user.dimension.getEntities({location:user.location,maxDistance:range,excludeTypes:bladeImmuneEntities });
-	if( victims.length > 1 ){
+    const victims = user.dimension.getEntities({location:user.location,maxDistance:range,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
+	if( victims.length > 0 ){
 		setBladeDamage(1,user);
 		for( let i = 0; i < victims.length; i++ ){
 			if( victims[i].nameTag != user.nameTag ){
