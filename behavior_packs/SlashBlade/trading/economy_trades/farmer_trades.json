@@ -207,6 +207,24 @@
               "trader_exp": 1,
               "max_uses": 16,
               "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 1,
+                  "price_multiplier": 0.05
+                }
+              ],
+              "gives": [
+                {
+                  "item": "zex:brown_bean",
+                  "quantity": 8
+                }
+              ],
+              "trader_exp": 1,
+              "max_uses": 16,
+              "reward_exp": true
             }
           ]
         }
