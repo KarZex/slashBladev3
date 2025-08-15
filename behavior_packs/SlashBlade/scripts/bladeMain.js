@@ -32,7 +32,7 @@ world.beforeEvents.playerBreakBlock.subscribe( e => {
 	const block = e.block;
 	const dimensiontype = e.dimension.id;
 	const dimension = world.getDimension(dimensiontype);
-	if( block.typeId.includes(`short_grass`) || block.typeId.includes(`tall_grass`) ){
+	if( (block.typeId.includes(`short_grass`) || block.typeId.includes(`tall_grass`)) && world.gameRules.doTileDrops ){
 		system.run(() => {
 			dimension.runCommand(`loot spawn ${block.location.x+0.5} ${block.location.y+0.5} ${block.location.z+0.5} loot "blocks/seeds"`);
 		});
@@ -397,7 +397,9 @@ world.afterEvents.entityDie.subscribe( e => {
 				const lore = blade.getLore();
 				const kill = blade.getDynamicProperty("killCount") + 1;
 				blade.setDynamicProperty("killCount",kill);
-				killer.dimension.runCommand(`loot spawn ${loc.x} ${loc.y} ${loc.z} loot ps`);
+				if( world.gameRules.doMobLoot ){
+					killer.dimension.runCommand(`loot spawn ${loc.x} ${loc.y} ${loc.z} loot ps`);
+				}
 				if( kill >= 1000 ){
 					lore[0] = `§r§4KillCount: ${kill}`;
 					lore[5] = `§r§6B-A§r/§cS-SSS§r/§5Limit`
