@@ -411,7 +411,7 @@ world.afterEvents.entityDie.subscribe( e => {
 			}
 
 		}
-		if( e.deadEntity.typeId == `wither` ){
+		if( e.deadEntity.typeId == `wither` && world.gameRules.doMobLoot ){
 				const loc = e.deadEntity.location;
 				killer.dimension.runCommand(`loot spawn ${loc.x} ${loc.y} ${loc.z} loot entities/sange`);
 		}
