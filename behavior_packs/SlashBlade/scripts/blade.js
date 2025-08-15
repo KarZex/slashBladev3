@@ -428,6 +428,18 @@ export const bladeData = {
     "damageplus": 17,
     "sound": "swingblade.c",
     "color": "pink",
+    "ench1": {
+      "id": "sharpness",
+      "lvl": 5
+    },
+    "ench2": {
+      "id": "unbreaking",
+      "lvl": 3
+    },
+    "ench3": {
+      "id": "fire_aspect",
+      "lvl": 2
+    },
     "insa": "drive"
   },
   "kamuy_fire": {
@@ -503,7 +515,7 @@ export const bladeData = {
     "damage": 7,
     "damageplus": 17,
     "sound": "swingblade.c",
-    "color": "light_blue",
+    "color": "pink",
     "ench1": {
       "id": "smite",
       "lvl": 5

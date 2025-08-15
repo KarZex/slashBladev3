@@ -240,10 +240,19 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 			world.scoreboard.getObjective(`combocool`).setScore(user,40);
 		}
 		else if( user.isSneaking && !user.isOnGround ){
-			user.applyKnockback(0,0,0,-5);
-			world.scoreboard.getObjective(`around`).setScore(user,8);
-			user.addEffect(`resistance`,8,{ amplifier:255 });
-			user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
+			while( true ){
+				if( !user.isOnGround ){
+					user.applyKnockback(0,0,0,-5);
+					world.scoreboard.getObjective(`around`).setScore(user,8);
+					user.addEffect(`resistance`,8,{ amplifier:255 });
+					user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
+					await system.waitTicks(1);
+				}
+				else{
+					break;
+				}
+
+			}
 		}
 		else {
 			bladeSwing( user,blade,user.isOnGround,sound,color );

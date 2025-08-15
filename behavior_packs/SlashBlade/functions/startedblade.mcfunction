@@ -27,7 +27,6 @@ scoreboard objectives add groundcomboA dummy
 scoreboard objectives add aircomboA dummy
 scoreboard objectives add bladecool dummy
 #sneaking
-execute as @a[tag=!startedbladeV4] run scoreboard players set @s cooldown 20
 execute as @a[tag=!startedbladeV4] run scoreboard players set @s blade 0
 execute as @a[tag=!startedbladeV4] run scoreboard players set @s around 0
 execute as @a[tag=!startedbladeV4] run scoreboard players set @s bladec 10
