@@ -1,0 +1,77 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "blade:fox_black",
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "armor_enchanted"
+      },
+      "textures": {
+        "default": "textures/models/fox_black",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.weiss"
+      },
+      "animations": {
+        "root": "controller.animation.blade",
+        "usesa": "animation.sword.usesa",
+        "atk": "animation.sword.ack",
+        "use": "animation.sword.use",
+        "use2": "animation.sword.use2",
+        "use3": "animation.sword.use3",
+        "use4": "animation.sword.use4",
+        "first": "animation.sword.first2",
+        "rapidSlash": "animation.sword.rapidSlash",
+        "acombo1": "animation.sword.acombo1",
+        "acombo1_reset": "animation.sword.acombo1_reset",
+        "acombo2_pre": "animation.sword.acombo2_pre",
+        "acombo2": "animation.sword.acombo2",
+        "acombo2_reset": "animation.sword.acombo2_reset",
+        "acombo3_pre": "animation.sword.acombo3_pre",
+        "acombo3": "animation.sword.acombo3",
+        "acombo3_reset": "animation.sword.acombo3_reset",
+        "acombo3b": "animation.sword.acombo3b",
+        "acombo3b_reset": "animation.sword.acombo3b_reset",
+        "acombo4_pre": "animation.sword.acombo4_pre",
+        "acombo4b": "animation.sword.acombo4b",
+        "acombo4b_reset": "animation.sword.acombo4b_reset",
+        "gcombo1": "animation.sword.gcombo1",
+        "gcombo1_reset": "animation.sword.gcombo1_reset",
+        "gcombo2_pre": "animation.sword.gcombo2_pre",
+        "gcombo2": "animation.sword.gcombo2",
+        "gcombo2_reset": "animation.sword.gcombo2_reset",
+        "gcombo3_pre": "animation.sword.gcombo3_pre",
+        "gcombo3": "animation.sword.gcombo3",
+        "gcombo3_reset": "animation.sword.gcombo3_reset",
+        "gcombo3c": "animation.sword.gcombo3c",
+        "gcombo3c_reset": "animation.sword.gcombo3c_reset",
+        "gcombo4_pre": "animation.sword.gcombo4_pre",
+        "gcombo4": "animation.sword.gcombo4",
+        "gcombo4_reset": "animation.sword.gcombo4_reset",
+        "gcombo4b": "animation.sword.gcombo4b",
+        "gcombo4b_reset": "animation.sword.gcombo4b_reset",
+        "reset": "animation.sword.reset",
+        "third": "animation.sword.third"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.off_hand = c.item_slot == 'off_hand';"
+        ],
+        "animate": [
+          "root",
+          {
+            "first": "(v.off_hand && c.is_first_person)"
+          },
+          {
+            "third": "v.off_hand && !c.is_first_person"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.armor"
+      ]
+    }
+  }
+}
