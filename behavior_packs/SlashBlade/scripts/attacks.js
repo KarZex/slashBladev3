@@ -95,6 +95,7 @@ export async function bladeComboG1( user,blade,sound ){
     if(bladeItemEnch.hasEnchantment("minecraft:fire_aspect")){
         isFire = true;
     }
+    user.playAnimation(`animation.bladehuman.a1`);
     //attack
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);
     playBladeSound(user,sound);

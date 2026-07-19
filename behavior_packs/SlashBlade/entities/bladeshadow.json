@@ -4,7 +4,6 @@
         "description": {
             "identifier": "zex:bladeshadow",
             "spawn_category": "creature",
-            "runtime_identifier": "minecraft:armor_stand",
             "is_spawnable": true,
             "is_summonable": true,
             "is_experimental": false,
@@ -133,7 +132,6 @@
             }
         },
         "components": {
-            "minecraft:behavior.trade_with_player": {},
             "minecraft:experience_reward": {
                 "on_death": "0"
             },
@@ -186,8 +184,7 @@
                 "has_collision": false,
                 "has_gravity": false,
                 "push_towards_closest_space": false
-            },
-            "minecraft:conditional_bandwidth_optimization": {}
+            }
         },
         "events": {
             "zex:despawn": {
