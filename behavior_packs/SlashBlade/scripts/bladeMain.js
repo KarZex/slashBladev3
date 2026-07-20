@@ -136,48 +136,53 @@ async function bladeSwing( user,blade,IsOnGround,sound ){
 		world.scoreboard.getObjective(`groundcomboA`).addScore(user,1);
 		const combo = world.scoreboard.getObjective(`groundcomboA`).getScore(user);
 		const time =  user.getDynamicProperty(`BladeStartOn`);
+		//print(`${time}`)
 		if( combo == 1 ){
 			bladeComboG1(user,blade,sound);
+			world.scoreboard.getObjective(`combocool`).setScore(user,20);
 		}
 		if( combo == 2 ){
 			bladeComboG2(user,blade,sound);
+			world.scoreboard.getObjective(`combocool`).setScore(user,20);
 		}
-		if( combo == 3 && time > 20 ){
+		if( combo == 3 && time >= 10 ){
 			bladeComboG3(user,blade,sound2);
+			world.scoreboard.getObjective(`combocool`).setScore(user,40);
 		}
-		if( combo == 3 && time <= 20 ){
+		if( combo == 3 && time < 10 ){
 			bladeComboG3_C(user,blade,sound2);
+			world.scoreboard.getObjective(`combocool`).setScore(user,40);
 		}
-		if( combo == 4 && time > 20 ){
+		if( combo == 4 && time > 30 ){
 			bladeComboG4_A(user,blade,sound2);
 		}
-		if( combo == 4 && time <= 20 ){
+		if( combo == 4 && time <= 30 ){
 			bladeComboG4_B(user,blade,sound2);
 		}
-		world.scoreboard.getObjective(`combocool`).setScore(user,40);
+		//world.scoreboard.getObjective(`combocool`).setScore(user,20);
 	}
 	else if(IsOnGround == false){
 		user.addEffect(`slow_falling`,40,{ amplifier:1 });
 		user.addEffect(`levitation`,2,{ amplifier:16 });
 		world.scoreboard.getObjective(`aircomboA`).addScore(user,1);
 		const combo = world.scoreboard.getObjective(`aircomboA`).getScore(user);
-		const time =  user.getDynamicProperty(`BladeStartOn`);
+		const time =  world.scoreboard.getObjective(`combocool`).getScore(user);
 		if( combo == 1 ){
 			bladeComboA1(user,blade,sound2);
 		}
 		if( combo == 2 ){
 			bladeComboA2(user,blade,sound2);
 		}
-		if( combo == 3 && time > 25 ){
+		if( combo == 3 && time > 10 ){
 			bladeComboA3(user,blade,sound2);
 		}
-		if( combo == 3 && time <= 25 ){
+		if( combo == 3 && time <= 10 ){
 			bladeComboA3_B(user,blade,sound2);
 		}
 		else if( combo == 4 ){
 			bladeComboA4_B(user,blade,sound2);
 		}
-		world.scoreboard.getObjective(`combocool`).setScore(user,40);
+		world.scoreboard.getObjective(`combocool`).setScore(user,20);
 	}
 }
 function bladeSwingProjectile( user ){
@@ -224,7 +229,7 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 	const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
 	const Tblade = user.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
 	const dmgCom = Tblade.getComponent(ItemComponentTypes.Durability);	
-	if ( e.itemStack.typeId.includes(`blade:`) & bladecool == 0 && e.useDuration > 100010 && dmgCom.damage < dmgCom.maxDurability ){
+	if ( e.itemStack.typeId.includes(`blade:`) && e.useDuration > 100010 && dmgCom.damage < dmgCom.maxDurability ){
 		const bladeId = e.itemStack.typeId.split(`:`)[1];
 		const sound = bladeData[`${bladeId}`][`sound`];
 		const color = bladeData[`${bladeId}`][`color`];
@@ -237,7 +242,7 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 			else{
 				rapidSlash(user,blade,sound,color);
 			}
-			world.scoreboard.getObjective(`combocool`).setScore(user,40);
+			world.scoreboard.getObjective(`combocool`).setScore(user,20);
 		}
 		else if( user.isSneaking && !user.isOnGround ){
 			while( true ){
@@ -422,11 +427,10 @@ world.afterEvents.entityDie.subscribe( e => {
 
 system.afterEvents.scriptEventReceive.subscribe( e => {
 	if( e.id == "zex:skinid" ){	
+		print(`animation`)
 		let M = e.message.split(` `);
-		let x =  Number(M[0]);
-		let y =  Number(M[1]);
-		e.sourceEntity.getComponent(`minecraft:skin_id`).value = x
-		e.sourceEntity.getComponent(`minecraft:variant`).value = y
+		const entity = e.sourceEntity;
+		entity.playAnimation(`animation.bladehuman.a1`);
 	}
 	else if( e.id == "zex:setsa" ){	
 		const user = e.sourceEntity;

@@ -283,10 +283,7 @@
 							"gcombo2_pre" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
-							"gcombo1_reset" : "query.state_time > 2.0"
-						},
-						{
-							"default" : "!query.is_on_ground"
+							"default" : "!query.is_on_ground || query.state_time > 1.0"
 						}
 					]
 				},
@@ -313,16 +310,13 @@
 					"animations" : [ "gcombo2" ],
 					"transitions" : [
 						{
-							"gcombo3_pre" : "query.is_using_item && query.state_time > 0.15 && query.state_time <= 1"
+							"gcombo3_pre" : "query.is_using_item && query.state_time <= 0.45"
 						},
 						{
-							"gcombo3c_pre" : "query.is_using_item && query.state_time > 1"
+							"gcombo3c_pre" : "query.is_using_item && query.state_time > 0.45  && query.state_time <= 1"
 						},
 						{
-							"gcombo2_reset" : "query.state_time > 2.0"
-						},
-						{
-							"default" : "!query.is_on_ground"
+							"default" : "!query.is_on_ground || query.state_time > 1.0"
 						}
 					]
 				},
@@ -349,16 +343,13 @@
 					"animations" : [ "gcombo3" ],
 					"transitions" : [
 						{
-							"gcombo4_pre" : "query.is_using_item && query.state_time > 0.15 && query.state_time <= 1"
+							"gcombo4_pre" : "query.is_using_item && query.state_time < 0.4 && query.state_time <= 1"
 						},
 						{
-							"gcombo4b_pre" : "query.is_using_item && query.state_time > 1"
+							"gcombo4b_pre" : "query.is_using_item && query.state_time >= 0.4 && query.state_time <= 1"
 						},
 						{
-							"gcombo3_reset" : "query.state_time > 2.0"
-						},
-						{
-							"default" : "!query.is_on_ground"
+							"default" : "!query.is_on_ground || query.state_time > 2.5"
 						}
 					]
 				},
@@ -385,22 +376,7 @@
 					"animations" : [ "gcombo3c" ],
 					"transitions" : [
 						{
-							"gcombo_pre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
-						},
-						{
-							"acombo_pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
-						},
-						{
-							"melee" : "query.is_delayed_attacking && !query.is_using_item"
-						},
-						{
-							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
-						},
-						{
-							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
-						},
-						{
-							"gcombo3_reset" : "query.state_time > 2.0"
+							"default" : "query.state_time > 2.5"
 						}
 					]
 				},
@@ -469,22 +445,7 @@
 					"animations" : [ "gcombo4b" ],
 					"transitions" : [
 						{
-							"gcombo_pre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
-						},
-						{
-							"acombo_pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
-						},
-						{
-							"melee" : "query.is_delayed_attacking && !query.is_using_item"
-						},
-						{
-							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
-						},
-						{
-							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
-						},
-						{
-							"gcombo4b_reset" : "query.state_time > 2.0"
+							"default" : "query.state_time > 3.5"
 						}
 					]
 				},

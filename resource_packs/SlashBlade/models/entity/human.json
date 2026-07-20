@@ -3,7 +3,7 @@
 	"geometry.human": {
 		"texturewidth": 64,
 		"textureheight": 64,
-		"visible_bounds_width": 3,
+		"visible_bounds_width": 4,
 		"visible_bounds_height": 4,
 		"visible_bounds_offset": [0, 2, 0],
 		"bones": [

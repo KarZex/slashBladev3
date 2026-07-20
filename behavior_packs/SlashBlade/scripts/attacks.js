@@ -118,6 +118,7 @@ export async function bladeComboG2( user,blade,sound ){
     if(bladeItemEnch.hasEnchantment("minecraft:fire_aspect")){
         isFire = true;
     }
+    user.playAnimation(`animation.bladehuman.a2`);
     //attack
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);
     playBladeSound(user,sound);
@@ -140,6 +141,7 @@ export async function bladeComboG3( user,blade,sound ){
     if(bladeItemEnch.hasEnchantment("minecraft:fire_aspect")){
         isFire = true;
     }
+    user.playAnimation(`animation.bladehuman.a3`);
 
     //attack
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);
@@ -167,6 +169,7 @@ export async function bladeComboG3_C( user,blade,sound ){
     if(bladeItemEnch.hasEnchantment("minecraft:fire_aspect")){
         isFire = true;
     }
+    user.playAnimation(`animation.bladehuman.a5`);
     //attack
 	await system.waitTicks(1);
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);
@@ -215,6 +218,7 @@ export async function bladeComboG4_B( user,blade,sound ){
     if(bladeItemEnch.hasEnchantment("minecraft:fire_aspect")){
         isFire = true;
     }
+    user.playAnimation(`animation.bladehuman.a4`);
     //attack
 	for( let i = 0; i < 6; i++ ){
 		rangeAttack(user,d/6,false,0,5,isFire,1);
@@ -352,8 +356,7 @@ export async function provocation(user,score) {
 			break;
 		}
 		await system.waitTicks(1);
-		i++;
-		if( bladecool == 0 && combocool == 0 && i > 20 ){
+		if( combocool == 0 && i > 5 ){
 			const victims = user.dimension.getEntities({location:user.location,maxDistance:16,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
 			if( victims.length > 0 ){
 				world.scoreboard.getObjective(`printlevel`).setScore(user,100);
@@ -371,5 +374,6 @@ export async function provocation(user,score) {
 			}
 			break;
 		}
+		i++;
 	}
 }
