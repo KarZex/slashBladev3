@@ -194,6 +194,7 @@ export async function bladeComboG4_A( user,blade,sound ){
     if(bladeItemEnch.hasEnchantment("minecraft:fire_aspect")){
         isFire = true;
     }
+    user.playAnimation(`animation.bladehuman.a6`);
     //attack
 	await system.waitTicks(7);
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);

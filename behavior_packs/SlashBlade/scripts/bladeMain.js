@@ -137,7 +137,7 @@ async function bladeSwing( user,blade,IsOnGround,sound ){
 		const combo = world.scoreboard.getObjective(`groundcomboA`).getScore(user);
 		const time =  user.getDynamicProperty(`BladeStartOn`);
 		//print(`${time}`)
-		if( combo == 1 ){
+		if( combo == 1 && time <= 0 ){
 			bladeComboG1(user,blade,sound);
 			world.scoreboard.getObjective(`combocool`).setScore(user,20);
 		}
@@ -155,9 +155,11 @@ async function bladeSwing( user,blade,IsOnGround,sound ){
 		}
 		if( combo == 4 && time > 30 ){
 			bladeComboG4_A(user,blade,sound2);
+			world.scoreboard.getObjective(`combocool`).setScore(user,40);
 		}
 		if( combo == 4 && time <= 30 ){
 			bladeComboG4_B(user,blade,sound2);
+			world.scoreboard.getObjective(`combocool`).setScore(user,40);
 		}
 		//world.scoreboard.getObjective(`combocool`).setScore(user,20);
 	}
