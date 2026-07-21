@@ -12,27 +12,7 @@
 			},
 			"bones": [
 				{
-					"name": "root",
-					"pivot": [0, 0, 0]
-				},
-				{
-					"name": "body",
-					"parent": "root",
-					"pivot": [0, 0, 0]
-				},
-				{
-					"name": "rightArmA",
-					"parent": "root",
-					"pivot": [0, 0, 0]
-				},
-				{
-					"name": "rightArm",
-					"parent": "rightArmA",
-					"pivot": [-5, 22, 0]
-				},
-				{
 					"name": "sword",
-					"parent": "rightArm",
 					"pivot": [-6, -19, -2],
 					"rotation": [0, 0, -180]
 				},
@@ -1064,16 +1044,6 @@
 					"name": "sa",
 					"parent": "swordat",
 					"pivot": [-2, 0, 0]
-				},
-				{
-					"name": "leftArmA",
-					"parent": "root",
-					"pivot": [5, 22, 0]
-				},
-				{
-					"name": "leftArm",
-					"parent": "leftArmA",
-					"pivot": [5, 22, 0]
 				}
 			]
 		}
