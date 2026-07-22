@@ -283,7 +283,7 @@
 							"gcombo2_pre" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
-							"default" : "!query.is_on_ground || query.state_time > 1.0"
+							"default" : "!query.is_on_ground || query.state_time > 1.5"
 						}
 					]
 				},
@@ -430,7 +430,7 @@
 					"animations" : [ "gcombo4b" ],
 					"transitions" : [
 						{
-							"default" : "query.state_time > 3.5"
+							"default" : "query.state_time > 3.0"
 						}
 					]
 				},
