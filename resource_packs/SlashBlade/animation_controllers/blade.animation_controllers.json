@@ -430,7 +430,7 @@
 					"animations" : [ "gcombo4b" ],
 					"transitions" : [
 						{
-							"default" : "query.state_time > 3.0"
+							"default" : "query.state_time > 3.5"
 						}
 					]
 				},
