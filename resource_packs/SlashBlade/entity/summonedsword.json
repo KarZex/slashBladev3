@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "safire:summonedsword",
+        "materials": {
+          "default": "entity_alphablend"
+        },
+        "textures": {
+          "default": "textures/entity/airblade"
+        },
+        "geometry": {
+          "default": "geometry.summonedsword"
+        },
+        "scripts": {
+          "animate": [ 
+            "fly"
+          ]
+        },
+        "animations": {
+          "fly": "animation.airblade.rolling"
+        },
+        "render_controllers": [ 
+          "controller.render.arrow" 
+        ]
+      }
+    }
+}

@@ -4,7 +4,7 @@
     "description": {
       "identifier": "zex:bladeshadow",
       "materials": {
-        "default": "custom_animated"
+        "default": "entity_alphablend"
       },
       "textures": {
         "default": "textures/entity/bladeshadow/bladeshadow_0",
@@ -34,11 +34,15 @@
       },
       "scripts": {
         "animate": [
-          "float"
+          "float",
+          "rotatez",
+          "rotatey"
         ]
       },
       "animations": {
-        "float": "animation.bladeslash.role"
+        "float": "animation.bladeslash.role",
+        "rotatez": "animation.bladeslash.rotatez",
+        "rotatey": "animation.bladeslash.rotatey"
       },
       "render_controllers": [
         "controller.render.bladeshadow"

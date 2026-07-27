@@ -1,0 +1,22 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:ore_feature": {
+        "description": {
+            "identifier": "zex:f_sakuradiamond_ore"
+        },
+        "count": 32,
+        "discard_chance_on_air_exposure": 0.4,
+        "replace_rules": [
+            {
+                "places_block": "zex:sakuradiamond_ore",
+                "may_replace": [
+                    "minecraft:stone",
+                    "minecraft:granite",
+                    "minecraft:diorite",
+                    "minecraft:andesite",
+                    "minecraft:tuff"
+                ]
+            }
+        ]
+    }
+}

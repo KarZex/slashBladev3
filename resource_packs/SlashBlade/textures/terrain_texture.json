@@ -111,7 +111,8 @@
 	
     "kayabuki": { "textures": [ "textures/blocks/kayabuki" ] },
 	
-    "cherry_plank": { "textures": [ "textures/blocks/sakuraplank" ] },
+    "sakuradiamond_ore": { "textures": [ "textures/blocks/sakuradiamond_ore" ] },
+    "sakuradiamond_block": { "textures": [ "textures/blocks/sakuradiamond_block" ] },
 	
     "tatami": { "textures": [ "textures/blocks/tatami" ] },
     "tatami_n": { "textures": [ "textures/blocks/tatami_n" ] },

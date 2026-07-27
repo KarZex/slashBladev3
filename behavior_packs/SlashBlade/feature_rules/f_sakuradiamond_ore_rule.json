@@ -1,0 +1,41 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:feature_rules": {
+        "description": {
+            "identifier": "zex:f_sakuradiamond_ore_rule",
+            "places_feature": "zex:f_sakuradiamond_ore"
+        },
+        "conditions": {
+            "placement_pass": "after_underground_pass",
+            "minecraft:biome_filter": {
+                "test": "has_biome_tag",
+                "operator": "==",
+                "value": "cherry_grove"
+            }
+        },
+        "distribution": {
+            "iterations": 48,
+            "x": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    15
+                ]
+            },
+            "y": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    256
+                ]
+            },
+            "z": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    15
+                ]
+            }
+        }
+    }
+}

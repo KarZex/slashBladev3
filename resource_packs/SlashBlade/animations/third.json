@@ -21,16 +21,16 @@
 		"animation.sword.third": {
 			"loop": true,
 			"bones": {
-				"rightArm": {
-					"rotation": [0, 0, 0]
+				"sword": {
+					"rotation": [113.7295, -11.64986, 5.30728],
+					"position": [5, 44, -27],
+					"scale": 0.3
 				},
 				"leftArm": {
 					"rotation": [-12.5, 0, 0]
 				},
-				"sword": {
-					"rotation": [114.234, -16.21876, 3.21398],
-					"position": [6, 46, -24],
-					"scale": 0.3
+				"rightArm": {
+					"rotation": [0, 0, 0]
 				}
 			}
 		},

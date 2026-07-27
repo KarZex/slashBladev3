@@ -420,8 +420,7 @@ function slashBladeBellingEvent( event ){
     const block = event.block;
     block.dimension.playSound(`note.bell`,block.location,{ pitch:3, volume:3 });
 }
-
-world.beforeEvents.worldInitialize.subscribe( e => {
+system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`zex:glowth7`,{onPlayerInteract: slashBlade7CropsInteractEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:growing7`,{onRandomTick: slashBlade7CropsGrowingEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:glowth6`,{onPlayerInteract: slashBlade6CropsInteractEvent});

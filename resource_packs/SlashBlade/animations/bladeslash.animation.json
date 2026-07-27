@@ -14,9 +14,22 @@
 						"0.5": [1.8, 1.4, 1.8],
 						"0.9167": [1.8, 1.4, 1.8]
 					}
-				},
+				}
+			}
+		},
+		"animation.bladeslash.rotatez": {
+			"animation_length": 1,
+			"bones": {
 				"aasd": {
 					"rotation": [0, 0, "q.property('zex:rotate')"]
+				}
+			}
+		},
+		"animation.bladeslash.rotatey": {
+			"animation_length": 1,
+			"bones": {
+				"aasd2": {
+					"rotation": [0, "q.property('zex:rotatey')",0]
 				}
 			}
 		}

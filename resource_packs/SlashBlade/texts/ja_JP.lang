@@ -226,6 +226,15 @@ item.zex:rice_beans=枝豆ご飯
 craft.zex:cooking_pot_oil.name=§e調理鍋(食用油)
 craft.zex:cooking_pot_water.name=§9調理鍋(水)
 
+item.zex:samurai_red_helmet=侍ヘルメット(赤)
+item.zex:samurai_red_chestplate=侍チェストプレート(赤)
+item.zex:samurai_red_leggings=侍レギンス(赤)
+item.zex:samurai_red_boots=侍ブーツ(赤)
+item.zex:samurai_green_helmet=侍ヘルメット(緑)
+item.zex:samurai_green_chestplate=侍チェストプレート(緑)
+item.zex:samurai_green_leggings=侍レギンス(緑)
+item.zex:samurai_green_boots=侍ブーツ(緑)
+
 script.zex:drive.name=Drive
 script.zex:slashdimension.name=Slash Dimension
 script.zex:vdrive.name=Vertical-Drive

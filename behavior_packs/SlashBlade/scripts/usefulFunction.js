@@ -84,7 +84,7 @@ export function callDamage( blade, score ){
     else if( score >= 32 * 4 && score < 150 && overkill == true ){
         damage = atkPlus;
     }
-    else if ( score >= 150 ){
+    else if ( score >= 192 ){
         damage = atkPlus;
     }
     

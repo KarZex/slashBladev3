@@ -8,20 +8,32 @@
     "butamesi": {
       "textures": "textures/items/butamesi"
     },
-    "gyukusi": {
-      "textures": "textures/items/gyukusi"
+    "sakuradiamond": {
+      "textures": "textures/items/sakuradiamond"
     },
-    "gyumesi": {
-      "textures": "textures/items/gyumesi"
+    "samurai_red_boots": {
+      "textures": "textures/items/samurai_red_boots"
     },
-    "kaisenoyako": {
-      "textures": "textures/items/kaisenoyako"
+    "samurai_red_chestplate": {
+      "textures": "textures/items/samurai_red_chestplate"
     },
-    "katsudon": {
-      "textures": "textures/items/katsudon"
+    "samurai_red_helmet": {
+      "textures": "textures/items/samurai_red_helmet"
     },
-    "meshi_egg": {
-      "textures": "textures/items/meshi_egg"
+    "samurai_red_leggings": {
+      "textures": "textures/items/samurai_red_leggings"
+    },
+    "samurai_green_boots": {
+      "textures": "textures/items/samurai_green_boots"
+    },
+    "samurai_green_chestplate": {
+      "textures": "textures/items/samurai_green_chestplate"
+    },
+    "samurai_green_helmet": {
+      "textures": "textures/items/samurai_green_helmet"
+    },
+    "samurai_green_leggings": {
+      "textures": "textures/items/samurai_green_leggings"
     },
     "meshi_kinoko": {
       "textures": "textures/items/meshi_kinoko"

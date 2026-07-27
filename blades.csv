@@ -1,5 +1,5 @@
 名前,id,blade_attack,plus,blade_durability,Ench1,Ench2,Ench3,Ench4,Ench5,sa,R,G,M,S,is_L,color,入手,,,,,,R
-sample,sample,100,110,1000,sharpness-3,unbreaking-2,fire_aspect-2,,,C,epic,wooddebug,,swingblade.c,,blue,,,,,,,
+sample,sample,100,110,1000,sharpness-3,unbreaking-2,fire_aspect-2,power-5,,C,epic,wooddebug,,swingblade.c,,blue,,,,,,,
 大太刀「」,slashblade,7,17,240,,,,,,,,newslashblade,,swingblade.c,,blue,,,,,,,
 無銘刀「木偶」,wood,4,14,60,,,,,,,,,,swingblade.c,,blue,,,,,,,
 無銘刀「竹光」,bamboo,5,15,60,,,,,,,,wood,,swingblade.c,,blue,,,,,,,
@@ -28,7 +28,7 @@ sample,sample,100,110,1000,sharpness-3,unbreaking-2,fire_aspect-2,,,C,epic,woodd
 血刀「似蛭」,nihilex,10,20,900,unbreaking-2,sharpness-3,fire_aspect-2,looting-1,,waveedge,epic,nihil,,swingblade.c,,purple,,,,,,,
 妖刀「紅桜」,crimsoncherry,11,21,900,sharpness-5,fire_aspect-2,,,,fireup,epic,nihil,,swingblade.c,,red,,,,,,,
 ?獄刀「死念」,nihilbx,13,23,1200,sharpness-5,fire_aspect-2,unbreaking-3,,,spear,epic,nihil,,swingblade.c,,red,,,,,,,
-獄刀「似蛭」,nihilul,12,22,1200,unbreaking-3,sharpness-5,looting-3,fire_aspect-2,,waveedge,epic,nihil,,swingblade.c,,red,,,,,,,
+獄刀「似蛭」,nihilul,12,22,1200,unbreaking-3,sharpness-5,looting-3,fire_aspect-2,power-5,waveedge,epic,nihil,,swingblade.c,,red,,,,,,,
 ユキガラス,snowcrow,7,17,300,fire_aspect-2,knockback-2,unbreaking-3,looting-3,,slashdimension,,raven,,swingblade.c,,white,,,,,,,
 ヤミガラス,darkraven,7,17,300,smite-4,fire_aspect-2,knockback-2,,,spear,,darkraven,,swingblade.c,,black,,,,,,,
 洞爺湖,toyako,5,15,300,,,,,,,,yasha,,swingblade.c,,blue,,,,,,,

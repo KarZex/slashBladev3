@@ -9,7 +9,56 @@ export function summonBladeShadow(user,color,thita){
     const spawn = user.dimension.spawnEntity(`zex:bladeshadow`,user.location);
     spawn.triggerEvent(`${color}`);
     spawn.setProperty(`zex:rotate`,thita);
-    spawn.setRotation({y:user.getRotation().y,x:0});
+    spawn.setProperty(`zex:rotatey`,Math.floor(user.getRotation().y));
+    //spawn.setRotation({y:user.getRotation().y,x:0});
+}
+
+export function summonBladeShadow2(user,color,thita){
+    try{
+        const spawn = user.dimension.spawnEntity(`zex:bladeshadow`,{ x:user.location.x,y:user.location.y-1.5,z:user.location.z });
+        spawn.triggerEvent(`${color}`);
+        spawn.setProperty(`zex:rotate`,thita);
+        spawn.setProperty(`zex:rotatey`,Math.floor(user.getDynamicProperty(`rotate`)));
+        //spawn.setRotation({y:user.getDynamicProperty(`rotate`),x:0});
+    }catch{}
+}
+
+export function summonBladeShadow3(pos,rot,d,color,thita){
+    const spawn = d.spawnEntity(`zex:bladeshadow`,pos);
+    spawn.triggerEvent(`${color}`);
+    spawn.setProperty(`zex:rotate`,thita);
+    spawn.setProperty(`zex:rotatey`,rot);
+    //spawn.setRotation({y:rot,x:0});
+}
+
+export function SummonedswordLine( user,blade,bladeSlot ){
+    const bladeItemEnch = blade.getComponent(ItemComponentTypes.Enchantable);
+    if( bladeItemEnch.hasEnchantment("minecraft:power") && 2 <= bladeSlot.getDynamicProperty("ProudSoul") ){
+        const level = bladeItemEnch.getEnchantment(`minecraft:power`).level;
+        user.dimension.playSound(`mob.endermen.portal`,user.location,{ pitch:1.5, volume:3 });
+        const power = 1;
+        const O = user.location;
+        const V = user.getViewDirection();
+        const soul = bladeSlot.getDynamicProperty("ProudSoul") - 2;
+        bladeSlot.setDynamicProperty("ProudSoul", soul );
+        const lore = bladeSlot.getLore();
+        lore[1] = `§rProudSoul: ${soul}`;
+        bladeSlot.setLore(lore);
+        const FirePos = {
+        x: O.x,
+        y: O.y + 1.125,
+        z: O.z 
+        }
+        const shootView = {
+        x: V.x * power,
+        y: V.y * power,
+        z: V.z * power 
+        }
+        const fire = user.dimension.spawnEntity(`safire:summonedsword`,FirePos);
+        fire.getComponent(`minecraft:projectile`).owner = user
+        fire.getComponent(`minecraft:projectile`).shoot( shootView );
+        fire.setDynamicProperty(`damage`,level)
+    }
 }
 
 export async function rapidSlash( user,blade,sound,color ){
@@ -20,15 +69,17 @@ export async function rapidSlash( user,blade,sound,color ){
     if( sound != `swingblade.c` ){
         sound2 = sound;
     }
+    user.playAnimation(`animation.bladehuman.a7`);
     let abs_v = 9;
     let d = user.getViewDirection();
-    user.applyKnockback(d.x,d.z,abs_v,0);
+	user.applyKnockback({ x:abs_v*d.x,z:abs_v*d.z },0);
+    await system.waitTicks(4);
     for( let i = 0; i < 6; i++ ){
         playBladeSound(user,sound2);
-        user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
+        //user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
         summonBladeShadow(user,color,(i%2)*90+30+30*Math.random());
         rangeAttack(user,damage,false,0,2,false,1);
-        await system.waitTicks(2);
+        await system.waitTicks(1);
     }
 }
 
@@ -40,14 +91,15 @@ export async function risingStar( user,target,blade,sound,color ){
     if( sound != `swingblade.c` ){
         sound2 = sound;
     }
+    user.playAnimation(`animation.bladehuman.a7`);
 	user.addEffect(`resistance`,12,{ amplifier:255 });
     for( let i = 0; i < 6; i++ ){
         playBladeSound(user,sound2);
         user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
         summonBladeShadow(user,color,(i%2)*90+30+30*Math.random());
         rangeAttack(user,damage,true,0.5,2,false,1);
-        target.applyKnockback(0,0,0,0.5);
-        user.applyKnockback(0,0,0,0.5);
+		user.applyKnockback({ x:0,z:0 },0.5);
+		target.applyKnockback({ x:0,z:0 },0.5);
         await system.waitTicks(2);
     }
 }
@@ -60,9 +112,11 @@ export function rangeAttack(user,damage,knockback,knockbackpower,range,Isfire,co
 			if( victims[i].nameTag != user.nameTag ){
 				try{
 					victims[i].applyDamage( damage,{ cause:`override`,damagingEntity:user });
-					victims[i].applyKnockback(0,0,0,0);
+		            victims[i].applyKnockback({ x:0,z:0 },0);
                     if(knockback == true){
-                        victims[i].applyKnockback(user.getViewDirection().x,user.getViewDirection().z,2,knockbackpower);
+                        const d = user.getViewDirection();
+                        const abs_v = 2;
+					    victims[i].applyKnockback({ x:abs_v*d.x,z:abs_v*d.z },knockbackpower);
                         victims[i].dimension.spawnParticle(`minecraft:critical_hit_emitter`,{x:victims[i].location.x,y:victims[i].location.y+1,z:victims[i].location.z});
                     }
 				}
@@ -79,6 +133,21 @@ export function rangeAttack(user,damage,knockback,knockbackpower,range,Isfire,co
         if( victims2.length > 1 ){
 			world.scoreboard.getObjective(`blade`).addScore(user,-12);
         }
+	}
+}
+
+
+export function rangeAttackE(user,loc,d,damage,pos,range){
+    const victims = d.getEntities({location:loc,maxDistance:range,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
+	if( victims.length > 0 ){
+		for( let i = 0; i < victims.length; i++ ){
+			if( victims[i].nameTag != user.nameTag ){
+				try{
+					victims[i].applyDamage( damage,{ cause:`override`,damagingEntity:user });
+				}
+				catch{}
+			}
+		}
 	}
 }
 
@@ -249,6 +318,7 @@ export async function bladeComboA1( user,blade,sound ){
     if(bladeItemEnch.hasEnchantment("minecraft:fire_aspect")){
         isFire = true;
     }
+    user.playAnimation(`animation.bladehuman.a9`);
     //attack
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);
     playBladeSound(user,sound);
@@ -269,6 +339,7 @@ export async function bladeComboA2( user,blade,sound ){
     if(bladeItemEnch.hasEnchantment("minecraft:fire_aspect")){
         isFire = true;
     }
+    user.playAnimation(`animation.bladehuman.a10`);
     //attack
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);
     playBladeSound(user,sound);
@@ -289,6 +360,7 @@ export async function bladeComboA3( user,blade,sound ){
     if(bladeItemEnch.hasEnchantment("minecraft:fire_aspect")){
         isFire = true;
     }
+    user.playAnimation(`animation.bladehuman.a11`);
     //attack
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);
     playBladeSound(user,sound);
@@ -311,12 +383,13 @@ export async function bladeComboA3_B( user,blade,sound ){
     if(bladeItemEnch.hasEnchantment("minecraft:fire_aspect")){
         isFire = true;
     }
+    user.playAnimation(`animation.bladehuman.a12`);
     //attack
     rangeAttack(user,d,false,knockbackpower,5,isFire,comboG/2);
     playBladeSound(user,sound);
     summonBladeShadow(user,color,60);
 	await system.waitTicks(3);
-	user.applyKnockback(0,0,0,1);
+	user.applyKnockback({ x:0,z:0 },1);
     rangeAttack(user,d,true,1,8,isFire,comboG/2);
     playBladeSound(user,sound);
     summonBladeShadow(user,color,75);
@@ -336,6 +409,7 @@ export async function bladeComboA4_B( user,blade,sound ){
     if(bladeItemEnch.hasEnchantment("minecraft:fire_aspect")){
         isFire = true;
     }
+    user.playAnimation(`animation.bladehuman.a13`);
     //attack
     rangeAttack(user,d,knockback,knockbackpower,5,isFire,comboG);
     playBladeSound(user,sound);

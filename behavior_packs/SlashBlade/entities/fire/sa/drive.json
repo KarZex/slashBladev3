@@ -11,7 +11,7 @@
 	    "animate": [ "walk" ]
 	  },
 	  "animations": {
-	    "walk": "controller.animation.ding"
+	    "walk": "controller.animation.drive"
 	  }
     },
     "components": {
@@ -39,7 +39,7 @@
         "catch_fire": false
       },
 				"minecraft:explode": {
-				"fuse_length": 0.5,
+				"fuse_length": 10,
 				"fuse_lit": true,
 				"power": 0,
 				"causes_fire": false

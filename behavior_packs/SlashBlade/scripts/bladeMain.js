@@ -1,10 +1,10 @@
-import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, ItemComponentTypes,EnchantmentType, EntityDamageCause, EnchantmentTypes, EffectType, EffectTypes, Effect, EntityIsShakingComponent  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, ItemComponentTypes,EnchantmentType, EntityDamageCause, EnchantmentTypes, EffectType, EffectTypes, Effect, EntityIsShakingComponent, InputButton, EntitySwingSource  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
 import { classReg, drive, slashdimension } from "./saData";
 import "./compornents";
 import { playBladeSound,isMoving , absVector3,roundTo,print,setBladeDamage,callDamage  } from "./usefulFunction";
-import { rapidSlash,risingStar,bladeComboG1,bladeComboG2,bladeComboG3,bladeComboG3_C,bladeComboG4_A,bladeComboG4_B,bladeComboA1,bladeComboA2,bladeComboA3,bladeComboA3_B,bladeComboA4_B  } from "./attacks";
+import { summonBladeShadow2,SummonedswordLine,rangeAttackE,rapidSlash,risingStar,bladeComboG1,bladeComboG2,bladeComboG3,bladeComboG3_C,bladeComboG4_A,bladeComboG4_B,bladeComboA1,bladeComboA2,bladeComboA3,bladeComboA3_B,bladeComboA4_B, summonBladeShadow3  } from "./attacks";
 import { bladeImmuneEntities,bladeNoEnemyStepEntities,SNEAK_TIME } from "./config";
 
 const Rank = [ `D`,`C`,`B`,`A`,`1S`,`2S`,`3S`,`3S` ];
@@ -171,20 +171,25 @@ async function bladeSwing( user,blade,IsOnGround,sound ){
 		const time =  world.scoreboard.getObjective(`combocool`).getScore(user);
 		if( combo == 1 ){
 			bladeComboA1(user,blade,sound2);
+			world.scoreboard.getObjective(`combocool`).setScore(user,20);
 		}
 		if( combo == 2 ){
 			bladeComboA2(user,blade,sound2);
+			world.scoreboard.getObjective(`combocool`).setScore(user,20);
 		}
 		if( combo == 3 && time > 10 ){
 			bladeComboA3(user,blade,sound2);
+			world.scoreboard.getObjective(`combocool`).setScore(user,20);
 		}
 		if( combo == 3 && time <= 10 ){
 			bladeComboA3_B(user,blade,sound2);
+			world.scoreboard.getObjective(`combocool`).setScore(user,20);
 		}
 		else if( combo == 4 ){
 			bladeComboA4_B(user,blade,sound2);
+			world.scoreboard.getObjective(`combocool`).setScore(user,20);
 		}
-		world.scoreboard.getObjective(`combocool`).setScore(user,20);
+		//world.scoreboard.getObjective(`combocool`).setScore(user,20);
 	}
 }
 function bladeSwingProjectile( user ){
@@ -214,6 +219,14 @@ function bladeSwingProjectile( user ){
 	}
 }
 
+world.afterEvents.playerSwingStart.subscribe( async e => {
+	const user  = e.player;
+	const blade = e.heldItemStack;
+	if( blade != undefined && blade.typeId.includes(`blade:`) ){
+		SummonedswordLine(user,blade,user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand));
+	}
+}, { swingSource: EntitySwingSource.Attack }  )
+
 world.afterEvents.itemStartUse.subscribe( async e => {
 	const player = e.source;
 	const blade = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
@@ -235,21 +248,27 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 		const bladeId = e.itemStack.typeId.split(`:`)[1];
 		const sound = bladeData[`${bladeId}`][`sound`];
 		const color = bladeData[`${bladeId}`][`color`];
-		if( user.isSneaking && (user.isOnGround)  ){
-			const targets = user.dimension.getEntities({ location:user.location,excludeTypes: bladeImmuneEntities,closest:1,maxDistance:1.5,excludeNames:[ user.nameTag ] });
-			if( targets.length > 0 ){
-				const targetEntity = targets[0];
-				risingStar(user,targetEntity,blade,sound,color);
+		if( user.isSneaking && (user.isOnGround) ){
+			if( user.inputInfo.getMovementVector().y > 0.3 ){
+				const targets = user.dimension.getEntities({ location:user.location,excludeTypes: bladeImmuneEntities,closest:1,maxDistance:1.5,excludeNames:[ user.nameTag ] });
+				if( targets.length > 0 ){
+					const targetEntity = targets[0];
+					risingStar(user,targetEntity,blade,sound,color);
+				}
+				else{
+					rapidSlash(user,blade,sound,color);
+				}
+				world.scoreboard.getObjective(`combocool`).setScore(user,20);
+
 			}
 			else{
-				rapidSlash(user,blade,sound,color);
+				SummonedswordLine(user,blade,user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand));
 			}
-			world.scoreboard.getObjective(`combocool`).setScore(user,20);
 		}
 		else if( user.isSneaking && !user.isOnGround ){
 			while( true ){
 				if( !user.isOnGround ){
-					user.applyKnockback(0,0,0,-5);
+					user.applyKnockback({ x:0,z:0 },-5);
 					world.scoreboard.getObjective(`around`).setScore(user,8);
 					user.addEffect(`resistance`,8,{ amplifier:255 });
 					user.dimension.spawnParticle(`minecraft:large_explosion`,user.location);
@@ -317,34 +336,47 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 	}
 } )
 
-world.afterEvents.entityHitEntity.subscribe( e => {
-	const attacker = e.damagingEntity;
-	const victim = e.hitEntity;
-	if( attacker.typeId == `minecraft:player` ){
-		if( attacker.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand).typeId.includes(`blade:`) ){
-			const score = world.scoreboard.getObjective(`blade`).getScore( attacker );
-			const blade = attacker.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-			e.hitEntity.applyDamage(callDamage(blade,score),{ cause:EntityDamageCause.entityAttack,damagingEntity:attacker })
-			setBladeDamage(1,attacker);
-			const vict = e.hitEntity;
-			world.scoreboard.getObjective(`blade`).addScore(attacker,7);
-			world.scoreboard.getObjective(`printlevel`).setScore(attacker,100);
-			if( world.scoreboard.getObjective(`meleeup`).getScore( attacker ) == 0 ){
-				vict.applyKnockback(0,0,0,0.5);
-				world.scoreboard.getObjective(`meleeup`).setScore( attacker,15 );
-			}
-			else{
-				const vect = attacker.getViewDirection();
-				vict.applyKnockback(vect.x,vect.z,2,-0.25);
-			}
-		}
+// world.afterEvents.entityHitEntity.subscribe( e => {
+// 	const attacker = e.damagingEntity;
+// 	const victim = e.hitEntity;
+// 	if( attacker.typeId == `minecraft:player` ){
+// 		if( attacker.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand).typeId.includes(`blade:`) ){
+// 			const score = world.scoreboard.getObjective(`blade`).getScore( attacker );
+// 			const blade = attacker.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+// 			//e.hitEntity.applyDamage(callDamage(blade,score),{ cause:EntityDamageCause.entityAttack,damagingEntity:attacker })
+// 			//setBladeDamage(1,attacker);
+// 			const bladeId = blade.typeId.split(`:`)[1];
+// 			const sound = bladeData[`${bladeId}`][`sound`];
+// 			const color = bladeData[`${bladeId}`][`color`];
+// 			const vict = e.hitEntity;
+// 			world.scoreboard.getObjective(`blade`).addScore(attacker,7);
+// 			world.scoreboard.getObjective(`printlevel`).setScore(attacker,100);
+// 			// if( world.scoreboard.getObjective(`meleeup`).getScore( attacker ) == 0 ){
+// 			// 	vict.applyKnockback(0,0,0,0.5);
+// 			// 	world.scoreboard.getObjective(`meleeup`).setScore( attacker,15 );
+// 			// }
+// 			// else{
+// 			// 	const vect = attacker.getViewDirection();
+// 			// 	vict.applyKnockback(vect.x,vect.z,2,-0.25);
+// 			// }
+// 			bladeSwing( attacker,blade,attacker.isOnGround,sound,color );
+// 		}
 
+// 	}
+// } )
+
+world.afterEvents.projectileHitBlock.subscribe( e => {
+	const projectile = e.projectile;
+	if( projectile.typeId == "safire:summonedsword" ){
+		projectile.dimension.playSound("item.trident.hit",e.location,{ pitch:2, volume:5 });
+		projectile.remove()
 	}
 } )
 
-world.afterEvents.projectileHitEntity.subscribe( e => {
+world.afterEvents.projectileHitEntity.subscribe( async e => {
 	const vict = e.getEntityHit().entity;
 	const attacker = e.source;
+	if( bladeNoEnemyStepEntities.includes(vict.typeId)  ){ return; }
 	if( e.projectile.typeId.includes("absorb") ){
 		if( attacker.nameTag != vict.nameTag ){
 			e.projectile.remove();
@@ -360,13 +392,52 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			attacker.getComponent(EntityComponentTypes.Health).setCurrentValue(Math.min(PHealth + dmg,PMHealth));
 		}
 	}
+	else if( e.projectile.typeId == "safire:summonedsword" ){
+		const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
+		if( e.projectile.getDynamicProperty(`damage`) == undefined ){ e.projectile.setDynamicProperty(`damage`,0); }
+		const dmg = e.projectile.getDynamicProperty(`damage`);
+		let vict = e.getEntityHit().entity;
+		e.dimension.playSound("item.trident.hit",e.location,{ pitch:2, volume:5 });
+		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
+		let gunName = e.projectile.typeId;
+		
+		world.scoreboard.getObjective(`blade`).addScore(e.source,7);
+		world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
+	}
 	else if( e.projectile.typeId == "safire:drive" ){
 		const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
 		const sa = new classRef();
-		const dmg = sa.damage + callDamage(attacker.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand),world.scoreboard.getObjective(`blade`).getScore(attacker));;
-		let vict = e.getEntityHit().entity;
-		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
-		let gunName = e.projectile.typeId
+		const color = e.projectile.getDynamicProperty(`color`);
+		const dmg = e.projectile.getDynamicProperty(`dmg`);
+		const rot = e.projectile.getDynamicProperty(`rotate`)
+		const blade = e.source.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+		const level = world.scoreboard.getObjective(`blade`).getScore(e.source);
+		let d = callDamage( blade,level );
+		e.getEntityHit().entity.applyKnockback({ x:0,z:0 },0)
+
+
+		for( let i = 0; i < 6; i++ ){
+			e.getEntityHit().entity.clearVelocity()
+			e.getEntityHit().entity.teleport(e.location);
+			//e.projectile.teleport(e.location);
+			rangeAttackE(e.source,e.location,e.dimension,d/6,e.location,3);
+			e.dimension.playSound( `item.trident.throw`,e.location,{ pitch:0.7, volume:3 });
+			summonBladeShadow3(e.location,rot,e.dimension,color,90*(i%2)+15+60*Math.random());
+			world.scoreboard.getObjective(`blade`).addScore(e.source,2);
+			world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
+			await system.waitTicks(2);
+		}
+		for( let i = 0; i < 8; i++ ){
+			e.getEntityHit().entity.teleport(e.location);
+			//e.projectile.teleport(e.location);
+			await system.waitTicks(1);
+		}
+		rangeAttackE(e.source,e.location,e.dimension,d*1.5,e.location,3);
+		summonBladeShadow3(e.location,rot,e.dimension,color,60);
+		//const dmg = sa.damage + callDamage(attacker.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand),world.scoreboard.getObjective(`blade`).getScore(attacker));;
+		//let vict = e.getEntityHit().entity;
+		//vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
+		//let gunName = e.projectile.typeId
 		world.scoreboard.getObjective(`blade`).addScore(e.source,7);
 		world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
 	}
@@ -377,7 +448,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		let vict = e.getEntityHit().entity;
 		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
 		let gunName = e.projectile.typeId;
-		vict.applyKnockback(0,0,0,1);
+		user.applyKnockback({ x:0,z:0 },1);
 		world.scoreboard.getObjective(`blade`).addScore(e.source,7);
 		world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
 	}
@@ -433,6 +504,17 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		let M = e.message.split(` `);
 		const entity = e.sourceEntity;
 		entity.playAnimation(`animation.bladehuman.a1`);
+		entity.getComponent(EntityComponentTypes.SkinId).value = 0;
+	}
+	if( e.id == "zex:drive" ){
+		//print(`animation`);
+		const color = e.sourceEntity.getDynamicProperty(`color`);
+		const rotate = e.sourceEntity.getDynamicProperty(`rotate`);
+		const dmg = e.sourceEntity.getDynamicProperty(`dmg`);
+		const deg = Math.floor(Math.random()*180);
+		summonBladeShadow2(e.sourceEntity,color,deg);
+		summonBladeShadow2(e.sourceEntity,color,360-deg);
+		e.sourceEntity.dimension.playSound( `item.trident.throw`,e.sourceEntity.location,{ pitch:0.7, volume:3 });
 	}
 	else if( e.id == "zex:setsa" ){	
 		const user = e.sourceEntity;
@@ -475,15 +557,14 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			world.scoreboard.getObjective(`blade`).setScore(player,0);
 			score = 0;
 		 }
-		else if(score > 160){ 
-			world.scoreboard.getObjective(`blade`).setScore(player,160);
-			score = 160;
+		else if(score > 224){ 
+			world.scoreboard.getObjective(`blade`).setScore(player,224);
+			score = 224;
 		}
 		let bar = score % 32;
 		//S,SS,SSS mode
-		if( r >= 4 ){
-			bar = score - 32 * 4;
-			r = 4 + Math.floor(bar / 11); 
+		if( score >= 224 ){
+			bar = 32
 		}
 
 		//type 00, 01, 02, ...
@@ -518,7 +599,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					user.addTag(`sprint`);
 					let abs_v = 4;
 					let d = user.getViewDirection();
-					user.applyKnockback(d.x,d.z,abs_v,0);
+					user.applyKnockback({ x:abs_v*d.x,z:abs_v*d.z },0);
 					//user.addEffect(`hunger`,20,{ amplifier:20 });
 					user.dimension.playSound(`mob.shulker.teleport`,user.location,{ pitch:1.2, volume:3 });
 				}
@@ -557,7 +638,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				if( user.isJumping && user.getVelocity().y < 0 ){
 					const victims = user.dimension.getEntities({location:user.location,maxDistance:1.5,closest:1,excludeTypes:bladeNoEnemyStepEntities,excludeNames:[ user.nameTag ] });
 					if( victims.length > 0 ){
-						user.applyKnockback(0,0,0,0.6);
+						user.applyKnockback({ x:0,z:0 },0.6);
 						user.removeTag(`jumped`);
 						user.addEffect(`resistance`,10,{ amplifier:20 });
 					}
@@ -566,7 +647,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 
 			if( user.isJumping && !user.hasTag(`jumped`) && user.isSneaking && !user.isOnGround && user.getVelocity().y < 0 ){
 				//user.clearVelocity();
-				user.applyKnockback(0,0,0,-(0.5*user.getVelocity().y)+0.8);
+				user.applyKnockback({ x:0,z:0 },-(0.5*user.getVelocity().y)+0.8);
 				user.addTag(`jumped`);
 				user.dimension.playSound(`mob.shulker.teleport`,user.location,{ pitch:1.2, volume:3 });
 			}

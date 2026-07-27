@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.20",
+  "format_version": "1.21.100",
   "minecraft:item": {
     "description": {
       "identifier": "blade:aquablaze",
@@ -55,7 +55,7 @@
       },
       "minecraft:enchantable": {
         "value": 14,
-        "slot": "sword"
+        "slot": "all"
       },
       "minecraft:rarity": "epic"
     }

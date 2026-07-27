@@ -16,7 +16,8 @@
                 ]
             },
             "properties": {
-                "zex:rotate": { "client_sync": true, "type": "int", "default": 0, "range": [0, 359] }
+                "zex:rotate": { "client_sync": true, "type": "int", "default": 0, "range": [0, 359] },
+                "zex:rotatey": { "client_sync": true, "type": "int", "default": 0, "range": [-360, 359] }
             }
         },
         "component_groups": {

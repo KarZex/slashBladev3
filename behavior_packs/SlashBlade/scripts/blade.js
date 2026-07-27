@@ -17,6 +17,10 @@ export const bladeData = {
       "id": "fire_aspect",
       "lvl": 2
     },
+    "ench4": {
+      "id": "power",
+      "lvl": 5
+    },
     "insa": "C"
   },
   "slashblade": {
@@ -361,6 +365,10 @@ export const bladeData = {
     "ench4": {
       "id": "fire_aspect",
       "lvl": 2
+    },
+    "ench5": {
+      "id": "power",
+      "lvl": 5
     },
     "insa": "waveedge"
   },

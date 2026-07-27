@@ -40,18 +40,7 @@
 							"acombo2_pre" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
-							"acombo1_reset" : "query.state_time > 2.0"
-						},
-						{
-							"default" : "query.is_on_ground"
-						}
-					]
-				},
-				"acombo1_reset":{
-					"animations" : [ "acombo1_reset" ],
-					"transitions" : [
-						{
-							"default" : "query.state_time > 1.0"
+							"default" : "query.is_on_ground || query.state_time > 2.0"
 						}
 					]
 				},
@@ -76,18 +65,7 @@
 							"acombo3b_pre" : "query.is_using_item && query.state_time > 0.75"
 						},
 						{
-							"acombo2_reset" : "query.state_time > 2.0"
-						},
-						{
-							"default" : "query.is_on_ground"
-						}
-					]
-				},
-				"acombo2_reset":{
-					"animations" : [ "acombo2_reset" ],
-					"transitions" : [
-						{
-							"default" : "query.state_time > 1.0"
+							"default" : "query.is_on_ground || query.state_time > 2.0"
 						}
 					]
 				},
@@ -121,15 +99,7 @@
 							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
 						},
 						{
-							"acombo3_reset" : "query.state_time > 2.0"
-						}
-					]
-				},
-				"acombo3_reset":{
-					"animations" : [ "acombo3_reset" ],
-					"transitions" : [
-						{
-							"default" : "query.state_time > 1.0"
+							"default" : "query.is_on_ground || query.state_time > 2.0"
 						}
 					]
 				},
@@ -151,10 +121,7 @@
 							"acombo4b_pre" : "query.is_using_item && query.state_time > 0.15 && query.state_time <= 1"
 						},
 						{
-							"acombo3b_reset" : "query.state_time > 2.0"
-						},
-						{
-							"default" : "query.is_on_ground"
+							"default" : "query.is_on_ground || query.state_time > 2.0"
 						}
 					]
 				},
@@ -196,7 +163,7 @@
 							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
 						},
 						{
-							"acombo4b_reset" : "query.state_time > 2.0"
+							"default" : "query.state_time > 2.0"
 						}
 					]
 				},
@@ -239,7 +206,7 @@
 							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
 						},
 						{
-							"acombo3_reset" : "query.state_time > 2.0"
+							"default" : "query.state_time > 2.0"
 						}
 					]
 				},
@@ -287,14 +254,6 @@
 						}
 					]
 				},
-				"gcombo1_reset":{
-					"animations" : [ "gcombo1_reset" ],
-					"transitions" : [
-						{
-							"default" : "query.state_time > 1.0"
-						}
-					]
-				},
 				"gcombo2_pre" : {
 					"animations" : [ "gcombo2_pre" ],
 					"transitions" : [
@@ -317,14 +276,6 @@
 						},
 						{
 							"default" : "!query.is_on_ground || query.state_time > 1.0"
-						}
-					]
-				},
-				"gcombo2_reset":{
-					"animations" : [ "gcombo2_reset" ],
-					"transitions" : [
-						{
-							"default" : "query.state_time > 1.0"
 						}
 					]
 				},
@@ -353,14 +304,6 @@
 						}
 					]
 				},
-				"gcombo3_reset":{
-					"animations" : [ "gcombo3_reset" ],
-					"transitions" : [
-						{
-							"default" : "query.state_time > 1.0"
-						}
-					]
-				},
 				"gcombo3c_pre" : {
 					"animations" : [ "gcombo3_pre" ],
 					"transitions" : [
@@ -376,15 +319,22 @@
 					"animations" : [ "gcombo3c" ],
 					"transitions" : [
 						{
-							"default" : "query.state_time > 2.5"
-						}
-					]
-				},
-				"gcombo3c_reset":{
-					"animations" : [ "gcombo3c_reset" ],
-					"transitions" : [
+							"gcombo_pre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
+						},
 						{
-							"default" : "query.state_time > 1.0"
+							"acombo_pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
+						},
+						{
+							"melee" : "query.is_delayed_attacking && !query.is_using_item"
+						},
+						{
+							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
+						},
+						{
+							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
+						},
+						{
+							"default" : "query.state_time > 2.5"
 						}
 					]
 				},
@@ -403,15 +353,22 @@
 					"animations" : [ "gcombo4" ],
 					"transitions" : [
 						{
-							"default" : "query.state_time > 2.5"
-						}
-					]
-				},
-				"gcombo4_reset":{
-					"animations" : [ "gcombo4_reset" ],
-					"transitions" : [
+							"gcombo_pre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
+						},
 						{
-							"default" : "query.state_time > 1.0"
+							"acombo_pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
+						},
+						{
+							"melee" : "query.is_delayed_attacking && !query.is_using_item"
+						},
+						{
+							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
+						},
+						{
+							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
+						},
+						{
+							"default" : "query.state_time > 2.5"
 						}
 					]
 				},
@@ -430,15 +387,22 @@
 					"animations" : [ "gcombo4b" ],
 					"transitions" : [
 						{
-							"default" : "query.state_time > 3.5"
-						}
-					]
-				},
-				"gcombo4b_reset":{
-					"animations" : [ "gcombo4b_reset" ],
-					"transitions" : [
+							"gcombo_pre" : "query.is_using_item && !query.is_sneaking && query.is_on_ground"
+						},
 						{
-							"default" : "query.state_time > 1.0"
+							"acombo_pre" : "query.is_using_item && !query.is_sneaking && !query.is_on_ground"
+						},
+						{
+							"melee" : "query.is_delayed_attacking && !query.is_using_item"
+						},
+						{
+							"fall" : "query.is_sneaking && !query.is_jumping && query.is_using_item && !query.is_on_ground"
+						},
+						{
+							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
+						},
+						{
+							"default" : "query.state_time > 3.5"
 						}
 					]
 				},

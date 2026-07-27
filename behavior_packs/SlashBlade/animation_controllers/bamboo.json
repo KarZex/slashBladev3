@@ -42,6 +42,30 @@
         }
       }
     },
+    "controller.animation.drive": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/scriptevent zex:drive"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/scriptevent zex:drive"
+          ]
+        }
+      }
+    },
     "controller.animation.smoke": {
       "states": {
         "default": {

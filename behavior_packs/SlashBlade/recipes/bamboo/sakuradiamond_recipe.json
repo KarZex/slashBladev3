@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:sakuradiamond_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:sakuradiamond_block"
+      }
+    },
+    "result": {
+      "item": "zex:sakuradiamond",
+      "count": 9
+    }
+  }
+  
+}

@@ -3,7 +3,7 @@ import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
 import { bladeImmuneEntities} from "./config"
 
-const dimension = world.getDimension(`overworld`);
+//const dimension = world.getDimension(`overworld`);
 
 export class drive {
   cost = 10
@@ -15,7 +15,7 @@ export class drive {
     const V = user.getViewDirection();
     const FirePos = {
       x: O.x,
-      y: O.y + 1.125,
+      y: O.y + 1.62,
       z: O.z 
     }
     const shootView = {
@@ -24,8 +24,14 @@ export class drive {
       z: V.z * power 
     }
     const fire = user.dimension.spawnEntity(`safire:drive`,FirePos);
-    fire.getComponent(`minecraft:projectile`).owner = user
+    fire.getComponent(`minecraft:projectile`).owner = user;
+    fire.setDynamicProperty(`color`,bladeData[`${blade.typeId.split(`:`)[1]}`][`color`]);
+    fire.setDynamicProperty(`dmg`,bladeData[`${blade.typeId.split(`:`)[1]}`][`damage`]);
+    fire.setDynamicProperty(`rotate`,user.getRotation().y)
+    //fire.setRotation({y:user.getRotation().y,x:0});
     fire.getComponent(`minecraft:projectile`).shoot( shootView );
+    user.dimension.playSound(`mob.wither.hurt`,O,{ pitch:0.55, volume:3 });
+    //fire.setRotation({y:user.getRotation().y,x:0});
   }
 }
 
