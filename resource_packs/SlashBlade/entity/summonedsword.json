@@ -4,10 +4,26 @@
       "description": {
         "identifier": "safire:summonedsword",
         "materials": {
-          "default": "entity_alphablend"
+          "default": "entity_emissive_alpha"
         },
         "textures": {
-          "default": "textures/entity/airblade"
+        "default": "textures/entity/sa/sa_0",
+        "white":"textures/entity/sa/sa_0",
+        "orange":"textures/entity/sa/sa_1",
+        "magenta":"textures/entity/sa/sa_2",
+        "light_blue":"textures/entity/sa/sa_3",
+        "yellow":"textures/entity/sa/sa_4",
+        "lime":"textures/entity/sa/sa_5",
+        "pink":"textures/entity/sa/sa_6",
+        "gray":"textures/entity/sa/sa_7",
+        "light_gray":"textures/entity/sa/sa_8",
+        "cyan":"textures/entity/sa/sa_9",
+        "purple":"textures/entity/sa/sa_10",
+        "blue":"textures/entity/sa/sa_11",
+        "brown":"textures/entity/sa/sa_12",
+        "green":"textures/entity/sa/sa_13",
+        "red":"textures/entity/sa/sa_14",
+        "black":"textures/entity/sa/sa_15"
         },
         "geometry": {
           "default": "geometry.summonedsword"
@@ -21,7 +37,7 @@
           "fly": "animation.airblade.rolling"
         },
         "render_controllers": [ 
-          "controller.render.arrow" 
+          "controller.render.bladeshadow"
         ]
       }
     }
