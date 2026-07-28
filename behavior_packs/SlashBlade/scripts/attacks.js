@@ -54,7 +54,7 @@ export function SummonedswordLine( user,blade,bladeSlot ){
         y: V.y * power,
         z: V.z * power 
         }
-        const color = bladeData[`${blade.typeId.split(`:`)[1]}`]["color"]
+        const color = bladeData[`${blade.typeId.split(`:`)[1]}`]["color"];
         const fire = user.dimension.spawnEntity(`safire:summonedsword`,FirePos);
         fire.getComponent(`minecraft:projectile`).owner = user
         fire.triggerEvent(`${color}`);
