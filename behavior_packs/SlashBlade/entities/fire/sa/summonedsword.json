@@ -6,17 +6,108 @@
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier":"minecraft:arrow",
+      "runtime_identifier": "minecraft:arrow",
       "scripts": {
-	    "animate": [ "walk" ]
-	  },
-	  "animations": {
-	    "walk": "controller.animation.ding"
-	  }
+        "animate": [
+          "walk"
+        ]
+      },
+      "animations": {
+        "walk": "controller.animation.ding"
+      }
+    },
+    "component_groups": {
+      "despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
+      },
+      "white": {
+        "minecraft:skin_id": {
+          "value": 0
+        }
+      },
+      "orange": {
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+      "magenta": {
+        "minecraft:skin_id": {
+          "value": 2
+        }
+      },
+      "light_blue": {
+        "minecraft:skin_id": {
+          "value": 3
+        }
+      },
+      "yellow": {
+        "minecraft:skin_id": {
+          "value": 4
+        }
+      },
+      "lime": {
+        "minecraft:skin_id": {
+          "value": 5
+        }
+      },
+      "pink": {
+        "minecraft:skin_id": {
+          "value": 6
+        }
+      },
+      "gray": {
+        "minecraft:skin_id": {
+          "value": 7
+        }
+      },
+      "light_gray": {
+        "minecraft:skin_id": {
+          "value": 8
+        }
+      },
+      "cyan": {
+        "minecraft:skin_id": {
+          "value": 9
+        }
+      },
+      "purple": {
+        "minecraft:skin_id": {
+          "value": 10
+        }
+      },
+      "blue": {
+        "minecraft:skin_id": {
+          "value": 11
+        }
+      },
+      "brown": {
+        "minecraft:skin_id": {
+          "value": 12
+        }
+      },
+      "green": {
+        "minecraft:skin_id": {
+          "value": 13
+        }
+      },
+      "red": {
+        "minecraft:skin_id": {
+          "value": 14
+        }
+      },
+      "black": {
+        "minecraft:skin_id": {
+          "value": 15
+        }
+      }
     },
     "components": {
       "minecraft:type_family": {
-        "family": [ "sabullet"]
+        "family": [
+          "sabullet"
+        ]
       },
       "minecraft:damage_sensor": {
         "triggers": [
@@ -47,17 +138,138 @@
         ],
         "catch_fire": false
       },
-				"minecraft:explode": {
-				"fuse_length": 10,
-				"fuse_lit": true,
-				"power": 0,
-				"causes_fire": false
-			},
+      "minecraft:explode": {
+        "fuse_length": 10,
+        "fuse_lit": true,
+        "power": 0,
+        "causes_fire": false
+      },
       "minecraft:collision_box": {
         "width": 3.0,
         "height": 0.5
       },
-	    "minecraft:physics": {}
-		}
-	}
+      "minecraft:physics": {}
+    },
+    "events": {
+      "zex:despawn": {
+        "add": {
+          "component_groups": [
+            "despawn"
+          ]
+        }
+      },
+      "white": {
+        "add": {
+          "component_groups": [
+            "white"
+          ]
+        }
+      },
+      "orange": {
+        "add": {
+          "component_groups": [
+            "orange"
+          ]
+        }
+      },
+      "magenta": {
+        "add": {
+          "component_groups": [
+            "magenta"
+          ]
+        }
+      },
+      "light_blue": {
+        "add": {
+          "component_groups": [
+            "light_blue"
+          ]
+        }
+      },
+      "yellow": {
+        "add": {
+          "component_groups": [
+            "yellow"
+          ]
+        }
+      },
+      "lime": {
+        "add": {
+          "component_groups": [
+            "lime"
+          ]
+        }
+      },
+      "pink": {
+        "add": {
+          "component_groups": [
+            "pink"
+          ]
+        }
+      },
+      "gray": {
+        "add": {
+          "component_groups": [
+            "gray"
+          ]
+        }
+      },
+      "light_gray": {
+        "add": {
+          "component_groups": [
+            "light_gray"
+          ]
+        }
+      },
+      "cyan": {
+        "add": {
+          "component_groups": [
+            "cyan"
+          ]
+        }
+      },
+      "purple": {
+        "add": {
+          "component_groups": [
+            "purple"
+          ]
+        }
+      },
+      "blue": {
+        "add": {
+          "component_groups": [
+            "blue"
+          ]
+        }
+      },
+      "brown": {
+        "add": {
+          "component_groups": [
+            "brown"
+          ]
+        }
+      },
+      "green": {
+        "add": {
+          "component_groups": [
+            "green"
+          ]
+        }
+      },
+      "red": {
+        "add": {
+          "component_groups": [
+            "red"
+          ]
+        }
+      },
+      "black": {
+        "add": {
+          "component_groups": [
+            "black"
+          ]
+        }
+      }
+    }
+  }
 }
