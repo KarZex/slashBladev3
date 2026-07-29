@@ -454,7 +454,7 @@ export const bladeData = {
     "damage": 7,
     "damageplus": 17,
     "sound": "swingblade.c",
-    "color": "orange",
+    "color": "red",
     "ench1": {
       "id": "unbreaking",
       "lvl": 3
@@ -467,7 +467,7 @@ export const bladeData = {
       "id": "bane_of_arthropods",
       "lvl": 5
     },
-    "insa": "flamethrower"
+    "insa": "fire_spiral"
   },
   "kamuy_lightning": {
     "damage": 7,

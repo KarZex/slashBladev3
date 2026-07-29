@@ -1,0 +1,35 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "blade:yuzukitukumo.blade_drop_item",
+      "item": {
+        "blade:yuzukitukumo": "query.owner_identifier == 'zex:blade_drop_item'"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/models/yuzukitukumo"
+      },
+      "geometry": {
+        "default": "geometry.blade2"
+      },
+      "animations": {
+        "root": "animation.sword.blade_drop_item",
+        "fly": "animation.sword.blade_drop_item_air"
+      },
+      "scripts": {
+        "animate": [
+          "root",
+          {
+            "fly": "!q.is_on_ground"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

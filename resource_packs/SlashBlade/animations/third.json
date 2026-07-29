@@ -1,23 +1,6 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.sword.stand": {
-			"loop": true,
-			"bones": {
-				"rightArm": {
-					"rotation": [-5, 0, 0],
-					"position": [-26, 22.25, 3.75]
-				},
-				"leftArm": {
-					"rotation": [-12.5, 0, 0]
-				},
-				"sword": {
-					"rotation": [180.6574, -7.4713, -95.04292],
-					"position": [-3, 4.48288, -0.3922],
-					"scale": 0.3
-				}
-			}
-		},
 		"animation.sword.third": {
 			"loop": true,
 			"bones": {
@@ -34,7 +17,10 @@
 				}
 			}
 		},
-		"animation.sword.linearstand1": {
+		"animation.sword.new": {
+			"loop": true
+		},
+		"animation.sword.stand": {
 			"loop": true,
 			"bones": {
 				"rightArm": {
@@ -45,8 +31,8 @@
 					"rotation": [-12.5, 0, 0]
 				},
 				"sword": {
-					"rotation": [180, -7.5, -90],
-					"position": [-1, 6.48288, -0.3922],
+					"rotation": [180.6574, -7.4713, -95.04292],
+					"position": [-3, 4.48288, -0.3922],
 					"scale": 0.3
 				}
 			}
@@ -147,16 +133,9 @@
 		"animation.sword.linearstand2": {
 			"loop": true,
 			"bones": {
-				"rightArm": {
-					"rotation": [-5, 0, 0],
-					"position": [-26, 22.25, 3.75]
-				},
-				"leftArm": {
-					"rotation": [-12.5, 0, 0]
-				},
 				"sword": {
-					"rotation": [180, -7.5, -90],
-					"position": [-3, 6.73288, -0.3922],
+					"rotation": [180.9845, -7.4355, -97.5639],
+					"position": [-33, 24.73288, 0.6078],
 					"scale": 0.3
 				},
 				"bone41": {
@@ -165,6 +144,59 @@
 				},
 				"swordat": {
 					"position": [0, -10, 0]
+				},
+				"leftArm": {
+					"rotation": [-12.5, 0, 0]
+				},
+				"rightArm": {
+					"rotation": [-5, 0, 0],
+					"position": [-26, 22.25, 3.75]
+				}
+			}
+		},
+		"animation.sword.linearstand1": {
+			"loop": true,
+			"bones": {
+				"sword": {
+					"rotation": [180.9845, -7.4355, -97.5639],
+					"position": [-33, 24.73288, 0.6078],
+					"scale": 0.3
+				},
+				"bone41": {
+					"position": [0, -10, 0]
+				},
+				"swordat": {
+					"position": [0, -10, 0]
+				}
+			}
+		},
+		"animation.sword.blade_drop_item": {
+			"loop": true,
+			"bones": {
+				"sword": {
+					"rotation": [180.9845, -7.4355, -97.5639],
+					"position": [-33, 24.73288, 0.6078],
+					"scale": 0.3
+				},
+				"bone41": {
+					"rotation": [-101.8818, 65.1848, -273.2839],
+					"position": [-24.09162, -120.80334, 56.25135]
+				},
+				"swordat": {
+					"rotation": [0, 0, 105],
+					"position": [94.47874, -80.93872, -15.6992]
+				}
+			}
+		},
+		"animation.sword.blade_drop_item_air": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"sword": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -360, 0]
+					}
 				}
 			}
 		}

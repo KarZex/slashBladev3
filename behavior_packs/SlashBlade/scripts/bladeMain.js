@@ -1,9 +1,9 @@
-import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, ItemComponentTypes,EnchantmentType, EntityDamageCause, EnchantmentTypes, EffectType, EffectTypes, Effect, EntityIsShakingComponent, InputButton, EntitySwingSource  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, ItemComponentTypes,EnchantmentType, EntityDamageCause, EnchantmentTypes, EffectType, EffectTypes, Effect, EntityIsShakingComponent, InputButton, EntitySwingSource, EntityInitializationCause, ItemStack  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
 import { classReg, drive, slashdimension } from "./saData";
 import "./compornents";
-import { playBladeSound,isMoving , absVector3,roundTo,print,setBladeDamage,callDamage  } from "./usefulFunction";
+import { playBladeSound,isMoving , absVector3,roundTo,print,setBladeDamage,callDamage,Vector2Sub ,getVector3E,DistanceVector3 } from "./usefulFunction";
 import { summonBladeShadow2,SummonedswordLine,rangeAttackE,rapidSlash,risingStar,bladeComboG1,bladeComboG2,bladeComboG3,bladeComboG3_C,bladeComboG4_A,bladeComboG4_B,bladeComboA1,bladeComboA2,bladeComboA3,bladeComboA3_B,bladeComboA4_B, summonBladeShadow3  } from "./attacks";
 import { bladeImmuneEntities,bladeNoEnemyStepEntities,SNEAK_TIME } from "./config";
 
@@ -77,13 +77,14 @@ function bladeInstant( user,blade ){
 	const attack = bladeData[`${bladeId}`][`damage`];
 	const mac = bladeData[`${bladeId}`][`damageplus`];
 	blade.setLore([
-		`§rKillCount: ${blade.getDynamicProperty("killCount")}`,
-		`§rProudSoul: ${blade.getDynamicProperty("ProudSoul")}`,
-		`§rRefine: ${blade.getDynamicProperty("Refine")}`,
-		`§rSA: ${blade.getDynamicProperty("sa")}`,
-		`§r§4RankAttackDamage`,
-		`§r§6B-SS§r/§cSSS§r/§5Limit`,
-		`§r§6+${attack}.0§r/§c+${attack}.0§r/§5+${mac}.0`
+		{ text : `§rKillCount: ${blade.getDynamicProperty("killCount")}`},
+		{ text :`§rProudSoul: ${blade.getDynamicProperty("ProudSoul")}`},
+		//{ text:`§rRefine: ${blade.getDynamicProperty("Refine")}`},
+		{ text:``},
+		{ rawtext : [ { text: `§rSA:`},{ translate: `script.sa:${blade.getDynamicProperty("sa")}.name`}]},
+		{ text:`§r§4RankAttackDamage`},
+		{ text:`§r§6B-SS§r/§cSSS§r/§5Limit`},
+		{ text:`§r§6+${attack}.0§r/§c+${attack}.0§r/§5+${mac}.0`}
 	]);
 }
 
@@ -91,16 +92,16 @@ function bladeSoulcal( user,blade ){
 	const xp = user.getTotalXp();
 	const bladeId = blade.typeId.split(`:`)[1];
 	const Tblade = user.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
-	if ( Tblade.getComponent(ItemComponentTypes.Durability).damage < blade.getDynamicProperty(`currentDurability`) ){
-		blade.setDynamicProperty("currentDurability",Tblade.getComponent(ItemComponentTypes.Durability).damage);
-		const Refine = blade.getDynamicProperty("Refine") + 1;
-		blade.setDynamicProperty("Refine",Refine);
-		blade.setDynamicProperty("damagemax",bladeData[`${bladeId}`][`damageplus`] + Refine);
-		const lore = blade.getLore();
-		lore[2] = `§rRefine: ${Refine}`;
-		lore[6] = `§r§6+${bladeData[`${bladeId}`][`damage`]}.0§r/§c+${blade.getDynamicProperty("damage")}.0§r/§5+${blade.getDynamicProperty("damagemax")}.0`;
-		blade.setLore(lore);
-	}
+	// if ( Tblade.getComponent(ItemComponentTypes.Durability).damage < blade.getDynamicProperty(`currentDurability`) ){
+	// 	blade.setDynamicProperty("currentDurability",Tblade.getComponent(ItemComponentTypes.Durability).damage);
+	// 	const Refine = blade.getDynamicProperty("Refine") + 1;
+	// 	blade.setDynamicProperty("Refine",Refine);
+	// 	blade.setDynamicProperty("damagemax",bladeData[`${bladeId}`][`damageplus`] + Refine);
+	// 	const lore = blade.getLore();
+	// 	lore[2] = `§rRefine: ${Refine}`;
+	// 	lore[6] = `§r§6+${bladeData[`${bladeId}`][`damage`]}.0§r/§c+${blade.getDynamicProperty("damage")}.0§r/§5+${blade.getDynamicProperty("damagemax")}.0`;
+	// 	blade.setLore(lore);
+	// }
 	if ( blade.getDynamicProperty(`damagemax`) - bladeData[`${bladeId}`][`damage`] < user.level ){
 		blade.setDynamicProperty("damage",blade.getDynamicProperty(`damagemax`));
 		const lore = blade.getLore();
@@ -127,7 +128,7 @@ function bladeSoulcal( user,blade ){
 }
 
 
-async function bladeSwing( user,blade,IsOnGround,sound ){   
+async function bladeSwing( user,blade,IsOnGround,sound ){
 	let sound2 = `item.trident.throw`;
 	if( sound != `swingblade.c` ){
 		sound2 = sound;
@@ -455,7 +456,7 @@ world.afterEvents.projectileHitEntity.subscribe( async e => {
 	else if( e.projectile.typeId == "safire:flamethrower" ){
 		const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
 		const sa = new classRef();
-		const dmg = sa.damage + callDamage(attacker.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand),world.scoreboard.getObjective(`blade`).getScore(attacker));;
+		const dmg = sa.damage + callDamage(attacker.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand),world.scoreboard.getObjective(`blade`).getScore(attacker));
 		let vict = e.getEntityHit().entity;
 		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
 		vict.setOnFire(5);
@@ -464,6 +465,45 @@ world.afterEvents.projectileHitEntity.subscribe( async e => {
 		world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
 	}
 })
+
+world.afterEvents.entityItemDrop.subscribe( e => {
+	const items = e.items;
+	for( let i = 0; i < items.length; i++ ){
+		const itemEntity = items[i]
+		if( itemEntity.getComponent(EntityComponentTypes.Item).itemStack.typeId.includes(`blade:`) ){
+			const blade = itemEntity.getComponent(EntityComponentTypes.Item).itemStack;
+			const V = itemEntity.getVelocity()
+			const bladeDropEntity = itemEntity.dimension.spawnEntity(`zex:blade_drop_item`,itemEntity.location);
+			//bladeDropEntity.addItem(blade)
+			bladeDropEntity.getComponent(EntityComponentTypes.Inventory).container.setItem(0,blade);
+			bladeDropEntity.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${blade.typeId}`);
+			bladeDropEntity.addEffect(`invisibility`,19999999,{ showParticles:false });
+			//print(`${bladeDropEntity.getComponent(EntityComponentTypes.Equippable).isValid}`)
+			bladeDropEntity.applyImpulse(V);
+			itemEntity.remove();
+		}
+	}
+} )
+
+world.afterEvents.entityHitEntity.subscribe( e => {
+	const victim = e.hitEntity;
+	const attacker = e.damagingEntity;
+	if( victim.typeId == "zex:blade_drop_item" ){
+		const blade = victim.getComponent(EntityComponentTypes.Inventory).container.getItem(0);
+		attacker.addItem(blade);
+		victim.remove()
+	}
+} )
+
+world.afterEvents.playerInteractWithEntity.subscribe( e => {
+	const victim = e.target;
+	const attacker = e.player;
+	if( victim.typeId == "zex:blade_drop_item" ){
+		const blade = victim.getComponent(EntityComponentTypes.Inventory).container.getItem(0);
+		attacker.addItem(blade);
+		victim.remove()
+	}
+} )
 
 world.afterEvents.entityDie.subscribe( e => {
 	try{
@@ -490,8 +530,15 @@ world.afterEvents.entityDie.subscribe( e => {
 
 		}
 		if( e.deadEntity.typeId == `wither` && world.gameRules.doMobLoot ){
-				const loc = e.deadEntity.location;
-				killer.dimension.runCommand(`loot spawn ${loc.x} ${loc.y} ${loc.z} loot entities/sange`);
+			const loc = e.deadEntity.location;
+			const blade = new ItemStack(`blade:sange`,1);
+			//const V = itemEntity.getVelocity()
+			const bladeDropEntity = e.deadEntity.dimension.spawnEntity(`zex:blade_drop_item`,loc);
+			//bladeDropEntity.addItem(blade)
+			bladeDropEntity.getComponent(EntityComponentTypes.Inventory).container.setItem(0,blade);
+			bladeDropEntity.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${blade.typeId}`);
+			bladeDropEntity.addEffect(`invisibility`,19999999,{ showParticles:false });
+			//print(`${bladeDropEntity.getComponent(EntityComponentTypes.Equippable).isValid}`)
 		}
 	}catch{}
 
@@ -500,11 +547,15 @@ world.afterEvents.entityDie.subscribe( e => {
 
 system.afterEvents.scriptEventReceive.subscribe( e => {
 	if( e.id == "zex:skinid" ){	
-		print(`animation`)
-		let M = e.message.split(` `);
-		const entity = e.sourceEntity;
-		entity.playAnimation(`animation.bladehuman.a1`);
-		entity.getComponent(EntityComponentTypes.SkinId).value = 0;
+		const loc = e.sourceEntity.location;
+		const blade = new ItemStack(`blade:sange`,1);
+		//const V = itemEntity.getVelocity()
+		const bladeDropEntity = e.sourceEntity.dimension.spawnEntity(`zex:blade_drop_item`,loc);
+		//bladeDropEntity.addItem(blade)
+		bladeDropEntity.getComponent(EntityComponentTypes.Inventory).container.setItem(0,blade);
+		bladeDropEntity.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${blade.typeId}`);
+		bladeDropEntity.addEffect(`invisibility`,19999999,{ showParticles:false });
+		//print(`${bladeDropEntity.getComponent(EntityComponentTypes.Equippable).isValid}`)
 	}
 	if( e.id == "zex:drive" ){
 		//print(`animation`);
@@ -526,9 +577,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		bladeSlot.setLore(lore);
 	}
 	else if( e.id == "zex:slashdim" ){	
-		try{
+
 			const fire = e.sourceEntity;
-			const user = world.getPlayers({name:fire.getDynamicProperty(`zex:owner`)})[0];
+			const user = world.getEntity(`${fire.getDynamicProperty(`zex:owner`)}`)
 			const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
 			const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);//({location:user.location,maxDistance:1.5,closest:1,excludeNames:[ user.nameTag ] });
 			const victims = fire.dimension.getEntities({location:fire.location,maxDistance:1.5,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
@@ -536,6 +587,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				for( let i = 0; i < victims.length; i++ ){
 					if( victims[i].nameTag != user.nameTag ){
 						victims[i].applyDamage( 3,{ cause:`override`,damagingEntity:user });
+						victims[i].applyKnockback({ x:0,z:0 },0);
 						world.scoreboard.getObjective(`blade`).addScore(user,4);
 						if( bladeItemEnch.hasEnchantment("minecraft:fire_aspect") ){
 							victims[i].setOnFire(5);
@@ -543,10 +595,22 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					}
 				}
 			}
-		}
-		catch{
-
-		}
+			const victims2 = fire.dimension.getEntities({location:fire.location,maxDistance:3,minDistance:2,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
+			if( victims2.length > 0 ){
+				for( let i = 0; i < victims2.length; i++ ){
+					if( victims2[i].nameTag != user.nameTag ){
+						const P0 = fire.location;
+						const Pi = victims2[i].location;
+						let abs_v = DistanceVector3(Pi,P0);
+						//print(`${abs_v}`);
+						if( abs_v < 0 ){ abs_v = 0; }
+						const d = getVector3E(Vector2Sub(Pi,P0));
+						victims2[i].applyKnockback({ x:abs_v*d.x,z:abs_v*d.z },0);
+						try{
+						}catch{ print(`error`) }
+					}
+				}
+			}
 
 	}
 	else if( e.id == "zex:printlevel" ){

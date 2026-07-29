@@ -168,6 +168,23 @@ for row in csv_reader:
         with open("resource_packs/SlashBlade/attachables/replace/stand1/{}.json".format(blade_id),"w") as f:
             json.dump(gun_item,f,indent=2)
 
+        
+        with open("tool/blade_drop_item.json","r") as f:
+            gun_item = json.load(f)
+            gun_item["minecraft:attachable"]["description"]["identifier"] = "blade:{}.blade_drop_item".format(blade_id)
+            gun_item["minecraft:attachable"]["description"]["item"] = { "blade:{}".format(blade_id) : "query.owner_identifier == 'zex:blade_drop_item'" }
+            gun_item["minecraft:attachable"]["description"]["textures"]["default"] = "textures/models/{}".format(blade_id)
+            if blade_mate != "":
+                gun_item["minecraft:attachable"]["description"]["materials"]["default"] = "{}".format(blade_mate)
+            if blade_geo != "":
+                gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_geo)
+            else:
+                gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_id)
+            if blade_li == "T":
+                 gun_item["minecraft:attachable"]["description"]["animations"]["root"] = "animation.sword.blade_drop_item"
+        with open("resource_packs/SlashBlade/attachables/replace/drop_item/{}.json".format(blade_id),"w") as f:
+            json.dump(gun_item,f,indent=2)
+
 
         
         standrender_json["render_controllers"]["controller.render.bladeitem"]["arrays"]["geometries"]["Array.item_geo"].append("geometry.{}".format(blade_id))  

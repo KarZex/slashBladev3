@@ -1,0 +1,55 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "\n\u4f5c\u8005:Kar Zex\n\u30e2\u30c7\u30eb\u63d0\u4f9b\u8005\nkusnek:MGL140,Mosin-Nagant,PPSh-41,TT33\n\u3044\u306c\u3048\u30e2\u30f3:AWM\n\u3041\u6905\u5b50:Glock17,Glock18c,F-117\nMihono Bourbon:M9,MG42\n\u30d7\u30c1\u30cd\u30b3:Panzerfaust,M79.Mi-24d\n",
+        "name": "ServerManage",
+        "min_engine_version": [
+            1,
+            21,
+            100
+        ],
+        "uuid": "3c72b9fc-d27c-4014-b32d-42bd44d0be69",
+        "version": [
+            1,
+            21,
+            100
+        ]
+    },
+    "modules": [
+        {
+            "description": "Data Module",
+            "type": "data",
+            "uuid": "1763db36-82a3-4d05-8b1c-47506d53c0ea",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        },
+        {
+            "description": "Script API Module",
+            "language": "javascript",
+            "type": "script",
+            "uuid": "c891898d-9bf6-4acf-8717-14b1515e59a8",
+            "version": [
+                2,
+                0,
+                0
+            ],
+            "entry": "scripts/main.js"
+        }
+    ],
+    "capabilities": [
+        "script_eval"
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "2.8.0"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "2.0.0"
+        }
+    ]
+}

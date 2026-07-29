@@ -46,7 +46,7 @@ export function SummonedswordLine( user,blade,bladeSlot ){
         bladeSlot.setLore(lore);
         const FirePos = {
         x: O.x,
-        y: O.y + 1.125,
+        y: O.y + 1.62,
         z: O.z 
         }
         const shootView = {

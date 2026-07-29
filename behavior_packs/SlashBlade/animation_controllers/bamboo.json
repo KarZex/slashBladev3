@@ -130,6 +130,47 @@
         }
       }
     },
+    "controller.animation.blade_drop_item":{
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ground": "query.is_on_ground"
+            },
+            {
+              "fly2": "!query.is_on_ground"
+            }
+          ],
+          "on_entry": [
+            "/tag @s remove inground",
+            "/particle minecraft:endrod ~~~"
+          ]
+        },
+        "fly2": {
+          "transitions": [
+            {
+              "ground": "query.is_on_ground"
+            },
+            {
+              "default": "!query.is_on_ground"
+            }
+          ],
+          "on_entry": [
+            "/tag @s remove inground"
+          ]
+        },
+        "ground": {
+          "transitions": [
+            {
+              "default": "!query.is_on_ground"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add inground"
+          ]
+        }
+      }
+    },
     "controller.animation.saflame": {
       "states": {
         "default": {

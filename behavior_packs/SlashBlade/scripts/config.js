@@ -34,6 +34,8 @@ export const bladeImmuneEntities = [
     `zex:bladestand2`,
     `zex:chair`,
     `zex:bladeshadow`,
+    `safire:slashdim`,
+    `zex:blade_drop_item`,
     `safire:summonedsword`
 ]
 //エネミーステップを無効化するエンティティ
@@ -47,6 +49,8 @@ export const bladeNoEnemyStepEntities = [
     `zex:bladestand2`,
     `zex:chair`,
     `zex:bladeshadow`,
+    `safire:slashdim`,
+    `zex:blade_drop_item`,
     `safire:summonedsword`
 ]
 

@@ -1,0 +1,35 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "blade:lightsaber.blade_drop_item",
+      "item": {
+        "blade:lightsaber": "query.owner_identifier == 'zex:blade_drop_item'"
+      },
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/models/lightsaber"
+      },
+      "geometry": {
+        "default": "geometry.lightsaber"
+      },
+      "animations": {
+        "root": "animation.sword.blade_drop_item",
+        "fly": "animation.sword.blade_drop_item_air"
+      },
+      "scripts": {
+        "animate": [
+          "root",
+          {
+            "fly": "!q.is_on_ground"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

@@ -235,6 +235,17 @@ item.zex:samurai_green_chestplate=侍チェストプレート(緑)
 item.zex:samurai_green_leggings=侍レギンス(緑)
 item.zex:samurai_green_boots=侍ブーツ(緑)
 
+script.sa:drive.name=幻影刃
+script.sa:vdrive.name=幻影刃-縦
+script.sa:waveedge.name=波刀竜胆
+script.sa:spear.name=平突
+script.sa:circleslash.name=円刃
+script.sa:sakuraend.name=終焉桜
+script.sa:slashdimension.name=次元斬
+script.sa:fire_spiral.name=キムンリムセ
+script.sa:water_drive.name=ルヤンペチュイェ
+script.sa:lighting_swords.name=ニシコトロアイ
+
 script.zex:drive.name=Drive
 script.zex:slashdimension.name=Slash Dimension
 script.zex:vdrive.name=Vertical-Drive

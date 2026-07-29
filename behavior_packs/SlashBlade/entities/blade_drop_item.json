@@ -1,0 +1,101 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "zex:blade_drop_item",
+      "spawn_category": "creature",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+          "animate": [
+              "walk"
+          ]
+      },
+      "animations": {
+          "walk": "controller.animation.blade_drop_item"
+      }
+    },
+    "component_groups": {
+    },
+    "components": {
+      "minecraft:behavior.trade_with_player": {},
+      "minecraft:experience_reward": {
+        "on_death": "0"
+      },
+      "minecraft:timer": {
+        "time": 0.25,
+        "looping": true,
+        "time_down_event": {
+          "event": "zex:playsound",
+          "target": "self"
+        }
+      },
+      "minecraft:inventory": {
+        "inventory_size": 1,
+        "container_type": "container",
+        "private": true,
+        "restrict_to_owner": true
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 2
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "interact_text": "action.blade.getblade.name",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family","subject": "other","value": "player"}
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:health": {
+        "value": 32767,
+        "max": 32767
+      },
+      "minecraft:push_through": {
+        "value": 0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:physics": {
+        "has_collision": true,
+        "has_gravity": true,
+        "push_towards_closest_space": false
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+      }
+    },
+    "events": {
+      "zex:playsound":{
+        "queue_command": {
+          "command":"execute if entity @s[tag=!inground] run playsound swingblade.c @a ~~~ 2 2"
+        }
+      }
+    }
+  }
+}

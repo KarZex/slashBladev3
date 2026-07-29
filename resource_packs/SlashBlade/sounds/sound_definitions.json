@@ -1,12 +1,6 @@
 {
 	"format_version": "1.14.0",
 	"sound_definitions": {
- 		"swingblade.c": {
-			"category": "hostile",
-			"sounds": [
-				"sounds/blade"
-			]
-		},
 		"swingblade.sab": {
 		   "category": "hostile",
 		   "sounds": [
@@ -23,6 +17,18 @@
 			"category": "hostile",
 			"sounds": [
 				"sounds/lightsaber"
+			]
+		},
+ 		"swingblade.c": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sweep/Sweep_attack1",
+				"sounds/sweep/Sweep_attack2",
+				"sounds/sweep/Sweep_attack3",
+				"sounds/sweep/Sweep_attack4",
+				"sounds/sweep/Sweep_attack5",
+				"sounds/sweep/Sweep_attack6",
+				"sounds/sweep/Sweep_attack7"
 			]
 		}
   	}

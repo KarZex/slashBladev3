@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.asfweeg": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/structure load cheat ~~~",
+			"/kill @s"
+          ]
+        }
+      }
+    },
+    "controller.animation.asfweeg2": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ]
+        },
+        "ticking": {
+          "on_entry": [
+		        "/structure load villagerHack ~~~",
+			      "/kill @s"
+          ]
+        }
+      }
+    }
+  }
+}

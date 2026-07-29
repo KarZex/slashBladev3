@@ -2,14 +2,16 @@ import { world, system, EquipmentSlot, EntityComponentTypes, TicksPerSecond, Ite
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
 import { bladeImmuneEntities} from "./config"
-
+import { summonBladeShadow3,rangeAttack } from "./attacks"
+import { callDamage,Vector2Sub,getVector3E,absVector3 } from "./usefulFunction"
+ 
 //const dimension = world.getDimension(`overworld`);
 
 export class drive {
   cost = 10
   damage = 6;
   fireSa( blade, user ){
-    user.dimension.playSound(`swingblade.sab`,user.location,{ pitch:1, volume:3 });
+    //user.dimension.playSound(`swingblade.sab`,user.location,{ pitch:1, volume:3 });
     const power = 0.1;
     const O = user.location;
     const V = user.getViewDirection();
@@ -50,12 +52,12 @@ export class slashdimension {
       const attackPos = victims[0].location;
       const fire = user.dimension.spawnEntity(`safire:slashdim`,{ x:attackPos.x,y:attackPos.y+1,z:attackPos.z });
 			world.scoreboard.getObjective(`printlevel`).setScore(user,100);
-      fire.setDynamicProperty(`zex:owner`,user.nameTag);
+      fire.setDynamicProperty(`zex:owner`,user.id);
       user.dimension.playSound(`mob.wither.hurt`,O,{ pitch:0.55, volume:3 });
     }
     else{
       const fire = user.dimension.spawnEntity(`safire:slashdim`,O);
-      fire.setDynamicProperty(`zex:owner`,user.nameTag);
+      fire.setDynamicProperty(`zex:owner`,user.id);
       user.dimension.playSound(`mob.wither.hurt`,O,{ pitch:0.55, volume:3 });
     }
   }
@@ -91,7 +93,8 @@ export class spear {
     user.playSound(`random.explode`);
     world.scoreboard.getObjective(`around`).setScore(user,10);
     const d = user.getViewDirection();
-    user.applyKnockback(d.x,d.z,4,0)
+    const abs_v = 4;
+    user.applyKnockback({x:abs_v*d.x,z:abs_v*d.z},0);
   }
 }
 
@@ -115,18 +118,50 @@ export class circleslash {
     }
   }
 }
-export class flamethrower {
+export class fire_spiral {
   cost = 20
   damage = 2
   fireSa( blade, user ){
-    user.playSound(`swingblade.sab`);
+    //user.dimension.playSound(`mob.wither.hurt`,O,{ pitch:0.55, volume:3 });
     let FirePos = user.location;
+    user.dimension.playSound(`mob.wither.hurt`,FirePos,{ pitch:0.55, volume:3 });
     const viewLocation = user.getViewDirection();
     FirePos.y = FirePos.y + 1;
-    for( let i = 0; i < 16; i++ ){
-      const fire = user.dimension.spawnEntity(`safire:flamethrower`,FirePos);
-      fire.getComponent(`minecraft:projectile`).owner = user
-      fire.getComponent(`minecraft:projectile`).shoot( viewLocation,{  uncertainty:8 } );
+    user.dimension.spawnParticle(`zex:fire_spiral_particle`,user.location);
+    for( let i = 0; i < 6; i++ ){
+      let Rotate = user.getRotation().y+60*i;
+      if( Rotate >= 180 ){
+        Rotate = Rotate - 360;
+      }
+      
+      const pos = {
+        x:user.location.x + 3*Math.cos(2*Math.PI*Rotate/360),
+        y:user.location.y,
+        z:user.location.z + 3*Math.sin(2*Math.PI*Rotate/360)
+      }
+      summonBladeShadow3(pos,Rotate,user.dimension,"red",150);
+    }
+    const level = world.scoreboard.getObjective(`blade`).getScore(user);
+    let damage = callDamage( blade,level ) * 2;
+    const victims = user.dimension.getEntities({location:user.location,maxDistance:6,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
+    if( victims.length > 0 ){
+      //setBladeDamage(1,user);
+      for( let i = 0; i < victims.length; i++ ){
+        if( victims[i].nameTag != user.nameTag ){
+          try{
+            //victims[i].applyKnockback({ x:0,z:0 },0);
+            const P0 = user.location;
+            const Pi = victims[i].location;
+            const abs_v = 6;
+            const d = getVector3E(Vector2Sub(P0,Pi));
+            victims[i].applyKnockback({ x:abs_v*d.x,z:abs_v*d.z },2);
+          }
+          catch{}
+          victims[i].applyDamage( damage,{ cause:`override`,damagingEntity:user });
+          world.scoreboard.getObjective(`blade`).addScore(user,7 * ( 1 + 0.5 * 1));
+          victims[i].setOnFire(10);
+        }
+      }
     }
   }
 }
@@ -216,7 +251,7 @@ export const classReg = {
   vdrive,
   spear,
   circleslash,
-  flamethrower,
+  fire_spiral,
   waveedge,
   fireup,
   lighting_swords,

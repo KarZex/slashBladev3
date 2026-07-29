@@ -18,6 +18,26 @@ export function DistanceVector3( V1,V2 ){
     return Math.sqrt(distance_x + distance_y + distance_z);
 }
 
+export function Vector2Sub( V1,V2 ){
+    let distance_x = (V2.x - V1.x);
+    let distance_y = (V2.y - V1.y);
+    let distance_z = (V2.z - V1.z);
+    return {
+        x:distance_x,
+        y:distance_y,
+        z:distance_z
+    }
+}
+
+export function getVector3E( V ){
+    let distance = absVector3(V)
+    return {
+        x:V.x/distance,
+        y:V.y/distance,
+        z:V.z/distance
+    }
+}
+
 export function isMoving(user){
     const v = user.getVelocity();
     return (absVector3(v) > 0.01)
