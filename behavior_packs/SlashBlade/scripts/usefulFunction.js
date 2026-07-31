@@ -4,6 +4,15 @@ import { bladeImmuneEntities } from "./config"
 
 //world.getEntity(`a`).getVelocity()
 
+export function addProudSoul( p, bladeSlot ){
+    //const bladeSlot2 = world.getAllPlayers()[0].getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand)
+    const soul = bladeSlot.getDynamicProperty("ProudSoul") + p;
+    const lore = bladeSlot.getLore();
+    lore[2] = `§rProudSoul: ${soul}`;
+    bladeSlot.setLore(lore);
+    bladeSlot.setDynamicProperty("ProudSoul", soul );
+}
+
 export function absVector3( V ){
     let abs_x = V.x * V.x;
     let abs_y = V.y * V.y;

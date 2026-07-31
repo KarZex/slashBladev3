@@ -246,6 +246,13 @@ script.sa:fire_spiral.name=キムンリムセ
 script.sa:water_drive.name=ルヤンペチュイェ
 script.sa:lighting_swords.name=ニシコトロアイ
 
+script.sa:undefined.name= 
+script.blade:.name= 
+script.blade:uncommon.name=§8封§r
+script.blade:rare.name=§b印§r
+script.blade:epic.name=§d妖§r
+
+
 script.zex:drive.name=Drive
 script.zex:slashdimension.name=Slash Dimension
 script.zex:vdrive.name=Vertical-Drive
