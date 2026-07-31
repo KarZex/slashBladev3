@@ -54,6 +54,7 @@ for row in csv_reader:
         bladedata_json["{}".format(blade_id)]["damageplus"] = blade_attack_plus
         bladedata_json["{}".format(blade_id)]["sound"] = blade_sound
         bladedata_json["{}".format(blade_id)]["color"] = blade_color
+        bladedata_json["{}".format(blade_id)]["rare"] = blade_rare
 
         if blade_ench1 != "":
             Ench = blade_ench1.split("-")

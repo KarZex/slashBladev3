@@ -3,7 +3,7 @@ import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
 import { classReg, drive, slashdimension } from "./saData";
 import "./compornents";
-import { playBladeSound,isMoving , absVector3,roundTo,print,setBladeDamage,callDamage,Vector2Sub ,getVector3E,DistanceVector3 } from "./usefulFunction";
+import { addProudSoul,playBladeSound,isMoving , absVector3,roundTo,print,setBladeDamage,callDamage,Vector2Sub ,getVector3E,DistanceVector3 } from "./usefulFunction";
 import { summonBladeShadow2,SummonedswordLine,rangeAttackE,rapidSlash,risingStar,bladeComboG1,bladeComboG2,bladeComboG3,bladeComboG3_C,bladeComboG4_A,bladeComboG4_B,bladeComboA1,bladeComboA2,bladeComboA3,bladeComboA3_B,bladeComboA4_B, summonBladeShadow3  } from "./attacks";
 import { bladeImmuneEntities,bladeNoEnemyStepEntities,SNEAK_TIME } from "./config";
 
@@ -63,12 +63,14 @@ function bladeInstant( user,blade ){
 	if( bladeData[`${bladeId}`].hasOwnProperty(`ench5`) ){
 		user.runCommand(`enchant @s ${bladeData[`${bladeId}`][`ench5`][`id`]} ${bladeData[`${bladeId}`][`ench5`][`lvl`]}`);
 	}
-	if( bladeData[`${bladeId}`].hasOwnProperty(`insa`) ){
+	if( bladeData[`${bladeId}`].hasOwnProperty(`insa`) && bladeData[`${bladeId}`][`rare`] == "epic" ){
 		blade.setDynamicProperty("sa",`${bladeData[`${bladeId}`][`insa`]}`);
 	}
 	blade.setDynamicProperty("killCount",0);
 	blade.setDynamicProperty("ProudSoul",0);
 	blade.setDynamicProperty("Refine",0);
+	blade.setDynamicProperty("rare",bladeData[`${bladeId}`][`rare`]);
+
 	if( user.getDynamicProperty("userXp") == undefined ){
 		user.setDynamicProperty("userXp",0);
 	}
@@ -77,12 +79,13 @@ function bladeInstant( user,blade ){
 	const attack = bladeData[`${bladeId}`][`damage`];
 	const mac = bladeData[`${bladeId}`][`damageplus`];
 	blade.setLore([
+		{ translate : `script.blade:${blade.getDynamicProperty("rare")}.name` },
 		{ text : `§rKillCount: ${blade.getDynamicProperty("killCount")}`},
 		{ text :`§rProudSoul: ${blade.getDynamicProperty("ProudSoul")}`},
-		//{ text:`§rRefine: ${blade.getDynamicProperty("Refine")}`},
-		{ text:``},
+		{ text:`§rRefine: ${blade.getDynamicProperty("Refine")}`},
+		//{ text:``},
 		{ rawtext : [ { text: `§rSA:`},{ translate: `script.sa:${blade.getDynamicProperty("sa")}.name`}]},
-		{ text:`§r§4RankAttackDamage`},
+		//{ text:`§r§4RankAttackDamage`},
 		{ text:`§r§6B-SS§r/§cSSS§r/§5Limit`},
 		{ text:`§r§6+${attack}.0§r/§c+${attack}.0§r/§5+${mac}.0`}
 	]);
@@ -91,7 +94,7 @@ function bladeInstant( user,blade ){
 function bladeSoulcal( user,blade ){
 	const xp = user.getTotalXp();
 	const bladeId = blade.typeId.split(`:`)[1];
-	const Tblade = user.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
+	const Tblade = world.getAllPlayers()[0].getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
 	// if ( Tblade.getComponent(ItemComponentTypes.Durability).damage < blade.getDynamicProperty(`currentDurability`) ){
 	// 	blade.setDynamicProperty("currentDurability",Tblade.getComponent(ItemComponentTypes.Durability).damage);
 	// 	const Refine = blade.getDynamicProperty("Refine") + 1;
@@ -102,6 +105,20 @@ function bladeSoulcal( user,blade ){
 	// 	lore[6] = `§r§6+${bladeData[`${bladeId}`][`damage`]}.0§r/§c+${blade.getDynamicProperty("damage")}.0§r/§5+${blade.getDynamicProperty("damagemax")}.0`;
 	// 	blade.setLore(lore);
 	// }
+	if( Tblade.getComponent(ItemComponentTypes.Enchantable).getEnchantments().length > 0 && blade.getDynamicProperty("rare") == "uncommon" ){
+		blade.setDynamicProperty("rare","rare");
+		const lore = blade.getLore();
+		lore[0] = { translate : `script.blade:${blade.getDynamicProperty("rare")}.name` };
+		blade.setLore(lore);
+	}
+	if( Tblade.nameTag != undefined && lade.getDynamicProperty("rare") == "rare" ){
+		blade.setDynamicProperty("rare","epic");
+		Tblade.nameTag = `§d${Tblade.nameTag}`;
+		const lore = blade.getLore();
+		lore[0] = { translate : `script.blade:${blade.getDynamicProperty("rare")}.name` };
+		blade.setLore(lore);
+		blade.setDynamicProperty("sa","slashdimension");
+	}
 	if ( blade.getDynamicProperty(`damagemax`) - bladeData[`${bladeId}`][`damage`] < user.level ){
 		blade.setDynamicProperty("damage",blade.getDynamicProperty(`damagemax`));
 		const lore = blade.getLore();
@@ -115,11 +132,7 @@ function bladeSoulcal( user,blade ){
 		blade.setLore(lore);
 	}
 	if( xp > user.getDynamicProperty("userXp") ){
-		const soul = blade.getDynamicProperty("ProudSoul") + (xp - user.getDynamicProperty("userXp")) * 5;
-		const lore = blade.getLore();
-		lore[1] = `§rProudSoul: ${soul}`;
-		blade.setLore(lore);
-		blade.setDynamicProperty("ProudSoul", soul );
+		addProudSoul((xp - user.getDynamicProperty("userXp")),blade);
 		user.setDynamicProperty("userXp",xp);
 	}
 	else{
@@ -519,11 +532,11 @@ world.afterEvents.entityDie.subscribe( e => {
 					killer.dimension.runCommand(`loot spawn ${loc.x} ${loc.y} ${loc.z} loot ps`);
 				}
 				if( kill >= 1000 ){
-					lore[0] = `§r§4KillCount: ${kill}`;
+					lore[1] = `§r§4KillCount: ${kill}`;
 					lore[5] = `§r§6B-A§r/§cS-SSS§r/§5Limit`
 				}
 				else {
-					lore[0] = `§rKillCount: ${kill}`;
+					lore[1] = `§rKillCount: ${kill}`;
 				}
 				blade.setLore(lore);
 			}
