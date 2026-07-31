@@ -23,6 +23,9 @@ execute as @a[scores={around=1..}] run function fly
 execute as @a[scores={antipro=1..}] run function antipro
 execute as @a[scores={antidmg=1..}] run function antidmg
 
+execute as @e[tag=end_projectile] run scriptevent zex:end_projectile
+
 
 gamerule commandblockoutput false
 
+scoreboard players remove @e[scores={bladesword=0..}] bladesword 1

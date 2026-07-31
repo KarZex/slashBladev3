@@ -13,6 +13,10 @@ export function addProudSoul( p, bladeSlot ){
     bladeSlot.setDynamicProperty("ProudSoul", soul );
 }
 
+export function getBladeTarget( r ){
+    
+}
+
 export function absVector3( V ){
     let abs_x = V.x * V.x;
     let abs_y = V.y * V.y;
@@ -31,6 +35,16 @@ export function Vector2Sub( V1,V2 ){
     let distance_x = (V2.x - V1.x);
     let distance_y = (V2.y - V1.y);
     let distance_z = (V2.z - V1.z);
+    return {
+        x:distance_x,
+        y:distance_y,
+        z:distance_z
+    }
+}
+export function Vector2Add( V1,V2 ){
+    let distance_x = (V2.x + V1.x);
+    let distance_y = (V2.y + V1.y);
+    let distance_z = (V2.z + V1.z);
     return {
         x:distance_x,
         y:distance_y,

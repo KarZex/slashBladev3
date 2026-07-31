@@ -6,15 +6,7 @@
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier": "minecraft:arrow",
-      "scripts": {
-        "animate": [
-          "walk"
-        ]
-      },
-      "animations": {
-        "walk": "controller.animation.ding"
-      }
+      "runtime_identifier": "minecraft:arrow"
     },
     "component_groups": {
       "despawn": {
@@ -101,6 +93,29 @@
         "minecraft:skin_id": {
           "value": 15
         }
+      },
+      "zex:projectile":{
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 0,
+              "knockback": true
+            },
+            "stick_in_ground": {}
+          },
+          "power": 0.2,
+          "gravity": 0,
+          "inertia": 1.5,
+          "uncertainty_base": 0,
+          "uncertainty_multiplier": 0,
+          "anchor": 1,
+          "offset": [
+            0,
+            0.5,
+            0
+          ],
+          "catch_fire": false
+        }
       }
     },
     "components": {
@@ -117,27 +132,15 @@
           }
         ]
       },
-      "minecraft:fire_immune": {},
-      "minecraft:projectile": {
-        "on_hit": {
-          "impact_damage": {
-            "damage": 0,
-            "knockback": true
-          }
-        },
-        "power": 0.2,
-        "gravity": 0,
-        "inertia": 1.5,
-        "uncertainty_base": 0,
-        "uncertainty_multiplier": 0,
-        "anchor": 1,
-        "offset": [
-          0,
-          0.5,
-          0
-        ],
-        "catch_fire": false
+      "minecraft:timer": {
+        "time": 10.0,
+        "looping": true,
+        "time_down_event": {
+          "event": "zex:despawn",
+          "target": "self"
+        }
       },
+      "minecraft:fire_immune": {},
       "minecraft:explode": {
         "fuse_length": 10,
         "fuse_lit": true,
@@ -148,10 +151,32 @@
         "width": 3.0,
         "height": 0.5
       },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:physics": {}
     },
     "events": {
+      "zex:projectile": {
+        "add": {
+          "component_groups": [
+            "zex:projectile"
+          ]
+        }
+      },
+      "zex:end_projectile": {
+        "remove": {
+          "component_groups": [
+            "zex:projectile"
+          ]
+        }
+      },
       "zex:despawn": {
+        "queue_command": {
+          "command":[
+            "playsound random.glass @a ~~~ 2 2"
+          ]
+        },
         "add": {
           "component_groups": [
             "despawn"

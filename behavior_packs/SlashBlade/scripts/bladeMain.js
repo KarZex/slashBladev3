@@ -3,7 +3,7 @@ import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { bladeData } from "./blade";
 import { classReg, drive, slashdimension } from "./saData";
 import "./compornents";
-import { addProudSoul,playBladeSound,isMoving , absVector3,roundTo,print,setBladeDamage,callDamage,Vector2Sub ,getVector3E,DistanceVector3 } from "./usefulFunction";
+import { Vector2Add,addProudSoul,playBladeSound,isMoving , absVector3,roundTo,print,setBladeDamage,callDamage,Vector2Sub ,getVector3E,DistanceVector3 } from "./usefulFunction";
 import { summonBladeShadow2,SummonedswordLine,rangeAttackE,rapidSlash,risingStar,bladeComboG1,bladeComboG2,bladeComboG3,bladeComboG3_C,bladeComboG4_A,bladeComboG4_B,bladeComboA1,bladeComboA2,bladeComboA3,bladeComboA3_B,bladeComboA4_B, summonBladeShadow3  } from "./attacks";
 import { bladeImmuneEntities,bladeNoEnemyStepEntities,SNEAK_TIME } from "./config";
 
@@ -303,11 +303,7 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 		const sa = new classRef();
 		if( sa.cost <= blade.getDynamicProperty("ProudSoul") ){
 			setBladeDamage(1,user);
-			const soul = blade.getDynamicProperty("ProudSoul") - sa.cost;
-			blade.setDynamicProperty("ProudSoul", soul );
-			const lore = blade.getLore();
-			lore[1] = `§rProudSoul: ${soul}`;
-			blade.setLore(lore);
+        	addProudSoul(-sa.cost,blade);
 			sa.fireSa( blade,user );
 
 		}
@@ -383,7 +379,7 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 	const projectile = e.projectile;
 	if( projectile.typeId == "safire:summonedsword" ){
 		projectile.dimension.playSound("item.trident.hit",e.location,{ pitch:2, volume:5 });
-		projectile.remove()
+		projectile.triggerEvent(`zex:end_projectile`);
 	}
 } )
 
@@ -414,6 +410,14 @@ world.afterEvents.projectileHitEntity.subscribe( async e => {
 		e.dimension.playSound("item.trident.hit",e.location,{ pitch:2, volume:5 });
 		vict.applyDamage(dmg,{ cause:`override`,damagingEntity:e.source });
 		let gunName = e.projectile.typeId;
+		e.projectile.triggerEvent(`zex:end_projectile`);
+		e.projectile.addTag(`end_projectile`);
+		e.projectile.setDynamicProperty(`eid`,vict.id);
+		e.projectile.setDynamicProperty(`eloc`,Vector2Sub(vict.location,e.location));
+		e.projectile.clearVelocity();
+
+		vict.setDynamicProperty(`bladesword`,e.source.id);
+		world.scoreboard.getObjective(`bladesword`).setScore(vict,100);
 		
 		world.scoreboard.getObjective(`blade`).addScore(e.source,7);
 		world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
@@ -559,6 +563,17 @@ world.afterEvents.entityDie.subscribe( e => {
 
 
 system.afterEvents.scriptEventReceive.subscribe( e => {
+	if( e.id == "zex:end_projectile" ){	
+		const projectile = e.sourceEntity;
+		const target = world.getEntity(projectile.getDynamicProperty(`eid`));
+		if( target != undefined && world.scoreboard.getObjective(`bladesword`).getScore(target) > -1 ){
+			const locp = projectile.getDynamicProperty(`eloc`);
+			projectile.tryTeleport(Vector2Add(locp,target.location));
+		}
+		else{
+			projectile.triggerEvent(`zex:despawn`);
+		}
+	}
 	if( e.id == "zex:skinid" ){	
 		const loc = e.sourceEntity.location;
 		const blade = new ItemStack(`blade:sange`,1);

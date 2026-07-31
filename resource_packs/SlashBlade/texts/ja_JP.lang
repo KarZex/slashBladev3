@@ -248,9 +248,9 @@ script.sa:lighting_swords.name=ニシコトロアイ
 
 script.sa:undefined.name= 
 script.blade:.name= 
-script.blade:uncommon.name=§8封§r
-script.blade:rare.name=§b印§r
-script.blade:epic.name=§d妖§r
+script.blade:uncommon.name=§r§8封§r
+script.blade:rare.name=§r§b印§r
+script.blade:epic.name=§r§d妖§r
 
 
 script.zex:drive.name=Drive

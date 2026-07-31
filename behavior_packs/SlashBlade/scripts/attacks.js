@@ -1,7 +1,7 @@
 import { world, system, Entity,ItemComponentTypes  } from "@minecraft/server";
 import { bladeData } from "./blade";
 import { bladeImmuneEntities } from "./config"
-import { print,isMoving,isSpeedMoving,setBladeDamage,callDamage,playBladeSound } from "./usefulFunction"
+import { print,isMoving,isSpeedMoving,setBladeDamage,callDamage,playBladeSound,addProudSoul } from "./usefulFunction"
 
 //Attacks
 
@@ -39,11 +39,7 @@ export function SummonedswordLine( user,blade,bladeSlot ){
         const power = 1;
         const O = user.location;
         const V = user.getViewDirection();
-        const soul = bladeSlot.getDynamicProperty("ProudSoul") - 2;
-        bladeSlot.setDynamicProperty("ProudSoul", soul );
-        const lore = bladeSlot.getLore();
-        lore[1] = `§rProudSoul: ${soul}`;
-        bladeSlot.setLore(lore);
+        addProudSoul(-2,bladeSlot);
         const FirePos = {
         x: O.x,
         y: O.y + 1.62,
@@ -55,8 +51,8 @@ export function SummonedswordLine( user,blade,bladeSlot ){
         z: V.z * power 
         }
         const color = bladeData[`${blade.typeId.split(`:`)[1]}`]["color"];
-        const fire = user.dimension.spawnEntity(`safire:summonedsword`,FirePos);
-        fire.getComponent(`minecraft:projectile`).owner = user
+        const fire = user.dimension.spawnEntity(`safire:summonedsword`,FirePos,{ spawnEvent:`zex:projectile` });
+        fire.getComponent(`minecraft:projectile`).owner = user;
         fire.triggerEvent(`${color}`);
         fire.getComponent(`minecraft:projectile`).shoot( shootView );
         fire.setDynamicProperty(`damage`,level)
@@ -107,7 +103,9 @@ export async function risingStar( user,target,blade,sound,color ){
 }
 
 export function rangeAttack(user,damage,knockback,knockbackpower,range,Isfire,combo){
-    const victims = user.dimension.getEntities({location:user.location,maxDistance:range,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
+    const victims1 = user.dimension.getEntities({location:user.location,maxDistance:range,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
+    const victims2 = user.dimension.getEntities({location:user.location,maxDistance:range,scoreOptions:[ { objective:`bladesword`,minScore:0 } ] } );
+    const victims = victims1.concat(victims2);
 	if( victims.length > 0 ){
 		setBladeDamage(1,user);
 		for( let i = 0; i < victims.length; i++ ){
@@ -131,8 +129,8 @@ export function rangeAttack(user,damage,knockback,knockbackpower,range,Isfire,co
 		}
 	}
 	else{
-        const victims2 = user.dimension.getEntities({location:user.location,maxDistance:range*1.5,excludeTypes:bladeImmuneEntities });
-        if( victims2.length > 1 ){
+        const victims3 = user.dimension.getEntities({location:user.location,maxDistance:range*1.5,excludeTypes:bladeImmuneEntities });
+        if( victims3.length > 1 ){
 			world.scoreboard.getObjective(`blade`).addScore(user,-12);
         }
 	}
@@ -140,7 +138,9 @@ export function rangeAttack(user,damage,knockback,knockbackpower,range,Isfire,co
 
 
 export function rangeAttackE(user,loc,d,damage,pos,range){
-    const victims = d.getEntities({location:loc,maxDistance:range,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
+    const victims1 = d.getEntities({location:loc,maxDistance:range,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
+    const victims2 = d.getEntities({location:loc,maxDistance:range,scoreOptions:[ { objective:`bladesword`,minScore:0 } ],excludeNames:[ user.nameTag ] } );
+    const victims = victims1.concat(victims2);
 	if( victims.length > 0 ){
 		for( let i = 0; i < victims.length; i++ ){
 			if( victims[i].nameTag != user.nameTag ){
