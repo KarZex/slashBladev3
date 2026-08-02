@@ -16,6 +16,7 @@
       },
       "animations": {
         "root": "controller.animation.blade",
+        "offhand": "animation.sword.third_left",
         "usesa": "animation.sword.usesa",
         "atk": "animation.sword.ack",
         "use": "animation.sword.use",
@@ -57,10 +58,16 @@
       },
       "scripts": {
         "pre_animation": [
-          "v.main_hand = c.item_slot == 'main_hand';"
+          "v.main_hand = c.item_slot == 'main_hand';",
+          "v.off_hand = c.item_slot == 'off_hand';"
         ],
         "animate": [
-          "root",
+          {
+            "root": "v.main_hand"
+          },
+          {
+            "offhand": "v.off_hand"
+          },
           {
             "first": "(v.main_hand && c.is_first_person)"
           },

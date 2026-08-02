@@ -21,9 +21,10 @@
           "render_method": "opaque"
         }
       },
-      "minecraft:custom_components": [
-        "zex:bladestand2","zex:bladestand2b"
-      ],
+      "zex:bladestand":{
+        "stand":2
+      },
+      "minecraft:collision_box":false,
       "minecraft:geometry": "geometry.bladestand2",
       "minecraft:loot": "loot_tables/blocks/bladestand2.json",
       "minecraft:map_color": "#00ff00",

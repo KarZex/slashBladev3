@@ -3,6 +3,7 @@ import { world,BlockPermutation, Block,EntityComponentTypes,EquipmentSlot, syste
 //抜刀剣の攻撃を無効化するエンティティ
 //The list of entities that are immune to blade attacks
 export const bladeImmuneEntities = [
+    `player`,
     `armor_stand`,
     `area_effect_cloud`,
     `bat`,
@@ -32,10 +33,15 @@ export const bladeImmuneEntities = [
     `snow_golem`,
     `zex:bladestand1`,
     `zex:bladestand2`,
+    `zex:bladestand3`,
+    `zex:bladestand4`,
+    `zex:bladestand5`,
     `zex:chair`,
     `zex:bladeshadow`,
     `safire:slashdim`,
+    `zex:blade_item`,
     `zex:blade_drop_item`,
+    `zex:dummy_entity`,
     `safire:summonedsword`
 ]
 //エネミーステップを無効化するエンティティ
@@ -47,10 +53,15 @@ export const bladeNoEnemyStepEntities = [
     `lightning_bolt`,
     `zex:bladestand1`,
     `zex:bladestand2`,
+    `zex:bladestand3`,
+    `zex:bladestand4`,
+    `zex:bladestand5`,
     `zex:chair`,
     `zex:bladeshadow`,
     `safire:slashdim`,
+    `zex:dummy_entity`,
     `zex:blade_drop_item`,
+    `zex:blade_item`,
     `safire:summonedsword`
 ]
 

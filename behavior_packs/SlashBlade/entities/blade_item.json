@@ -1,0 +1,136 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "zex:blade_item",
+      "spawn_category": "creature",
+      "runtime_identifier": "minecraft:armor_stand",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "zex:stand_type": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            6
+          ],
+          "default": 1
+        }
+      },
+      "scripts": {
+          "animate": [
+              "walk"
+          ]
+      },
+      "animations": {
+          "walk": "controller.animation.blade_drop_item"
+      }
+    },
+    "component_groups": {
+      "zex:drop_item":{
+        "minecraft:timer": {
+          "time": 0.25,
+          "looping": true,
+          "time_down_event": {
+            "event": "zex:playsound",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:behavior.trade_with_player": {},
+      "minecraft:experience_reward": {
+        "on_death": "0"
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:inventory": {
+        "inventory_size": 1,
+        "container_type": "container",
+        "private": true,
+        "restrict_to_owner": true
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.15,
+        "height": 0.15
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:health": {
+        "value": 32767,
+        "max": 32767
+      },
+      "minecraft:push_through": {
+        "value": 0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:physics": {
+        "has_collision": false,
+        "has_gravity": false,
+        "push_towards_closest_space": false
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+      }
+    },
+    "events": {
+      "zex:playsound":{
+        "queue_command": {
+          "command":"execute if entity @s[tag=!inground] run playsound swingblade.c @a ~~~ 2 2"
+        }
+      },
+      "zex:drop_item":{
+        "set_property": {
+          "zex:stand_type": 0
+        }
+      },
+      "zex:stand1":{
+        "set_property": {
+          "zex:stand_type": 1
+        }
+      },
+      "zex:stand2":{
+        "set_property": {
+          "zex:stand_type": 2
+        }
+      },
+      "zex:stand3":{
+        "set_property": {
+          "zex:stand_type": 3
+        }
+      },
+      "zex:stand4":{
+        "set_property": {
+          "zex:stand_type": 4
+        }
+      },
+      "zex:stand5":{
+        "set_property": {
+          "zex:stand_type": 5
+        }
+      },
+      "zex:stand6":{
+        "set_property": {
+          "zex:stand_type": 6
+        }
+      }
+    }
+  }
+}

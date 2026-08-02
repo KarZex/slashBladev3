@@ -135,10 +135,10 @@
         "default": {
           "transitions": [
             {
-              "ground": "query.is_on_ground"
+              "ground": "query.is_on_ground && query.property('zex:stand_type') == 0"
             },
             {
-              "fly2": "!query.is_on_ground"
+              "fly2": "!query.is_on_ground && query.property('zex:stand_type') == 0"
             }
           ],
           "on_entry": [

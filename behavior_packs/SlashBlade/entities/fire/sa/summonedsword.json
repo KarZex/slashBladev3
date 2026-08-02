@@ -174,7 +174,8 @@
       "zex:despawn": {
         "queue_command": {
           "command":[
-            "playsound random.glass @a ~~~ 2 2"
+            "playsound random.glass @a ~~~ 2 2",
+            "particle minecraft:critical_hit_emitter ~~1~"
           ]
         },
         "add": {

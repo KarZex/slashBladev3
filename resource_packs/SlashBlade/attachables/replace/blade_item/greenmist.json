@@ -1,0 +1,49 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "blade:greenmist.blade_item",
+      "item": {
+        "blade:greenmist": "query.owner_identifier == 'zex:blade_item'"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/models/greenmist"
+      },
+      "geometry": {
+        "default": "geometry.raven"
+      },
+      "animations": {
+        "root1": "animation.sword.stand",
+        "root2": "animation.sword.stand2",
+        "root3": "animation.sword.stand3",
+        "root4": "animation.sword.stand4",
+        "root5": "animation.sword.stand5"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "root1": "query.property('zex:stand_type') == 1"
+          },
+          {
+            "root2": "query.property('zex:stand_type') == 2"
+          },
+          {
+            "root3": "query.property('zex:stand_type') == 3"
+          },
+          {
+            "root4": "query.property('zex:stand_type') == 4"
+          },
+          {
+            "root5": "query.property('zex:stand_type') == 5"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

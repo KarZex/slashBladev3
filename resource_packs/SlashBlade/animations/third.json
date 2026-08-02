@@ -17,6 +17,22 @@
 				}
 			}
 		},
+		"animation.sword.third_left": {
+			"loop": true,
+			"bones": {
+				"sword": {
+					"rotation": [180, 0, 85],
+					"position": [40.25, 40.5, 2.5],
+					"scale": 0.3
+				},
+				"leftArm": {
+					"rotation": [-12.5, 0, 0]
+				},
+				"rightArm": {
+					"rotation": [0, 0, 0]
+				}
+			}
+		},
 		"animation.sword.new": {
 			"loop": true
 		},
@@ -102,10 +118,10 @@
 				},
 				"bone41": {
 					"rotation": [0, 0, 0],
-					"position": [-11.05164, 0.36651, 5.29638]
+					"position": [-20.44398, 0.36651, 0.02534]
 				},
 				"swordat": {
-					"position": [0, -10, 0]
+					"position": [-5.21828, -10, 1.33026]
 				},
 				"leftArm": {
 					"rotation": [-12.5, 0, 0]
@@ -126,10 +142,91 @@
 				},
 				"bone41": {
 					"rotation": [0, 0, 0],
-					"position": [-11.05164, 0.36651, 5.29638]
+					"position": [-18.34608, 1.32683, 1.80619]
 				},
 				"swordat": {
-					"position": [0, -10, 0]
+					"position": [-5.3354, -9.29759, 2.56956]
+				},
+				"leftArm": {
+					"rotation": [-12.5, 0, 0]
+				},
+				"rightArm": {
+					"rotation": [-5, 0, 0],
+					"position": [-26, 22.25, 3.75]
+				}
+			}
+		},
+		"animation.sword.stand4": {
+			"loop": true,
+			"bones": {
+				"sword": {
+					"rotation": [180.6574, -7.4713, -95.0429],
+					"position": [-29, 24.23288, -6.0922],
+					"scale": 0.3
+				},
+				"leftArm": {
+					"rotation": [-12.5, 0, 0]
+				},
+				"rightArm": {
+					"rotation": [-5, 0, 0],
+					"position": [-26, 22.25, 3.75]
+				}
+			}
+		},
+		"animation.sword.linearstand4": {
+			"loop": true,
+			"bones": {
+				"sword": {
+					"rotation": [0, 0, 90],
+					"position": [-28, 27.25, -3],
+					"scale": 0.3
+				},
+				"leftArm": {
+					"rotation": [-12.5, 0, 0]
+				},
+				"rightArm": {
+					"rotation": [-5, 0, 0],
+					"position": [-26, 22.25, 3.75]
+				}
+			}
+		},
+		"animation.sword.linearstand5": {
+			"loop": true,
+			"bones": {
+				"sword": {
+					"rotation": [0, 0, 90],
+					"position": [-28, 27.25, -3],
+					"scale": 0.3
+				},
+				"leftArm": {
+					"rotation": [-12.5, 0, 0]
+				},
+				"rightArm": {
+					"rotation": [-5, 0, 0],
+					"position": [-26, 22.25, 3.75]
+				},
+				"bone41": {
+					"position": [7, 7, 0]
+				},
+				"swordat": {
+					"position": [-8, 0, 0]
+				}
+			}
+		},
+		"animation.sword.stand5": {
+			"loop": true,
+			"bones": {
+				"sword": {
+					"rotation": [180.9845, -7.4355, -97.5639],
+					"position": [-33, 24.73288, 0.6078],
+					"scale": 0.3
+				},
+				"bone41": {
+					"rotation": [0, 0, 0],
+					"position": [-13.01549, 0.62504, -23.71032]
+				},
+				"swordat": {
+					"position": [2.81467, -10.37057, -21.56393]
 				},
 				"leftArm": {
 					"rotation": [-12.5, 0, 0]
@@ -145,7 +242,7 @@
 			"bones": {
 				"sword": {
 					"rotation": [180, -7.5, -90],
-					"position": [-32, 29.48288, 0.6078],
+					"position": [-32, 28.48288, 0.1078],
 					"scale": 0.3
 				},
 				"bone41": {
@@ -161,7 +258,39 @@
 			"bones": {
 				"sword": {
 					"rotation": [180.9845, -7.4355, -97.5639],
-					"position": [-33, 24.73288, 0.6078],
+					"position": [-33, 23.98288, 0.6078],
+					"scale": 0.3
+				},
+				"bone41": {
+					"position": [0, -10, 0]
+				},
+				"swordat": {
+					"position": [0, -10, 0]
+				}
+			}
+		},
+		"animation.sword.stand3": {
+			"loop": true,
+			"bones": {
+				"sword": {
+					"rotation": [90, 70, -90],
+					"position": [7.8, 74.98288, -10.6422],
+					"scale": 0.3
+				},
+				"bone41": {
+					"position": [0, -10, 0]
+				},
+				"swordat": {
+					"position": [0, -10, 0]
+				}
+			}
+		},
+		"animation.sword.linearstand3": {
+			"loop": true,
+			"bones": {
+				"sword": {
+					"rotation": [90, 77.5, -90],
+					"position": [7.8, 70.23288, -5.1422],
 					"scale": 0.3
 				},
 				"bone41": {

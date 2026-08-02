@@ -196,8 +196,6 @@ tile.zex:kawara.name=瓦
 tile.zex:kayabuki.name=茅葺
 tile.zex:wara.name=ワラブロック
 
-tile.zex:bladestand1.name=1段刀掛台
-tile.zex:bladestand2.name=2段刀掛台
 tile.zex:campfire.name=焚き火
 tile.zex:cobblestone_lantern.name=丸石の灯籠
 tile.zex:husuma_down.name=Husuma Down
@@ -251,6 +249,13 @@ script.blade:.name=
 script.blade:uncommon.name=§r§8封§r
 script.blade:rare.name=§r§b印§r
 script.blade:epic.name=§r§d妖§r
+
+
+tile.zex:bladestand1.name=刀掛け台 一段
+tile.zex:bladestand2.name=刀掛け台 二段
+tile.zex:bladestand3.name=刀掛け台 縦掛け
+tile.zex:bladestand4.name=刀掛け台 壁掛け一段
+tile.zex:bladestand5.name=刀掛け台 壁掛け二段
 
 
 script.zex:drive.name=Drive

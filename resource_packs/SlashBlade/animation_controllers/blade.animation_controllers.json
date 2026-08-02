@@ -269,10 +269,10 @@
 					"animations" : [ "gcombo2" ],
 					"transitions" : [
 						{
-							"gcombo3_pre" : "query.is_using_item && query.state_time <= 0.45"
+							"gcombo3_pre" : "query.is_using_item && query.state_time <= 0.6"
 						},
 						{
-							"gcombo3c_pre" : "query.is_using_item && query.state_time > 0.45  && query.state_time <= 1"
+							"gcombo3c_pre" : "query.is_using_item && query.state_time > 0.6  && query.state_time <= 1"
 						},
 						{
 							"default" : "!query.is_on_ground || query.state_time > 1.0"
@@ -294,10 +294,10 @@
 					"animations" : [ "gcombo3" ],
 					"transitions" : [
 						{
-							"gcombo4_pre" : "query.is_using_item && query.state_time < 0.4 && query.state_time <= 1"
+							"gcombo4_pre" : "query.is_using_item && query.state_time < 0.5 && query.state_time <= 1"
 						},
 						{
-							"gcombo4b_pre" : "query.is_using_item && query.state_time >= 0.4 && query.state_time <= 1"
+							"gcombo4b_pre" : "query.is_using_item && query.state_time >= 0.5 && query.state_time <= 1"
 						},
 						{
 							"default" : "!query.is_on_ground || query.state_time > 2.5"

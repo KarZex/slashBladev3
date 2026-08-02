@@ -136,27 +136,27 @@ for row in csv_reader:
                 json.dump(gun_item,f,indent=2)
 
         
-        with open("tool/bladestand2.json","r") as f:
-            gun_item = json.load(f)
-            gun_item["minecraft:attachable"]["description"]["identifier"] = "blade:{}.bladestand2".format(blade_id)
-            gun_item["minecraft:attachable"]["description"]["item"] = { "blade:{}".format(blade_id) : "query.owner_identifier == 'zex:bladestand2'" }
-            gun_item["minecraft:attachable"]["description"]["textures"]["default"] = "textures/models/{}".format(blade_id)
-            if blade_mate != "":
-                gun_item["minecraft:attachable"]["description"]["materials"]["default"] = "{}".format(blade_mate)
-            if blade_geo != "":
-                gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_geo)
-            else:
-                gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_id)
-            if blade_li == "T":
-                 gun_item["minecraft:attachable"]["description"]["animations"]["root"] = "animation.sword.linearstand2"
-        with open("resource_packs/SlashBlade/attachables/replace/stand2/{}.json".format(blade_id),"w") as f:
-            json.dump(gun_item,f,indent=2)
+        # with open("tool/bladestand2.json","r") as f:
+        #     gun_item = json.load(f)
+        #     gun_item["minecraft:attachable"]["description"]["identifier"] = "blade:{}.bladestand2".format(blade_id)
+        #     gun_item["minecraft:attachable"]["description"]["item"] = { "blade:{}".format(blade_id) : "query.owner_identifier == 'zex:bladestand2'" }
+        #     gun_item["minecraft:attachable"]["description"]["textures"]["default"] = "textures/models/{}".format(blade_id)
+        #     if blade_mate != "":
+        #         gun_item["minecraft:attachable"]["description"]["materials"]["default"] = "{}".format(blade_mate)
+        #     if blade_geo != "":
+        #         gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_geo)
+        #     else:
+        #         gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_id)
+        #     if blade_li == "T":
+        #          gun_item["minecraft:attachable"]["description"]["animations"]["root"] = "animation.sword.linearstand2"
+        # with open("resource_packs/SlashBlade/attachables/replace/stand2/{}.json".format(blade_id),"w") as f:
+        #     json.dump(gun_item,f,indent=2)
 
         
         with open("tool/stand1.json","r") as f:
             gun_item = json.load(f)
-            gun_item["minecraft:attachable"]["description"]["identifier"] = "blade:{}.bladestand1".format(blade_id)
-            gun_item["minecraft:attachable"]["description"]["item"] = { "blade:{}".format(blade_id) : "query.owner_identifier == 'zex:bladestand1'" }
+            gun_item["minecraft:attachable"]["description"]["identifier"] = "blade:{}.blade_item".format(blade_id)
+            gun_item["minecraft:attachable"]["description"]["item"] = { "blade:{}".format(blade_id) : "query.owner_identifier == 'zex:blade_item'" }
             gun_item["minecraft:attachable"]["description"]["textures"]["default"] = "textures/models/{}".format(blade_id)
             if blade_mate != "":
                 gun_item["minecraft:attachable"]["description"]["materials"]["default"] = "{}".format(blade_mate)
@@ -165,8 +165,12 @@ for row in csv_reader:
             else:
                 gun_item["minecraft:attachable"]["description"]["geometry"]["default"] = "geometry.{}".format(blade_id)
             if blade_li == "T":
-                 gun_item["minecraft:attachable"]["description"]["animations"]["root"] = "animation.sword.linearstand2"
-        with open("resource_packs/SlashBlade/attachables/replace/stand1/{}.json".format(blade_id),"w") as f:
+                 gun_item["minecraft:attachable"]["description"]["animations"]["root1"] = "animation.sword.linearstand1"
+                 gun_item["minecraft:attachable"]["description"]["animations"]["root2"] = "animation.sword.linearstand2"
+                 gun_item["minecraft:attachable"]["description"]["animations"]["root3"] = "animation.sword.linearstand3"
+                 gun_item["minecraft:attachable"]["description"]["animations"]["root4"] = "animation.sword.linearstand4"
+                 gun_item["minecraft:attachable"]["description"]["animations"]["root5"] = "animation.sword.linearstand5"
+        with open("resource_packs/SlashBlade/attachables/replace/blade_item/{}.json".format(blade_id),"w") as f:
             json.dump(gun_item,f,indent=2)
 
         

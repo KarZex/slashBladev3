@@ -9,10 +9,11 @@
     },
     "components": {
       "minecraft:can_destroy_in_creative": false,
+      "minecraft:allow_off_hand": true,
       "minecraft:max_stack_size": 1,
       "minecraft:hand_equipped": true,
       "minecraft:damage": {
-        "value": 7
+        "value": 5
       },
       "minecraft:shooter": {
         "max_draw_duration": 1.0,

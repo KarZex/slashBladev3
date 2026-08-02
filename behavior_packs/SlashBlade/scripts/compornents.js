@@ -190,97 +190,65 @@ function slashBladeCookingPotLiqXEvent( event ){
         block.setPermutation(block.permutation.withState(`zex:water`,"nothing"));
     }
 }
-function slashBladeStandInteractEvent( event ){
-    const user = event.player;
-    const block = event.block;
-    const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-    const view =  event.block.permutation.getState(`minecraft:cardinal_direction`);
-    if ( item.typeId.includes(`blade:`) ){
-        try{
-            const e = user.dimension.getEntities({
-                maxDistance:1,
-                location:block.location,
-                type:`zex:bladestand1`
-            })
-            for( let p of e ){
+
+const BladeStandEvent = {
+    onPlayerInteract( event,p ){
+        const user = event.player;
+        const params = p.params;
+        const standType = p.params.stand;
+        const block = event.block;
+        const item = user.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
+        const view =  event.block.permutation.getState(`minecraft:cardinal_direction`);
+        const e = user.dimension.getEntitiesAtBlockLocation(block.location)
+        //print(e.length)
+        for( let p of e ){
+            if( p.typeId == "zex:blade_item" ){ 
+                const Settedblade = p.getComponent(EntityComponentTypes.Inventory).container.getItem(0);
+                //  print(p.getComponent(EntityComponentTypes.Inventory).container.size)
+                //  print(p.getComponent(EntityComponentTypes.Inventory).container.emptySlotsCount)
+                //  print(p.getComponent(EntityComponentTypes.Inventory).container.firstItem())
+                // print(Settedblade.typeId);
+                user.addItem(Settedblade);
                 p.remove();
             }
-        }catch{}
-        const summon = user.dimension.spawnEntity(`zex:bladestand1`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
-        //summon.getComponent(EntityComponentTypes.Equippable).setEquipment(`mainhand`,item);
-        summon.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${item.typeId}`);
-        summon.addEffect(`invisibility`,19999999,{ showParticles:false });
-        if( view == "north" ){
-            summon.teleport({x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5},{ rotation:{ x:0,y:180 } })
         }
-        else if( view == "west" ){
-            summon.teleport({x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5},{ rotation:{ x:0,y:90 } })
+        if ( item && item.typeId.includes(`blade:`) ){
+            const summon = user.dimension.spawnEntity(`zex:blade_item`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
+            //const summon = world.getDimension().spawnEntity(`zex:blade_item`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
+            summon.setProperty("zex:stand_type",standType);
+            //summon.getComponent(EntityComponentTypes.Equippable).setEquipment(`mainhand`,item);
+            //summon.getComponent(EntityComponentTypes.Inventory).container.setItem(0,item);
+            summon.getComponent(EntityComponentTypes.Inventory).container.addItem(item);
+            print(summon.getComponent(EntityComponentTypes.Inventory).container.firstItem())
+            summon.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${item.typeId}`);
+            summon.addEffect(`invisibility`,19999999,{ showParticles:false });
+            user.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 air`);
+            if( view == "north" ){
+                summon.teleport({x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5},{ rotation:{ x:0,y:180 } })
+            }
+            else if( view == "west" ){
+                summon.teleport({x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5},{ rotation:{ x:0,y:90 } })
+            }
+            else if( view == "east" ){
+                summon.teleport({x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5},{ rotation:{ x:0,y:-90 } })
+            }
         }
-        else if( view == "east" ){
-            summon.teleport({x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5},{ rotation:{ x:0,y:-90 } })
-        }
-    }
-}
-function slashBladeStandInteract2Event( event ){
-    const user = event.player;
-    const block = event.block;
-    const item = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-    const view =  event.block.permutation.getState(`minecraft:cardinal_direction`);
-    if ( item.typeId.includes(`blade:`) ){
-        try{
-            const e = user.dimension.getEntities({
-                maxDistance:1,
-                location:block.location,
-                type:`zex:bladestand2`
-            })
-            for( let p of e ){
+    },
+    onBreak( event,p ){
+        const d = event.dimension;
+        const block = event.block;
+        const e = d.getEntitiesAtBlockLocation(block.location)
+            //print(e.length)
+        for( let p of e ){
+            if( p.typeId == "zex:blade_item" ){ 
+                const Settedblade = p.getComponent(EntityComponentTypes.Inventory).container.getItem(0);
+                d.spawnItem(Settedblade,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5})
                 p.remove();
             }
-        }catch{}
-        const summon = user.dimension.spawnEntity(`zex:bladestand2`,{x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5});
-        //summon.getComponent(EntityComponentTypes.Equippable).setEquipment(`mainhand`,item);
-        summon.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${item.typeId}`);
-        summon.addEffect(`invisibility`,19999999,{ showParticles:false });
-        if( view == "north" ){
-            summon.teleport({x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5},{ rotation:{ x:0,y:180 } })
-        }
-        else if( view == "west" ){
-            summon.teleport({x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5},{ rotation:{ x:0,y:90 } })
-        }
-        else if( view == "east" ){
-            summon.teleport({x:block.location.x+0.5,y:block.location.y,z:block.location.z+0.5},{ rotation:{ x:0,y:-90 } })
         }
     }
 }
 
-function slashBladeStandBreakEvent( event ){
-    const d = event.dimension;
-    const block = event.block;
-    try{
-        const e = d.getEntities({
-            maxDistance:1,
-            location:block.location,
-            type:`zex:bladestand1`
-        })
-        for( let p of e ){
-            p.remove();
-        }
-    }catch{}
-}
-function slashBladeStandBreak2Event( event ){
-    const d = event.dimension;
-    const block = event.block;
-    try{
-        const e = d.getEntities({
-            maxDistance:1,
-            location:block.location,
-            type:`zex:bladestand2`
-        })
-        for( let p of e ){
-            p.remove();
-        }
-    }catch{}
-}
 function slashBladeNoodleEvent( event ){
     const d = event.dimension;
     const block = event.block;
@@ -436,16 +404,13 @@ system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`zex:pepper_splint_glowth`,{onPlayerInteract: slashBladePepperInteractEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:pepper_splint_growing`,{onRandomTick: slashBladePepperGrowingEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:pepper_splint_place`,{beforeOnPlayerPlace: slashBladePepperPlaceEvent});
-    e.blockComponentRegistry.registerCustomComponent(`zex:bladestand1`,{onPlayerInteract: slashBladeStandInteractEvent});
-    e.blockComponentRegistry.registerCustomComponent(`zex:bladestand2`,{onPlayerInteract: slashBladeStandInteract2Event});
-    e.blockComponentRegistry.registerCustomComponent(`zex:bladestand1b`,{onPlayerDestroy: slashBladeStandBreakEvent});
-    e.blockComponentRegistry.registerCustomComponent(`zex:bladestand2b`,{onPlayerDestroy: slashBladeStandBreak2Event});
+    e.blockComponentRegistry.registerCustomComponent(`zex:bladestand`,BladeStandEvent);
     e.blockComponentRegistry.registerCustomComponent(`zex:noodle`,{onStepOn: slashBladeNoodleEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:noodle2`,{onPlayerInteract: slashBladeNoodleCutEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:husuma_top_use`,{onPlayerInteract: slashBladeHusumaTopUseEvent});
-    e.blockComponentRegistry.registerCustomComponent(`zex:husuma_top_destroy`,{onPlayerDestroy: slashBladeHusumaTopDestroyEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:husuma_top_destroy`,{onBreak: slashBladeHusumaTopDestroyEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:husuma_down_use`,{onPlayerInteract: slashBladeHusumaDownUseEvent});
-    e.blockComponentRegistry.registerCustomComponent(`zex:husuma_down_destroy`,{onPlayerDestroy: slashBladeHusumaDownDestroyEvent});
+    e.blockComponentRegistry.registerCustomComponent(`zex:husuma_down_destroy`,{onBreak: slashBladeHusumaDownDestroyEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:husuma_down_place`,{onPlace: slashBladeHusumaDownPlaceEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:sittable`,{onPlayerInteract: slashBladeSittableEvent});
     e.blockComponentRegistry.registerCustomComponent(`zex:belling`,{onRandomTick: slashBladeBellingEvent});

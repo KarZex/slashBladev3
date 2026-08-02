@@ -1,0 +1,49 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "blade:fluorescentbar.blade_item",
+      "item": {
+        "blade:fluorescentbar": "query.owner_identifier == 'zex:blade_item'"
+      },
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/models/fluorescentbar"
+      },
+      "geometry": {
+        "default": "geometry.fluorescentbar"
+      },
+      "animations": {
+        "root1": "animation.sword.linearstand1",
+        "root2": "animation.sword.linearstand2",
+        "root3": "animation.sword.linearstand3",
+        "root4": "animation.sword.linearstand4",
+        "root5": "animation.sword.linearstand5"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "root1": "query.property('zex:stand_type') == 1"
+          },
+          {
+            "root2": "query.property('zex:stand_type') == 2"
+          },
+          {
+            "root3": "query.property('zex:stand_type') == 3"
+          },
+          {
+            "root4": "query.property('zex:stand_type') == 4"
+          },
+          {
+            "root5": "query.property('zex:stand_type') == 5"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

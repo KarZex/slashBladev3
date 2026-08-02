@@ -25,110 +25,85 @@ export const bladeData = {
     "insa": "C"
   },
   "slashblade": {
-    "damage": 7,
-    "damageplus": 17,
+    "damage": 4,
+    "damageplus": 8,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": ""
   },
   "wood": {
-    "damage": 4,
-    "damageplus": 14,
+    "damage": 1,
+    "damageplus": 2,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": ""
   },
   "bamboo": {
-    "damage": 5,
-    "damageplus": 15,
+    "damage": 1,
+    "damageplus": 2,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": ""
   },
   "silverbanboo": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 3,
+    "damageplus": 6,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": ""
   },
   "white": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 3,
+    "damageplus": 6,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": ""
   },
   "slashblade_named": {
     "damage": 4,
-    "damageplus": 14,
+    "damageplus": 8,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": ""
   },
   "wooden_katana": {
-    "damage": 2,
-    "damageplus": 12,
+    "damage": 1,
+    "damageplus": 2,
     "sound": "swingblade.c",
     "color": "blue",
-    "rare": "uncommon",
-    "ench1": {
-      "id": "looting",
-      "lvl": 1
-    },
-    "insa": "slashdimension"
+    "rare": "uncommon"
   },
   "stone_katana": {
-    "damage": 4,
-    "damageplus": 14,
+    "damage": 2,
+    "damageplus": 4,
     "sound": "swingblade.c",
     "color": "blue",
-    "rare": "uncommon",
-    "ench1": {
-      "id": "looting",
-      "lvl": 1
-    },
-    "insa": "slashdimension"
+    "rare": "uncommon"
   },
   "iron_katana": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 3,
+    "damageplus": 6,
     "sound": "swingblade.c",
     "color": "blue",
-    "rare": "uncommon",
-    "ench1": {
-      "id": "looting",
-      "lvl": 1
-    },
-    "insa": "slashdimension"
+    "rare": "uncommon"
   },
   "diamond_katana": {
-    "damage": 8,
-    "damageplus": 18,
+    "damage": 4,
+    "damageplus": 8,
     "sound": "swingblade.c",
     "color": "blue",
-    "rare": "uncommon",
-    "ench1": {
-      "id": "looting",
-      "lvl": 1
-    },
-    "insa": "slashdimension"
+    "rare": "uncommon"
   },
   "golden_katana": {
-    "damage": 2,
-    "damageplus": 12,
+    "damage": 1,
+    "damageplus": 2,
     "sound": "swingblade.c",
     "color": "blue",
-    "rare": "uncommon",
-    "ench1": {
-      "id": "looting",
-      "lvl": 1
-    },
-    "insa": "slashdimension"
+    "rare": "uncommon"
   },
   "tagayasan": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 4,
+    "damageplus": 8,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": "epic",
@@ -143,8 +118,8 @@ export const bladeData = {
     "insa": "vdrive"
   },
   "yamato": {
-    "damage": 9,
-    "damageplus": 19,
+    "damage": 7,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": "epic",
@@ -160,7 +135,7 @@ export const bladeData = {
   },
   "yuzukitukumo": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "pink",
     "rare": "epic",
@@ -179,59 +154,45 @@ export const bladeData = {
     "insa": "drive"
   },
   "agito": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 4,
+    "damageplus": 8,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": "",
     "insa": "drive"
   },
   "agito_rust": {
-    "damage": 5,
-    "damageplus": 15,
+    "damage": 2,
+    "damageplus": 4,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": ""
   },
   "orotiagito": {
-    "damage": 7,
-    "damageplus": 17,
+    "damage": 5,
+    "damageplus": 10,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": "",
     "insa": "drive"
   },
   "sange": {
-    "damage": 9,
-    "damageplus": 19,
+    "damage": 7,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "blue",
-    "rare": "uncommon",
-    "ench1": {
-      "id": "sharpness",
-      "lvl": 4
-    },
-    "ench2": {
-      "id": "unbreaking",
-      "lvl": 3
-    },
-    "ench3": {
-      "id": "fire_aspect",
-      "lvl": 2
-    },
-    "insa": "slashdimension"
+    "rare": "uncommon"
   },
   "yasha": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 2,
+    "damageplus": 4,
     "sound": "swingblade.c",
     "color": "blue",
-    "rare": "uncommon",
-    "insa": "slashdimension"
+    "rare": "uncommon"
   },
   "fox_white": {
-    "damage": 9,
-    "damageplus": 19,
+    "damage": 6,
+    "damageplus": 12,
     "sound": "swingblade.c",
     "color": "white",
     "rare": "epic",
@@ -254,8 +215,8 @@ export const bladeData = {
     "insa": "slashdimension"
   },
   "fox_black": {
-    "damage": 9,
-    "damageplus": 19,
+    "damage": 6,
+    "damageplus": 12,
     "sound": "swingblade.c",
     "color": "black",
     "rare": "epic",
@@ -274,22 +235,22 @@ export const bladeData = {
     "insa": "spear"
   },
   "muramasa": {
-    "damage": 7,
-    "damageplus": 17,
+    "damage": 5,
+    "damageplus": 10,
     "sound": "swingblade.c",
     "color": "white",
     "rare": "uncommon"
   },
   "sabigatana": {
-    "damage": 4,
-    "damageplus": 14,
+    "damage": 1,
+    "damageplus": 2,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": ""
   },
   "doutanuki": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 5,
+    "damageplus": 10,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": ""
@@ -339,8 +300,8 @@ export const bladeData = {
     "insa": "waveedge"
   },
   "crimsoncherry": {
-    "damage": 11,
-    "damageplus": 21,
+    "damage": 16,
+    "damageplus": 32,
     "sound": "swingblade.c",
     "color": "red",
     "rare": "epic",
@@ -355,8 +316,8 @@ export const bladeData = {
     "insa": "fireup"
   },
   "nihilbx": {
-    "damage": 13,
-    "damageplus": 23,
+    "damage": 20,
+    "damageplus": 40,
     "sound": "swingblade.c",
     "color": "red",
     "rare": "epic",
@@ -375,8 +336,8 @@ export const bladeData = {
     "insa": "spear"
   },
   "nihilul": {
-    "damage": 12,
-    "damageplus": 22,
+    "damage": 16,
+    "damageplus": 32,
     "sound": "swingblade.c",
     "color": "red",
     "rare": "epic",
@@ -404,7 +365,7 @@ export const bladeData = {
   },
   "snowcrow": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "white",
     "rare": "",
@@ -428,7 +389,7 @@ export const bladeData = {
   },
   "darkraven": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "black",
     "rare": "",
@@ -448,14 +409,14 @@ export const bladeData = {
   },
   "toyako": {
     "damage": 5,
-    "damageplus": 15,
+    "damageplus": 10,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": ""
   },
   "fluorescentbar": {
     "damage": 2,
-    "damageplus": 12,
+    "damageplus": 4,
     "sound": "swingblade.c",
     "color": "white",
     "rare": "uncommon",
@@ -467,7 +428,7 @@ export const bladeData = {
   },
   "yukari": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "pink",
     "rare": "uncommon",
@@ -487,7 +448,7 @@ export const bladeData = {
   },
   "kamuy_fire": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "red",
     "rare": "epic",
@@ -507,7 +468,7 @@ export const bladeData = {
   },
   "kamuy_lightning": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "yellow",
     "rare": "epic",
@@ -523,7 +484,7 @@ export const bladeData = {
   },
   "kamuy_water": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": "epic",
@@ -543,7 +504,7 @@ export const bladeData = {
   },
   "kamuy_none": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "white",
     "rare": "epic",
@@ -554,14 +515,14 @@ export const bladeData = {
   },
   "frosty_cherry": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "light_blue",
     "rare": ""
   },
   "moonlightcherry": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "pink",
     "rare": "epic",
@@ -573,7 +534,7 @@ export const bladeData = {
   },
   "greenmist": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "green",
     "rare": "epic",
@@ -585,7 +546,7 @@ export const bladeData = {
   },
   "aquablaze": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "red\n",
     "rare": "epic",
@@ -597,35 +558,35 @@ export const bladeData = {
   },
   "blue": {
     "damage": 7,
-    "damageplus": 17,
+    "damageplus": 14,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": ""
   },
   "katana_red": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 3,
+    "damageplus": 6,
     "sound": "swingblade.c",
     "color": "red",
     "rare": ""
   },
   "tachi": {
-    "damage": 7,
-    "damageplus": 17,
+    "damage": 3,
+    "damageplus": 6,
     "sound": "swingblade.c",
     "color": "blue",
     "rare": ""
   },
   "katana": {
-    "damage": 6,
-    "damageplus": 16,
+    "damage": 3,
+    "damageplus": 6,
     "sound": "swingblade.c",
     "color": "red",
     "rare": ""
   },
   "lightsaber": {
-    "damage": 13,
-    "damageplus": 23,
+    "damage": 7,
+    "damageplus": 14,
     "sound": "swingblade.lightsaber",
     "color": "red",
     "rare": "epic",
