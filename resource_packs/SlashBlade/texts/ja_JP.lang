@@ -243,6 +243,8 @@ script.sa:slashdimension.name=次元斬
 script.sa:fire_spiral.name=キムンリムセ
 script.sa:water_drive.name=ルヤンペチュイェ
 script.sa:lighting_swords.name=ニシコトロアイ
+script.sa:absorb.name=吸血円刃
+script.sa:explode_swords.name=烈風幻影剣
 
 script.sa:undefined.name= 
 script.blade:.name= 

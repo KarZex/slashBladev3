@@ -181,7 +181,7 @@ export async function bladeComboG1( user,blade,sound ){
     summonBladeShadow(user,color,30);
     //after
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
-    provocation(user,comboG);
+    //provocation(user,comboG);
 }
 
 export async function bladeComboG2( user,blade,sound ){
@@ -204,7 +204,7 @@ export async function bladeComboG2( user,blade,sound ){
     summonBladeShadow(user,color,150);
     //after
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
-    provocation(user,comboG);
+    //provocation(user,comboG);
 }
 
 export async function bladeComboG3( user,blade,sound ){
@@ -233,7 +233,7 @@ export async function bladeComboG3( user,blade,sound ){
     
     //after
 	world.scoreboard.getObjective(`printlevel`).setScore(user,100);
-    provocation(user,comboG);
+    //provocation(user,comboG);
 }
 export async function bladeComboG3_C( user,blade,sound ){
     //pre
@@ -430,35 +430,20 @@ export async function bladeComboA4_B( user,blade,sound ){
     world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
 }
 
-export async function provocation(user,score) {
-	let i = 0;
-	while( true ){
-		const ComboA = world.scoreboard.getObjective(`groundcomboA`).getScore(user);
-		const combocool = world.scoreboard.getObjective(`combocool`).getScore(user);
-		const bladecool = world.scoreboard.getObjective(`bladecool`).getScore(user);
-		if( isSpeedMoving(user) || user.isSprinting ||( ComboA != score && ComboA != 0) ){
-			//print(`break${i},${score}`);
-			break;
-		}
-		await system.waitTicks(1);
-		if( combocool == 0 && i > 5 ){
-			const victims = user.dimension.getEntities({location:user.location,maxDistance:16,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
-			if( victims.length > 0 ){
-				world.scoreboard.getObjective(`printlevel`).setScore(user,100);
-				world.scoreboard.getObjective(`blade`).addScore(user,32);
-				user.playSound(`mob.blaze.shoot`);
-				for( let i = 0; i < victims.length; i++ ){
-					if( victims[i].nameTag != user.nameTag ){
-						victims[i].addEffect(`speed`,600,{ amplifier:1 });
-						victims[i].addEffect(`strength`,600,{ amplifier:1 });
-						user.dimension.spawnParticle(`minecraft:bleach`,{x:victims[i].location.x,y:victims[i].location.y+1.8,z:victims[i].location.z});
-						victims[i].applyDamage( 0.1,{ cause:`override`,damagingEntity:user });
-					}
-				}
-				//print(`succcess`);
-			}
-			break;
-		}
-		i++;
-	}
+export async function provocation(user) {
+    const victims = user.dimension.getEntities({location:user.location,maxDistance:16,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
+    if( victims.length > 0 ){
+        world.scoreboard.getObjective(`printlevel`).setScore(user,100);
+        world.scoreboard.getObjective(`blade`).addScore(user,32);
+        user.playSound(`mob.blaze.shoot`);
+        for( let i = 0; i < victims.length; i++ ){
+            if( victims[i].nameTag != user.nameTag ){
+                victims[i].addEffect(`speed`,600,{ amplifier:1 });
+                victims[i].addEffect(`strength`,600,{ amplifier:1 });
+                user.dimension.spawnParticle(`minecraft:bleach`,{x:victims[i].location.x,y:victims[i].location.y+1.8,z:victims[i].location.z});
+                victims[i].applyDamage( 0.1,{ cause:`override`,damagingEntity:user });
+            }
+        }
+        //print(`succcess`);
+    }
 }

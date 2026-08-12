@@ -35,6 +35,18 @@
     "samurai_green_leggings": {
       "textures": "textures/items/samurai_green_leggings"
     },
+    "samurai_black_boots": {
+      "textures": "textures/items/samurai_black_boots"
+    },
+    "samurai_black_chestplate": {
+      "textures": "textures/items/samurai_black_chestplate"
+    },
+    "samurai_black_helmet": {
+      "textures": "textures/items/samurai_black_helmet"
+    },
+    "samurai_black_leggings": {
+      "textures": "textures/items/samurai_black_leggings"
+    },
     "meshi_kinoko": {
       "textures": "textures/items/meshi_kinoko"
     },

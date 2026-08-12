@@ -42,6 +42,7 @@ system.runInterval(() => {
 			const speed = Math.sqrt( velocity.x**2 + velocity.y**2 + velocity.z**2 );
 			const speedKmh = (speed * 20).toFixed(2);
 			player.runCommand(`title @s actionbar §aSpeed: §e${speedKmh} m/s`);
+			//player.teleport({ x:player.location.x,y:player.location.y+100000,z:player.location.z })
 		}
 	}
 }, 1);

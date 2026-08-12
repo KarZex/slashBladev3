@@ -28,6 +28,7 @@ scoreboard objectives add aircomboA dummy
 scoreboard objectives add bladecool dummy
 
 scoreboard objectives add bladesword dummy
+scoreboard objectives add attacktype dummy
 #sneaking
 execute as @a[tag=!startedbladeV4] run scoreboard players set @s blade 0
 execute as @a[tag=!startedbladeV4] run scoreboard players set @s around 0
@@ -48,4 +49,5 @@ execute as @a[tag=!startedbladeV4] run scoreboard players set @s groundcomboA 0
 execute as @a[tag=!startedbladeV4] run scoreboard players set @s groundcomboC 0
 execute as @a[tag=!startedbladeV4] run scoreboard players set @s aircomboA 0
 execute as @a[tag=!startedbladeV4] run scoreboard players set @s groundcomboA 0
+execute as @a[tag=!startedbladeV4] run scoreboard players set @s attacktype 0
 tag @a[tag=!startedbladeV4] add startedbladeV4 

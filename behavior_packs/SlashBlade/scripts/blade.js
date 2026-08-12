@@ -115,7 +115,7 @@ export const bladeData = {
       "id": "smite",
       "lvl": 3
     },
-    "insa": "vdrive"
+    "insa": "drive"
   },
   "yamato": {
     "damage": 7,
@@ -256,8 +256,8 @@ export const bladeData = {
     "rare": ""
   },
   "nihil": {
-    "damage": 10,
-    "damageplus": 20,
+    "damage": 6,
+    "damageplus": 12,
     "sound": "swingblade.c",
     "color": "purple",
     "rare": "epic",
@@ -273,11 +273,11 @@ export const bladeData = {
       "id": "fire_aspect",
       "lvl": 1
     },
-    "insa": "vdrive"
+    "insa": "drive"
   },
   "nihilex": {
-    "damage": 10,
-    "damageplus": 20,
+    "damage": 8,
+    "damageplus": 16,
     "sound": "swingblade.c",
     "color": "purple",
     "rare": "epic",
@@ -300,8 +300,8 @@ export const bladeData = {
     "insa": "waveedge"
   },
   "crimsoncherry": {
-    "damage": 16,
-    "damageplus": 32,
+    "damage": 15,
+    "damageplus": 30,
     "sound": "swingblade.c",
     "color": "red",
     "rare": "epic",
@@ -333,11 +333,11 @@ export const bladeData = {
       "id": "unbreaking",
       "lvl": 3
     },
-    "insa": "spear"
+    "insa": "absorb"
   },
   "nihilul": {
-    "damage": 16,
-    "damageplus": 32,
+    "damage": 15,
+    "damageplus": 30,
     "sound": "swingblade.c",
     "color": "red",
     "rare": "epic",
@@ -364,8 +364,8 @@ export const bladeData = {
     "insa": "waveedge"
   },
   "snowcrow": {
-    "damage": 7,
-    "damageplus": 14,
+    "damage": 5,
+    "damageplus": 10,
     "sound": "swingblade.c",
     "color": "white",
     "rare": "",
@@ -388,8 +388,8 @@ export const bladeData = {
     "insa": "slashdimension"
   },
   "darkraven": {
-    "damage": 7,
-    "damageplus": 14,
+    "damage": 5,
+    "damageplus": 10,
     "sound": "swingblade.c",
     "color": "black",
     "rare": "",
@@ -427,8 +427,8 @@ export const bladeData = {
     "insa": "slashdimension"
   },
   "yukari": {
-    "damage": 7,
-    "damageplus": 14,
+    "damage": 8,
+    "damageplus": 16,
     "sound": "swingblade.c",
     "color": "pink",
     "rare": "uncommon",
@@ -500,11 +500,11 @@ export const bladeData = {
       "id": "knockback",
       "lvl": 2
     },
-    "insa": "spear"
+    "insa": "absorb"
   },
   "kamuy_none": {
-    "damage": 7,
-    "damageplus": 14,
+    "damage": 5,
+    "damageplus": 10,
     "sound": "swingblade.c",
     "color": "white",
     "rare": "epic",
@@ -514,15 +514,15 @@ export const bladeData = {
     }
   },
   "frosty_cherry": {
-    "damage": 7,
-    "damageplus": 14,
+    "damage": 6,
+    "damageplus": 12,
     "sound": "swingblade.c",
     "color": "light_blue",
     "rare": ""
   },
   "moonlightcherry": {
-    "damage": 7,
-    "damageplus": 14,
+    "damage": 8,
+    "damageplus": 16,
     "sound": "swingblade.c",
     "color": "pink",
     "rare": "epic",
@@ -533,8 +533,8 @@ export const bladeData = {
     "insa": "circleslash"
   },
   "greenmist": {
-    "damage": 7,
-    "damageplus": 14,
+    "damage": 8,
+    "damageplus": 16,
     "sound": "swingblade.c",
     "color": "green",
     "rare": "epic",
@@ -542,11 +542,11 @@ export const bladeData = {
       "id": "looting",
       "lvl": 1
     },
-    "insa": "fireup"
+    "insa": "explode_swords"
   },
   "aquablaze": {
-    "damage": 7,
-    "damageplus": 14,
+    "damage": 8,
+    "damageplus": 16,
     "sound": "swingblade.c",
     "color": "red\n",
     "rare": "epic",
@@ -554,7 +554,7 @@ export const bladeData = {
       "id": "fire_aspect",
       "lvl": 2
     },
-    "insa": "circleslash"
+    "insa": "explode_swords"
   },
   "blue": {
     "damage": 7,

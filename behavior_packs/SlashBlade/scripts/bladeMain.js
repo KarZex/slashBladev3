@@ -4,7 +4,7 @@ import { bladeData } from "./blade";
 import { classReg, drive, slashdimension } from "./saData";
 import "./compornents";
 import { Vector2Add,addProudSoul,playBladeSound,isMoving , absVector3,roundTo,print,setBladeDamage,callDamage,Vector2Sub ,getVector3E,DistanceVector3 } from "./usefulFunction";
-import { summonBladeShadow2,SummonedswordLine,rangeAttackE,rapidSlash,risingStar,bladeComboG1,bladeComboG2,bladeComboG3,bladeComboG3_C,bladeComboG4_A,bladeComboG4_B,bladeComboA1,bladeComboA2,bladeComboA3,bladeComboA3_B,bladeComboA4_B, summonBladeShadow3  } from "./attacks";
+import { summonBladeShadow2,SummonedswordLine,rangeAttackE,rapidSlash,risingStar,bladeComboG1,bladeComboG2,bladeComboG3,bladeComboG3_C,bladeComboG4_A,bladeComboG4_B,bladeComboA1,bladeComboA2,bladeComboA3,bladeComboA3_B,bladeComboA4_B, summonBladeShadow3,provocation  } from "./attacks";
 import { bladeImmuneEntities,bladeNoEnemyStepEntities,SNEAK_TIME } from "./config";
 
 const Rank = [ `D`,`C`,`B`,`A`,`1S`,`2S`,`3S`,`3S` ];
@@ -140,6 +140,27 @@ function bladeSoulcal( user,blade ){
 	}
 }
 
+async function bladeOff(user,blade,attacktime,offtime,bladetime,attacktype,isprovocation){
+	try{
+		for( let i = 0; i < attacktime; i++ ){
+			await system.waitTicks(1);
+			if( world.scoreboard.getObjective(`attacktype`).getScore(user) != attacktype ){
+				return;
+			}
+		}
+		user.addTag(`bladeoff`);
+		if( offtime > 0 ){
+			await system.waitTicks(offtime);
+			user.playSound(`block.lantern.break`,{ pitch:1.8, volume:5 });
+		}
+		if( isprovocation ){
+			provocation(user)
+		}
+		await system.waitTicks(bladetime-offtime);
+		user.removeTag(`bladeoff`);
+
+	}catch{ user.removeTag(`bladeoff`); }
+}
 
 async function bladeSwing( user,blade,IsOnGround,sound ){
 	let sound2 = `item.trident.throw`;
@@ -147,61 +168,93 @@ async function bladeSwing( user,blade,IsOnGround,sound ){
 		sound2 = sound;
 	}
 	if(IsOnGround == true){
-		world.scoreboard.getObjective(`groundcomboA`).addScore(user,1);
 		const combo = world.scoreboard.getObjective(`groundcomboA`).getScore(user);
+
 		const time =  user.getDynamicProperty(`BladeStartOn`);
 		//print(`${time}`)
-		if( combo == 1 && time <= 0 ){
+		if( combo == 0 ){
 			bladeComboG1(user,blade,sound);
 			world.scoreboard.getObjective(`combocool`).setScore(user,20);
+			world.scoreboard.getObjective(`groundcomboA`).setScore(user,1);
+			world.scoreboard.getObjective(`attacktype`).setScore(user,1);
+			bladeOff(user,blade,20,0,0,1,true);
 		}
-		if( combo == 2 ){
+		if( combo == 1 ){
 			bladeComboG2(user,blade,sound);
 			world.scoreboard.getObjective(`combocool`).setScore(user,20);
+			world.scoreboard.getObjective(`groundcomboA`).setScore(user,2);
+			world.scoreboard.getObjective(`attacktype`).setScore(user,2);
+			bladeOff(user,blade,20,0,0,2,true);
 		}
-		if( combo == 3 && time >= 10 ){
+		if( combo == 2 && time >= 10 ){
 			bladeComboG3(user,blade,sound2);
 			world.scoreboard.getObjective(`combocool`).setScore(user,40);
+			world.scoreboard.getObjective(`groundcomboA`).setScore(user,3);
+			world.scoreboard.getObjective(`attacktype`).setScore(user,3);
+			bladeOff(user,blade,20,20,30,3,true);
 		}
-		if( combo == 3 && time < 10 ){
+		if( combo == 2 && time < 10 ){
 			bladeComboG3_C(user,blade,sound2);
 			world.scoreboard.getObjective(`combocool`).setScore(user,40);
+			world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
+			world.scoreboard.getObjective(`attacktype`).setScore(user,3);
+			bladeOff(user,blade,20,15,30,3,false);
 		}
-		if( combo == 4 && time > 30 ){
+		if( combo == 3 && time > 30 ){
 			bladeComboG4_A(user,blade,sound2);
 			world.scoreboard.getObjective(`combocool`).setScore(user,40);
+			world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
+			world.scoreboard.getObjective(`attacktype`).setScore(user,4);
+			bladeOff(user,blade,20,20,30,4,false);
 		}
-		if( combo == 4 && time <= 30 ){
+		if( combo == 3 && time <= 30 ){
 			bladeComboG4_B(user,blade,sound2);
 			world.scoreboard.getObjective(`combocool`).setScore(user,40);
+			world.scoreboard.getObjective(`groundcomboA`).setScore(user,0);
+			world.scoreboard.getObjective(`attacktype`).setScore(user,4);
+			bladeOff(user,blade,40,20,30,4,false);
 		}
 		//world.scoreboard.getObjective(`combocool`).setScore(user,20);
 	}
 	else if(IsOnGround == false){
 		user.addEffect(`slow_falling`,40,{ amplifier:1 });
 		user.addEffect(`levitation`,2,{ amplifier:16 });
-		world.scoreboard.getObjective(`aircomboA`).addScore(user,1);
 		const combo = world.scoreboard.getObjective(`aircomboA`).getScore(user);
 		const time =  world.scoreboard.getObjective(`combocool`).getScore(user);
-		if( combo == 1 ){
+		if( combo == 0 ){
 			bladeComboA1(user,blade,sound2);
+			world.scoreboard.getObjective(`aircomboA`).setScore(user,1);
 			world.scoreboard.getObjective(`combocool`).setScore(user,20);
+			world.scoreboard.getObjective(`attacktype`).setScore(user,1);
+			bladeOff(user,blade,25,10,15,1,true);
 		}
-		if( combo == 2 ){
+		if( combo == 1 ){
 			bladeComboA2(user,blade,sound2);
+			world.scoreboard.getObjective(`aircomboA`).setScore(user,2);
 			world.scoreboard.getObjective(`combocool`).setScore(user,20);
+			world.scoreboard.getObjective(`attacktype`).setScore(user,2);
+			bladeOff(user,blade,25,10,15,2,true);
 		}
-		if( combo == 3 && time > 10 ){
+		if( combo == 2 && time > 10 ){
 			bladeComboA3(user,blade,sound2);
+			world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
 			world.scoreboard.getObjective(`combocool`).setScore(user,20);
+			world.scoreboard.getObjective(`attacktype`).setScore(user,3);
+			bladeOff(user,blade,25,10,15,3,false);
 		}
-		if( combo == 3 && time <= 10 ){
+		if( combo == 2 && time <= 10 ){
 			bladeComboA3_B(user,blade,sound2);
+			world.scoreboard.getObjective(`aircomboA`).setScore(user,3);
 			world.scoreboard.getObjective(`combocool`).setScore(user,20);
+			world.scoreboard.getObjective(`attacktype`).setScore(user,3);
+			bladeOff(user,blade,20,10,20,3,true);
 		}
-		else if( combo == 4 ){
+		else if( combo == 3 ){
 			bladeComboA4_B(user,blade,sound2);
+			world.scoreboard.getObjective(`aircomboA`).setScore(user,0);
 			world.scoreboard.getObjective(`combocool`).setScore(user,20);
+			world.scoreboard.getObjective(`attacktype`).setScore(user,4);
+			bladeOff(user,blade,20,10,20,4,false);
 		}
 		//world.scoreboard.getObjective(`combocool`).setScore(user,20);
 	}
@@ -249,7 +302,6 @@ world.afterEvents.itemStartUse.subscribe( async e => {
 		player.setDynamicProperty(`BladeStartOn`,time);
 		//print(time)
 	}
-
 } )
 
 world.afterEvents.itemReleaseUse.subscribe( async e => {
@@ -258,19 +310,24 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 	const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
 	const Tblade = user.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
 	const dmgCom = Tblade.getComponent(ItemComponentTypes.Durability);	
+	if( user.hasTag(`bladeoff`)  ){ return; }
 	if ( e.itemStack.typeId.includes(`blade:`) && e.useDuration > 100010 && dmgCom.damage < dmgCom.maxDurability ){
 		const bladeId = e.itemStack.typeId.split(`:`)[1];
 		const sound = bladeData[`${bladeId}`][`sound`];
 		const color = bladeData[`${bladeId}`][`color`];
 		if( user.isSneaking && (user.isOnGround) ){
-			if( user.inputInfo.getMovementVector().y > 0.3 ){
+			if( true ){
 				const targets = user.dimension.getEntities({ location:user.location,excludeTypes: bladeImmuneEntities,closest:1,maxDistance:1.5,excludeNames:[ user.nameTag ] });
 				if( targets.length > 0 ){
 					const targetEntity = targets[0];
 					risingStar(user,targetEntity,blade,sound,color);
+					world.scoreboard.getObjective(`attacktype`).addScore(user,-1);
+					bladeOff(user,blade,25,10,5,world.scoreboard.getObjective(`attacktype`).getScore(user),false);
 				}
 				else{
 					rapidSlash(user,blade,sound,color);
+					world.scoreboard.getObjective(`attacktype`).addScore(user,-1);
+					bladeOff(user,blade,25,10,5,world.scoreboard.getObjective(`attacktype`).getScore(user),false);
 				}
 				world.scoreboard.getObjective(`combocool`).setScore(user,20);
 
@@ -421,6 +478,13 @@ world.afterEvents.projectileHitEntity.subscribe( async e => {
 		
 		world.scoreboard.getObjective(`blade`).addScore(e.source,7);
 		world.scoreboard.getObjective(`printlevel`).setScore(e.source,100);
+
+		if( e.projectile.hasTag(`lighting_swords`) ){
+			e.dimension.spawnEntity(`minecraft:lightning_bolt`,e.location);
+		}
+		if( e.projectile.hasTag(`explode_swords`) ){
+			e.dimension.createExplosion(e.location,1,{ breaksBlocks:false });
+		}
 	}
 	else if( e.projectile.typeId == "safire:drive" ){
 		const classRef = classReg[`${e.projectile.typeId.split(`:`)[1]}`];
@@ -555,7 +619,7 @@ world.afterEvents.entityDie.subscribe( e => {
 			bladeDropEntity.getComponent(EntityComponentTypes.Inventory).container.setItem(0,blade);
 			bladeDropEntity.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${blade.typeId}`);
 			bladeDropEntity.addEffect(`invisibility`,19999999,{ showParticles:false });
-			//print(`${bladeDropEntity.getComponent(EntityComponentTypes.Equippable).isValid}`)
+			//print(`${bladeDropEntity.getComponent(EntityComponentTypes.Equippable).isValid}`);
 		}
 	}catch{}
 
@@ -576,13 +640,8 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 	}
 	if( e.id == "zex:skinid" ){	
 		const loc = e.sourceEntity.location;
-		const blade = new ItemStack(`blade:sange`,1);
-		//const V = itemEntity.getVelocity()
-		const bladeDropEntity = e.sourceEntity.dimension.spawnEntity(`zex:blade_drop_item`,loc);
-		//bladeDropEntity.addItem(blade)
-		bladeDropEntity.getComponent(EntityComponentTypes.Inventory).container.setItem(0,blade);
-		bladeDropEntity.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${blade.typeId}`);
-		bladeDropEntity.addEffect(`invisibility`,19999999,{ showParticles:false });
+		const blade = e.sourceEntity.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand)
+		blade.setDynamicProperty(`sa`,e.message);
 		//print(`${bladeDropEntity.getComponent(EntityComponentTypes.Equippable).isValid}`)
 	}
 	if( e.id == "zex:drive" ){
@@ -694,7 +753,7 @@ system.runInterval( () => {
 			if( user.getDynamicProperty(`dummy_entity`) != undefined ){
 				const dummyEntity = world.getEntity(user.getDynamicProperty(`dummy_entity`));
 				user.setDynamicProperty(`dummy_entity`,undefined);
-				dummyEntity.remove()
+				dummyEntity.remove();
 			}
 		}
 		else if( user.getDynamicProperty(`dummy_entity`) == undefined ){
@@ -757,8 +816,9 @@ system.runInterval( () => {
 				world.scoreboard.getObjective(`combocool`).setScore(user,-99);
 			}
 			if( user.isJumping && user.getVelocity().y < 0 ){
-				const victims = user.dimension.getEntities({location:user.location,maxDistance:1.5,closest:1,excludeTypes:bladeNoEnemyStepEntities,excludeNames:[ user.nameTag ] });
+				const victims = user.dimension.getEntities({location:user.location,minDistance:0.25,maxDistance:1.5,closest:1,excludeTypes:bladeNoEnemyStepEntities,excludeNames:[ user.nameTag ] });
 				if( victims.length > 0 ){
+					//print(`${victims[0].typeId}`)
 					user.applyKnockback({ x:0,z:0 },0.6);
 					user.removeTag(`jumped`);
 					user.addEffect(`resistance`,10,{ amplifier:20 });
