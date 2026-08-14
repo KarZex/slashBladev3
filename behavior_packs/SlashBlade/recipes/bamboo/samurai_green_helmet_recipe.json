@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:samurai_green_helmet_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ACA",
+      "ABA"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:sakuradiamond"
+      },
+      "B": {
+        "item": "minecraft:iron_ingot"
+      },
+      "C": {
+        "item": "minecraft:gold_ingot"
+      }
+    },
+    "result": {
+      "item": "zex:samurai_green_helmet",
+      "count": 1
+    }
+  }
+  
+}

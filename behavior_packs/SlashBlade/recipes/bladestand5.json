@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:bladestand5_proudsoul"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:oak_fence"
+      },
+      "B": {
+        "item": "zex:proudsoul"
+      }
+    },
+    "result": {
+      "item": "zex:bladestand5",
+      "count": 1
+    }
+  }
+  
+}

@@ -197,6 +197,23 @@ tile.zex:udon.name=Udon
 craft.zex:cooking_pot_oil.name=§eCooking Pot
 craft.zex:cooking_pot_water.name=§9Cooking Pot
 
+item.zex:samurai_green_boots=Samurai Green Boots
+item.zex:samurai_green_chestplate=Samurai Green Chestplate
+item.zex:samurai_green_helmet=Samurai Green Helmet
+item.zex:samurai_green_leggings=Samurai Green Leggings
+item.zex:samurai_black_boots=Samurai Black Boots
+item.zex:samurai_black_chestplate=Samurai Black Chestplate
+item.zex:samurai_black_helmet=Samurai Black Helmet
+item.zex:samurai_black_leggings=Samurai Black Leggings
+item.zex:samurai_red_boots=Samurai Red Boots
+item.zex:samurai_red_chestplate=Samurai Red Chestplate
+item.zex:samurai_red_helmet=Samurai Red Helmet
+item.zex:samurai_red_leggings=Samurai Red Leggings
+
+item.zex:sakuradiamond=Sakuradiamond
+tile.zex:sakuradiamond_block.name=Sakuradiamond Block
+tile.zex:sakuradiamond_ore.name=Sakuradiamond Ore
+
 script.zex:drive.name=Drive
 script.zex:slashdimension.name=Slash Dimension
 script.zex:vdrive.name=Vertical-Drive
@@ -208,6 +225,12 @@ script.zex:fireup.name=Fire Up
 script.zex:lighting_swords.name=Lighting Swords
 script.zex:water_drive.name=Water Drive
 script.zex:absorb.name=Absorb
+script.sa:explode_swords.name=explode swords
 
 script.sa:undefined.name= 
 
+
+script.blade:.name= 
+script.blade:uncommon.name=§r§8Uncommon§r
+script.blade:rare.name=§r§bRare§r
+script.blade:epic.name=§r§dEpic§r

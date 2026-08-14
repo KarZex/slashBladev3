@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:samurai_black_leggings_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ABA",
+      "ABA",
+      "B B"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:sakuradiamond"
+      },
+      "B": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "zex:samurai_black_leggings",
+      "count": 1
+    }
+  }
+  
+}

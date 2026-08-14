@@ -95,16 +95,16 @@ function bladeSoulcal( user,blade ){
 	const xp = user.getTotalXp();
 	const bladeId = blade.typeId.split(`:`)[1];
 	const Tblade = user.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
-	// if ( Tblade.getComponent(ItemComponentTypes.Durability).damage < blade.getDynamicProperty(`currentDurability`) ){
-	// 	blade.setDynamicProperty("currentDurability",Tblade.getComponent(ItemComponentTypes.Durability).damage);
-	// 	const Refine = blade.getDynamicProperty("Refine") + 1;
-	// 	blade.setDynamicProperty("Refine",Refine);
-	// 	blade.setDynamicProperty("damagemax",bladeData[`${bladeId}`][`damageplus`] + Refine);
-	// 	const lore = blade.getLore();
-	// 	lore[2] = `§rRefine: ${Refine}`;
-	// 	lore[6] = `§r§6+${bladeData[`${bladeId}`][`damage`]}.0§r/§c+${blade.getDynamicProperty("damage")}.0§r/§5+${blade.getDynamicProperty("damagemax")}.0`;
-	// 	blade.setLore(lore);
-	// }
+	if ( Tblade.getComponent(ItemComponentTypes.Durability).damage < blade.getDynamicProperty(`currentDurability`) ){
+		blade.setDynamicProperty("currentDurability",Tblade.getComponent(ItemComponentTypes.Durability).damage);
+		const Refine = blade.getDynamicProperty("Refine") + 1;
+		blade.setDynamicProperty("Refine",Refine);
+		blade.setDynamicProperty("damagemax",bladeData[`${bladeId}`][`damageplus`] + Refine);
+		const lore = blade.getLore();
+		lore[3] = `§rRefine: ${Refine}`;
+		lore[6] = `§r§6+${bladeData[`${bladeId}`][`damage`]}.0§r/§c+${blade.getDynamicProperty("damage")}.0§r/§5+${blade.getDynamicProperty("damagemax")}.0`;
+		blade.setLore(lore);
+	}
 	if( Tblade.getComponent(ItemComponentTypes.Enchantable).getEnchantments().length > 0 && blade.getDynamicProperty("rare") == "uncommon" ){
 		blade.setDynamicProperty("rare","rare");
 		const lore = blade.getLore();
@@ -142,10 +142,17 @@ function bladeSoulcal( user,blade ){
 
 async function bladeOff(user,blade,attacktime,offtime,bladetime,attacktype,isprovocation){
 	try{
+		let doprovocation = false;
+		if( isprovocation ){
+			doprovocation = true
+		}
 		for( let i = 0; i < attacktime; i++ ){
 			await system.waitTicks(1);
 			if( world.scoreboard.getObjective(`attacktype`).getScore(user) != attacktype ){
 				return;
+			}
+			if( isMoving(user) ){
+				doprovocation = false
 			}
 		}
 		user.addTag(`bladeoff`);
@@ -153,7 +160,7 @@ async function bladeOff(user,blade,attacktime,offtime,bladetime,attacktype,ispro
 			await system.waitTicks(offtime);
 			user.playSound(`block.lantern.break`,{ pitch:1.8, volume:5 });
 		}
-		if( isprovocation ){
+		if( doprovocation ){
 			provocation(user)
 		}
 		await system.waitTicks(bladetime-offtime);
@@ -375,12 +382,12 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 			Tblade.setDynamicProperty("ProudSoul",soul);
 			dmgCom.damage = 0;
 			const lore = Tblade.getLore();
-			lore[1] = `§rProudSoul: ${soul}`;
+			lore[2] = `§rProudSoul: ${soul}`;
 			Tblade.setDynamicProperty("currentDurability",Tblade.getComponent(ItemComponentTypes.Durability).damage);
 			const Refine = Tblade.getDynamicProperty("Refine") + 1;
 			Tblade.setDynamicProperty("Refine",Refine);
 			Tblade.setDynamicProperty("damagemax",bladeData[`${bladeId}`][`damageplus`] + Refine);
-			lore[2] = `§rRefine: ${Refine}`;
+			lore[3] = `§rRefine: ${Refine}`;
 			lore[6] = `§r§6+${bladeData[`${bladeId}`][`damage`]}.0§r/§c+${Tblade.getDynamicProperty("damage")}.0§r/§5+${Tblade.getDynamicProperty("damagemax")}.0`;
 			Tblade.setLore(lore);
 			user.getComponent("minecraft:inventory").container.setItem(user.selectedSlotIndex, Tblade);
@@ -390,12 +397,12 @@ world.afterEvents.itemReleaseUse.subscribe( async e => {
 			Tblade.setDynamicProperty("ProudSoul",0);
 			user.getComponent("minecraft:inventory").container.setItem(user.selectedSlotIndex, Tblade);
 			const lore = Tblade.getLore();
-			lore[1] = `§rProudSoul: 0`;
+			lore[2] = `§rProudSoul: 0`;
 			Tblade.setDynamicProperty("currentDurability",Tblade.getComponent(ItemComponentTypes.Durability).damage);
 			const Refine = Tblade.getDynamicProperty("Refine") + 1;
 			Tblade.setDynamicProperty("Refine",Refine);
 			Tblade.setDynamicProperty("damagemax",bladeData[`${bladeId}`][`damageplus`] + Refine);
-			lore[2] = `§rRefine: ${Refine}`;
+			lore[3] = `§rRefine: ${Refine}`;
 			lore[6] = `§r§6+${bladeData[`${bladeId}`][`damage`]}.0§r/§c+${Tblade.getDynamicProperty("damage")}.0§r/§5+${Tblade.getDynamicProperty("damagemax")}.0`;
 			Tblade.setLore(lore);
 			user.getComponent("minecraft:inventory").container.setItem(user.selectedSlotIndex, Tblade);
@@ -669,7 +676,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const user = world.getEntity(`${fire.getDynamicProperty(`zex:owner`)}`)
 			const blade = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
 			const bladeItemEnch = blade.getItem().getComponent(ItemComponentTypes.Enchantable);//({location:user.location,maxDistance:1.5,closest:1,excludeNames:[ user.nameTag ] });
-			const victims = fire.dimension.getEntities({location:fire.location,maxDistance:1.5,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
+			const victims = fire.dimension.getEntities({location:fire.location,maxDistance:8,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
 			if( victims.length > 0 ){
 				for( let i = 0; i < victims.length; i++ ){
 					if( victims[i].nameTag != user.nameTag ){
@@ -682,7 +689,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					}
 				}
 			}
-			const victims2 = fire.dimension.getEntities({location:fire.location,maxDistance:3,minDistance:2,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
+			const victims2 = fire.dimension.getEntities({location:fire.location,maxDistance:8,minDistance:2,excludeTypes:bladeImmuneEntities,excludeNames:[ user.nameTag ] });
 			if( victims2.length > 0 ){
 				for( let i = 0; i < victims2.length; i++ ){
 					if( victims2[i].nameTag != user.nameTag ){

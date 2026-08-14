@@ -209,8 +209,8 @@ with open("behavior_packs/SlashBlade/scripts/blade.json","r") as f:
 with open("behavior_packs/SlashBlade/scripts/blade.js","w") as f:
     f.write(export)
 
-with open("resource_packs/SlashBlade/animation_controllers/player.animation_controllers.json","w") as f:
-    json.dump(animation_controllers_json,f,indent=2)
+# with open("resource_packs/SlashBlade/animation_controllers/player.animation_controllers.json","w") as f:
+#     json.dump(animation_controllers_json,f,indent=2)
 
 with open("behavior_packs/SlashBlade/functions/blade_functions.mcfunction","w") as f:
     f.write(func)

@@ -6,40 +6,38 @@
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "BBB",
-      "BBB",
-      "AAA"
+      "ABC",
+      "DEF",
+      "GHI"
     ],
     "key": {
+    //you cant create bedrock item in survival mode so i use these items as placeholder
       "A": {
-        "item": "minecraft:netherite_block",
-        "data": 0
+        "item": "minecraft:allow"
       },
       "B": {
-        "item": "minecraft:redstone_block"
+        "item": "minecraft:barrier"
       },
       "C": {
-        "item": "zex:bladesoulsphere",
-        "data": 0
+        "item": "minecraft:command_block"
       },
       "D": {
-        "item": "blade:muramasa",
-        "data": 0
+        "item": "minecraft:end_gateway"
       },
       "E": {
-        "item": "minecraft:quartz"
+        "item": "minecraft:netherreactor"
       },
       "F": {
-        "item": "minecraft:gold_block",
-        "data": 0
+        "item": "minecraft:end_portal"
       },
       "G": {
-        "item": "minecraft:quartz_block",
-        "data": 0
+        "item": "minecraft:portal"
       },
       "H": {
-        "item": "minecraft:diamond_block",
-        "data": 0
+        "item": "minecraft:stonecutter"
+      },
+      "I": {
+        "item": "minecraft:structure_block"
       }
     },
     "result": {

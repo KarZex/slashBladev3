@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:samurai_black_chestplate_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A A",
+      "ABA",
+      "AAA"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:sakuradiamond"
+      },
+      "B": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "zex:samurai_black_chestplate",
+      "count": 1
+    }
+  }
+  
+}

@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "zex:samurai_green_boots_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A A",
+      "A A"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:sakuradiamond"
+      }
+    },
+    "result": {
+      "item": "zex:samurai_green_boots",
+      "count": 1
+    }
+  }
+  
+}

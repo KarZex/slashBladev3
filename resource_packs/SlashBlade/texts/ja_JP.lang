@@ -232,6 +232,16 @@ item.zex:samurai_green_helmet=侍ヘルメット(緑)
 item.zex:samurai_green_chestplate=侍チェストプレート(緑)
 item.zex:samurai_green_leggings=侍レギンス(緑)
 item.zex:samurai_green_boots=侍ブーツ(緑)
+item.zex:samurai_black_helmet=侍ヘルメット(黒)
+item.zex:samurai_black_chestplate=侍チェストプレート(黒)
+item.zex:samurai_black_leggings=侍レギンス(黒)
+item.zex:samurai_black_boots=侍ブーツ(黒)
+
+item.zex:sakuradiamond=桜ダイヤモンド
+tile.zex:sakuradiamond_block.name=桜ダイヤモンドブロック
+tile.zex:sakuradiamond_ore.name=桜ダイヤモンド鉱石
+
+
 
 script.sa:drive.name=幻影刃
 script.sa:vdrive.name=幻影刃-縦

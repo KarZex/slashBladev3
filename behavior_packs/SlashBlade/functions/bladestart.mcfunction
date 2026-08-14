@@ -1,4 +1,4 @@
-execute as @a[tag=!startedbladeV4] run function startedblade
+execute as @a[tag=!startedbladeV5] run function startedblade
 
 execute as @a run function blade_functions
 

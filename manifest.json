@@ -2,7 +2,7 @@
   "format_version": 2,
   "header": {
     "description": "Java版抜刀剣modと桜modを再現したアドオンです。",
-    "name": "§gSakura SlashBlade Addon Beta V4.6",
+    "name": "§gSakura SlashBlade Addon V5.0",
     "min_engine_version": [1, 21, 100 ],
     "uuid": "f3149345-3fad-4cc6-9410-24a6ed8b5842",
     "version": [1, 21, 100]

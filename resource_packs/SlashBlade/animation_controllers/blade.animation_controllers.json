@@ -27,9 +27,6 @@
 					"transitions" : [
 						{
 							"acombo1" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 0.5)"
-						},
-						{
-							"default" : "query.is_on_ground"
 						}
 					]
 				},
@@ -49,9 +46,6 @@
 					"transitions" : [
 						{
 							"acombo2" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
-						},
-						{
-							"default" : "query.is_on_ground"
 						}
 					]
 				},
@@ -65,7 +59,7 @@
 							"acombo3b_pre" : "query.is_using_item && query.state_time > 0.75"
 						},
 						{
-							"default" : "query.is_on_ground || query.state_time > 2.0"
+							"default" : "query.state_time > 2.0"
 						}
 					]
 				},
@@ -74,9 +68,6 @@
 					"transitions" : [
 						{
 							"acombo3" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
-						},
-						{
-							"default" : "query.is_on_ground"
 						}
 					]
 				},
@@ -99,7 +90,7 @@
 							"is_using_item_pre" : "query.is_sneaking && query.is_using_item && ( query.is_on_ground && !query.is_jumping ) && query.is_moving"
 						},
 						{
-							"default" : "query.is_on_ground || query.state_time > 2.0"
+							"default" : "query.state_time > 2.0"
 						}
 					]
 				},
@@ -108,9 +99,6 @@
 					"transitions" : [
 						{
 							"acombo3b" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
-						},
-						{
-							"default" : "query.is_on_ground"
 						}
 					]
 				},
@@ -121,7 +109,7 @@
 							"acombo4b_pre" : "query.is_using_item && query.state_time > 0.15 && query.state_time <= 1"
 						},
 						{
-							"default" : "query.is_on_ground || query.state_time > 2.0"
+							"default" : "query.state_time > 2.0"
 						}
 					]
 				},
@@ -138,9 +126,6 @@
 					"transitions" : [
 						{
 							"acombo4b" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
-						},
-						{
-							"default" : "query.is_on_ground"
 						}
 					]
 				},
@@ -237,9 +222,6 @@
 						},
 						{
 							"usesa" : "!query.is_using_item && ((query.is_sneaking && !query.is_on_ground) || query.state_time > 0.5)"
-						},
-						{
-							"default" : "!query.is_on_ground"
 						}
 					]
 				},
@@ -250,7 +232,7 @@
 							"gcombo2_pre" : "query.is_using_item && query.state_time > 0.15"
 						},
 						{
-							"default" : "!query.is_on_ground || query.state_time > 1.5"
+							"default" : "query.state_time > 1.5"
 						}
 					]
 				},
@@ -259,9 +241,6 @@
 					"transitions" : [
 						{
 							"gcombo2" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
-						},
-						{
-							"default" : "!query.is_on_ground"
 						}
 					]
 				},
@@ -275,7 +254,7 @@
 							"gcombo3c_pre" : "query.is_using_item && query.state_time > 0.6  && query.state_time <= 1"
 						},
 						{
-							"default" : "!query.is_on_ground || query.state_time > 1.0"
+							"default" : "query.state_time > 1.0"
 						}
 					]
 				},
@@ -284,9 +263,6 @@
 					"transitions" : [
 						{
 							"gcombo3" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
-						},
-						{
-							"default" : "!query.is_on_ground"
 						}
 					]
 				},
@@ -300,7 +276,7 @@
 							"gcombo4b_pre" : "query.is_using_item && query.state_time >= 0.5 && query.state_time <= 1"
 						},
 						{
-							"default" : "!query.is_on_ground || query.state_time > 2.5"
+							"default" : "query.state_time > 2.5"
 						}
 					]
 				},
@@ -309,9 +285,6 @@
 					"transitions" : [
 						{
 							"gcombo3c" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
-						},
-						{
-							"default" : "!query.is_on_ground"
 						}
 					]
 				},
@@ -343,9 +316,6 @@
 					"transitions" : [
 						{
 							"gcombo4" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) && query.state_time <= 1.0)"
-						},
-						{
-							"default" : "!query.is_on_ground"
 						}
 					]
 				},
@@ -377,9 +347,6 @@
 					"transitions" : [
 						{
 							"gcombo4b" : "!query.is_using_item && ((!query.is_sneaking || query.is_on_ground) )"
-						},
-						{
-							"default" : "!query.is_on_ground"
 						}
 					]
 				},

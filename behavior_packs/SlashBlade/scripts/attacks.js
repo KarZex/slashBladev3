@@ -71,13 +71,13 @@ export async function rapidSlash( user,blade,sound,color ){
     let abs_v = 9;
     let d = user.getViewDirection();
 	user.applyKnockback({ x:abs_v*d.x,z:abs_v*d.z },0);
-    const victims2 = user.getEntitiesFromViewDirection({ maxDistance:32,scoreOptions:[ { objective:`bladesword`,minScore:0 } ] })
+    const victims2 = user.dimension.getEntities({ location:user.location,maxDistance:16,scoreOptions:[ { objective:`bladesword`,minScore:0 } ] })
     if( victims2.length > 0 ){
         user.clearVelocity();
         user.addEffect(`resistance`,10,{ amplifier:255,showParticle:false });
         //print(victims2[0].entity.typeId)
-        user.dimension.playSound(`mob.shulker.teleport`,victims2[0].entity.location,{ pitch:1.2, volume:3 });
-        user.teleport(victims2[0].entity.location);
+        user.dimension.playSound(`mob.shulker.teleport`,victims2[0].location,{ pitch:1.2, volume:3 });
+        user.teleport(victims2[0].location);
     }
     await system.waitTicks(4);
     for( let i = 0; i < 6; i++ ){
